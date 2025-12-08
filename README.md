@@ -3,413 +3,381 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مطوية الحاسب الآلي - عمل الطالب جسار فهد نغيمش الخالدي</title>
+    <title>مطوية الحاسب الآلي للأطفال</title>
     <style>
         /* تنسيقات عامة */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', 'Arial', sans-serif;
         }
         
         body {
+            font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', sans-serif;
+            background: linear-gradient(to bottom, #e3f2fd, #f3e5f5);
             color: #333;
-            background: white;
             line-height: 1.6;
-            padding: 20px;
+            padding: 0;
+            margin: 0;
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
         }
         
         /* تنسيقات الطباعة */
         @media print {
             body {
-                padding: 0;
-                margin: 0;
-                font-size: 11pt;
-                background: white;
-            }
-            
-            .student-header {
-                display: block !important;
-                margin-bottom: 10px;
-            }
-            
-            .brochure-container {
-                box-shadow: none !important;
+                background: white !important;
+                padding: 0 !important;
                 margin: 0 !important;
-                width: 100% !important;
-                height: auto !important;
-                transform: none !important;
-                page-break-inside: avoid;
             }
             
             .brochure {
+                box-shadow: none !important;
+                border: 1px solid #ccc !important;
+                margin: 0 !important;
                 width: 100% !important;
                 height: auto !important;
-                transform: none !important;
-                box-shadow: none !important;
-                border-radius: 0 !important;
-                border: 1px solid #ddd !important;
-            }
-            
-            .panels {
-                display: flex !important;
-            }
-            
-            .panel {
-                border: 1px solid #eee !important;
-                padding: 20px !important;
-                page-break-inside: avoid;
+                page-break-after: always;
             }
             
             h1, h2, h3 {
                 color: black !important;
             }
             
-            .graphic {
-                break-inside: avoid;
-            }
-            
-            .panel-back {
-                display: none !important;
+            .fold-lines {
+                display: block !important;
             }
         }
         
-        /* رأس الصفحة - معلومات الطالب */
-        .student-header {
-            width: 100%;
-            max-width: 8.5in;
-            text-align: center;
-            margin-bottom: 20px;
-            padding: 15px;
-            background: linear-gradient(135deg, #1a237e, #283593);
-            color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .student-name {
-            font-size: 24pt;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        
-        .student-class {
-            font-size: 18pt;
-            font-weight: normal;
-            opacity: 0.9;
-        }
-        
-        .project-title {
-            font-size: 16pt;
-            margin-top: 10px;
-            color: #bbdefb;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            padding-top: 10px;
-        }
-        
-        /* حاوية المطوية */
-        .brochure-container {
-            width: 100%;
-            max-width: 8.5in;
-            height: 11in;
-            margin: 0 auto;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            overflow: hidden;
+        /* المطوية */
+        .brochure {
+            width: 8.27in; /* عرض A4 */
+            height: 11.69in; /* طول A4 */
             background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            margin: 20px;
         }
         
-        /* الألواح الثلاثة */
-        .panels {
-            display: flex;
+        /* خطوط الطي */
+        .fold-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
+            pointer-events: none;
+            display: none;
         }
         
-        .panel {
-            width: 33.33%;
+        .fold-line {
+            position: absolute;
+            top: 0;
             height: 100%;
-            padding: 25px 20px;
-            position: relative;
-            overflow: hidden;
-            border-right: 1px solid #eee;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            width: 1px;
+            background: repeating-linear-gradient(
+                to bottom,
+                transparent,
+                transparent 10px,
+                #ff6b6b 10px,
+                #ff6b6b 12px
+            );
         }
         
-        .panel:last-child {
-            border-right: none;
+        .fold-line-1 {
+            left: 33.33%;
         }
         
-        /* اللوحة الأولى */
-        .panel-1 {
-            background: #f8f9ff;
+        .fold-line-2 {
+            left: 66.66%;
         }
         
-        /* اللوحة الثانية */
-        .panel-2 {
-            background: #f9f7ff;
-        }
-        
-        /* اللوحة الثالثة */
-        .panel-3 {
-            background: #f7fff9;
-        }
-        
-        /* تنسيق العناوين */
-        .panel-title {
-            text-align: center;
-            padding: 15px 10px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            color: white;
-            font-size: 20pt;
-            font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        .panel-1 .panel-title {
-            background: linear-gradient(135deg, #1a237e, #283593);
-        }
-        
-        .panel-2 .panel-title {
-            background: linear-gradient(135deg, #4a148c, #7b1fa2);
-        }
-        
-        .panel-3 .panel-title {
-            background: linear-gradient(135deg, #1b5e20, #388e3c);
-        }
-        
-        /* محتوى اللوحة */
-        .panel-content {
-            flex-grow: 1;
-            padding: 5px 0;
-        }
-        
-        .panel-content p {
-            margin-bottom: 15px;
-            text-align: justify;
-            font-size: 12pt;
-            line-height: 1.7;
-            color: #333;
-        }
-        
-        /* الرسومات */
-        .graphics-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin: 20px 0;
-            justify-content: center;
-        }
-        
-        .graphic {
-            width: 48%;
-            height: 140px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            position: relative;
-            background: white;
+        /* ترويسة المطوية */
+        .header {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            height: 120px;
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 1px solid #eee;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 5px dashed #ff6b6b;
         }
         
-        /* تصميمات رسومية للحاسب */
-        .computer-icon {
+        .header-title {
+            font-size: 32px;
+            color: white;
+            text-shadow: 2px 2px 0 #ff6b6b;
+            text-align: center;
+            z-index: 2;
+        }
+        
+        .header-clouds {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        
+        .cloud {
+            position: absolute;
+            background: white;
+            border-radius: 50px;
+            opacity: 0.3;
+        }
+        
+        .cloud-1 {
+            width: 80px;
+            height: 40px;
+            top: 20px;
+            left: 50px;
+        }
+        
+        .cloud-2 {
+            width: 60px;
+            height: 30px;
+            top: 50px;
+            right: 100px;
+        }
+        
+        .cloud-3 {
             width: 100px;
-            height: 80px;
+            height: 50px;
+            bottom: 20px;
+            left: 150px;
+        }
+        
+        /* المحتوى الرئيسي */
+        .content {
+            display: flex;
+            height: calc(100% - 120px);
+        }
+        
+        /* الأعمدة الثلاثة */
+        .column {
+            width: 33.33%;
+            padding: 25px 20px;
+            display: flex;
+            flex-direction: column;
+            border-right: 2px dashed #ccc;
+        }
+        
+        .column:last-child {
+            border-right: none;
+        }
+        
+        .column-1 {
+            background: #f0f9ff;
+        }
+        
+        .column-2 {
+            background: #fff0f7;
+        }
+        
+        .column-3 {
+            background: #f0fff4;
+        }
+        
+        /* عناوين الأعمدة */
+        .column-title {
+            text-align: center;
+            padding: 15px 10px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            color: white;
+            font-size: 22px;
+            position: relative;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .column-1 .column-title {
+            background: linear-gradient(135deg, #36d1dc, #5b86e5);
+        }
+        
+        .column-2 .column-title {
+            background: linear-gradient(135deg, #ff9a9e, #fecfef);
+        }
+        
+        .column-3 .column-title {
+            background: linear-gradient(135deg, #56ab2f, #a8e063);
+        }
+        
+        /* محتوى العمود */
+        .column-content {
+            flex-grow: 1;
+            font-size: 16px;
+            line-height: 1.7;
+            text-align: justify;
+        }
+        
+        .column-content p {
+            margin-bottom: 15px;
+        }
+        
+        /* الرسومات */
+        .graphics {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            height: 150px;
+        }
+        
+        /* رسومات الأطفال */
+        .kid-computer {
+            width: 120px;
+            height: 120px;
             position: relative;
         }
         
-        .monitor {
-            width: 90px;
-            height: 65px;
-            background: #1a237e;
-            border-radius: 8px;
-            position: relative;
+        .kid {
+            position: absolute;
+            width: 60px;
+            height: 80px;
+            bottom: 0;
+            left: 30px;
+        }
+        
+        .kid-head {
+            width: 30px;
+            height: 30px;
+            background: #ffcc80;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 15px;
+        }
+        
+        .kid-body {
+            width: 40px;
+            height: 50px;
+            background: #4d96ff;
+            border-radius: 10px;
+            position: absolute;
+            top: 30px;
+            left: 10px;
+        }
+        
+        .computer {
+            width: 80px;
+            height: 60px;
+            background: #ff8a65;
+            border-radius: 10px;
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
         .screen {
-            width: 75px;
-            height: 45px;
-            background: #e8eaf6;
+            width: 60px;
+            height: 40px;
+            background: #e3f2fd;
             border-radius: 5px;
-            position: absolute;
-            top: 10px;
-            left: 7.5px;
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 24px;
-            color: #1a237e;
-        }
-        
-        .stand {
-            width: 20px;
-            height: 15px;
-            background: #283593;
-            border-radius: 3px 3px 0 0;
-            position: absolute;
-            bottom: -15px;
-            left: 35px;
-        }
-        
-        .base {
-            width: 40px;
-            height: 5px;
-            background: #3949ab;
-            border-radius: 2px;
-            position: absolute;
-            bottom: -20px;
-            left: 25px;
-        }
-        
-        /* رسمة لوحة المفاتيح */
-        .keyboard-icon {
-            width: 110px;
-            height: 60px;
-            position: relative;
-        }
-        
-        .keyboard {
-            width: 100px;
-            height: 40px;
-            background: #4a148c;
-            border-radius: 6px;
-            position: relative;
-        }
-        
-        .keys {
-            display: grid;
-            grid-template-columns: repeat(10, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            gap: 2px;
-            padding: 8px;
-        }
-        
-        .key {
-            width: 7px;
-            height: 5px;
-            background: white;
-            border-radius: 1px;
-        }
-        
-        /* رسمة فأرة */
-        .mouse-icon {
-            width: 80px;
-            height: 60px;
-            position: relative;
-        }
-        
-        .mouse {
-            width: 50px;
-            height: 30px;
-            background: #1b5e20;
-            border-radius: 20px 20px 10px 10px;
-            position: relative;
-            transform: rotate(-20deg);
-        }
-        
-        .mouse-button {
-            width: 20px;
-            height: 10px;
-            background: #388e3c;
-            border-radius: 5px;
-            position: absolute;
-            top: 5px;
-        }
-        
-        .left-button {
-            left: 5px;
-        }
-        
-        .right-button {
-            right: 5px;
-        }
-        
-        .mouse-cable {
-            width: 40px;
-            height: 3px;
-            background: #2e7d32;
-            position: absolute;
-            top: 15px;
-            right: -30px;
-            transform: rotate(10deg);
         }
         
         /* رسمة سحابة إنترنت */
-        .cloud-icon {
+        .internet-cloud {
+            width: 120px;
+            height: 120px;
+            position: relative;
+        }
+        
+        .cloud-body {
             width: 100px;
             height: 70px;
-            position: relative;
+            background: #bbdefb;
+            border-radius: 50px;
+            position: absolute;
+            top: 25px;
+            left: 10px;
         }
         
-        .cloud {
-            width: 80px;
-            height: 50px;
-            background: #3949ab;
-            border-radius: 40px;
-            position: relative;
-        }
-        
-        .cloud:before, .cloud:after {
+        .cloud-body:before, .cloud-body:after {
             content: "";
             position: absolute;
-            background: #3949ab;
+            background: #bbdefb;
             border-radius: 50%;
         }
         
-        .cloud:before {
-            width: 30px;
-            height: 30px;
-            top: -15px;
-            left: 15px;
-        }
-        
-        .cloud:after {
+        .cloud-body:before {
             width: 40px;
             height: 40px;
             top: -20px;
+            left: 15px;
+        }
+        
+        .cloud-body:after {
+            width: 50px;
+            height: 50px;
+            top: -25px;
             right: 15px;
         }
         
-        .wifi {
+        .wifi-signal {
             position: absolute;
-            top: 20px;
-            left: 25px;
-            width: 30px;
-            height: 30px;
-            border: 3px solid white;
+            top: 40px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            border: 4px solid #ff6b6b;
             border-radius: 50%;
             border-top-color: transparent;
-            border-left-color: transparent;
-            transform: rotate(45deg);
+            border-right-color: transparent;
+            transform: rotate(-45deg);
+        }
+        
+        .wifi-signal:before {
+            content: "";
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 4px solid #ffa726;
+            border-radius: 50%;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            top: 8px;
+            left: 8px;
+        }
+        
+        .wifi-signal:after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 4px solid #66bb6a;
+            border-radius: 50%;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            top: 18px;
+            left: 18px;
         }
         
         /* رسمة روبوت */
-        .robot-icon {
-            width: 80px;
-            height: 100px;
+        .friendly-robot {
+            width: 100px;
+            height: 120px;
             position: relative;
         }
         
         .robot-head {
-            width: 60px;
+            width: 70px;
             height: 50px;
-            background: #7b1fa2;
+            background: #78909c;
             border-radius: 15px 15px 5px 5px;
             position: absolute;
             top: 0;
-            left: 10px;
+            left: 15px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -418,83 +386,54 @@
         .robot-eye {
             width: 10px;
             height: 10px;
-            background: #4caf50;
+            background: #00e676;
             border-radius: 50%;
             margin: 0 8px;
+            animation: blink 2s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50%, 100% { transform: scale(1); }
+            25%, 75% { transform: scale(0.2); }
         }
         
         .robot-body {
-            width: 70px;
-            height: 60px;
-            background: #9c27b0;
+            width: 80px;
+            height: 70px;
+            background: #546e7a;
             border-radius: 10px;
             position: absolute;
             bottom: 0;
-            left: 5px;
+            left: 10px;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 24px;
-            color: white;
+            font-size: 30px;
         }
         
-        /* رسمة هاتف ذكي */
-        .phone-icon {
-            width: 70px;
-            height: 100px;
-            position: relative;
-        }
-        
-        .phone {
-            width: 60px;
-            height: 90px;
-            background: #283593;
-            border-radius: 10px;
-            position: relative;
-            border: 5px solid #1a237e;
-        }
-        
-        .phone-screen {
-            width: 50px;
-            height: 65px;
-            background: #e8eaf6;
-            border-radius: 5px;
-            position: absolute;
-            top: 10px;
-            left: 5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 20px;
-            color: #283593;
-        }
-        
-        /* عناصر القائمة */
+        /* قوائم */
         .features-list {
             list-style-type: none;
             padding: 0;
-            margin: 20px 0;
+            margin: 15px 0;
         }
         
         .feature-item {
-            padding: 12px 15px;
+            padding: 10px 15px;
             margin-bottom: 12px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
             border-right: 4px solid;
-            font-size: 11.5pt;
             position: relative;
-            padding-right: 40px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            padding-right: 35px;
         }
         
         .feature-item:before {
-            content: "✓";
+            content: "★";
             position: absolute;
-            right: 15px;
+            right: 10px;
             top: 50%;
             transform: translateY(-50%);
-            font-weight: bold;
             color: white;
             width: 20px;
             height: 20px;
@@ -504,267 +443,288 @@
             justify-content: center;
         }
         
-        .panel-1 .feature-item {
-            border-right-color: #283593;
+        .column-1 .feature-item {
+            border-right-color: #36d1dc;
         }
         
-        .panel-1 .feature-item:before {
-            background-color: #283593;
+        .column-1 .feature-item:before {
+            background-color: #36d1dc;
         }
         
-        .panel-2 .feature-item {
-            border-right-color: #7b1fa2;
+        .column-2 .feature-item {
+            border-right-color: #ff9a9e;
         }
         
-        .panel-2 .feature-item:before {
-            background-color: #7b1fa2;
+        .column-2 .feature-item:before {
+            background-color: #ff9a9e;
         }
         
-        .panel-3 .feature-item {
-            border-right-color: #388e3c;
+        .column-3 .feature-item {
+            border-right-color: #56ab2f;
         }
         
-        .panel-3 .feature-item:before {
-            background-color: #388e3c;
+        .column-3 .feature-item:before {
+            background-color: #56ab2f;
         }
         
-        /* تذييل اللوحة */
-        .panel-footer {
+        /* تذييل العمود */
+        .column-footer {
             text-align: center;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 8px;
+            padding: 15px 10px;
             margin-top: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
             font-weight: bold;
-            font-size: 12pt;
-            color: #333;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
-            border-top: 2px solid;
-        }
-        
-        .panel-1 .panel-footer {
-            border-top-color: #283593;
-            color: #283593;
-        }
-        
-        .panel-2 .panel-footer {
-            border-top-color: #7b1fa2;
-            color: #7b1fa2;
-        }
-        
-        .panel-3 .panel-footer {
-            border-top-color: #388e3c;
-            color: #388e3c;
-        }
-        
-        /* علامات التبويب */
-        .panel-tab {
-            position: absolute;
-            top: 20px;
-            left: -10px;
-            width: 30px;
-            height: 40px;
-            background: inherit;
-            border-radius: 5px;
-            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            color: white;
+            color: #555;
+            border: 2px dotted #aaa;
             font-size: 16px;
         }
         
-        .panel-1 .panel-tab {
-            background: #283593;
-        }
-        
-        .panel-2 .panel-tab {
-            background: #7b1fa2;
-        }
-        
-        .panel-3 .panel-tab {
-            background: #388e3c;
-        }
-        
-        /* تذييل الصفحة */
-        .page-footer {
+        /* تذييل المطوية */
+        .footer {
+            position: absolute;
+            bottom: 0;
             width: 100%;
-            max-width: 8.5in;
-            text-align: center;
-            margin-top: 20px;
+            background: linear-gradient(135deg, #a7ffeb, #84ffff);
             padding: 15px;
-            color: #666;
-            font-size: 11pt;
-            border-top: 1px solid #eee;
+            text-align: center;
+            font-size: 16px;
+            color: #00796b;
+            border-top: 5px dashed #00bfa5;
         }
+        
+        .student-info {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        /* زخارف */
+        .decoration {
+            position: absolute;
+            z-index: 1;
+            opacity: 0.1;
+        }
+        
+        .decoration-1 {
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, #36d1dc 0%, transparent 70%);
+            top: 50px;
+            right: -50px;
+        }
+        
+        .decoration-2 {
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, #ff9a9e 0%, transparent 70%);
+            bottom: 100px;
+            left: -40px;
+        }
+        
+        .decoration-3 {
+            width: 180px;
+            height: 180px;
+            background: radial-gradient(circle, #56ab2f 0%, transparent 70%);
+            top: 150px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* نجوم */
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+        
+        .star {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ffd600;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+        
+        .star-1 { top: 30px; left: 50px; }
+        .star-2 { top: 100px; right: 80px; }
+        .star-3 { bottom: 150px; left: 100px; }
+        .star-4 { bottom: 80px; right: 40px; }
+        .star-5 { top: 200px; left: 150px; }
     </style>
 </head>
 <body>
-    <!-- رأس الصفحة - معلومات الطالب -->
-    <div class="student-header">
-        <div class="student-name">جسار فهد نغيمش الخالدي</div>
-        <div class="student-class">الصف الخامس - الفصل الثاني</div>
-        <div class="project-title">مطوية عن أهمية الحاسب الآلي واستخداماته</div>
-    </div>
-    
-    <!-- المطوية الثلاثية -->
-    <div class="brochure-container">
-        <div class="brochure">
-            <div class="panels">
-                <!-- اللوحة الأولى: ما هو الحاسب؟ -->
-                <div class="panel panel-1">
-                    <div class="panel-tab">1</div>
-                    <h2 class="panel-title">ما هو الحاسب؟</h2>
+    <div class="brochure">
+        <!-- خطوط الطي -->
+        <div class="fold-lines">
+            <div class="fold-line fold-line-1"></div>
+            <div class="fold-line fold-line-2"></div>
+        </div>
+        
+        <!-- زخارف -->
+        <div class="decoration decoration-1"></div>
+        <div class="decoration decoration-2"></div>
+        <div class="decoration decoration-3"></div>
+        
+        <!-- نجوم -->
+        <div class="stars">
+            <div class="star star-1"></div>
+            <div class="star star-2"></div>
+            <div class="star star-3"></div>
+            <div class="star star-4"></div>
+            <div class="star star-5"></div>
+        </div>
+        
+        <!-- ترويسة -->
+        <div class="header">
+            <div class="header-clouds">
+                <div class="cloud cloud-1"></div>
+                <div class="cloud cloud-2"></div>
+                <div class="cloud cloud-3"></div>
+            </div>
+            <h1 class="header-title">الحاسب الآلي صديقنا الذكي</h1>
+        </div>
+        
+        <!-- المحتوى -->
+        <div class="content">
+            <!-- العمود الأول -->
+            <div class="column column-1">
+                <h2 class="column-title">ما هو الحاسب؟</h2>
+                
+                <div class="column-content">
+                    <p>الحاسب الآلي هو آلة ذكية تساعدنا في فعل الكثير من الأشياء الممتعة والمفيدة. يتكون من عدة أجزاء تعمل معاً مثل فريق رائع!</p>
                     
-                    <div class="panel-content">
-                        <p>الحاسب الآلي هو آلة إلكترونية ذكية قادرة على استقبال البيانات ومعالجتها وتخزينها واسترجاعها. يعمل الحاسب بواسطة مجموعة من التعليمات المخزنة تسمى البرامج.</p>
-                        
-                        <div class="graphics-container">
-                            <div class="graphic">
-                                <div class="computer-icon">
-                                    <div class="monitor">
-                                        <div class="screen">💻</div>
-                                    </div>
-                                    <div class="stand"></div>
-                                    <div class="base"></div>
-                                </div>
+                    <div class="graphics">
+                        <div class="kid-computer">
+                            <div class="kid">
+                                <div class="kid-head"></div>
+                                <div class="kid-body"></div>
                             </div>
-                            <div class="graphic">
-                                <div class="keyboard-icon">
-                                    <div class="keyboard">
-                                        <div class="keys">
-                                            <div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div>
-                                            <div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div>
-                                            <div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="computer">
+                                <div class="screen">💻</div>
                             </div>
                         </div>
-                        
-                        <ul class="features-list">
-                            <li class="feature-item">يتكون من وحدات إدخال (مثل الفأرة ولوحة المفاتيح)</li>
-                            <li class="feature-item">يحتوي على وحدة معالجة مركزية (عقل الحاسب)</li>
-                            <li class="feature-item">يستخدم الذاكرة لتخزين البيانات والبرامج</li>
-                            <li class="feature-item">له وحدات إخراج (مثل الشاشة والطابعة)</li>
-                            <li class="feature-item">يعمل بأنظمة تشغيل تتحكم في عملياته</li>
-                        </ul>
                     </div>
                     
-                    <div class="panel-footer">
-                        الحاسب هو العقل الإلكتروني الذي غيّر العالم
-                    </div>
+                    <ul class="features-list">
+                        <li class="feature-item">آلة ذكية تفهم الأوامر</li>
+                        <li class="feature-item">يتكون من شاشة ولوحة مفاتيح وفأرة</li>
+                        <li class="feature-item">يحفظ المعلومات والصور والفيديوهات</li>
+                        <li class="feature-item">يساعدنا في الدراسة واللعب</li>
+                        <li class="feature-item">يربطنا بأصدقائنا حول العالم</li>
+                    </ul>
                 </div>
                 
-                <!-- اللوحة الثانية: استخدامات الحاسب -->
-                <div class="panel panel-2">
-                    <div class="panel-tab">2</div>
-                    <h2 class="panel-title">استخدامات الحاسب</h2>
+                <div class="column-footer">
+                    🎯 الحاسب صديق مخلص يساعدنا في التعلم
+                </div>
+            </div>
+            
+            <!-- العمود الثاني -->
+            <div class="column column-2">
+                <h2 class="column-title">استخدامات الحاسب</h2>
+                
+                <div class="column-content">
+                    <p>نستخدم الحاسب في حياتنا اليومية للعديد من الأشياء الممتعة والمفيدة. إنه رفيقنا في الدراسة والترفيه!</p>
                     
-                    <div class="panel-content">
-                        <p>يستخدم الحاسب في مجالات عديدة من حياتنا اليومية. من التعليم إلى الترفيه، ومن العمل إلى التواصل، أصبح الحاسب جزءاً أساسياً في العصر الحديث.</p>
-                        
-                        <div class="graphics-container">
-                            <div class="graphic">
-                                <div class="cloud-icon">
-                                    <div class="cloud">
-                                        <div class="wifi"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="graphic">
-                                <div class="phone-icon">
-                                    <div class="phone">
-                                        <div class="phone-screen">📱</div>
-                                    </div>
-                                </div>
+                    <div class="graphics">
+                        <div class="internet-cloud">
+                            <div class="cloud-body">
+                                <div class="wifi-signal"></div>
                             </div>
                         </div>
-                        
-                        <ul class="features-list">
-                            <li class="feature-item">في التعليم: البحث عن المعلومات، التعلم عن بعد</li>
-                            <li class="feature-item">في العمل: معالجة النصوص، الجداول الحسابية</li>
-                            <li class="feature-item">في الترفيه: الألعاب، الأفلام، الموسيقى</li>
-                            <li class="feature-item">في التواصل: البريد الإلكتروني، وسائل التواصل</li>
-                            <li class="feature-item">في التجارة: التسوق الإلكتروني، البنوك</li>
-                            <li class="feature-item">في الصحة: التشخيص الطبي، إدارة المستشفيات</li>
-                        </ul>
                     </div>
                     
-                    <div class="panel-footer">
-                        الحاسب صديقنا اليومي في كل مكان
-                    </div>
+                    <ul class="features-list">
+                        <li class="feature-item">البحث عن المعلومات للدراسة</li>
+                        <li class="feature-item">اللعب بألعاب تعليمية مسلية</li>
+                        <li class="feature-item">رسم الصور والتلوين</li>
+                        <li class="feature-item">مشاهدة أفلام كرتونية</li>
+                        <li class="feature-item">التواصل مع الأصدقاء</li>
+                        <li class="feature-item">حل الواجبات المدرسية</li>
+                    </ul>
                 </div>
                 
-                <!-- اللوحة الثالثة: مستقبل الحاسب -->
-                <div class="panel panel-3">
-                    <div class="panel-tab">3</div>
-                    <h2 class="panel-title">مستقبل الحاسب</h2>
+                <div class="column-footer">
+                    🎮 الحاسب يجعل التعلم ممتعاً واللعب مفيداً
+                </div>
+            </div>
+            
+            <!-- العمود الثالث -->
+            <div class="column column-3">
+                <h2 class="column-title">مستقبل الحاسب</h2>
+                
+                <div class="column-content">
+                    <p>سيكون للحاسب دور أكبر في المستقبل! تخيل عالماً مليئاً بالروبوتات الذكية والتقنيات المدهشة.</p>
                     
-                    <div class="panel-content">
-                        <p>يتطور عالم الحواسيب بسرعة كبيرة. في المستقبل القريب، سنشهد تقنيات أكثر تطوراً تجعل الحواسيب أكثر ذكاءً وأكثر تكاملاً مع حياتنا.</p>
-                        
-                        <div class="graphics-container">
-                            <div class="graphic">
-                                <div class="robot-icon">
-                                    <div class="robot-head">
-                                        <div class="robot-eye"></div>
-                                        <div class="robot-eye"></div>
-                                    </div>
-                                    <div class="robot-body">🤖</div>
-                                </div>
+                    <div class="graphics">
+                        <div class="friendly-robot">
+                            <div class="robot-head">
+                                <div class="robot-eye"></div>
+                                <div class="robot-eye"></div>
                             </div>
-                            <div class="graphic">
-                                <div class="mouse-icon">
-                                    <div class="mouse">
-                                        <div class="mouse-button left-button"></div>
-                                        <div class="mouse-button right-button"></div>
-                                    </div>
-                                    <div class="mouse-cable"></div>
-                                </div>
-                            </div>
+                            <div class="robot-body">🤖</div>
                         </div>
-                        
-                        <ul class="features-list">
-                            <li class="feature-item">الذكاء الاصطناعي: حواسيب تفكر وتتعلم</li>
-                            <li class="feature-item">الواقع الافتراضي: عواص رقمية غامرة</li>
-                            <li class="feature-item">إنترنت الأشياء: أجهزة متصلة ببعضها</li>
-                            <li class="feature-item">الحوسبة السحابية: تخزين ومعالجة عن بعد</li>
-                            <li class="feature-item">الروبوتات: مساعدين أذكياء في المنزل والعمل</li>
-                            <li class="feature-item">التقنيات القابلة للارتداء: ساعات ونظارات ذكية</li>
-                        </ul>
                     </div>
                     
-                    <div class="panel-footer">
-                        المستقبل الرقمي مليء بالإبداعات والتقنيات المدهشة
-                    </div>
+                    <ul class="features-list">
+                        <li class="feature-item">روبوتات تساعد في الأعمال المنزلية</li>
+                        <li class="feature-item">سيارات تسير بنفسها بدون سائق</li>
+                        <li class="feature-item">منازل ذكية تضيء بنفسها</li>
+                        <li class="feature-item">نظارات ذكية تعلمنا الأشياء</li>
+                        <li class="feature-item">مستقبل مدهش نصنعه معاً</li>
+                    </ul>
+                </div>
+                
+                <div class="column-footer">
+                    🚀 مستقبلنا مع الحاسب مليء بالإبداع
                 </div>
             </div>
         </div>
+        
+        <!-- تذييل المطوية -->
+        <div class="footer">
+            <div class="student-info">عمل الطالب: جسار فهد نغيمش الخالدي - الصف ٥-٢</div>
+            <div>مطوية تعليمية جميلة عن الحاسب الآلي</div>
+        </div>
     </div>
     
-    <!-- تذييل الصفحة -->
-    <div class="page-footer">
-        مطوية تعليمية عن الحاسب الآلي - تصميم رقمي - جميع الحقوق محفوظة &copy; 2023
-    </div>
-
     <script>
-        // عند تحميل الصفحة، نضيف رسالة للطباعة
-        window.addEventListener('load', function() {
-            // رسالة بسيطة للطباعة
-            console.log("لطباعة المطوية: اضغط Ctrl+P أو Cmd+P");
-            console.log("تأكد من تحديد الاتجاه الأفقي (Landscape) وحجم الورق A4");
+        // عند الطباعة، نظهر خطوط الطي
+        window.onbeforeprint = function() {
+            document.querySelector('.fold-lines').style.display = 'block';
+        };
+        
+        window.onafterprint = function() {
+            document.querySelector('.fold-lines').style.display = 'none';
+        };
+        
+        // تأثير بسيط عند النقر على المطوية
+        document.querySelector('.brochure').addEventListener('click', function() {
+            this.style.transform = 'scale(0.99)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 200);
         });
         
-        // نضيف إمكانية الطباعة بالضغط على زر من لوحة المفاتيح
-        document.addEventListener('keydown', function(e) {
-            if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
-                e.preventDefault();
-                alert("لطباعة المطوية بشكل صحيح:\n\n1. اختر الطابعة المناسبة\n2. حدد الاتجاه: أفقي (Landscape)\n3. حدد حجم الورق: A4\n4. اضبط الهوامش على: ضيقة (Narrow)\n5. اضغط موافق للطباعة");
-                window.print();
-            }
+        // جعل النجوم تومض
+        const stars = document.querySelectorAll('.star');
+        stars.forEach((star, index) => {
+            star.style.animation = `twinkle ${2 + index * 0.5}s infinite alternate`;
         });
+        
+        // إضافة CSS للوميض
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes twinkle {
+                0% { opacity: 0.2; transform: scale(0.8); }
+                100% { opacity: 1; transform: scale(1.2); }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>
