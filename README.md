@@ -43,7 +43,7 @@
             -webkit-text-size-adjust: 100%;
         }
         
-        /* Fixed Top Bar Styles */
+        /* Fixed Top Bar Styles - Updated */
         .fixed-top-bar {
             position: fixed;
             top: 0;
@@ -51,28 +51,25 @@
             left: 0;
             background: var(--gradient-purple);
             color: white;
-            padding: 12px 0;
+            padding: 8px 0;
             z-index: 2000;
-            box-shadow: 0 4px 15px rgba(44, 26, 94, 0.3);
+            box-shadow: 0 3px 10px rgba(44, 26, 94, 0.3);
             border-bottom: 2px solid var(--accent-color);
-            transition: transform 0.4s ease, opacity 0.4s ease;
+            transition: transform 0.3s ease;
             transform: translateY(0);
-            opacity: 1;
-        }
-        
-        .fixed-top-bar.hidden {
-            transform: translateY(-100%);
-            opacity: 0;
+            height: 45px;
+            display: flex;
+            align-items: center;
         }
         
         .top-bar-container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
+            width: 100%;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            gap: 20px;
+            justify-content: center;
         }
         
         .fade-messages {
@@ -82,7 +79,7 @@
             overflow: hidden;
             text-align: center;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.95rem;
             letter-spacing: -0.2px;
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
             display: flex;
@@ -101,32 +98,12 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            line-height: 1.3;
         }
         
         .message.active {
             opacity: 1;
             transform: translateY(0);
-        }
-        
-        .top-bar-close {
-            width: 28px;
-            height: 28px;
-            min-width: 28px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            font-size: 0.9rem;
-        }
-        
-        .top-bar-close:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: scale(1.1);
         }
         
         .container {
@@ -147,8 +124,9 @@
             height: auto;
             min-height: 80px;
             padding: 0;
-            transition: transform 0.3s ease, top 0.4s ease;
+            transition: transform 0.3s ease;
             border-bottom: 3px solid var(--accent-color);
+            border-top: 2px solid rgba(255, 255, 255, 0.2);
         }
         
         .nav-container {
@@ -293,14 +271,13 @@
             background: var(--card-bg);
             border-radius: 25px;
             box-shadow: var(--shadow-heavy);
-            margin-top: 70px; /* ارتفاع الشريط الثابت + الهيدر */
+            margin-top: 130px; /* ارتفاع الشريط الثابت + الهيدر */
             margin-bottom: 30px;
             padding: 35px 30px;
             min-height: auto;
             border: 1px solid rgba(232, 228, 213, 0.5);
             position: relative;
             overflow: hidden;
-            transition: margin-top 0.4s ease;
         }
         
         .section {
@@ -1261,6 +1238,7 @@
         @media (min-width: 768px) {
             .fixed-top-bar {
                 padding: 10px 0;
+                height: 50px;
             }
             
             .fade-messages {
@@ -1270,6 +1248,7 @@
             .navbar {
                 height: 95px;
                 padding: 0;
+                top: 50px; /* ارتفاع الشريط الثابت المعدل */
             }
             
             .nav-container {
@@ -1300,6 +1279,7 @@
             
             .main-content {
                 padding: 40px 35px;
+                margin-top: 145px; /* ارتفاع الشريط الثابت + الهيدر المعدل */
             }
             
             .section-title {
@@ -1449,7 +1429,8 @@
         
         @media (max-height: 600px) and (orientation: landscape) {
             .fixed-top-bar {
-                padding: 8px 0;
+                padding: 6px 0;
+                height: 40px;
             }
             
             .fade-messages {
@@ -1460,6 +1441,7 @@
             .navbar {
                 height: auto;
                 min-height: 65px;
+                top: 40px;
             }
             
             .nav-container {
@@ -1500,6 +1482,10 @@
                 font-size: 0.65rem;
             }
             
+            .main-content {
+                margin-top: 105px;
+            }
+            
             .pdf-viewer {
                 height: 350px;
             }
@@ -1507,7 +1493,8 @@
         
         @media (max-width: 767px) {
             .fixed-top-bar {
-                padding: 10px 0;
+                padding: 8px 0;
+                height: 40px;
             }
             
             .top-bar-container {
@@ -1515,15 +1502,8 @@
             }
             
             .fade-messages {
-                font-size: 0.9rem;
+                font-size: 0.85rem;
                 height: 26px;
-            }
-            
-            .top-bar-close {
-                width: 26px;
-                height: 26px;
-                min-width: 26px;
-                font-size: 0.8rem;
             }
             
             .navbar {
@@ -1531,13 +1511,13 @@
             }
             
             .main-content {
-                margin-top: 65px;
+                margin-top: 120px;
             }
         }
         
         @media (max-width: 480px) {
             .fade-messages {
-                font-size: 0.85rem;
+                font-size: 0.8rem;
                 height: 24px;
             }
             
@@ -1545,6 +1525,7 @@
                 white-space: normal;
                 text-align: center;
                 line-height: 1.3;
+                padding: 0 10px;
             }
         }
         
@@ -1564,7 +1545,7 @@
     </style>
 </head>
 <body class="no-select">
-    <!-- Fixed Top Bar -->
+    <!-- Fixed Top Bar - Updated (no close button) -->
     <div class="fixed-top-bar">
         <div class="top-bar-container">
             <div class="fade-messages">
@@ -1573,9 +1554,6 @@
                 <div class="message">كل فكرة عظيمة تبدأ بسؤال</div>
                 <div class="message">التقنية وسيلة لتمكين التعلم</div>
                 <div class="message">التقييم من أجل التعلّم وليس لمجرّد الحكم</div>
-            </div>
-            <div class="top-bar-close" id="topBarClose">
-                <i class="fas fa-times"></i>
             </div>
         </div>
     </div>
@@ -2220,6 +2198,7 @@
             
             let lastScrollTop = 0;
             const navbar = document.querySelector('.navbar');
+            const fixedTopBar = document.querySelector('.fixed-top-bar');
             
             window.addEventListener('scroll', function() {
                 const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -2227,17 +2206,18 @@
                 if (scrollTop > lastScrollTop && scrollTop > 100) {
                     navbar.style.transform = 'translateY(-100%)';
                     navbar.style.transition = 'transform 0.3s ease';
+                    fixedTopBar.style.transform = 'translateY(-100%)';
+                    fixedTopBar.style.transition = 'transform 0.3s ease';
                 } else {
                     navbar.style.transform = 'translateY(0)';
+                    fixedTopBar.style.transform = 'translateY(0)';
                 }
                 
                 lastScrollTop = scrollTop;
             });
             
-            // Fixed Top Bar Functionality
-            const fixedTopBar = document.querySelector('.fixed-top-bar');
+            // Fixed Top Bar Functionality - Updated (no close button)
             const messages = document.querySelectorAll('.message');
-            const topBarClose = document.getElementById('topBarClose');
             
             if (fixedTopBar && messages.length > 0) {
                 let currentMessageIndex = 0;
@@ -2249,25 +2229,6 @@
                 }
                 
                 let messageInterval = setInterval(rotateMessages, 4000);
-                
-                if (topBarClose) {
-                    topBarClose.addEventListener('click', function() {
-                        fixedTopBar.classList.add('hidden');
-                        
-                        setTimeout(() => {
-                            const navbar = document.querySelector('.navbar');
-                            const mainContent = document.querySelector('.main-content');
-                            
-                            if (navbar) {
-                                navbar.style.top = '0';
-                            }
-                            
-                            if (mainContent) {
-                                mainContent.style.marginTop = '25px';
-                            }
-                        }, 400);
-                    });
-                }
                 
                 messages.forEach(message => {
                     message.addEventListener('click', function() {
