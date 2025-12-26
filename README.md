@@ -275,11 +275,13 @@
             box-shadow: var(--shadow-heavy);
             margin-top: 270px; /* ارتفاع الشريط الثابت + الهيدر */
             margin-bottom: 30px;
-            padding: 35px 30px;
+            padding: 35px 25px;
             min-height: auto;
             border: 1px solid rgba(232, 228, 213, 0.5);
             position: relative;
             overflow: hidden;
+            max-width: 100%;
+            width: 100%;
         }
         
         .section {
@@ -324,6 +326,253 @@
             height: 4px;
             background: var(--gradient-gold);
             border-radius: 2px;
+        }
+        
+        /* تصميم قسم نبذة عني - توسيع وتحسين */
+        .about-section {
+            max-width: 100%;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .about-card {
+            background: var(--card-bg);
+            border-radius: 22px;
+            padding: 35px 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-medium);
+            animation: fadeIn 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(232, 228, 213, 0.5);
+            width: 100%;
+            max-width: 100%;
+        }
+        
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-gold);
+        }
+        
+        .about-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+            gap: 25px;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: var(--gradient-purple);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3.8rem;
+            box-shadow: 
+                0 10px 30px rgba(44, 26, 94, 0.2),
+                inset 0 3px 6px rgba(255, 255, 255, 0.3);
+            border: 4px solid var(--accent-color);
+            animation: floating 4s ease-in-out infinite;
+        }
+        
+        .about-info {
+            width: 100%;
+            max-width: 100%;
+        }
+        
+        .about-info h3 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 2rem;
+            font-weight: 800;
+            line-height: 1.3;
+            letter-spacing: -0.5px;
+            text-align: center;
+        }
+        
+        .about-info p {
+            color: var(--text-color);
+            line-height: 1.7;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+            text-align: center;
+            max-width: 100%;
+            width: 100%;
+        }
+        
+        .highlight {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        
+        .about-details {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-top: 30px;
+            width: 100%;
+            max-width: 100%;
+        }
+        
+        .detail-item {
+            background: var(--gold-light);
+            border-radius: 18px;
+            padding: 25px;
+            box-shadow: var(--shadow-light);
+            border: 1px solid rgba(232, 228, 213, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+        
+        .detail-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .detail-item h4 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        
+        .detail-item h4 i {
+            color: white;
+            background: var(--gradient-purple);
+            width: 42px;
+            height: 42px;
+            min-width: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(44, 26, 94, 0.3);
+        }
+        
+        .detail-item p {
+            color: var(--text-color);
+            line-height: 1.7;
+            font-size: 1.05rem;
+            text-align: right;
+            max-width: 100%;
+        }
+        
+        /* تصميم قسم الشواهد الوظيفية - توسيع وتحسين */
+        .certificates-section {
+            max-width: 100%;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 20px;
+            width: 100%;
+            max-width: 100%;
+        }
+        
+        .certificate-item {
+            background: var(--card-bg);
+            border-radius: 18px;
+            padding: 25px;
+            border: 1px solid rgba(232, 228, 213, 0.8);
+            box-shadow: var(--shadow-medium);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border-top: 4px solid var(--primary-color);
+            width: 100%;
+            max-width: 100%;
+        }
+        
+        .certificate-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-heavy);
+        }
+        
+        .certificate-header-pdf {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(232, 228, 213, 0.8);
+            width: 100%;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .certificate-header-pdf h3 {
+            color: var(--secondary-color);
+            font-size: 1.4rem;
+            font-weight: 700;
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .certificate-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .pdf-action-btn {
+            background: var(--gradient-purple);
+            color: white;
+            border: none;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(44, 26, 94, 0.2);
+            flex-shrink: 0;
+        }
+        
+        .pdf-action-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 12px rgba(44, 26, 94, 0.3);
+        }
+        
+        .pdf-viewer {
+            width: 100%;
+            height: 550px;
+            border-radius: 12px;
+            border: 1px solid rgba(232, 228, 213, 0.8);
+            overflow: hidden;
+            background: #f9f9f9;
+            max-width: 100%;
+        }
+        
+        .pdf-viewer iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
         
         /* تصميم قسم الدورات التربوية المحدث - تصغير 75% */
@@ -434,222 +683,6 @@
         
         .certificate-image:hover {
             transform: scale(1.02);
-        }
-        
-        /* تصميم بقية الأقسام */
-        .about-section {
-            max-width: 100%;
-            margin: 0 auto;
-        }
-        
-        .about-card {
-            background: var(--card-bg);
-            border-radius: 22px;
-            padding: 35px 30px;
-            margin-bottom: 30px;
-            box-shadow: var(--shadow-medium);
-            animation: fadeIn 0.5s ease;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(232, 228, 213, 0.5);
-        }
-        
-        .about-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--gradient-gold);
-        }
-        
-        .about-header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 30px;
-            gap: 25px;
-            position: relative;
-            z-index: 1;
-            text-align: center;
-        }
-        
-        .avatar {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background: var(--gradient-purple);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3.8rem;
-            box-shadow: 
-                0 10px 30px rgba(44, 26, 94, 0.2),
-                inset 0 3px 6px rgba(255, 255, 255, 0.3);
-            border: 4px solid var(--accent-color);
-            animation: floating 4s ease-in-out infinite;
-        }
-        
-        .about-info h3 {
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-            font-size: 2rem;
-            font-weight: 800;
-            line-height: 1.3;
-            letter-spacing: -0.5px;
-        }
-        
-        .about-info p {
-            color: var(--text-color);
-            line-height: 1.7;
-            margin-bottom: 12px;
-            font-size: 1.1rem;
-        }
-        
-        .highlight {
-            color: var(--primary-color);
-            font-weight: 700;
-        }
-        
-        .about-details {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-            margin-top: 30px;
-        }
-        
-        .detail-item {
-            background: var(--gold-light);
-            border-radius: 18px;
-            padding: 25px;
-            box-shadow: var(--shadow-light);
-            border: 1px solid rgba(232, 228, 213, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .detail-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-        }
-        
-        .detail-item h4 {
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
-        
-        .detail-item h4 i {
-            color: white;
-            background: var(--gradient-purple);
-            width: 42px;
-            height: 42px;
-            min-width: 42px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 10px rgba(44, 26, 94, 0.3);
-        }
-        
-        .detail-item p {
-            color: var(--text-color);
-            line-height: 1.7;
-            font-size: 1.05rem;
-        }
-        
-        /* تصميم قسم الشواهد */
-        .certificates-section {
-            max-width: 100%;
-            margin: 0 auto;
-        }
-        
-        .certificates-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 25px;
-            margin-top: 20px;
-        }
-        
-        .certificate-item {
-            background: var(--card-bg);
-            border-radius: 18px;
-            padding: 25px;
-            border: 1px solid rgba(232, 228, 213, 0.8);
-            box-shadow: var(--shadow-medium);
-            transition: transform 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            border-top: 4px solid var(--primary-color);
-        }
-        
-        .certificate-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-heavy);
-        }
-        
-        .certificate-header-pdf {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid rgba(232, 228, 213, 0.8);
-        }
-        
-        .certificate-header-pdf h3 {
-            color: var(--secondary-color);
-            font-size: 1.4rem;
-            font-weight: 700;
-        }
-        
-        .certificate-actions {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .pdf-action-btn {
-            background: var(--gradient-purple);
-            color: white;
-            border: none;
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            box-shadow: 0 4px 8px rgba(44, 26, 94, 0.2);
-        }
-        
-        .pdf-action-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 12px rgba(44, 26, 94, 0.3);
-        }
-        
-        .pdf-viewer {
-            width: 100%;
-            height: 500px;
-            border-radius: 12px;
-            border: 1px solid rgba(232, 228, 213, 0.8);
-            overflow: hidden;
-            background: #f9f9f9;
-        }
-        
-        .pdf-viewer iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
         }
         
         /* تصميم الأقسام الأخرى */
@@ -1191,6 +1224,10 @@
                 padding: 0 25px;
             }
             
+            .main-content {
+                padding: 35px 30px;
+            }
+            
             .nav-icon {
                 min-width: 75px;
                 padding: 10px 12px;
@@ -1218,6 +1255,11 @@
                 align-items: center;
             }
             
+            .about-info h3,
+            .about-info p {
+                text-align: right;
+            }
+            
             .avatar {
                 width: 170px;
                 height: 170px;
@@ -1228,7 +1270,14 @@
                 font-size: 2.1rem;
             }
             
-            .certificates-grid,
+            .about-details {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .certificates-grid {
+                grid-template-columns: 1fr;
+            }
+            
             .certificate-cards {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -1296,9 +1345,7 @@
             }
             
             .about-details {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 30px;
+                grid-template-columns: repeat(3, 1fr);
             }
             
             .bio-grid {
@@ -1325,8 +1372,18 @@
                 gap: 30px;
             }
             
+            /* توسيع قسم الشواهد الوظيفية */
             .certificates-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+            
+            .certificate-item {
+                padding: 30px;
+            }
+            
+            .pdf-viewer {
+                height: 600px;
             }
             
             .certificate-cards {
@@ -1377,8 +1434,19 @@
                 grid-template-columns: repeat(2, 1fr);
             }
             
+            /* توسيع قسم الشواهد الوظيفية للشاشات الكبيرة */
             .certificates-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr;
+                max-width: 100%;
+            }
+            
+            .certificate-item {
+                max-width: 100%;
+                padding: 35px;
+            }
+            
+            .pdf-viewer {
+                height: 650px;
             }
             
             .certificate-cards {
@@ -1411,6 +1479,23 @@
                 font-size: 2rem;
             }
             
+            /* توسيع قسم نبذة عني للشاشات الكبيرة جداً */
+            .about-card {
+                padding: 40px 35px;
+            }
+            
+            .about-info h3 {
+                font-size: 2.3rem;
+            }
+            
+            .about-info p {
+                font-size: 1.15rem;
+            }
+            
+            .detail-item {
+                padding: 28px;
+            }
+            
             .planning-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
@@ -1419,8 +1504,17 @@
                 grid-template-columns: repeat(4, 1fr);
             }
             
+            /* توسيع قسم الشواهد الوظيفية للشاشات الكبيرة جداً */
             .certificates-grid {
-                grid-template-columns: repeat(2, 1fr);
+                max-width: 100%;
+            }
+            
+            .certificate-item {
+                padding: 40px;
+            }
+            
+            .pdf-viewer {
+                height: 700px;
             }
             
             .certificate-cards {
@@ -1539,6 +1633,36 @@
             
             .main-content {
                 margin-top: 220px;
+                padding: 30px 20px;
+            }
+            
+            /* تعديلات قسم الشواهد الوظيفية للشاشات الصغيرة */
+            .certificates-grid {
+                gap: 25px;
+            }
+            
+            .certificate-item {
+                padding: 20px;
+            }
+            
+            .certificate-header-pdf {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .certificate-header-pdf h3 {
+                min-width: 100%;
+                text-align: center;
+            }
+            
+            .certificate-actions {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .pdf-viewer {
+                height: 400px;
             }
             
             /* تعديلات قسم الدورات للشاشات الصغيرة */
@@ -1583,6 +1707,43 @@
             
             .main-content {
                 margin-top: 200px;
+                padding: 25px 15px;
+            }
+            
+            /* تعديلات قسم نبذة عني للشاشات الصغيرة جداً */
+            .about-card {
+                padding: 25px 20px;
+            }
+            
+            .avatar {
+                width: 120px;
+                height: 120px;
+                font-size: 3rem;
+            }
+            
+            .about-info h3 {
+                font-size: 1.6rem;
+            }
+            
+            .about-info p {
+                font-size: 1rem;
+            }
+            
+            .detail-item {
+                padding: 20px;
+            }
+            
+            /* تعديلات قسم الشواهد الوظيفية للشاشات الصغيرة جداً */
+            .certificates-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .certificate-item {
+                padding: 18px;
+            }
+            
+            .pdf-viewer {
+                height: 350px;
             }
             
             /* تعديلات قسم الدورات للشاشات الصغيرة جداً */
