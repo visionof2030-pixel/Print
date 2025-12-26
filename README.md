@@ -43,7 +43,7 @@
             -webkit-text-size-adjust: 100%;
         }
         
-        /* Fixed Top Bar Styles - Updated */
+        /* Fixed Top Bar Styles - Updated (4x larger) */
         .fixed-top-bar {
             position: fixed;
             top: 0;
@@ -51,15 +51,16 @@
             left: 0;
             background: var(--gradient-purple);
             color: white;
-            padding: 8px 0;
+            padding: 15px 0;
             z-index: 2000;
             box-shadow: 0 3px 10px rgba(44, 26, 94, 0.3);
             border-bottom: 2px solid var(--accent-color);
             transition: transform 0.3s ease;
             transform: translateY(0);
-            height: 45px;
+            height: 180px; /* 4x larger */
             display: flex;
             align-items: center;
+            border-bottom: 3px solid var(--accent-color);
         }
         
         .top-bar-container {
@@ -74,12 +75,12 @@
         
         .fade-messages {
             flex: 1;
-            height: 30px;
+            height: 120px; /* 4x larger */
             position: relative;
             overflow: hidden;
             text-align: center;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 1.6rem; /* Larger font */
             letter-spacing: -0.2px;
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
             display: flex;
@@ -93,12 +94,13 @@
             right: 0;
             left: 0;
             opacity: 0;
-            transform: translateY(10px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
             line-height: 1.3;
+            padding: 0 20px;
         }
         
         .message.active {
@@ -118,7 +120,7 @@
             background: var(--gradient-purple);
             color: white;
             position: sticky;
-            top: 45px; /* ارتفاع الشريط الثابت */
+            top: 180px; /* ارتفاع الشريط الثابت 4x larger */
             z-index: 1000;
             box-shadow: var(--shadow-heavy);
             height: auto;
@@ -271,7 +273,7 @@
             background: var(--card-bg);
             border-radius: 25px;
             box-shadow: var(--shadow-heavy);
-            margin-top: 130px; /* ارتفاع الشريط الثابت + الهيدر */
+            margin-top: 270px; /* ارتفاع الشريط الثابت + الهيدر */
             margin-bottom: 30px;
             padding: 35px 30px;
             min-height: auto;
@@ -324,7 +326,7 @@
             border-radius: 2px;
         }
         
-        /* تصميم قسم الدورات التربوية المحدث */
+        /* تصميم قسم الدورات التربوية المحدث - تصغير 75% */
         .courses-section {
             max-width: 100%;
             margin: 0 auto;
@@ -344,51 +346,56 @@
         .certificate-cards {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 30px;
+            gap: 20px;
             margin-top: 20px;
         }
         
         .certificate-card {
             background: white;
-            border-radius: 20px;
+            border-radius: 15px; /* تصغير */
             overflow: hidden;
             box-shadow: var(--shadow-heavy);
             transition: all 0.3s ease;
             border: 1px solid rgba(232, 228, 213, 0.8);
             position: relative;
+            transform: scale(0.85); /* تصغير البطاقات 75% */
+            transform-origin: center;
         }
         
         .certificate-card:hover {
-            transform: translateY(-8px);
+            transform: scale(0.88) translateY(-5px); /* تعديل التحويم ليتناسب مع التصغير */
             box-shadow: 0 20px 40px rgba(44, 26, 94, 0.2);
         }
         
         .certificate-header {
             background: var(--gradient-purple);
             color: white;
-            padding: 20px 25px;
+            padding: 15px 20px; /* تصغير */
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 3px solid var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
+            min-height: 70px; /* تصغير */
         }
         
         .certificate-title {
-            font-size: 1.4rem;
+            font-size: 1.05rem; /* تصغير 75% من 1.4rem */
             font-weight: 700;
+            line-height: 1.3;
+            max-width: 70%;
         }
         
         .download-btn-container {
             display: flex;
-            gap: 10px;
+            gap: 8px;
         }
         
         .download-btn {
             background: rgba(255, 255, 255, 0.2);
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 30px;
+            padding: 8px 15px; /* تصغير */
+            border-radius: 25px; /* تصغير */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -397,8 +404,8 @@
             text-decoration: none;
             backdrop-filter: blur(5px);
             font-weight: 600;
-            font-size: 0.9rem;
-            gap: 8px;
+            font-size: 0.675rem; /* تصغير 75% من 0.9rem */
+            gap: 5px;
         }
         
         .download-btn:hover {
@@ -408,18 +415,19 @@
         
         .certificate-image-container {
             width: 100%;
-            padding: 25px;
+            padding: 20px; /* تصغير */
             display: flex;
             justify-content: center;
             align-items: center;
             background: linear-gradient(45deg, #f8f6f1, #f5f2ec);
+            min-height: 300px; /* تصغير */
         }
         
         .certificate-image {
             max-width: 100%;
-            max-height: 500px;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            max-height: 350px; /* تصغير من 500px */
+            border-radius: 8px; /* تصغير */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
             border: 1px solid rgba(193, 154, 95, 0.3);
             transition: transform 0.3s ease;
         }
@@ -1237,18 +1245,19 @@
         
         @media (min-width: 768px) {
             .fixed-top-bar {
-                padding: 10px 0;
-                height: 50px;
+                padding: 20px 0;
+                height: 160px; /* تعديل للشاشات المتوسطة */
             }
             
             .fade-messages {
-                font-size: 1.1rem;
+                font-size: 1.8rem;
+                height: 100px;
             }
             
             .navbar {
                 height: 95px;
                 padding: 0;
-                top: 50px; /* ارتفاع الشريط الثابت المعدل */
+                top: 160px; /* ارتفاع الشريط الثابت المعدل */
             }
             
             .nav-container {
@@ -1279,7 +1288,7 @@
             
             .main-content {
                 padding: 40px 35px;
-                margin-top: 145px; /* ارتفاع الشريط الثابت + الهيدر المعدل */
+                margin-top: 255px; /* ارتفاع الشريط الثابت + الهيدر المعدل */
             }
             
             .section-title {
@@ -1321,7 +1330,7 @@
             }
             
             .certificate-cards {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
             
             .evaluation-grid,
@@ -1373,7 +1382,7 @@
             }
             
             .certificate-cards {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(3, 1fr);
             }
             
             .evaluation-grid,
@@ -1429,19 +1438,19 @@
         
         @media (max-height: 600px) and (orientation: landscape) {
             .fixed-top-bar {
-                padding: 6px 0;
-                height: 40px;
+                padding: 10px 0;
+                height: 120px;
             }
             
             .fade-messages {
-                height: 24px;
-                font-size: 0.9rem;
+                height: 80px;
+                font-size: 1.2rem;
             }
             
             .navbar {
                 height: auto;
                 min-height: 65px;
-                top: 40px;
+                top: 120px;
             }
             
             .nav-container {
@@ -1483,18 +1492,36 @@
             }
             
             .main-content {
-                margin-top: 105px;
+                margin-top: 185px;
             }
             
             .pdf-viewer {
                 height: 350px;
             }
+            
+            /* تعديلات قسم الدورات للشاشات الأفقية */
+            .certificate-card {
+                transform: scale(0.75);
+            }
+            
+            .certificate-card:hover {
+                transform: scale(0.78) translateY(-5px);
+            }
+            
+            .certificate-title {
+                font-size: 0.9rem;
+            }
+            
+            .download-btn {
+                font-size: 0.6rem;
+                padding: 6px 12px;
+            }
         }
         
         @media (max-width: 767px) {
             .fixed-top-bar {
-                padding: 8px 0;
-                height: 40px;
+                padding: 10px 0;
+                height: 140px;
             }
             
             .top-bar-container {
@@ -1502,23 +1529,45 @@
             }
             
             .fade-messages {
-                font-size: 0.85rem;
-                height: 26px;
+                font-size: 1.2rem;
+                height: 100px;
             }
             
             .navbar {
-                top: 40px;
+                top: 140px;
             }
             
             .main-content {
-                margin-top: 120px;
+                margin-top: 220px;
+            }
+            
+            /* تعديلات قسم الدورات للشاشات الصغيرة */
+            .certificate-card {
+                transform: scale(0.9);
+            }
+            
+            .certificate-card:hover {
+                transform: scale(0.93) translateY(-5px);
+            }
+            
+            .certificate-title {
+                font-size: 0.95rem;
+            }
+            
+            .download-btn {
+                font-size: 0.65rem;
+                padding: 7px 12px;
             }
         }
         
         @media (max-width: 480px) {
+            .fixed-top-bar {
+                height: 120px;
+            }
+            
             .fade-messages {
-                font-size: 0.8rem;
-                height: 24px;
+                font-size: 1rem;
+                height: 80px;
             }
             
             .message {
@@ -1526,6 +1575,42 @@
                 text-align: center;
                 line-height: 1.3;
                 padding: 0 10px;
+            }
+            
+            .navbar {
+                top: 120px;
+            }
+            
+            .main-content {
+                margin-top: 200px;
+            }
+            
+            /* تعديلات قسم الدورات للشاشات الصغيرة جداً */
+            .certificate-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .certificate-card {
+                transform: scale(0.85);
+            }
+            
+            .certificate-card:hover {
+                transform: scale(0.88) translateY(-5px);
+            }
+            
+            .certificate-title {
+                font-size: 0.85rem;
+            }
+            
+            .certificate-header {
+                flex-direction: column;
+                gap: 10px;
+                padding: 12px 15px;
+            }
+            
+            .certificate-title {
+                max-width: 100%;
+                text-align: center;
             }
         }
         
@@ -1545,7 +1630,7 @@
     </style>
 </head>
 <body class="no-select">
-    <!-- Fixed Top Bar - Updated (no close button) -->
+    <!-- Fixed Top Bar - Updated (4x larger, no close button) -->
     <div class="fixed-top-bar">
         <div class="top-bar-container">
             <div class="fade-messages">
@@ -2216,7 +2301,7 @@
                 lastScrollTop = scrollTop;
             });
             
-            // Fixed Top Bar Functionality - Updated (no close button)
+            // Fixed Top Bar Functionality - Updated
             const messages = document.querySelectorAll('.message');
             
             if (fixedTopBar && messages.length > 0) {
