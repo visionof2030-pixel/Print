@@ -115,7 +115,7 @@
             width: 100%;
         }
         
-        /* تحسين الهيدر - تكبير اسم المعلمة وتصغير العنوان */
+        /* تحسين الهيدر - تكبير اسم المعلمة وتصغير العنوان - إزالة المسافات الجانبية */
         .navbar {
             background: var(--gradient-purple);
             color: white;
@@ -129,14 +129,20 @@
             transition: transform 0.3s ease;
             border-bottom: 3px solid var(--accent-color);
             border-top: 2px solid rgba(255, 255, 255, 0.2);
+            width: 100%;
+            border-radius: 0;
+            margin: 0;
         }
         
         .nav-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 15px;
+            padding: 0; /* إزالة المسافات الجانبية */
             gap: 15px;
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
         }
         
         .logo {
@@ -149,6 +155,7 @@
             width: 100%;
             justify-content: center;
             text-align: center;
+            padding: 15px 20px; /* مسافات داخلية بدلاً من خارجية */
         }
         
         .logo-icon {
@@ -199,13 +206,15 @@
         
         .nav-icons-container {
             background: rgba(255, 255, 255, 0.12);
-            border-radius: 18px;
-            padding: 10px;
+            border-radius: 0; /* إزالة الزوايا المستديرة */
+            padding: 10px 20px; /* مسافات داخلية بدلاً من خارجية */
             width: 100%;
             overflow: hidden;
             max-width: 100%;
             border: 1px solid rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
+            border-left: none; /* إزالة الحدود الجانبية */
+            border-right: none; /* إزالة الحدود الجانبية */
         }
         
         .nav-icons {
@@ -1312,7 +1321,7 @@
             .nav-container {
                 flex-direction: row;
                 justify-content: space-between;
-                padding: 0 30px;
+                padding: 0; /* التأكيد على عدم وجود مسافات */
                 height: 95px;
                 gap: 0;
             }
@@ -1320,11 +1329,14 @@
             .logo {
                 width: auto;
                 justify-content: flex-start;
+                padding: 0 30px; /* مسافات داخلية فقط */
             }
             
             .nav-icons-container {
                 width: auto;
                 max-width: 75%;
+                border-radius: 0; /* التأكيد على عدم وجود زوايا مستديرة */
+                padding: 10px 30px; /* مسافات داخلية فقط */
             }
             
             .logo-title {
@@ -1403,6 +1415,7 @@
         @media (min-width: 992px) {
             .nav-icons-container {
                 max-width: 80%;
+                border-radius: 0; /* التأكيد على عدم وجود زوايا مستديرة */
             }
             
             .nav-icon {
@@ -1549,7 +1562,7 @@
             
             .nav-container {
                 flex-direction: row;
-                padding: 10px 15px;
+                padding: 10px 0; /* مسافات عمودية فقط */
             }
             
             .logo-icon {
