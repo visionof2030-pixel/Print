@@ -272,12 +272,19 @@
             z-index: 1;
         }
         
-        /* مؤشر التنقل - يظهر أول مرة */
+        /* مؤشر التنقل - يظهر تحت الهيدر */
+        .nav-indicator-container {
+            position: fixed;
+            top: 205px; /* تحت الهيدر مباشرةً (140px الشريط + 65px الهيدر) */
+            right: 0;
+            left: 0;
+            z-index: 999;
+            display: flex;
+            justify-content: center;
+            pointer-events: none;
+        }
+        
         .nav-indicator {
-            position: absolute;
-            top: -20px;
-            right: 50%;
-            transform: translateX(50%);
             background: var(--gradient-gold);
             color: white;
             padding: 6px 12px;
@@ -286,12 +293,13 @@
             font-weight: 700;
             box-shadow: 0 4px 12px rgba(156, 124, 60, 0.4);
             z-index: 1001;
-            animation: bounce 2s infinite, fadeOut 0.5s ease 5s forwards;
+            animation: bounce 2s infinite, fadeOut 0.5s ease 10s forwards;
             display: flex;
             align-items: center;
             gap: 5px;
             white-space: nowrap;
             border: 2px solid white;
+            pointer-events: none;
         }
         
         .nav-indicator i {
@@ -299,8 +307,8 @@
         }
         
         @keyframes bounce {
-            0%, 100% { transform: translateX(50%) translateY(0); }
-            50% { transform: translateX(50%) translateY(-5px); }
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
         }
         
         @keyframes bounceRight {
@@ -1398,6 +1406,10 @@
                 margin-top: 195px; /* تم التعديل ليتناسب مع تصغير الهيدر */
             }
             
+            .nav-indicator-container {
+                top: 195px; /* تعديل الموقع ليصبح تحت الهيدر مباشرة */
+            }
+            
             .section-title {
                 font-size: 2.3rem;
             }
@@ -1647,6 +1659,10 @@
                 margin-top: 155px; /* تم التعديل */
             }
             
+            .nav-indicator-container {
+                top: 155px; /* تعديل الموقع */
+            }
+            
             .pdf-viewer {
                 height: 350px;
             }
@@ -1692,6 +1708,10 @@
             .main-content {
                 margin-top: 175px; /* تم التعديل */
                 padding: 30px 20px;
+            }
+            
+            .nav-indicator-container {
+                top: 175px; /* تعديل الموقع */
             }
             
             /* تعديلات قسم الشواهد الوظيفية للشاشات الصغيرة */
@@ -1766,6 +1786,10 @@
             .main-content {
                 margin-top: 165px; /* تم التعديل */
                 padding: 25px 15px;
+            }
+            
+            .nav-indicator-container {
+                top: 165px; /* تعديل الموقع */
             }
             
             /* تعديلات قسم نبذة عني للشاشات الصغيرة جداً */
@@ -1886,11 +1910,6 @@
             </div>
             
             <div class="nav-icons-container">
-                <!-- مؤشر التنقل - يظهر أول مرة -->
-                <div class="nav-indicator">
-                    <i class="fas fa-chevron-left"></i> اسحب للتنقل بين الأقسام
-                </div>
-                
                 <div class="nav-icons">
                     <a href="#" class="nav-icon active" data-target="about">
                         <i class="fas fa-user-circle"></i>
@@ -1952,6 +1971,13 @@
             </div>
         </div>
     </nav>
+
+    <!-- مؤشر التنقل - يظهر تحت الهيدر -->
+    <div class="nav-indicator-container">
+        <div class="nav-indicator">
+            <i class="fas fa-chevron-left"></i> اسحب للتنقل بين الأقسام
+        </div>
+    </div>
 
     <div class="container">
         <div class="main-content">
@@ -2444,13 +2470,46 @@
             const navIcons = document.querySelectorAll('.nav-icon');
             const sections = document.querySelectorAll('.section');
             const navIndicator = document.querySelector('.nav-indicator');
+            const navIconsContainer = document.querySelector('.nav-icons');
             
-            // إخفاء مؤشر التنقل بعد 5 ثوانٍ
-            setTimeout(() => {
-                if (navIndicator) {
-                    navIndicator.style.display = 'none';
+            // إخفاء مؤشر التنقل بعد 10 ثوانٍ
+            let indicatorTimeout = setTimeout(() => {
+                if (navIndicator && navIndicator.parentElement) {
+                    navIndicator.parentElement.style.display = 'none';
                 }
-            }, 5000);
+            }, 10000); // 10 ثواني بدلاً من 5
+            
+            // إخفاء المؤشر عند النقر على أي قسم
+            function hideIndicator() {
+                if (navIndicator && navIndicator.parentElement) {
+                    navIndicator.parentElement.style.display = 'none';
+                    clearTimeout(indicatorTimeout); // إلغاء المؤقت
+                }
+            }
+            
+            // إخفاء المؤشر عند التمرير الأفقي في شريط التنقل
+            let scrollTimeout;
+            navIconsContainer.addEventListener('scroll', function() {
+                hideIndicator();
+                
+                // إلغاء أي مؤقتات سابقة
+                clearTimeout(scrollTimeout);
+                
+                // إخفاء المؤشر لمدة 500 مللي بعد التمرير
+                scrollTimeout = setTimeout(hideIndicator, 500);
+            });
+            
+            // إخفاء المؤشر عند التمرير الرأسي للصفحة
+            let scrollTimeoutVertical;
+            window.addEventListener('scroll', function() {
+                hideIndicator();
+                
+                // إلغاء أي مؤقتات سابقة
+                clearTimeout(scrollTimeoutVertical);
+                
+                // إخفاء المؤشر لمدة 500 مللي بعد التمرير
+                scrollTimeoutVertical = setTimeout(hideIndicator, 500);
+            });
             
             function loadSection(targetId) {
                 navIcons.forEach(item => item.classList.remove('active'));
@@ -2476,6 +2535,9 @@
                     });
                 }, 100);
                 
+                // إخفاء مؤشر التنقل عند التبديل بين الأقسام
+                hideIndicator();
+                
                 if (window.innerWidth < 768) {
                     window.scrollTo({
                         top: 0,
@@ -2491,9 +2553,7 @@
                     loadSection(targetId);
                     
                     // إخفاء مؤشر التنقل عند النقر على أي قسم
-                    if (navIndicator) {
-                        navIndicator.style.display = 'none';
-                    }
+                    hideIndicator();
                 });
                 
                 icon.addEventListener('touchstart', function() {
