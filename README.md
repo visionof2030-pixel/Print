@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -58,7 +58,7 @@
             border-bottom: 2px solid var(--accent-color);
             transition: transform 0.3s ease;
             transform: translateY(0);
-            height: 180px; /* 4x larger */
+            height: 140px; /* تم التصغير بنسبة 30% تقريبًا من 180px */
             display: flex;
             align-items: center;
             border-bottom: 3px solid var(--accent-color);
@@ -76,12 +76,12 @@
         
         .fade-messages {
             flex: 1;
-            height: 120px; /* 4x larger */
+            height: 90px; /* تم التصغير بنسبة 30% تقريبًا من 120px */
             position: relative;
             overflow: hidden;
             text-align: center;
             font-weight: 700;
-            font-size: 2.2rem; /* LARGER FONT - GOLD COLOR */
+            font-size: 1.6rem; /* تم تصغير الخط من 2.2rem */
             letter-spacing: -0.3px;
             text-shadow: 0 2px 4px rgba(156, 124, 60, 0.3); /* GOLD SHADOW */
             display: flex;
@@ -118,16 +118,16 @@
             width: 100%;
         }
         
-        /* تحسين الهيدر - تكبير اسم المعلمة وتصغير العنوان */
+        /* تحسين الهيدر - تم تصغيره بنسبة 30% */
         .navbar {
             background: var(--gradient-purple);
             color: white;
             position: sticky;
-            top: 180px; /* ارتفاع الشريط الثابت 4x larger */
+            top: 140px; /* تم التعديل ليتناسب مع تصغير الشريط العلوي */
             z-index: 1000;
             box-shadow: var(--shadow-heavy);
             height: auto;
-            min-height: 80px;
+            min-height: 65px; /* تم التصغير بنسبة 30% تقريبًا من 80px */
             padding: 0;
             transition: transform 0.3s ease;
             border-bottom: 3px solid var(--accent-color);
@@ -138,16 +138,16 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 15px;
-            gap: 15px;
+            padding: 10px 15px; /* تم التصغير */
+            gap: 10px; /* تم التصغير */
         }
         
         .logo {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px; /* تم التصغير */
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.9rem; /* تم التصغير */
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
             width: 100%;
             justify-content: center;
@@ -156,9 +156,9 @@
         
         .logo-icon {
             background: var(--gradient-gold);
-            width: 55px;
-            height: 55px;
-            min-width: 55px;
+            width: 45px; /* تم التصغير من 55px */
+            height: 45px; /* تم التصغير من 55px */
+            min-width: 45px; /* تم التصغير */
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -171,7 +171,7 @@
         }
         
         .logo-icon i {
-            font-size: 1.5rem;
+            font-size: 1.2rem; /* تم التصغير من 1.5rem */
             z-index: 1;
             color: white;
         }
@@ -183,32 +183,33 @@
         }
         
         .logo-title {
-            font-size: 1.2rem; /* تصغير حجم عنوان "ملف الإنجاز المهني" */
+            font-size: 1rem; /* تم تصغير حجم عنوان "ملف الإنجاز المهني" */
             color: white;
-            font-weight: 600; /* جعله أقل سماكة */
-            line-height: 1.3;
+            font-weight: 600;
+            line-height: 1.2;
             letter-spacing: -0.3px;
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-            margin-bottom: 3px; /* إضافة مسافة صغيرة بين السطرين */
+            margin-bottom: 2px;
         }
         
         .logo-subtitle {
-            font-size: 1.5rem; /* تكبير اسم المعلمة "سارة الخالدي" */
+            font-size: 1.2rem; /* تم تصغير اسم المعلمة "سارة الخالدي" */
             color: white;
-            margin-top: 0; /* إزالة المسافة العلوية */
-            font-weight: 700; /* جعله أكثر وضوحاً */
+            margin-top: 0;
+            font-weight: 700;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
         
         .nav-icons-container {
             background: rgba(255, 255, 255, 0.12);
-            border-radius: 18px;
-            padding: 10px;
+            border-radius: 15px; /* تم التصغير */
+            padding: 8px; /* تم التصغير */
             width: 100%;
             overflow: hidden;
             max-width: 100%;
             border: 1px solid rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
+            position: relative;
         }
         
         .nav-icons {
@@ -230,14 +231,14 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 8px 10px;
+            padding: 6px 8px; /* تم التصغير */
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-decoration: none;
             color: white;
-            border-radius: 12px;
-            min-width: 70px;
-            height: 50px;
+            border-radius: 10px; /* تم التصغير */
+            min-width: 60px; /* تم التصغير من 70px */
+            height: 45px; /* تم التصغير من 50px */
             position: relative;
             overflow: hidden;
             background: rgba(255, 255, 255, 0.08);
@@ -259,16 +260,57 @@
         }
         
         .nav-icon i {
-            font-size: 1.1rem;
-            margin-bottom: 3px;
+            font-size: 0.9rem; /* تم التصغير من 1.1rem */
+            margin-bottom: 2px; /* تم التصغير */
             z-index: 1;
         }
         
         .nav-icon span {
-            font-size: 0.7rem;
+            font-size: 0.6rem; /* تم التصغير من 0.7rem */
             font-weight: 600;
             white-space: nowrap;
             z-index: 1;
+        }
+        
+        /* مؤشر التنقل - يظهر أول مرة */
+        .nav-indicator {
+            position: absolute;
+            top: -20px;
+            right: 50%;
+            transform: translateX(50%);
+            background: var(--gradient-gold);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(156, 124, 60, 0.4);
+            z-index: 1001;
+            animation: bounce 2s infinite, fadeOut 0.5s ease 5s forwards;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            white-space: nowrap;
+            border: 2px solid white;
+        }
+        
+        .nav-indicator i {
+            animation: bounceRight 1s infinite alternate;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateX(50%) translateY(0); }
+            50% { transform: translateX(50%) translateY(-5px); }
+        }
+        
+        @keyframes bounceRight {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(5px); }
+        }
+        
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; visibility: hidden; }
         }
         
         /* تصميم المحتوى الرئيسي */
@@ -276,7 +318,7 @@
             background: var(--card-bg);
             border-radius: 25px;
             box-shadow: var(--shadow-heavy);
-            margin-top: 270px; /* ارتفاع الشريط الثابت + الهيدر */
+            margin-top: 215px; /* تم التعديل ليتناسب مع تصغير الهيدر */
             margin-bottom: 30px;
             padding: 35px 25px;
             min-height: auto;
@@ -399,7 +441,7 @@
         .about-info h3 {
             color: var(--secondary-color);
             margin-bottom: 15px;
-            font-size: 2rem;
+            font-size: 1.6rem; /* تم تصغير الخط من 2rem */
             font-weight: 800;
             line-height: 1.3;
             letter-spacing: -0.5px;
@@ -1221,6 +1263,19 @@
             transform: translateY(0);
         }
         
+        /* تأثير ذهبي للعبارات */
+        @keyframes gold-glow {
+            0% { text-shadow: 0 0 5px rgba(193, 154, 95, 0.3); }
+            50% { text-shadow: 0 0 15px rgba(193, 154, 95, 0.7), 0 0 25px rgba(156, 124, 60, 0.5); }
+            100% { text-shadow: 0 0 5px rgba(193, 154, 95, 0.3); }
+        }
+        
+        .message.active {
+            opacity: 1;
+            transform: translateY(0);
+            animation: gold-glow 3s infinite alternate;
+        }
+        
         /* تصميم متجاوب */
         @media (min-width: 576px) {
             .container {
@@ -1232,20 +1287,20 @@
             }
             
             .nav-icon {
-                min-width: 75px;
-                padding: 10px 12px;
+                min-width: 65px; /* تم التصغير */
+                padding: 8px 10px; /* تم التصغير */
             }
             
             .nav-icon span {
-                font-size: 0.75rem;
+                font-size: 0.65rem; /* تم التصغير */
             }
             
             .logo-title {
-                font-size: 1.3rem;
+                font-size: 1.1rem; /* تم التصغير */
             }
             
             .logo-subtitle {
-                font-size: 1.6rem;
+                font-size: 1.4rem; /* تم التصغير */
             }
             
             .section-title {
@@ -1270,7 +1325,7 @@
             }
             
             .about-info h3 {
-                font-size: 2.1rem;
+                font-size: 1.8rem; /* تم التصغير من 2.1rem */
             }
             
             .about-details {
@@ -1297,26 +1352,26 @@
         
         @media (min-width: 768px) {
             .fixed-top-bar {
-                padding: 20px 0;
-                height: 160px; /* تعديل للشاشات المتوسطة */
+                padding: 15px 0; /* تم التصغير */
+                height: 120px; /* تم التصغير من 160px */
             }
             
             .fade-messages {
-                font-size: 2.4rem; /* تكبير الخط للشاشات المتوسطة */
-                height: 100px;
+                font-size: 1.8rem; /* تم التصغير من 2.4rem */
+                height: 80px; /* تم التصغير من 100px */
             }
             
             .navbar {
-                height: 95px;
+                height: 75px; /* تم التصغير من 95px */
                 padding: 0;
-                top: 160px; /* ارتفاع الشريط الثابت المعدل */
+                top: 120px; /* تم التعديل ليتناسب مع تصغير الشريط العلوي */
             }
             
             .nav-container {
                 flex-direction: row;
                 justify-content: space-between;
-                padding: 0 30px;
-                height: 95px;
+                padding: 0 25px; /* تم التصغير */
+                height: 75px; /* تم التصغير من 95px */
                 gap: 0;
             }
             
@@ -1331,16 +1386,16 @@
             }
             
             .logo-title {
-                font-size: 1.4rem;
+                font-size: 1.2rem; /* تم التصغير */
             }
             
             .logo-subtitle {
-                font-size: 1.8rem;
+                font-size: 1.5rem; /* تم التصغير */
             }
             
             .main-content {
                 padding: 40px 35px;
-                margin-top: 255px; /* ارتفاع الشريط الثابت + الهيدر المعدل */
+                margin-top: 195px; /* تم التعديل ليتناسب مع تصغير الهيدر */
             }
             
             .section-title {
@@ -1409,12 +1464,12 @@
             }
             
             .nav-icon {
-                min-width: 80px;
-                padding: 10px 15px;
+                min-width: 70px; /* تم التصغير من 80px */
+                padding: 8px 12px; /* تم التصغير */
             }
             
             .nav-icon span {
-                font-size: 0.8rem;
+                font-size: 0.7rem; /* تم التصغير */
             }
             
             .about-details {
@@ -1471,15 +1526,15 @@
         
         @media (min-width: 1200px) {
             .nav-icon {
-                min-width: 85px;
+                min-width: 75px; /* تم التصغير من 85px */
             }
             
             .logo-title {
-                font-size: 1.5rem;
+                font-size: 1.3rem; /* تم التصغير */
             }
             
             .logo-subtitle {
-                font-size: 2rem;
+                font-size: 1.6rem; /* تم التصغير */
             }
             
             /* توسيع قسم نبذة عني للشاشات الكبيرة جداً */
@@ -1488,7 +1543,7 @@
             }
             
             .about-info h3 {
-                font-size: 2.3rem;
+                font-size: 2rem; /* تم التصغير من 2.3rem */
             }
             
             .about-info p {
@@ -1535,61 +1590,61 @@
         
         @media (max-height: 600px) and (orientation: landscape) {
             .fixed-top-bar {
-                padding: 10px 0;
-                height: 120px;
+                padding: 8px 0; /* تم التصغير */
+                height: 100px; /* تم التصغير من 120px */
             }
             
             .fade-messages {
-                height: 80px;
-                font-size: 1.6rem;
+                height: 70px; /* تم التصغير من 80px */
+                font-size: 1.4rem; /* تم التصغير */
             }
             
             .navbar {
                 height: auto;
-                min-height: 65px;
-                top: 120px;
+                min-height: 55px; /* تم التصغير من 65px */
+                top: 100px; /* تم التعديل */
             }
             
             .nav-container {
                 flex-direction: row;
-                padding: 10px 15px;
+                padding: 8px 12px; /* تم التصغير */
             }
             
             .logo-icon {
-                width: 45px;
-                height: 45px;
-                min-width: 45px;
+                width: 40px; /* تم التصغير من 45px */
+                height: 40px; /* تم التصغير من 45px */
+                min-width: 40px; /* تم التصغير */
             }
             
             .logo-icon i {
-                font-size: 1.2rem;
+                font-size: 1.1rem; /* تم التصغير */
             }
             
             .logo-title {
-                font-size: 1.1rem;
+                font-size: 1rem; /* تم التصغير */
             }
             
             .logo-subtitle {
-                font-size: 1.3rem;
+                font-size: 1.2rem; /* تم التصغير */
             }
             
             .nav-icon {
-                min-width: 65px;
-                height: 45px;
-                padding: 6px 8px;
+                min-width: 60px; /* تم التصغير من 65px */
+                height: 40px; /* تم التصغير من 45px */
+                padding: 5px 7px; /* تم التصغير */
             }
             
             .nav-icon i {
-                font-size: 1rem;
+                font-size: 0.9rem; /* تم التصغير */
                 margin-bottom: 2px;
             }
             
             .nav-icon span {
-                font-size: 0.65rem;
+                font-size: 0.6rem; /* تم التصغير */
             }
             
             .main-content {
-                margin-top: 185px;
+                margin-top: 155px; /* تم التعديل */
             }
             
             .pdf-viewer {
@@ -1618,7 +1673,7 @@
         @media (max-width: 767px) {
             .fixed-top-bar {
                 padding: 10px 0;
-                height: 140px;
+                height: 110px; /* تم التصغير من 140px */
             }
             
             .top-bar-container {
@@ -1626,16 +1681,16 @@
             }
             
             .fade-messages {
-                font-size: 1.8rem;
-                height: 100px;
+                font-size: 1.5rem; /* تم التصغير من 1.8rem */
+                height: 80px; /* تم التصغير من 100px */
             }
             
             .navbar {
-                top: 140px;
+                top: 110px; /* تم التعديل */
             }
             
             .main-content {
-                margin-top: 220px;
+                margin-top: 175px; /* تم التعديل */
                 padding: 30px 20px;
             }
             
@@ -1689,12 +1744,12 @@
         
         @media (max-width: 480px) {
             .fixed-top-bar {
-                height: 120px;
+                height: 100px; /* تم التصغير من 120px */
             }
             
             .fade-messages {
-                font-size: 1.5rem;
-                height: 80px;
+                font-size: 1.3rem; /* تم التصغير من 1.5rem */
+                height: 70px; /* تم التصغير من 80px */
             }
             
             .message {
@@ -1705,11 +1760,11 @@
             }
             
             .navbar {
-                top: 120px;
+                top: 100px; /* تم التعديل */
             }
             
             .main-content {
-                margin-top: 200px;
+                margin-top: 165px; /* تم التعديل */
                 padding: 25px 15px;
             }
             
@@ -1725,7 +1780,7 @@
             }
             
             .about-info h3 {
-                font-size: 1.6rem;
+                font-size: 1.4rem; /* تم التصغير من 1.6rem */
             }
             
             .about-info p {
@@ -1791,19 +1846,6 @@
         * {
             -webkit-overflow-scrolling: touch;
         }
-        
-        /* تأثير ذهبي للعبارات */
-        @keyframes gold-glow {
-            0% { text-shadow: 0 0 5px rgba(193, 154, 95, 0.3); }
-            50% { text-shadow: 0 0 15px rgba(193, 154, 95, 0.7), 0 0 25px rgba(156, 124, 60, 0.5); }
-            100% { text-shadow: 0 0 5px rgba(193, 154, 95, 0.3); }
-        }
-        
-        .message.active {
-            opacity: 1;
-            transform: translateY(0);
-            animation: gold-glow 3s infinite alternate;
-        }
     </style>
 </head>
 <body class="no-select">
@@ -1844,6 +1886,11 @@
             </div>
             
             <div class="nav-icons-container">
+                <!-- مؤشر التنقل - يظهر أول مرة -->
+                <div class="nav-indicator">
+                    <i class="fas fa-chevron-left"></i> اسحب للتنقل بين الأقسام
+                </div>
+                
                 <div class="nav-icons">
                     <a href="#" class="nav-icon active" data-target="about">
                         <i class="fas fa-user-circle"></i>
@@ -1917,7 +1964,8 @@
                                 <i class="fas fa-chalkboard-teacher"></i>
                             </div>
                             <div class="about-info">
-                                <h3>سارة خويتم عبدالجبار الخالدي</h3>
+                                <!-- تم تصغير اسم المعلمة -->
+                                <h3>سارة خويتم الخالدي</h3>
                                 <p><span class="highlight">التخصص:</span> رياضيات وإحصاء</p>
                                 <p><span class="highlight">المهنة:</span> معلمة رياضيات للمرحلة الابتدائية</p>
                                 <p><span class="highlight">الخبرة:</span> 4 سنوات في القطاع الخاص</p>
@@ -2395,6 +2443,14 @@
         document.addEventListener('DOMContentLoaded', function() {
             const navIcons = document.querySelectorAll('.nav-icon');
             const sections = document.querySelectorAll('.section');
+            const navIndicator = document.querySelector('.nav-indicator');
+            
+            // إخفاء مؤشر التنقل بعد 5 ثوانٍ
+            setTimeout(() => {
+                if (navIndicator) {
+                    navIndicator.style.display = 'none';
+                }
+            }, 5000);
             
             function loadSection(targetId) {
                 navIcons.forEach(item => item.classList.remove('active'));
@@ -2433,6 +2489,11 @@
                     e.preventDefault();
                     const targetId = this.getAttribute('data-target');
                     loadSection(targetId);
+                    
+                    // إخفاء مؤشر التنقل عند النقر على أي قسم
+                    if (navIndicator) {
+                        navIndicator.style.display = 'none';
+                    }
                 });
                 
                 icon.addEventListener('touchstart', function() {
