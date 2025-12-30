@@ -26,21 +26,20 @@
     
     <style>
         :root {
-            /* الألوان المحدثة لتتناسب مع طقم النصر */
-            --primary: #1A3A5F; /* أزرق كحلي بدلاً من الأزرق النصراوي */
+            /* الألوان المحدثة */
+            --primary: #1A3A5F;
             --primary-dark: #0F2A47;
             --primary-light: #2A4F7A;
-            --accent: #F5D76E; /* أصفر باهت بدلاً من الأصفر النصراوي */
+            --accent: #F5D76E;
             --accent-dark: #E6C860;
             --accent-light: #FFE89D;
-            --bg: #FFFFFF; /* خلفية بيضاء */
+            --bg: #FFFFFF;
             --card-bg: #FFFFFF;
             --text: #1A1A1A;
             --light-text: #666666;
             --border: #E6E6E6;
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             --shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.1);
-            /* تحديث التدرجات اللونية */
             --gradient: linear-gradient(135deg, #1A3A5F, #F5D76E);
             --gradient-dark: linear-gradient(135deg, #0F2A47, #E6C860);
             --gradient-light: linear-gradient(135deg, #2A4F7A, #FFE89D);
@@ -68,9 +67,6 @@
 
         html {
             scroll-behavior: smooth;
-            -webkit-text-size-adjust: 100%;
-            -moz-text-size-adjust: 100%;
-            -ms-text-size-adjust: 100%;
         }
 
         body {
@@ -78,69 +74,52 @@
             color: var(--text);
             line-height: 1.7;
             overflow-x: hidden;
-            padding-top: 70px;
+            padding-top: 80px;
             transition: background 0.3s ease, color 0.3s ease;
         }
 
-        /* ========== IMPROVED FIXED HEADER WITH FADE EFFECT ========== */
+        /* ========== FIXED HEADER WITH FADE EFFECT ========== */
         .main-header {
             position: fixed;
             top: 0;
             right: 0;
             left: 0;
             z-index: 1000;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             background: var(--blue-gradient);
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
             border-bottom: 3px solid var(--accent);
-            opacity: 1;
+            transition: transform 0.4s ease, opacity 0.4s ease;
             transform: translateY(0);
-            height: 70px;
+            opacity: 1;
         }
 
         .main-header.hidden {
             transform: translateY(-100%);
             opacity: 0;
-            pointer-events: none;
-        }
-
-        .main-header.visible {
-            transform: translateY(0);
-            opacity: 1;
-            pointer-events: all;
-        }
-
-        /* تأثير إضافي عند التمرير */
-        .main-header.scrolled {
-            height: 60px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
-            backdrop-filter: blur(10px);
-            background: linear-gradient(135deg, rgba(26, 58, 95, 0.95), rgba(42, 79, 122, 0.95));
         }
 
         .header-container {
             max-width: 100%;
             margin: 0 auto;
             padding: 0 15px;
-            height: 100%;
         }
 
-        .header-content {
+        .header-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 100%;
-            position: relative;
+            padding: 10px 0;
         }
 
-        .logo-title {
+        .logo-section {
             display: flex;
             align-items: center;
             gap: 15px;
             flex: 1;
+            justify-content: center;
         }
 
-        .logo-title h1 {
+        .logo-section h1 {
             font-size: 1.3rem;
             font-weight: 800;
             margin: 0;
@@ -148,16 +127,8 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-align: center;
-            flex: 1;
-            transition: all 0.3s ease;
         }
 
-        .main-header.scrolled .logo-title h1 {
-            font-size: 1.1rem;
-        }
-
-        /* زر الترجمة والوضع الليلي في أقصى الزاوية اليمنى العلوية */
         .header-actions {
             display: flex;
             gap: 8px;
@@ -186,7 +157,7 @@
             transform: translateY(-2px);
         }
 
-        /* ========== IMPROVED NAVIGATION BAR ========== */
+        /* ========== NAVIGATION BAR ========== */
         .nav-container {
             background: linear-gradient(90deg, rgba(26, 58, 95, 0.95), rgba(42, 79, 122, 0.95));
             backdrop-filter: blur(10px);
@@ -195,11 +166,6 @@
             -webkit-overflow-scrolling: touch;
             scrollbar-width: none;
             -ms-overflow-style: none;
-            transition: all 0.3s ease;
-        }
-
-        .main-header.scrolled .nav-container {
-            background: linear-gradient(90deg, rgba(26, 58, 95, 0.85), rgba(42, 79, 122, 0.85));
         }
 
         .nav-container::-webkit-scrollbar {
@@ -215,7 +181,7 @@
 
         .nav-item {
             flex: 0 0 auto;
-            padding: 12px 15px;
+            padding: 10px 12px;
             text-decoration: none;
             color: white;
             font-weight: 600;
@@ -242,14 +208,12 @@
 
         .nav-item:hover {
             background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
         }
 
         .nav-item.active {
             background: var(--yellow-gradient);
             color: var(--primary-dark);
             box-shadow: 0 -4px 8px rgba(245, 215, 110, 0.3);
-            transform: translateY(-2px);
         }
 
         .nav-item.active::before {
@@ -262,15 +226,6 @@
             height: 3px;
             background: var(--primary-dark);
             border-radius: 2px;
-        }
-
-        .main-header.scrolled .nav-item {
-            padding: 10px 12px;
-            font-size: 0.6rem;
-        }
-
-        .main-header.scrolled .nav-item i {
-            font-size: 0.7rem;
         }
 
         /* ========== HERO SECTION WITH KEY PHRASES ========== */
@@ -338,33 +293,12 @@
             backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
-            animation: fadeIn 0.6s ease backwards;
         }
 
         .phrase-item:hover {
             background: rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .phrase-item:nth-child(1) { animation-delay: 0.1s; }
-        .phrase-item:nth-child(2) { animation-delay: 0.2s; }
-        .phrase-item:nth-child(3) { animation-delay: 0.3s; }
-        .phrase-item:nth-child(4) { animation-delay: 0.4s; }
-        .phrase-item:nth-child(5) { animation-delay: 0.5s; }
-        .phrase-item:nth-child(6) { animation-delay: 0.6s; }
-        .phrase-item:nth-child(7) { animation-delay: 0.7s; }
 
         .hero-actions {
             display: flex;
@@ -450,6 +384,7 @@
         section {
             display: none;
             animation: fadeInUp 0.6s ease;
+            padding: 20px 0;
         }
 
         section.active {
@@ -476,24 +411,6 @@
             height: 3px;
             background: var(--yellow-gradient);
             border-radius: 2px;
-        }
-
-        /* تأثيرات الظهور عند التمرير */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-in-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* إزالة تأثيرات الظهور من قسم الدورات */
-        #training .fade-in-up {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         /* Cards */
@@ -852,111 +769,78 @@
             display: block;
         }
 
-        /* إخفاء سهم Google Drive وأي عناصر غير مرغوب فيها */
-        .pdf-embed-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 40px;
-            background: #f8f9fa;
-            z-index: 2;
-            pointer-events: none;
-        }
-
-        /* Fullscreen Mode */
-        .pdf-embed-container.fullscreen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 2000;
-            background: white;
-        }
-
-        .pdf-embed-container.fullscreen iframe {
-            height: 100vh;
-        }
-
-        .pdf-embed-container.fullscreen::before {
-            display: none;
-        }
-
-        /* Fullscreen Controls */
-        .fullscreen-controls {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 2001;
-            display: none;
-            gap: 10px;
-            background: rgba(26, 58, 95, 0.95);
-            padding: 12px 24px;
-            border-radius: 30px;
-            backdrop-filter: blur(10px);
-            border: 2px solid var(--accent);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .fullscreen-controls.show {
-            display: flex;
-        }
-
-        /* PDF Note */
-        .pdf-note {
-            background: rgba(26, 58, 95, 0.05);
-            padding: 15px 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-top: 1px solid var(--border);
-        }
-
-        .update-notice {
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 0.9rem;
-            padding: 8px 16px;
-            background: rgba(245, 215, 110, 0.2);
-            border-radius: 20px;
-            border: 1px solid rgba(245, 215, 110, 0.3);
-        }
-
         /* Training Section */
-        .training-card {
-            background: linear-gradient(135deg, var(--card-bg), var(--bg));
-            border-right: 4px solid var(--accent);
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 20px;
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .certificate-item {
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
             box-shadow: var(--shadow);
+            transition: all 0.3s ease;
             border: 1px solid var(--border);
         }
 
-        .training-list {
-            list-style: none;
-            padding: 0;
+        .certificate-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
         }
 
-        .training-list li {
-            padding: 8px 0;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.85rem;
+        .certificate-image {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            background-color: #f9f9f9;
+            padding: 10px;
         }
 
-        .training-list li:last-child {
-            border-bottom: none;
+        .certificate-content {
+            padding: 15px;
         }
 
-        .training-list li i {
+        .certificate-title {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .certificate-download {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
             color: var(--accent);
-            font-size: 0.8rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            background: var(--yellow-gradient);
+            color: var(--primary-dark);
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
+
+        .certificate-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(245, 215, 110, 0.3);
+        }
+
+        .training-category {
+            margin-bottom: 30px;
+        }
+
+        .training-category-title {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            text-align: center;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent);
         }
 
         /* Tech Section */
@@ -970,7 +854,7 @@
             border: 1px solid var(--border);
         }
 
-        /* ========== NEW PROJECTS SECTION ========== */
+        /* ========== PROJECTS SECTION ========== */
         .portfolio-filters {
             display: flex;
             justify-content: center;
@@ -1059,138 +943,7 @@
             text-decoration: underline;
         }
 
-        /* Testimonials Section */
-        .testimonials-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
-        }
-
-        .testimonial-slider {
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-        }
-
-        .testimonial-slides {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-
-        .testimonial-slide {
-            min-width: 100%;
-            padding: 20px;
-            background: linear-gradient(135deg, var(--card-bg), var(--bg));
-            border-top: 3px solid var(--accent);
-            box-shadow: var(--shadow);
-            border-radius: 10px;
-            border: 1px solid var(--border);
-        }
-
-        .testimonial-content {
-            margin-bottom: 12px;
-        }
-
-        .testimonial-content p {
-            font-style: italic;
-            line-height: 1.6;
-            color: var(--text);
-            font-size: 0.9rem;
-        }
-
-        .testimonial-author {
-            text-align: left;
-        }
-
-        .testimonial-author strong {
-            display: block;
-            color: var(--primary);
-            font-size: 0.9rem;
-        }
-
-        .testimonial-author span {
-            font-size: 0.8rem;
-            color: var(--light-text);
-        }
-
-        .testimonial-controls {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .testimonial-control {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .testimonial-control:hover {
-            background: var(--yellow-gradient);
-            color: var(--primary-dark);
-        }
-
-        /* Contact Form */
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            background: var(--card-bg);
-            color: var(--text);
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(245, 215, 110, 0.2);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--blue-gradient);
-            color: white;
-            text-align: center;
-            padding: 25px 20px;
-            margin-top: 40px;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-links {
-            display: none;
-        }
-
-        .copyright {
-            margin-top: 15px;
-            opacity: 0.8;
-            font-size: 0.85rem;
-        }
-
-        /* أنماط إضافية للمعرض التفاعلي */
+        /* Gallery */
         .gallery-container {
             position: relative;
             width: 100%;
@@ -1286,35 +1039,100 @@
             box-shadow: 0 6px 12px rgba(245, 215, 110, 0.4);
         }
 
-        .gallery-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none;
+        /* Testimonials Section */
+        .testimonial-slider {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
         }
 
-        .gallery-indicator {
+        .testimonial-slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--card-bg), var(--bg));
+            border-top: 3px solid var(--accent);
+            box-shadow: var(--shadow);
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+
+        .testimonial-content {
+            margin-bottom: 12px;
+        }
+
+        .testimonial-content p {
+            font-style: italic;
+            line-height: 1.6;
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+
+        .testimonial-author {
+            text-align: left;
+        }
+
+        .testimonial-author strong {
+            display: block;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        .testimonial-author span {
+            font-size: 0.8rem;
+            color: var(--light-text);
+        }
+
+        .testimonial-controls {
             display: flex;
             justify-content: center;
+            gap: 10px;
             margin-top: 15px;
-            gap: 8px;
         }
 
-        .indicator-dot {
-            width: 10px;
-            height: 10px;
+        .testimonial-control {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
-            background: var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
-        .indicator-dot.active {
-            background: var(--accent);
-            transform: scale(1.2);
+        .testimonial-control:hover {
+            background: var(--yellow-gradient);
+            color: var(--primary-dark);
         }
 
-        /* ========== التحسينات الجديدة ========== */
-        
+        /* Footer */
+        footer {
+            background: var(--blue-gradient);
+            color: white;
+            text-align: center;
+            padding: 25px 20px;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .copyright {
+            margin-top: 15px;
+            opacity: 0.8;
+            font-size: 0.85rem;
+        }
+
         /* زر العودة للأعلى */
         .back-to-top {
             position: fixed;
@@ -1366,69 +1184,7 @@
             transition: width 0.1s ease;
         }
 
-        /* تحسينات للصور (Lazy Loading) */
-        img.lazy {
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        img.lazy.loaded {
-            opacity: 1;
-        }
-
-        /* تحسينات للنموذج */
-        .form-message {
-            padding: 10px 15px;
-            border-radius: 8px;
-            margin-top: 15px;
-            display: none;
-        }
-
-        .form-message.success {
-            background: rgba(76, 175, 80, 0.1);
-            border: 1px solid #4CAF50;
-            color: #4CAF50;
-            display: block;
-        }
-
-        .form-message.error {
-            background: rgba(244, 67, 54, 0.1);
-            border: 1px solid #F44336;
-            color: #F44336;
-            display: block;
-        }
-
-        .btn-loading {
-            position: relative;
-            pointer-events: none;
-        }
-
-        .btn-loading::after {
-            content: "";
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            margin: auto;
-            border: 2px solid transparent;
-            border-top-color: var(--primary-dark);
-            border-radius: 50%;
-            animation: button-loading-spinner 1s ease infinite;
-        }
-
-        @keyframes button-loading-spinner {
-            from {
-                transform: rotate(0turn);
-            }
-            to {
-                transform: rotate(1turn);
-            }
-        }
-
-        /* تحسينات للوضع الليلي - تحسين التباين */
+        /* تحسينات للوضع الليلي */
         :root[data-theme="dark"] .card {
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
         }
@@ -1437,74 +1193,11 @@
         :root[data-theme="dark"] .vision-item,
         :root[data-theme="dark"] .skill-category,
         :root[data-theme="dark"] .achievement-card,
-        :root[data-theme="dark"] .training-card,
         :root[data-theme="dark"] .tech-card,
         :root[data-theme="dark"] .portfolio-item,
         :root[data-theme="dark"] .testimonial-slide,
         :root[data-theme="dark"] .gallery-item {
             background: linear-gradient(135deg, #1E1E1E, #2A2A2A);
-        }
-
-        /* أنماط إضافية للدورات التدريبية */
-        .certificates-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .certificate-item {
-            background: var(--card-bg);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            border: 1px solid var(--border);
-        }
-
-        .certificate-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .certificate-image {
-            width: 100%;
-            height: 200px;
-            object-fit: contain;
-            background-color: #f9f9f9;
-            padding: 10px;
-            opacity: 1 !important;
-        }
-
-        .certificate-content {
-            padding: 15px;
-        }
-
-        .certificate-title {
-            color: var(--primary);
-            margin-bottom: 10px;
-            font-size: 1rem;
-            text-align: center;
-        }
-
-        .certificate-download {
-            display: block;
-            text-align: center;
-            margin-top: 10px;
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            transition: all 0.3s ease;
-            background: var(--yellow-gradient);
-            color: var(--primary-dark);
-            padding: 8px 15px;
-            border-radius: 20px;
-        }
-
-        .certificate-download:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(245, 215, 110, 0.3);
         }
 
         /* أنماط إضافية للمشاركات */
@@ -1523,20 +1216,6 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* أنماط إضافية للتدريب */
-        .training-category {
-            margin-bottom: 30px;
-        }
-
-        .training-category-title {
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-            text-align: center;
-            padding-bottom: 8px;
-            border-bottom: 2px solid var(--accent);
-        }
-
         /* أنماط إضافية للإنجازات */
         .achievement-images {
             display: flex;
@@ -1553,44 +1232,18 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* تحسينات لتحميل الصور بشكل أسرع */
-        .certificate-image,
-        .participation-image,
-        .achievement-image {
-            opacity: 1 !important;
-            transition: transform 0.3s ease;
-        }
-
-        .certificate-image:hover,
-        .participation-image:hover,
-        .achievement-image:hover {
-            transform: scale(1.02);
-        }
-
-        /* ========== RESPONSIVE IMPROVEMENTS ========== */
+        /* ========== RESPONSIVE DESIGN ========== */
         @media (max-width: 768px) {
             body {
-                padding-top: 60px;
+                padding-top: 70px;
             }
             
-            .main-header {
-                height: 60px;
-            }
-            
-            .main-header.scrolled {
-                height: 55px;
-            }
-            
-            .header-content {
+            .header-top {
                 padding: 8px 0;
             }
             
-            .logo-title h1 {
+            .logo-section h1 {
                 font-size: 1.1rem;
-            }
-            
-            .main-header.scrolled .logo-title h1 {
-                font-size: 1rem;
             }
             
             .lang-btn, .theme-btn {
@@ -1668,7 +1321,6 @@
                 grid-template-columns: 1fr;
             }
             
-            /* تحسينات إضافية للجوال */
             .back-to-top {
                 bottom: 20px;
                 left: 20px;
@@ -1677,7 +1329,6 @@
                 font-size: 1rem;
             }
             
-            /* تحسينات لملف الإنجاز على الجوال */
             .pdf-embed-container {
                 height: 60vh;
                 min-height: 400px;
@@ -1699,24 +1350,23 @@
                 justify-content: center;
             }
             
-            .fullscreen-controls {
-                top: 10px;
-                padding: 8px 16px;
-            }
-            
             .certificates-grid {
                 grid-template-columns: 1fr;
             }
         }
 
         @media (max-width: 480px) {
-            .header-content {
+            body {
+                padding-top: 65px;
+            }
+            
+            .header-top {
                 flex-direction: column;
                 gap: 10px;
                 padding: 10px 0;
             }
             
-            .logo-title h1 {
+            .logo-section h1 {
                 font-size: 1rem;
             }
             
@@ -1769,38 +1419,9 @@
                 height: 40px;
             }
             
-            /* تحسينات لملف الإنجاز على الشاشات الصغيرة */
             .pdf-embed-container {
                 height: 50vh;
                 min-height: 300px;
-            }
-            
-            .fullscreen-controls {
-                flex-direction: column;
-                width: 90%;
-                top: 10px;
-            }
-        }
-
-        /* ========== IOS SPECIFIC FIXES ========== */
-        @supports (-webkit-touch-callout: none) {
-            .hero-section,
-            .card,
-            .portfolio-item,
-            .btn {
-                -webkit-transform: translateZ(0);
-                transform: translateZ(0);
-            }
-            
-            input, textarea {
-                font-size: 16px !important; /* Prevent zoom on iOS */
-            }
-        }
-
-        /* ========== ANDROID SPECIFIC FIXES ========== */
-        @media screen and (-webkit-min-device-pixel-ratio:0) and (max-width: 768px) {
-            .nav-scroll {
-                padding-bottom: 5px; /* Fix for Android scrollbars */
             }
         }
 
@@ -1815,15 +1436,26 @@
                 transform: translateY(0);
             }
         }
+
+        /* إصلاحات iOS */
+        @supports (-webkit-touch-callout: none) {
+            .hero-section,
+            .card,
+            .portfolio-item,
+            .btn {
+                -webkit-transform: translateZ(0);
+                transform: translateZ(0);
+            }
+        }
     </style>
 </head>
 
 <body>
-    <!-- Improved Fixed Header -->
-    <header class="main-header visible">
+    <!-- Fixed Header -->
+    <header class="main-header">
         <div class="header-container">
-            <div class="header-content">
-                <div class="logo-title">
+            <div class="header-top">
+                <div class="logo-section">
                     <h1 id="pageTitle">فهد الخالدي</h1>
                 </div>
                 <div class="header-actions">
@@ -1837,7 +1469,7 @@
                 </div>
             </div>
             
-            <!-- شريط الأيقونات للتنقل -->
+            <!-- Navigation Bar -->
             <div class="nav-container">
                 <div class="nav-scroll" id="navScroll">
                     <a href="#about" class="nav-item active" data-section="about">
@@ -1889,61 +1521,62 @@
         </div>
     </header>
 
-    <!-- مؤشر تقدم التمرير -->
+    <!-- Scroll Progress -->
     <div class="scroll-progress">
         <div class="scroll-progress-bar"></div>
     </div>
 
-    <!-- باقي المحتوى -->
+    <!-- Main Content -->
     <main>
-        <!-- Hero Section with Key Phrases -->
-        <section id="about" class="active">
-            <div class="hero-section">
-                <div class="hero-content">
-                    <h1 class="hero-title" id="heroTitle">الملف المهني للمعلم فهد الخالدي</h1>
-                    <p class="hero-subtitle" id="heroSubtitle">معلم متخصص في اللغة الإنجليزية مع 13+ سنة خبرة في تطوير أساليب التعليم الحديثة</p>
-                    
-                    <!-- Key Phrases Section -->
-                    <div class="key-phrases">
-                        <div class="phrase-item">مصمم لاختبارات محاكية للرخصة المهنية العامة والخاصة باللغة الإنجليزية تفاعلية مع تغذية راجعة فورية.</div>
-                        <div class="phrase-item">مبتكر أدوات واختبارات إلكترونية للطلاب تعزز التفاعل وتحقق نواتج تعلم حقيقية.</div>
-                        <div class="phrase-item">صانع أداة إلكترونية لإصدار التقارير التربوية بأكثر من 100 تقرير ذكي يخدم المعلم في التوثيق والتقييم.</div>
-                        <div class="phrase-item">عضو في لجنة التميز المدرسي ومسهم في تطوير المبادرات التعليمية.</div>
-                        <div class="phrase-item">حاصل على 95 في اختبار الرخصة المهنية تخصص اللغة الإنجليزية.</div>
-                        <div class="phrase-item">شغفي للتعلم والتطوير هو الوقود الذي يدفعني نحو التميز والابتكار في الميدان التعليمي.</div>
-                        <div class="phrase-item">أتبع التعليم القائم على المشاريع وتنمية مهارات القرن الحادي والعشرين لبناء متعلم منتج وفعّال.</div>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title" id="heroTitle">الملف المهني للمعلم فهد الخالدي</h1>
+                <p class="hero-subtitle" id="heroSubtitle">معلم متخصص في اللغة الإنجليزية مع 13+ سنة خبرة في تطوير أساليب التعليم الحديثة</p>
+                
+                <!-- Key Phrases -->
+                <div class="key-phrases">
+                    <div class="phrase-item">مصمم لاختبارات محاكية للرخصة المهنية العامة والخاصة باللغة الإنجليزية تفاعلية مع تغذية راجعة فورية.</div>
+                    <div class="phrase-item">مبتكر أدوات واختبارات إلكترونية للطلاب تعزز التفاعل وتحقق نواتج تعلم حقيقية.</div>
+                    <div class="phrase-item">صانع أداة إلكترونية لإصدار التقارير التربوية بأكثر من 100 تقرير ذكي يخدم المعلم في التوثيق والتقييم.</div>
+                    <div class="phrase-item">عضو في لجنة التميز المدرسي ومسهم في تطوير المبادرات التعليمية.</div>
+                    <div class="phrase-item">حاصل على 95 في اختبار الرخصة المهنية تخصص اللغة الإنجليزية.</div>
+                    <div class="phrase-item">شغفي للتعلم والتطوير هو الوقود الذي يدفعني نحو التميز والابتكار في الميدان التعليمي.</div>
+                    <div class="phrase-item">أتبع التعليم القائم على المشاريع وتنمية مهارات القرن الحادي والعشرين لبناء متعلم منتج وفعّال.</div>
+                </div>
+                
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-laptop-code"></i>
+                        <span id="viewWorkBtn">استعرض أعمالي</span>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i>
+                        <span id="contactBtn">تواصل معي</span>
+                    </a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="number">13+</span>
+                        <span class="label" id="heroStat1">سنوات خبرة</span>
                     </div>
-                    
-                    <div class="hero-actions">
-                        <a href="#projects" class="btn btn-primary">
-                            <i class="fas fa-laptop-code"></i>
-                            <span id="viewWorkBtn">استعرض أعمالي</span>
-                        </a>
-                        <a href="#contact" class="btn btn-secondary">
-                            <i class="fas fa-envelope"></i>
-                            <span id="contactBtn">تواصل معي</span>
-                        </a>
+                    <div class="hero-stat">
+                        <span class="number">390+</span>
+                        <span class="label" id="heroStat2">ساعة تدريب</span>
                     </div>
-                    
-                    <div class="hero-stats">
-                        <div class="hero-stat">
-                            <span class="number">13+</span>
-                            <span class="label" id="heroStat1">سنوات خبرة</span>
-                        </div>
-                        <div class="hero-stat">
-                            <span class="number">390+</span>
-                            <span class="label" id="heroStat2">ساعة تدريب</span>
-                        </div>
-                        <div class="hero-stat">
-                            <span class="number">105+</span>
-                            <span class="label" id="heroStat3">ساعات تطوعية</span>
-                        </div>
+                    <div class="hero-stat">
+                        <span class="number">105+</span>
+                        <span class="label" id="heroStat3">ساعات تطوعية</span>
                     </div>
                 </div>
             </div>
+        </section>
 
+        <!-- About Section -->
+        <section id="about" class="active">
             <h2 class="section-title" id="aboutTitle">نبذة عني</h2>
-            <div class="card fade-in-up">
+            <div class="card">
                 <div class="profile-header">
                     <div class="profile-img">
                         <img src="https://i.ibb.co/k66psVmZ/20220817-151032.jpg" alt="صورة فهد الخالدي">
@@ -1980,7 +1613,7 @@
         <!-- Vision Section -->
         <section id="vision">
             <h2 class="section-title" id="visionTitle">الرؤية التعليمية</h2>
-            <div class="card fade-in-up">
+            <div class="card">
                 <div class="vision-content">
                     <div class="vision-item">
                         <i class="fas fa-lightbulb"></i>
@@ -2009,7 +1642,7 @@
         <!-- Experience Section -->
         <section id="experience">
             <h2 class="section-title" id="experienceTitle">الخبرات المهنية</h2>
-            <div class="card fade-in-up">
+            <div class="card">
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-date">2017 - الآن</div>
@@ -2046,7 +1679,7 @@
         <!-- Achievements Section -->
         <section id="achievements">
             <h2 class="section-title" id="achievementsTitle">الإنجازات</h2>
-            <div class="card fade-in-up">
+            <div class="card">
                 <div class="achievement-card">
                     <div class="achievement-year">2021</div>
                     <div class="achievement-content">
@@ -2070,7 +1703,7 @@
         <!-- Skills Section -->
         <section id="skills">
             <h2 class="section-title" id="skillsTitle">المهارات والكفاءات</h2>
-            <div class="card fade-in-up">
+            <div class="card">
                 <div class="skills-container">
                     <div class="skill-category">
                         <h3 id="skillCat1">المهارات التعليمية</h3>
@@ -2097,7 +1730,7 @@
         <!-- ملف الإنجاز Section -->
         <section id="portfolio">
             <h2 class="section-title" id="portfolioTitle">ملف الإنجاز</h2>
-            <div class="card fade-in-up">
+            <div class="card">
                 <div class="portfolio-section">
                     <h3 class="portfolio-title">ملف الإنجاز المهني للمعلم فهد الخالدي</h3>
                     <p class="portfolio-subtitle">
@@ -2105,7 +1738,6 @@
                     </p>
                     
                     <div class="pdf-container">
-                        <!-- PDF Header -->
                         <div class="pdf-header">
                             <h2>ملف الإنجاز المهني للمعلم فهد الخالدي</h2>
                             <div class="pdf-actions">
@@ -2116,12 +1748,10 @@
                             </div>
                         </div>
                         
-                        <!-- PDF Viewer -->
                         <div class="pdf-embed-container" id="pdfContainer">
                             <!-- سيتم تحميل الـ PDF هنا -->
                         </div>
                         
-                        <!-- PDF Note -->
                         <div class="pdf-note">
                             <div class="update-notice">
                                 <i class="fas fa-sync-alt"></i>
@@ -2280,7 +1910,7 @@
         <!-- Tech Section -->
         <section id="tech">
             <h2 class="section-title" id="techTitle">التقنية</h2>
-            <div class="card fade-in-up">
+            <div class="card">
                 <div class="tech-card">
                     <p id="techText">
                         أتمتع بشغف كبير تجاه التقنية والتعليم الرقمي، وأواكب أحدث التطورات في مجال الذكاء الاصطناعي وتطبيقاته التعليمية. أمتلك خبرة عملية في تصميم وتطوير أنشطة تفاعلية واختبارات إلكترونية باستخدام HTML وCSS وJavaScript، مما يثري تجربة التعلم ويجعلها أكثر تفاعلية وجاذبية للطلاب. أستخدم أدوات الذكاء الاصطناعي في تحليل أداء الطلاب وتصميم خطط تعليمية مخصصة، كما أصمم محتوى رقميًا مبتكرًا يتناسب مع احتياجات التعلم الحديثة. أسعى دائمًا لدمج التقنية في العملية التعليمية بطرق إبداعية تواكب متطلبات العصر الرقمي وتخدم أهداف رؤية المملكة 2030.
@@ -2292,7 +1922,7 @@
         <!-- Projects Section -->
         <section id="projects">
             <h2 class="section-title" id="projectsTitle">معرض الأعمال</h2>
-            <div class="card fade-in-up">
+            <div class="card">
                 <!-- أزرار التصفية -->
                 <div class="portfolio-filters">
                     <button class="filter-btn active" data-filter="all" id="filterAll">الكل</button>
@@ -2349,7 +1979,6 @@
                             <!-- معرض الصور التفاعلي -->
                             <div class="gallery-container">
                                 <div class="gallery-scroll" id="galleryScroll">
-                                    <!-- الصور الثلاثة الأولى مع عناوينها الحالية -->
                                     <div class="gallery-item">
                                         <img src="https://i.ibb.co/YrXjKC4/strategy7.jpg" alt="مهارات القرن الحادي والعشرين">
                                         <div class="gallery-caption" id="galleryCaption1">تعزيز مهارات القرن الحادي والعشرين لدى الطلاب</div>
@@ -2362,7 +1991,6 @@
                                         <img src="https://i.ibb.co/bR1Cn1WZ/strategy6.jpg" alt="بيئة تعليمية نشطة">
                                         <div class="gallery-caption" id="galleryCaption3">إعداد بيئة تعليمية نشطة ومحفزة للطلاب</div>
                                     </div>
-                                    <!-- باقي الصور بدون تعليقات -->
                                     <div class="gallery-item">
                                         <img src="https://i.ibb.co/DyNDhNX/strategy1.jpg" alt="استراتيجية تعليمية تفاعلية">
                                     </div>
@@ -2408,7 +2036,7 @@
                         </div>
                     </div>
                     
-                    <!-- المشاركة الأولى: عضوية لجنة التميز والتفاعل المهني -->
+                    <!-- المشاركة الأولى -->
                     <div class="portfolio-item" data-category="participations">
                         <div class="portfolio-content">
                             <h3 id="participation1Title">عضوية لجنة التميز والتفاعل المهني</h3>
@@ -2421,7 +2049,7 @@
                         </div>
                     </div>
                     
-                    <!-- المشاركة الثانية: تعزيز القيم الوطنية -->
+                    <!-- المشاركة الثانية -->
                     <div class="portfolio-item" data-category="participations">
                         <div class="portfolio-content">
                             <h3 id="participation2Title">تعزيز القيم الوطنية من خلال فعاليات اليوم الوطني</h3>
@@ -2439,7 +2067,7 @@
         <!-- Testimonials Section -->
         <section id="testimonials">
             <h2 class="section-title" id="testimonialsTitle">التوصيات</h2>
-            <div class="card fade-in-up">
+            <div class="card">
                 <div class="testimonial-slider">
                     <div class="testimonial-slides" id="testimonialSlides">
                         <div class="testimonial-slide">
@@ -2486,7 +2114,7 @@
         <!-- Contact Section -->
         <section id="contact">
             <h2 class="section-title" id="contactTitle">بيانات التواصل</h2>
-            <div class="card fade-in-up">
+            <div class="card">
                 <div style="text-align: center; padding: 25px;">
                     <h3 style="color: var(--primary); margin-bottom: 15px;" id="contactSubtitle">للتواصل</h3>
                     <div style="font-size: 1rem; line-height: 2; color: var(--text);">
@@ -2498,18 +2126,10 @@
         </section>
     </main>
 
-    <!-- زر العودة للأعلى -->
+    <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop">
         <i class="fas fa-chevron-up"></i>
     </button>
-
-    <!-- Fullscreen Controls -->
-    <div class="fullscreen-controls" id="fullscreenControls">
-        <button class="btn btn-primary" id="exitFullscreenBtn">
-            <i class="fas fa-compress"></i>
-            <span id="exitFullscreenText">خروج من وضع ملء الشاشة</span>
-        </button>
-    </div>
 
     <footer>
         <div class="footer-content">
@@ -2521,30 +2141,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- بيانات Structured Data لتحسين SEO -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "فهد الخالدي",
-        "jobTitle": "معلم متقدم - تخصص اللغة الإنجليزية",
-        "description": "معلم متخصص في اللغة الإنجليزية مع 13+ سنة خبرة في تطوير أساليب التعليم الحديثة",
-        "email": "iFahadenglish@gmail.com",
-        "telephone": "+966554449824",
-        "url": "https://example.com",
-        "knowsAbout": ["التعليم", "اللغة الإنجليزية", "التقنية التعليمية", "التدريس التفاعلي"],
-        "hasCredential": "معلم متقدم",
-        "worksFor": {
-            "@type": "Organization",
-            "name": "وزارة التعليم السعودية"
-        },
-        "alumniOf": {
-            "@type": "EducationalOrganization",
-            "name": "جامعة أم القرى"
-        }
-    }
-    </script>
 
     <script>
         // بيانات الترجمة الكاملة
@@ -2585,7 +2181,6 @@
                 achievementText: "في عام 2021 حصلتُ على ترقية إلى رتبة معلم متقدم بعد مسيرة مهنية امتدت لسنوات كمعلم ممارس، قدمت خلالها أداءً متميزًا أسهم في تطوير العملية التعليمية داخل المدرسة. جاءت هذه الترقية تقديرًا لجهودي في توظيف استراتيجيات تدريس حديثة تعزز مهارات التفكير النقدي والإبداعي لدى الطلاب، إضافة إلى قدرتي على تحليل نواتج التعلم وبناء خطط علاجية فردية أثمرت عن تحسين واضح في مستويات الطلاب.<br><br>وقد عكست هذه الترقية ثقة الجهة التعليمية بمهاراتي المهنية، خصوصًا في مجال تصميم أنشطة مبتكرة تُدمج مهارات الفهم العميق، والعمل التعاوني، والتعليم الذاتي داخل البيئة الصفية. كما كانت اعترافًا بدوري في تطوير البرامج التربوية والأنشطة التعليمية قبل عام 2021، ومساهمتي في بناء بيئة صفية محفزة يشعر فيها الطلاب بالأمان والرغبة في المشاركة والتعلم.<br><br>تعد هذه الترقية محطة مهمة في مسيرتي، لأنها لم تكن مجرد انتقال إلى مستوى وظيفي أعلى، بل كانت نتيجة تراكم خبرات وممارسات مهنية أثبتت أثرها على الطلاب وعلى منظومة التعليم داخل المدرسة. واليوم أواصل عملي كمعلم متقدم ملتزم بالتحسين المستمر، وتطبيق أفضل الممارسات التربوية، والمساهمة في رفع جودة التعليم وتحقيق نواتج تعلم أعلى.",
                 techText: "أتمتع بشغف كبير تجاه التقنية والتعليم الرقمي، وأواكب أحدث التطورات في مجال الذكاء الاصطناعي وتطبيقاته التعليمية. أمتلك خبرة عملية في تصميم وتطوير أنشطة تفاعلية واختبارات إلكترونية باستخدام HTML وCSS وJavaScript، مما يثري تجربة التعلم ويجعلها أكثر تفاعلية وجاذبية للطلاب. أستخدم أدوات الذكاء الاصطناعي في تحليل أداء الطلاب وتصميم خطط تعليمية مخصصة، كما أصمم محتوى رقميًا مبتكرًا يتناسب مع احتياجات التعلم الحديثة. أسعى دائمًا لدمج التقنية في العملية التعليمية بطرق إبداعية تواكب متطلبات العصر الرقمي وتخدم أهداف رؤية المملكة 2030.",
                 footerText: "© 2024 جميع الحقوق محفوظة - فهد الخالدي",
-                // إضافة ترجمة نصوص الأيقونات
                 navAbout: "نبذة عني",
                 navVision: "الرؤية التعليمية",
                 navExp: "الخبرات",
@@ -2597,7 +2192,6 @@
                 navProjects: "معرض الأعمال",
                 navTestimonials: "التوصيات",
                 navContact: "بيانات التواصل",
-                // ترجمة المهارات
                 skillCat1: "المهارات التعليمية",
                 skillCat2: "المهارات التقنية",
                 skill1: "إتقان اللغة الإنجليزية تحدثاً وكتابة",
@@ -2608,7 +2202,6 @@
                 skill6: "دمج التقنية في التعليم",
                 skill7: "تصميم أنشطة تفاعلية",
                 skill8: "تطوير اختبارات إلكترونية",
-                // ترجمة المشاريع
                 project1Title: "مشروع: اختبار الرخصة المهنية التفاعلي",
                 project1Desc: "مشروع تعليمي رقمي يهدف إلى محاكاة اختبار الرخصة المهنية للمعلمين، من خلال تقديم أسئلة تفاعلية مبنية على المعايير المعتمدة، مع تغذية راجعة فورية توضح السبب العلمي لكل إجابة صحيحة أو خاطئة، بما يسهم في رفع كفاءة المتدربين وتعزيز جاهزيتهم للاختبار الرسمي.",
                 project1Link: "عرض المشروع",
@@ -2618,7 +2211,6 @@
                 project3Desc: "تصميم عروض تفاعلية جذابة للطلاب باستخدام أحدث الأدوات والتقنيات التعليمية. تتضمن هذه العروض أنشطة تفاعلية، ومقاطع فيديو تعليمية، وأسئلة تقييم فورية لضمان مشاركة فعالة من الطلاب.",
                 project3Link1: "المشروع الأول",
                 project3Link2: "المشروع الثاني",
-                // ترجمة التوصيات
                 testimonial1Text: "\"المعلم فهد يتميز بالإبداع والابتكار في أساليب التدريس، وقد قدم إضافة حقيقية لفريق العمل\"",
                 testimonial1Author: "مدير المدرسة",
                 testimonial1Position: "مدرسة سعيد بن العاص",
@@ -2628,21 +2220,16 @@
                 testimonial3Text: "\"تميزه في استخدام التقنية جعل عملية التعلم أكثر متعة وفعالية للطلاب\"",
                 testimonial3Author: "زملاء العمل",
                 testimonial3Position: "فريق اللغة الإنجليزية",
-                // ترجمة الاتصال
                 contactSubtitle: "للتواصل",
                 contactEmail: "iFahadenglish@gmail.com",
                 contactPhone: "+966554449824",
-                // ترجمة الفوتر
                 footerName: "فهد الخالدي",
                 footerDesc: "معلم متخصص في اللغة الإنجليزية - تطوير التعليم من خلال التقنية والابتكار",
-                // ترجمة المعرض التفاعلي
                 scrollUpText: "تمرير للأعلى",
                 scrollDownText: "تمرير للأسفل",
-                exitFullscreenText: "خروج من وضع ملء الشاشة",
                 galleryCaption1: "تعزيز مهارات القرن الحادي والعشرين لدى الطلاب",
                 galleryCaption2: "أنشطة تعليمية تفاعلية لتحسين مستوى التحصيل الدراسي",
                 galleryCaption3: "إعداد بيئة تعليمية نشطة ومحفزة للطلاب",
-                // ترجمة قسم الخبرات
                 exp1Title: "معلم لغة إنجليزية – سعيد بن العاص",
                 exp1Location: "مكة المكرمة",
                 exp2Title: "معلم لغة إنجليزية – ثانوية الأمير سعود بن عبدالمحسن",
@@ -2651,25 +2238,20 @@
                 exp3Location: "عفيف",
                 exp4Title: "مترجم – وزارة الحج والعمرة",
                 exp4Location: "مكة المكرمة",
-                // ترجمة أزرار التصفية
                 filterAll: "الكل",
                 filterInteractive: "تفاعلية",
                 filterStrategies: "استراتيجيات",
                 filterPresentations: "عروض",
                 filterParticipations: "المشاركات",
                 filterTools: "أدوات",
-                // ترجمة أزرار CTA
                 viewWorkBtn: "استعرض أعمالي",
                 contactBtn: "تواصل معي",
-                // ترجمة المشاركات الجديدة
                 participation1Title: "عضوية لجنة التميز والتفاعل المهني",
                 participation1Desc: "جانب من مشاركتي بصفتي عضوًا في لجنة التميز المدرسية، دعمًا للتفاعل مع المجتمع المهني، وتعزيزًا للتعاون وتبادل الخبرات مع الزملاء، والمشاركة في المبادرات التعليمية التطويرية.",
                 participation2Title: "تعزيز القيم الوطنية من خلال فعاليات اليوم الوطني",
                 participation2Desc: "مشاركتي في فعاليات اليوم الوطني، تجسيدًا لقيم الانتماء والولاء للوطن، وتعزيزًا لدور المدرسة في غرس القيم الوطنية لدى الطلاب.",
-                // ترجمة أقسام التدريب
                 trainingCategory1: "تدريب تربوي",
                 trainingCategory2: "أخرى",
-                // ترجمة العبارات الرئيسية
                 phrase1: "مصمم لاختبارات محاكية للرخصة المهنية العامة والخاصة باللغة الإنجليزية تفاعلية مع تغذية راجعة فورية.",
                 phrase2: "مبتكر أدوات واختبارات إلكترونية للطلاب تعزز التفاعل وتحقق نواتج تعلم حقيقية.",
                 phrase3: "صانع أداة إلكترونية لإصدار التقارير التربوية بأكثر من 100 تقرير ذكي يخدم المعلم في التوثيق والتقييم.",
@@ -2714,7 +2296,6 @@
                 achievementText: "In 2021, I was promoted to the rank of Senior Teacher after a professional career spanning years as a practicing teacher, during which I provided outstanding performance that contributed to the development of the educational process within the school. This promotion came in recognition of my efforts in employing modern teaching strategies that enhance students' critical and creative thinking skills, in addition to my ability to analyze learning outcomes and build individual remedial plans that resulted in a clear improvement in student levels.<br><br>This promotion reflected the educational authority's confidence in my professional skills, especially in designing innovative activities that integrate deep understanding skills, collaborative work, and self-learning within the classroom environment. It was also an acknowledgment of my role in developing educational programs and activities before 2021, and my contribution to building a stimulating classroom environment where students feel safe and eager to participate and learn.<br><br>This promotion is an important milestone in my career, as it was not just a transition to a higher functional level, but rather the result of accumulated experiences and professional practices that proved their impact on students and the educational system within the school. Today, I continue my work as a senior teacher committed to continuous improvement, applying the best educational practices, and contributing to raising the quality of education and achieving higher learning outcomes.",
                 techText: "I have a great passion for technology and digital education, and I keep up with the latest developments in the field of artificial intelligence and its educational applications. I have practical experience in designing and developing interactive activities and electronic tests using HTML, CSS, and JavaScript, which enriches the learning experience and makes it more interactive and attractive for students. I use AI tools to analyze student performance and design customized educational plans, and I also design innovative digital content that suits modern learning needs. I always strive to integrate technology into the educational process in creative ways that keep pace with the requirements of the digital age and serve the goals of Saudi Vision 2030.",
                 footerText: "© 2024 All Rights Reserved - Fahad AlKhaldi",
-                // إضافة ترجمة نصوص الأيقونات
                 navAbout: "About Me",
                 navVision: "Educational Vision",
                 navExp: "Experience",
@@ -2726,7 +2307,6 @@
                 navProjects: "Portfolio",
                 navTestimonials: "Testimonials",
                 navContact: "Contact Info",
-                // ترجمة المهارات
                 skillCat1: "Teaching Skills",
                 skillCat2: "Technical Skills",
                 skill1: "Proficiency in spoken and written English",
@@ -2737,7 +2317,6 @@
                 skill6: "Integrating technology into education",
                 skill7: "Designing interactive activities",
                 skill8: "Developing electronic tests",
-                // ترجمة المشاريع
                 project1Title: "Project: Interactive Professional License Exam",
                 project1Desc: "A digital educational project that aims to simulate the professional license exam for teachers, by providing interactive questions based on approved standards, with immediate feedback that explains the scientific reason for each correct or incorrect answer, which helps raise the efficiency of trainees and enhance their readiness for the official exam.",
                 project1Link: "View Project",
@@ -2747,7 +2326,6 @@
                 project3Desc: "Designing interactive and engaging presentations for students using the latest educational tools and technologies. These presentations include interactive activities, educational videos, and instant assessment questions to ensure effective student participation.",
                 project3Link1: "Project One",
                 project3Link2: "Project Two",
-                // ترجمة التوصيات
                 testimonial1Text: "\"Teacher Fahad is distinguished by creativity and innovation in teaching methods, and has made a real addition to the work team\"",
                 testimonial1Author: "School Principal",
                 testimonial1Position: "Saeed bin Al-Aas School",
@@ -2757,21 +2335,16 @@
                 testimonial3Text: "\"His excellence in using technology has made the learning process more enjoyable and effective for students\"",
                 testimonial3Author: "Colleagues",
                 testimonial3Position: "English Language Team",
-                // ترجمة الاتصال
                 contactSubtitle: "For Contact",
                 contactEmail: "iFahadenglish@gmail.com",
                 contactPhone: "+966554449824",
-                // ترجمة الفوتر
                 footerName: "Fahad AlKhaldi",
                 footerDesc: "English Language Specialist - Developing Education Through Technology and Innovation",
-                // ترجمة المعرض التفاعلي
                 scrollUpText: "Scroll Up",
                 scrollDownText: "Scroll Down",
-                exitFullscreenText: "Exit Fullscreen",
                 galleryCaption1: "Enhancing 21st century skills among students",
                 galleryCaption2: "Interactive educational activities to improve academic achievement",
                 galleryCaption3: "Preparing an active and stimulating educational environment for students",
-                // ترجمة قسم الخبرات
                 exp1Title: "English Teacher – Saeed bin Al-Aas",
                 exp1Location: "Makkah",
                 exp2Title: "English Teacher – Prince Saud bin Abdulmohsen Secondary School",
@@ -2780,25 +2353,20 @@
                 exp3Location: "Afif",
                 exp4Title: "Translator – Ministry of Hajj and Umrah",
                 exp4Location: "Makkah",
-                // ترجمة أزرار التصفية
                 filterAll: "All",
                 filterInteractive: "Interactive",
                 filterStrategies: "Strategies",
                 filterPresentations: "Presentations",
                 filterParticipations: "Participations",
                 filterTools: "Tools",
-                // ترجمة أزرار CTA
                 viewWorkBtn: "View My Work",
                 contactBtn: "Contact Me",
-                // ترجمة المشاركات الجديدة
                 participation1Title: "Membership in Excellence and Professional Interaction Committee",
                 participation1Desc: "Aspects of my participation as a member of the School Excellence Committee, supporting interaction with the professional community, enhancing cooperation and exchange of experiences with colleagues, and participating in developmental educational initiatives.",
                 participation2Title: "Promoting National Values through National Day Activities",
                 participation2Desc: "My participation in National Day activities, embodying the values of belonging and loyalty to the homeland, and enhancing the school's role in instilling national values in students.",
-                // ترجمة أقسام التدريب
                 trainingCategory1: "Educational Training",
                 trainingCategory2: "Other",
-                // ترجمة العبارات الرئيسية
                 phrase1: "Designer of interactive professional license mock tests for general and English-specific tests with instant feedback.",
                 phrase2: "Innovator of electronic tools and tests for students that enhance interaction and achieve real learning outcomes.",
                 phrase3: "Creator of an electronic tool for issuing educational reports with over 100 smart reports that serve teachers in documentation and evaluation.",
@@ -2811,376 +2379,429 @@
 
         let currentLang = 'ar';
         let currentTheme = localStorage.getItem('theme') || 'light';
-
+        
         // تعيين الوضع الافتراضي
         document.documentElement.setAttribute('data-theme', currentTheme);
-
-        // عناصر DOM
-        const langBtn = document.getElementById('langBtn');
-        const themeBtn = document.getElementById('themeBtn');
-        const pageTitle = document.getElementById('pageTitle');
-        const heroTitle = document.getElementById('heroTitle');
-        const heroSubtitle = document.getElementById('heroSubtitle');
-        const heroStat1 = document.getElementById('heroStat1');
-        const heroStat2 = document.getElementById('heroStat2');
-        const heroStat3 = document.getElementById('heroStat3');
-        const aboutTitle = document.getElementById('aboutTitle');
-        const visionTitle = document.getElementById('visionTitle');
-        const experienceTitle = document.getElementById('experienceTitle');
-        const achievementsTitle = document.getElementById('achievementsTitle');
-        const skillsTitle = document.getElementById('skillsTitle');
-        const portfolioTitle = document.getElementById('portfolioTitle');
-        const trainingTitle = document.getElementById('trainingTitle');
-        const projectsTitle = document.getElementById('projectsTitle');
-        const testimonialsTitle = document.getElementById('testimonialsTitle');
-        const techTitle = document.getElementById('techTitle');
-        const contactTitle = document.getElementById('contactTitle');
-        const nameEl = document.getElementById('name');
-        const jobTitle = document.getElementById('jobTitle');
-        const bioText = document.getElementById('bioText');
-        const badge = document.getElementById('badge');
-        const stat1 = document.getElementById('stat1');
-        const stat2 = document.getElementById('stat2');
-        const stat3 = document.getElementById('stat3');
-        const visionItem1Title = document.getElementById('visionItem1Title');
-        const visionItem1Desc = document.getElementById('visionItem1Desc');
-        const visionItem2Title = document.getElementById('visionItem2Title');
-        const visionItem2Desc = document.getElementById('visionItem2Desc');
-        const visionItem3Title = document.getElementById('visionItem3Title');
-        const visionItem3Desc = document.getElementById('visionItem3Desc');
-        const visionItem4Title = document.getElementById('visionItem4Title');
-        const visionItem4Desc = document.getElementById('visionItem4Desc');
-        const achievementText = document.getElementById('achievementText');
-        const techText = document.getElementById('techText');
-        const footerText = document.getElementById('footerText');
-        const navScroll = document.getElementById('navScroll');
         
-        // عناصر نصوص الأيقونات
-        const navAbout = document.getElementById('navAbout');
-        const navVision = document.getElementById('navVision');
-        const navExp = document.getElementById('navExp');
-        const navAchievements = document.getElementById('navAchievements');
-        const navSkills = document.getElementById('navSkills');
-        const navPortfolio = document.getElementById('navPortfolio');
-        const navTrain = document.getElementById('navTrain');
-        const navTech = document.getElementById('navTech');
-        const navProjects = document.getElementById('navProjects');
-        const navTestimonials = document.getElementById('navTestimonials');
-        const navContact = document.getElementById('navContact');
-
         // تحديث أيقونة الوضع الليلي
         function updateThemeIcon() {
+            const themeBtn = document.getElementById('themeBtn');
             themeBtn.innerHTML = currentTheme === 'light' ? 
                 '<i class="fas fa-moon"></i>' : 
                 '<i class="fas fa-sun"></i>';
         }
-
+        
         // وظيفة لتحميل اللغة
         function loadLanguage(lang) {
             const t = translations[lang];
             
-            // تحديث النصوص الأساسية
-            pageTitle.textContent = t.pageTitle;
-            heroTitle.textContent = t.heroTitle;
-            heroSubtitle.textContent = t.heroSubtitle;
-            heroStat1.textContent = t.heroStat1;
-            heroStat2.textContent = t.heroStat2;
-            heroStat3.textContent = t.heroStat3;
-            aboutTitle.textContent = t.aboutTitle;
-            visionTitle.textContent = t.visionTitle;
-            experienceTitle.textContent = t.experienceTitle;
-            achievementsTitle.textContent = t.achievementsTitle;
-            skillsTitle.textContent = t.skillsTitle;
-            portfolioTitle.textContent = t.portfolioTitle;
-            trainingTitle.textContent = t.trainingTitle;
-            projectsTitle.textContent = t.projectsTitle;
-            testimonialsTitle.textContent = t.testimonialsTitle;
-            techTitle.textContent = t.techTitle;
-            contactTitle.textContent = t.contactTitle;
-            nameEl.textContent = t.name;
-            jobTitle.textContent = t.jobTitle;
-            bioText.textContent = t.bioText;
-            badge.textContent = t.badge;
-            stat1.textContent = t.stat1;
-            stat2.textContent = t.stat2;
-            stat3.textContent = t.stat3;
-            visionItem1Title.textContent = t.visionItem1Title;
-            visionItem1Desc.textContent = t.visionItem1Desc;
-            visionItem2Title.textContent = t.visionItem2Title;
-            visionItem2Desc.textContent = t.visionItem2Desc;
-            visionItem3Title.textContent = t.visionItem3Title;
-            visionItem3Desc.textContent = t.visionItem3Desc;
-            visionItem4Title.textContent = t.visionItem4Title;
-            visionItem4Desc.textContent = t.visionItem4Desc;
-            achievementText.innerHTML = t.achievementText;
-            techText.textContent = t.techText;
-            footerText.textContent = t.footerText;
+            // تحديث جميع النصوص
+            const elements = {
+                pageTitle: document.getElementById('pageTitle'),
+                heroTitle: document.getElementById('heroTitle'),
+                heroSubtitle: document.getElementById('heroSubtitle'),
+                heroStat1: document.getElementById('heroStat1'),
+                heroStat2: document.getElementById('heroStat2'),
+                heroStat3: document.getElementById('heroStat3'),
+                aboutTitle: document.getElementById('aboutTitle'),
+                visionTitle: document.getElementById('visionTitle'),
+                experienceTitle: document.getElementById('experienceTitle'),
+                achievementsTitle: document.getElementById('achievementsTitle'),
+                skillsTitle: document.getElementById('skillsTitle'),
+                portfolioTitle: document.getElementById('portfolioTitle'),
+                trainingTitle: document.getElementById('trainingTitle'),
+                projectsTitle: document.getElementById('projectsTitle'),
+                testimonialsTitle: document.getElementById('testimonialsTitle'),
+                techTitle: document.getElementById('techTitle'),
+                contactTitle: document.getElementById('contactTitle'),
+                name: document.getElementById('name'),
+                jobTitle: document.getElementById('jobTitle'),
+                bioText: document.getElementById('bioText'),
+                badge: document.getElementById('badge'),
+                stat1: document.getElementById('stat1'),
+                stat2: document.getElementById('stat2'),
+                stat3: document.getElementById('stat3'),
+                visionItem1Title: document.getElementById('visionItem1Title'),
+                visionItem1Desc: document.getElementById('visionItem1Desc'),
+                visionItem2Title: document.getElementById('visionItem2Title'),
+                visionItem2Desc: document.getElementById('visionItem2Desc'),
+                visionItem3Title: document.getElementById('visionItem3Title'),
+                visionItem3Desc: document.getElementById('visionItem3Desc'),
+                visionItem4Title: document.getElementById('visionItem4Title'),
+                visionItem4Desc: document.getElementById('visionItem4Desc'),
+                achievementText: document.getElementById('achievementText'),
+                techText: document.getElementById('techText'),
+                footerText: document.getElementById('footerText'),
+                navAbout: document.getElementById('navAbout'),
+                navVision: document.getElementById('navVision'),
+                navExp: document.getElementById('navExp'),
+                navAchievements: document.getElementById('navAchievements'),
+                navSkills: document.getElementById('navSkills'),
+                navPortfolio: document.getElementById('navPortfolio'),
+                navTrain: document.getElementById('navTrain'),
+                navTech: document.getElementById('navTech'),
+                navProjects: document.getElementById('navProjects'),
+                navTestimonials: document.getElementById('navTestimonials'),
+                navContact: document.getElementById('navContact'),
+                skillCat1: document.getElementById('skillCat1'),
+                skillCat2: document.getElementById('skillCat2'),
+                skill1: document.getElementById('skill1'),
+                skill2: document.getElementById('skill2'),
+                skill3: document.getElementById('skill3'),
+                skill4: document.getElementById('skill4'),
+                skill5: document.getElementById('skill5'),
+                skill6: document.getElementById('skill6'),
+                skill7: document.getElementById('skill7'),
+                skill8: document.getElementById('skill8'),
+                project1Title: document.getElementById('project1Title'),
+                project1Desc: document.getElementById('project1Desc'),
+                project1Link: document.getElementById('project1Link'),
+                project2Title: document.getElementById('project2Title'),
+                project2Desc1: document.getElementById('project2Desc1'),
+                project3Title: document.getElementById('project3Title'),
+                project3Desc: document.getElementById('project3Desc'),
+                project3Link1: document.getElementById('project3Link1'),
+                project3Link2: document.getElementById('project3Link2'),
+                testimonial1Text: document.getElementById('testimonial1Text'),
+                testimonial1Author: document.getElementById('testimonial1Author'),
+                testimonial1Position: document.getElementById('testimonial1Position'),
+                testimonial2Text: document.getElementById('testimonial2Text'),
+                testimonial2Author: document.getElementById('testimonial2Author'),
+                testimonial2Position: document.getElementById('testimonial2Position'),
+                testimonial3Text: document.getElementById('testimonial3Text'),
+                testimonial3Author: document.getElementById('testimonial3Author'),
+                testimonial3Position: document.getElementById('testimonial3Position'),
+                contactSubtitle: document.getElementById('contactSubtitle'),
+                contactEmail: document.getElementById('contactEmail'),
+                contactPhone: document.getElementById('contactPhone'),
+                footerName: document.getElementById('footerName'),
+                footerDesc: document.getElementById('footerDesc'),
+                scrollUpText: document.getElementById('scrollUpText'),
+                scrollDownText: document.getElementById('scrollDownText'),
+                galleryCaption1: document.getElementById('galleryCaption1'),
+                galleryCaption2: document.getElementById('galleryCaption2'),
+                galleryCaption3: document.getElementById('galleryCaption3'),
+                exp1Title: document.getElementById('exp1Title'),
+                exp1Location: document.getElementById('exp1Location'),
+                exp2Title: document.getElementById('exp2Title'),
+                exp2Location: document.getElementById('exp2Location'),
+                exp3Title: document.getElementById('exp3Title'),
+                exp3Location: document.getElementById('exp3Location'),
+                exp4Title: document.getElementById('exp4Title'),
+                exp4Location: document.getElementById('exp4Location'),
+                filterAll: document.getElementById('filterAll'),
+                filterInteractive: document.getElementById('filterInteractive'),
+                filterStrategies: document.getElementById('filterStrategies'),
+                filterPresentations: document.getElementById('filterPresentations'),
+                filterParticipations: document.getElementById('filterParticipations'),
+                filterTools: document.getElementById('filterTools'),
+                viewWorkBtn: document.getElementById('viewWorkBtn'),
+                contactBtn: document.getElementById('contactBtn'),
+                participation1Title: document.getElementById('participation1Title'),
+                participation1Desc: document.getElementById('participation1Desc'),
+                participation2Title: document.getElementById('participation2Title'),
+                participation2Desc: document.getElementById('participation2Desc'),
+                trainingCategory1: document.getElementById('trainingCategory1'),
+                trainingCategory2: document.getElementById('trainingCategory2')
+            };
             
-            // تحديث نصوص الأيقونات
-            navAbout.textContent = t.navAbout;
-            navVision.textContent = t.navVision;
-            navExp.textContent = t.navExp;
-            navAchievements.textContent = t.navAchievements;
-            navSkills.textContent = t.navSkills;
-            navPortfolio.textContent = t.navPortfolio;
-            navTrain.textContent = t.navTrain;
-            navTech.textContent = t.navTech;
-            navProjects.textContent = t.navProjects;
-            navTestimonials.textContent = t.navTestimonials;
-            navContact.textContent = t.navContact;
+            // تحديث النصوص
+            for (const [key, element] of Object.entries(elements)) {
+                if (element && t[key]) {
+                    if (key === 'achievementText' || key === 'project2Desc1') {
+                        element.innerHTML = t[key];
+                    } else {
+                        element.textContent = t[key];
+                    }
+                }
+            }
+            
+            // تحديث العبارات الرئيسية
+            const phraseItems = document.querySelectorAll('.phrase-item');
+            if (phraseItems.length === 7) {
+                phraseItems[0].textContent = t.phrase1;
+                phraseItems[1].textContent = t.phrase2;
+                phraseItems[2].textContent = t.phrase3;
+                phraseItems[3].textContent = t.phrase4;
+                phraseItems[4].textContent = t.phrase5;
+                phraseItems[5].textContent = t.phrase6;
+                phraseItems[6].textContent = t.phrase7;
+            }
             
             // تحديث اتجاه النص
             document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
             document.documentElement.lang = lang;
         }
-
-        // حدث تبديل اللغة
-        langBtn.addEventListener('click', () => {
-            currentLang = currentLang === 'ar' ? 'en' : 'ar';
-            loadLanguage(currentLang);
-            langBtn.innerHTML = currentLang === 'ar' ? 
-                '<i class="fas fa-language"></i><span>EN</span>' : 
-                '<i class="fas fa-language"></i><span>AR</span>';
-        });
-
-        // حدث تبديل الوضع الليلي
-        themeBtn.addEventListener('click', () => {
-            currentTheme = currentTheme === 'light' ? 'dark' : 'light';
-            document.documentElement.setAttribute('data-theme', currentTheme);
-            updateThemeIcon();
-            
-            // تخزين التفضيل في localStorage
-            localStorage.setItem('theme', currentTheme);
-        });
-
-        // تحديث أيقونة الوضع الليلي عند التحميل
-        updateThemeIcon();
-
-        // ========== FIXED NAVIGATION ==========
-        document.querySelectorAll(".nav-item").forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                
-                // إزالة النشط من جميع الروابط
-                document.querySelectorAll(".nav-item").forEach(n => n.classList.remove("active"));
-                
-                // إضافة النشط للرابط المحدد
-                link.classList.add("active");
-                
-                // إخفاء جميع الأقسام
-                document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
-                
-                // إظهار القسم المحدد
-                const targetSection = link.getAttribute('data-section');
-                const targetElement = document.getElementById(targetSection);
-                if (targetElement) {
-                    targetElement.classList.add("active");
-                    
-                    // إضافة تأثير التمرير السلس
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
-            });
-        });
-
-        // ========== IMPROVED HEADER SCROLL EFFECT ==========
-        let lastScrollTop = 0;
-        const header = document.querySelector('.main-header');
         
-        window.addEventListener('scroll', function() {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            // تأثير fade in/out للهيدر
-            if (scrollTop > lastScrollTop && scrollTop > 100) {
-                // التمرير لأسفل - إخفاء الهيدر
-                header.classList.remove('visible');
-                header.classList.add('hidden');
-            } else {
-                // التمرير لأعلى - إظهار الهيدر
-                header.classList.remove('hidden');
-                header.classList.add('visible');
-            }
-            
-            // تأثير تغيير الحجم عند التمرير
-            if (scrollTop > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-            
-            lastScrollTop = scrollTop;
-        });
-
-        // ========== BACK TO TOP BUTTON ==========
-        const backToTopBtn = document.getElementById('backToTop');
-
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopBtn.classList.add('visible');
-            } else {
-                backToTopBtn.classList.remove('visible');
-            }
-        });
-
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // ========== SCROLL PROGRESS BAR ==========
-        const scrollProgressBar = document.querySelector('.scroll-progress-bar');
-
-        window.addEventListener('scroll', () => {
-            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (window.scrollY / windowHeight) * 100;
-            scrollProgressBar.style.width = scrolled + '%';
-        });
-
-        // ========== INITIALIZE EVERYTHING ON LOAD ==========
+        // ========== INITIALIZE ON LOAD ==========
         document.addEventListener('DOMContentLoaded', function() {
             // تحميل اللغة الافتراضية
             loadLanguage(currentLang);
+            updateThemeIcon();
             
-            // تحميل ملف PDF
-            loadPdf();
+            // ========== FIXED HEADER SCROLL EFFECT ==========
+            let lastScrollTop = 0;
+            const header = document.querySelector('.main-header');
             
-            // تحسين تجربة اللمس
-            improveTouchExperience();
-        });
-
-        // ========== PDF MANAGEMENT ==========
-        function loadPdf() {
-            const pdfContainer = document.getElementById('pdfContainer');
-            
-            if (!pdfContainer) return;
-            
-            // رابط PDF مع إعدادات لإخفاء جميع العناصر
-            const pdfUrl = 'https://drive.google.com/file/d/109O8XbxTbS6R3ZyO6SgKzZYYJpa6d7Ty/preview?rm=minimal&toolbar=0&navpanes=0&view=FitH';
-            
-            // إنشاء iframe لتحميل PDF
-            const iframe = document.createElement('iframe');
-            iframe.id = 'pdfViewer';
-            iframe.src = pdfUrl;
-            iframe.style.width = '100%';
-            iframe.style.height = '100%';
-            iframe.style.border = 'none';
-            iframe.style.display = 'block';
-            iframe.title = 'ملف الإنجاز المهني - فهد الخالدي';
-            iframe.allow = 'autoplay';
-            iframe.loading = 'eager';
-            
-            // إضافة الـ iframe إلى الحاوية
-            pdfContainer.innerHTML = '';
-            pdfContainer.appendChild(iframe);
-            
-            // تأكد من تحميل الـ PDF
-            iframe.onload = function() {
-                console.log('تم تحميل ملف PDF بنجاح');
-                iframe.style.opacity = '1';
-            };
-        }
-
-        // ========== FULLSCREEN FUNCTIONALITY ==========
-        const fullscreenBtn = document.getElementById('fullscreenBtn');
-        const exitFullscreenBtn = document.getElementById('exitFullscreenBtn');
-        const pdfContainer = document.getElementById('pdfContainer');
-        const fullscreenControls = document.getElementById('fullscreenControls');
-        const body = document.body;
-        
-        let isFullscreen = false;
-        
-        if (fullscreenBtn) {
-            fullscreenBtn.addEventListener('click', toggleFullscreen);
-        }
-        
-        if (exitFullscreenBtn) {
-            exitFullscreenBtn.addEventListener('click', exitFullscreen);
-        }
-        
-        function toggleFullscreen() {
-            if (!isFullscreen) {
-                // استخدام Fullscreen API
-                if (pdfContainer.requestFullscreen) {
-                    pdfContainer.requestFullscreen();
-                } else if (pdfContainer.webkitRequestFullscreen) { /* Safari */
-                    pdfContainer.webkitRequestFullscreen();
+            window.addEventListener('scroll', function() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    // التمرير لأسفل - إخفاء الهيدر
+                    header.classList.add('hidden');
+                } else {
+                    // التمرير لأعلى - إظهار الهيدر
+                    header.classList.remove('hidden');
                 }
                 
-                pdfContainer.classList.add('fullscreen');
-                if (fullscreenControls) fullscreenControls.classList.add('show');
-                if (fullscreenBtn) fullscreenBtn.style.display = 'none';
-                body.style.overflow = 'hidden';
-                isFullscreen = true;
-            }
-        }
-        
-        function exitFullscreen() {
-            if (isFullscreen) {
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                } else if (document.webkitExitFullscreen) { /* Safari */
-                    document.webkitExitFullscreen();
-                }
-                
-                pdfContainer.classList.remove('fullscreen');
-                if (fullscreenControls) fullscreenControls.classList.remove('show');
-                if (fullscreenBtn) fullscreenBtn.style.display = 'flex';
-                body.style.overflow = 'auto';
-                isFullscreen = false;
-            }
-        }
-        
-        // الاستماع لتغييرات وضع ملء الشاشة
-        document.addEventListener('fullscreenchange', handleFullscreenChange);
-        document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
-        
-        function handleFullscreenChange() {
-            if (!document.fullscreenElement && !document.webkitFullscreenElement) {
-                if (isFullscreen) {
-                    exitFullscreen();
-                }
-            }
-        }
-        
-        // اختصار لوحة المفاتيح للخروج من وضع ملء الشاشة
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && isFullscreen) {
-                exitFullscreen();
-            }
-        });
-
-        // ========== IMPROVE TOUCH EXPERIENCE ==========
-        function improveTouchExperience() {
-            // تحسين استجابة اللمس
-            document.documentElement.style.touchAction = 'manipulation';
+                lastScrollTop = scrollTop;
+            });
             
-            // تحسين تجربة اللمس للأزرار
-            const buttons = document.querySelectorAll('button, .btn, .nav-item');
-            buttons.forEach(button => {
-                button.addEventListener('touchstart', function() {
-                    this.style.transform = 'scale(0.98)';
-                });
-                
-                button.addEventListener('touchend', function() {
-                    this.style.transform = '';
+            // ========== NAVIGATION BETWEEN SECTIONS ==========
+            document.querySelectorAll(".nav-item").forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    
+                    // إزالة النشط من جميع الروابط
+                    document.querySelectorAll(".nav-item").forEach(n => n.classList.remove("active"));
+                    
+                    // إضافة النشط للرابط المحدد
+                    link.classList.add("active");
+                    
+                    // إخفاء جميع الأقسام
+                    document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+                    
+                    // إظهار القسم المحدد
+                    const targetSection = link.getAttribute('data-section');
+                    const sectionElement = document.getElementById(targetSection);
+                    if (sectionElement) {
+                        sectionElement.classList.add("active");
+                    }
+                    
+                    // التمرير السلس إلى الأعلى
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 });
             });
-        }
-
-        // ========== RESPONSIVE HANDLING ==========
-        function handleResize() {
-            const isMobile = window.innerWidth <= 768;
             
-            if (isMobile) {
-                // تحسينات للجوال
-                document.body.style.paddingTop = '60px';
-            } else {
-                // إعادة الضبط لسطح المكتب
-                document.body.style.paddingTop = '70px';
+            // ========== PORTFOLIO FILTER ==========
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // إزالة النشط من جميع الأزرار
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // إضافة النشط للزر المحدد
+                    this.classList.add('active');
+                    
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    portfolioItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                            setTimeout(() => {
+                                item.style.opacity = '1';
+                                item.style.transform = 'translateY(0)';
+                            }, 100);
+                        } else {
+                            item.style.opacity = '0';
+                            item.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                item.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+            
+            // ========== TESTIMONIAL SLIDER ==========
+            const testimonialSlides = document.getElementById('testimonialSlides');
+            const testimonialPrev = document.getElementById('testimonialPrev');
+            const testimonialNext = document.getElementById('testimonialNext');
+            let currentSlide = 0;
+            const totalSlides = testimonialSlides.children.length;
+            
+            function updateTestimonialSlider() {
+                testimonialSlides.style.transform = `translateX(-${currentSlide * 100}%)`;
             }
-        }
-
-        // استدعاء الدالة عند تحميل الصفحة وتغيير الحجم
-        window.addEventListener('load', handleResize);
-        window.addEventListener('resize', handleResize);
+            
+            if (testimonialNext && testimonialPrev) {
+                testimonialNext.addEventListener('click', () => {
+                    currentSlide = (currentSlide + 1) % totalSlides;
+                    updateTestimonialSlider();
+                });
+                
+                testimonialPrev.addEventListener('click', () => {
+                    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                    updateTestimonialSlider();
+                });
+                
+                // تبديل تلقائي
+                setInterval(() => {
+                    currentSlide = (currentSlide + 1) % totalSlides;
+                    updateTestimonialSlider();
+                }, 5000);
+            }
+            
+            // ========== GALLERY ==========
+            const galleryScroll = document.getElementById('galleryScroll');
+            const scrollUpBtn = document.getElementById('scrollUpBtn');
+            const scrollDownBtn = document.getElementById('scrollDownBtn');
+            const galleryIndicator = document.getElementById('galleryIndicator');
+            
+            if (galleryScroll && galleryIndicator) {
+                // إنشاء نقاط المؤشر
+                const galleryItems = galleryScroll.querySelectorAll('.gallery-item');
+                galleryItems.forEach((_, index) => {
+                    const dot = document.createElement('div');
+                    dot.classList.add('indicator-dot');
+                    if (index === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => {
+                        scrollToGalleryItem(index);
+                    });
+                    galleryIndicator.appendChild(dot);
+                });
+                
+                const dots = galleryIndicator.querySelectorAll('.indicator-dot');
+                
+                function scrollToGalleryItem(index) {
+                    const item = galleryItems[index];
+                    galleryScroll.scrollTo({
+                        top: item.offsetTop - galleryScroll.offsetTop,
+                        behavior: 'smooth'
+                    });
+                    updateActiveDot(index);
+                }
+                
+                function updateActiveDot(index) {
+                    dots.forEach(dot => dot.classList.remove('active'));
+                    dots[index].classList.add('active');
+                }
+                
+                if (scrollUpBtn && scrollDownBtn) {
+                    scrollUpBtn.addEventListener('click', () => {
+                        const currentScroll = galleryScroll.scrollTop;
+                        let currentIndex = 0;
+                        for (let i = 0; i < galleryItems.length; i++) {
+                            if (galleryItems[i].offsetTop - galleryScroll.offsetTop >= currentScroll) {
+                                currentIndex = i;
+                                break;
+                            }
+                        }
+                        
+                        if (currentIndex > 0) {
+                            scrollToGalleryItem(currentIndex - 1);
+                        }
+                    });
+                    
+                    scrollDownBtn.addEventListener('click', () => {
+                        const currentScroll = galleryScroll.scrollTop;
+                        let currentIndex = 0;
+                        for (let i = 0; i < galleryItems.length; i++) {
+                            if (galleryItems[i].offsetTop - galleryScroll.offsetTop >= currentScroll) {
+                                currentIndex = i;
+                                break;
+                            }
+                        }
+                        
+                        if (currentIndex < galleryItems.length - 1) {
+                            scrollToGalleryItem(currentIndex + 1);
+                        }
+                    });
+                }
+                
+                galleryScroll.addEventListener('scroll', () => {
+                    const scrollPosition = galleryScroll.scrollTop;
+                    
+                    for (let i = 0; i < galleryItems.length; i++) {
+                        const item = galleryItems[i];
+                        const itemTop = item.offsetTop - galleryScroll.offsetTop;
+                        const itemBottom = itemTop + item.offsetHeight;
+                        
+                        if (scrollPosition >= itemTop && scrollPosition < itemBottom) {
+                            updateActiveDot(i);
+                            break;
+                        }
+                    }
+                });
+            }
+            
+            // ========== BACK TO TOP BUTTON ==========
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+            // ========== SCROLL PROGRESS BAR ==========
+            const scrollProgressBar = document.querySelector('.scroll-progress-bar');
+            
+            window.addEventListener('scroll', () => {
+                const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (window.scrollY / windowHeight) * 100;
+                scrollProgressBar.style.width = scrolled + '%';
+            });
+            
+            // ========== LANGUAGE SWITCH ==========
+            const langBtn = document.getElementById('langBtn');
+            
+            langBtn.addEventListener('click', () => {
+                currentLang = currentLang === 'ar' ? 'en' : 'ar';
+                loadLanguage(currentLang);
+                langBtn.innerHTML = currentLang === 'ar' ? 
+                    '<i class="fas fa-language"></i><span>EN</span>' : 
+                    '<i class="fas fa-language"></i><span>AR</span>';
+            });
+            
+            // ========== THEME SWITCH ==========
+            const themeBtn = document.getElementById('themeBtn');
+            
+            themeBtn.addEventListener('click', () => {
+                currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+                document.documentElement.setAttribute('data-theme', currentTheme);
+                updateThemeIcon();
+                localStorage.setItem('theme', currentTheme);
+            });
+            
+            // ========== PDF VIEWER ==========
+            function loadPdf() {
+                const pdfContainer = document.getElementById('pdfContainer');
+                const pdfUrl = 'https://drive.google.com/file/d/109O8XbxTbS6R3ZyO6SgKzZYYJpa6d7Ty/preview?rm=minimal&toolbar=0&navpanes=0&view=FitH';
+                
+                const iframe = document.createElement('iframe');
+                iframe.src = pdfUrl;
+                iframe.style.width = '100%';
+                iframe.style.height = '100%';
+                iframe.style.border = 'none';
+                iframe.title = 'ملف الإنجاز المهني - فهد الخالدي';
+                iframe.allow = 'autoplay';
+                
+                pdfContainer.innerHTML = '';
+                pdfContainer.appendChild(iframe);
+            }
+            
+            loadPdf();
+            
+            // ========== RESPONSIVE HANDLING ==========
+            function handleResize() {
+                if (window.innerWidth <= 768) {
+                    document.body.style.paddingTop = '70px';
+                } else {
+                    document.body.style.paddingTop = '80px';
+                }
+            }
+            
+            handleResize();
+            window.addEventListener('resize', handleResize);
+        });
     </script>
 </body>
 </html>
