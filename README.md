@@ -81,7 +81,7 @@
         /* ========== FIXED HEADER WITH FADE EFFECT ========== */
         .main-header {
             position: fixed;
-            top: 0;
+            top: 20;
             right: 0;
             left: 0;
             z-index: 1000;
