@@ -1,2646 +1,1770 @@
-
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>ملف الإنجاز المهني - المعلمة سارة الخالدي</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', 'Cairo', Tahoma, Geneva, Verdana, sans-serif;
-            -webkit-tap-highlight-color: transparent;
-        }
-        
-        :root {
-            --primary-color: #9C7C3C;
-            --secondary-color: #2C1A5E;
-            --accent-color: #C19A5F;
-            --background-color: #F5F3EF;
-            --card-bg: #FFFFFF;
-            --light-gray: #F9F7F2;
-            --text-color: #2C1A5E;
-            --text-light: #6B5B95;
-            --border-color: #E5DFD3;
-            --gradient-gold: linear-gradient(135deg, #9C7C3C 0%, #C19A5F 100%);
-            --gradient-purple: linear-gradient(135deg, #2C1A5E 0%, #4A2C8C 100%);
-            --gradient-light: linear-gradient(135deg, #F9F7F2 0%, #F5F3EF 100%);
-            --shadow-light: 0 5px 15px rgba(44, 26, 94, 0.08);
-            --shadow-medium: 0 10px 25px rgba(44, 26, 94, 0.12);
-            --shadow-heavy: 0 15px 35px rgba(44, 26, 94, 0.15);
-            --gold-light: #F2E9D8;
-            --purple-light: #F0EDF8;
-        }
-        
-        body {
-            background: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.7;
-            min-height: 100vh;
-            position: relative;
-            overflow-x: hidden;
-            -webkit-text-size-adjust: 100%;
-        }
-        
-        /* Fixed Top Bar Styles - Updated (4x larger) - WHITE BACKGROUND */
-        .fixed-top-bar {
-            position: fixed;
-            top: 0;
-            right: 0;
-            left: 0;
-            background: #FFFFFF; /* WHITE BACKGROUND */
-            color: var(--primary-color); /* GOLD TEXT COLOR */
-            padding: 15px 0;
-            z-index: 2000;
-            box-shadow: 0 3px 10px rgba(44, 26, 94, 0.15);
-            border-bottom: 2px solid var(--accent-color);
-            transition: transform 0.3s ease;
-            transform: translateY(0);
-            height: 140px; /* تم التصغير بنسبة 30% تقريبًا من 180px */
-            display: flex;
-            align-items: center;
-            border-bottom: 3px solid var(--accent-color);
-        }
-        
-        .top-bar-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .fade-messages {
-            flex: 1;
-            height: 90px; /* تم التصغير بنسبة 30% تقريبًا من 120px */
-            position: relative;
-            overflow: hidden;
-            text-align: center;
-            font-weight: 700;
-            font-size: 1.6rem; /* تم تصغير الخط من 2.2rem */
-            letter-spacing: -0.3px;
-            text-shadow: 0 2px 4px rgba(156, 124, 60, 0.3); /* GOLD SHADOW */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-color); /* GOLD TEXT COLOR */
-        }
-        
-        .message {
-            position: absolute;
-            top: 0;
-            right: 0;
-            left: 0;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1s ease, transform 1s ease;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            line-height: 1.3;
-            padding: 0 20px;
-            color: var(--primary-color); /* GOLD TEXT COLOR */
-        }
-        
-        .message.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-            width: 100%;
-        }
-        
-        /* تحسين الهيدر - تم تصغيره بنسبة 30% */
-        .navbar {
-            background: var(--gradient-purple);
-            color: white;
-            position: sticky;
-            top: 140px; /* تم التعديل ليتناسب مع تصغير الشريط العلوي */
-            z-index: 1000;
-            box-shadow: var(--shadow-heavy);
-            height: auto;
-            min-height: 65px; /* تم التصغير بنسبة 30% تقريبًا من 80px */
-            padding: 0;
-            transition: transform 0.3s ease;
-            border-bottom: 3px solid var(--accent-color);
-            border-top: 2px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .nav-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 10px 15px; /* تم التصغير */
-            gap: 10px; /* تم التصغير */
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px; /* تم التصغير */
-            font-weight: 600;
-            font-size: 0.9rem; /* تم التصغير */
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            width: 100%;
-            justify-content: center;
-            text-align: center;
-        }
-        
-        .logo-icon {
-            background: var(--gradient-gold);
-            width: 45px; /* تم التصغير من 55px */
-            height: 45px; /* تم التصغير من 55px */
-            min-width: 45px; /* تم التصغير */
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 6px 20px rgba(156, 124, 60, 0.3);
-            border: 2px solid rgba(255, 255, 255, 0.4);
-            position: relative;
-            overflow: hidden;
-            animation: pulse 3s infinite;
-        }
-        
-        .logo-icon i {
-            font-size: 1.2rem; /* تم التصغير من 1.5rem */
-            z-index: 1;
-            color: white;
-        }
-        
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-        }
-        
-        .logo-title {
-            font-size: 1rem; /* تم تصغير حجم عنوان "ملف الإنجاز المهني" */
-            color: white;
-            font-weight: 600;
-            line-height: 1.2;
-            letter-spacing: -0.3px;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-            margin-bottom: 2px;
-        }
-        
-        .logo-subtitle {
-            font-size: 1.2rem; /* تم تصغير اسم المعلمة "سارة الخالدي" */
-            color: white;
-            margin-top: 0;
-            font-weight: 700;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-        
-        .nav-icons-container {
-            background: rgba(255, 255, 255, 0.12);
-            border-radius: 15px; /* تم التصغير */
-            padding: 8px; /* تم التصغير */
-            width: 100%;
-            overflow: hidden;
-            max-width: 100%;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            position: relative;
-        }
-        
-        .nav-icons {
-            display: flex;
-            gap: 5px;
-            overflow-x: auto;
-            scrollbar-width: none;
-            padding: 3px;
-            -webkit-overflow-scrolling: touch;
-            scroll-behavior: smooth;
-        }
-        
-        .nav-icons::-webkit-scrollbar {
-            display: none;
-        }
-        
-        .nav-icon {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 6px 8px; /* تم التصغير */
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            text-decoration: none;
-            color: white;
-            border-radius: 10px; /* تم التصغير */
-            min-width: 60px; /* تم التصغير من 70px */
-            height: 45px; /* تم التصغير من 50px */
-            position: relative;
-            overflow: hidden;
-            background: rgba(255, 255, 255, 0.08);
-            flex-shrink: 0;
-            touch-action: manipulation;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-        
-        .nav-icon:hover, .nav-icon.active {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.15);
-        }
-        
-        .nav-icon.active {
-            background: rgba(255, 255, 255, 0.25);
-            box-shadow: 0 5px 18px rgba(255, 255, 255, 0.2);
-            border-color: var(--accent-color);
-        }
-        
-        .nav-icon i {
-            font-size: 0.9rem; /* تم التصغير من 1.1rem */
-            margin-bottom: 2px; /* تم التصغير */
-            z-index: 1;
-        }
-        
-        .nav-icon span {
-            font-size: 0.6rem; /* تم التصغير من 0.7rem */
-            font-weight: 600;
-            white-space: nowrap;
-            z-index: 1;
-        }
-        
-        /* مؤشر التنقل - يظهر تحت الهيدر */
-        .nav-indicator-container {
-            position: fixed;
-            top: 205px; /* تحت الهيدر مباشرةً (140px الشريط + 65px الهيدر) */
-            right: 0;
-            left: 0;
-            z-index: 999;
-            display: flex;
-            justify-content: center;
-            pointer-events: none;
-        }
-        
-        .nav-indicator {
-            background: var(--gradient-gold);
-            color: white;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            box-shadow: 0 4px 12px rgba(156, 124, 60, 0.4);
-            z-index: 1001;
-            animation: bounce 2s infinite, fadeOut 0.5s ease 10s forwards;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            white-space: nowrap;
-            border: 2px solid white;
-            pointer-events: none;
-        }
-        
-        .nav-indicator i {
-            animation: bounceRight 1s infinite alternate;
-        }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-        
-        @keyframes bounceRight {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(5px); }
-        }
-        
-        @keyframes fadeOut {
-            from { opacity: 1; }
-            to { opacity: 0; visibility: hidden; }
-        }
-        
-        /* تصميم المحتوى الرئيسي */
-        .main-content {
-            background: var(--card-bg);
-            border-radius: 25px;
-            box-shadow: var(--shadow-heavy);
-            margin-top: 215px; /* تم التعديل ليتناسب مع تصغير الهيدر */
-            margin-bottom: 30px;
-            padding: 35px 25px;
-            min-height: auto;
-            border: 1px solid rgba(232, 228, 213, 0.5);
-            position: relative;
-            overflow: hidden;
-            max-width: 100%;
-            width: 100%;
-        }
-        
-        .section {
-            display: none;
-            animation: fadeInUp 0.5s ease;
-        }
-        
-        .section.active {
-            display: block;
-        }
-        
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .section-title {
-            color: var(--secondary-color);
-            margin-bottom: 35px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid rgba(44, 26, 94, 0.1);
-            position: relative;
-            font-size: 1.9rem;
-            font-weight: 800;
-            line-height: 1.3;
-            letter-spacing: -0.5px;
-            text-align: center;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            right: 50%;
-            transform: translateX(50%);
-            width: 120px;
-            height: 4px;
-            background: var(--gradient-gold);
-            border-radius: 2px;
-        }
-        
-        /* تصميم قسم نبذة عني - توسيع وتحسين */
-        .about-section {
-            max-width: 100%;
-            margin: 0 auto;
-            width: 100%;
-        }
-        
-        .about-card {
-            background: var(--card-bg);
-            border-radius: 22px;
-            padding: 35px 30px;
-            margin-bottom: 30px;
-            box-shadow: var(--shadow-medium);
-            animation: fadeIn 0.5s ease;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(232, 228, 213, 0.5);
-            width: 100%;
-            max-width: 100%;
-        }
-        
-        .about-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--gradient-gold);
-        }
-        
-        .about-header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 30px;
-            gap: 25px;
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            width: 100%;
-        }
-        
-        .avatar {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background: var(--gradient-purple);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3.8rem;
-            box-shadow: 
-                0 10px 30px rgba(44, 26, 94, 0.2),
-                inset 0 3px 6px rgba(255, 255, 255, 0.3);
-            border: 4px solid var(--accent-color);
-            animation: floating 4s ease-in-out infinite;
-        }
-        
-        .about-info {
-            width: 100%;
-            max-width: 100%;
-        }
-        
-        .about-info h3 {
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-            font-size: 1.6rem; /* تم تصغير الخط من 2rem */
-            font-weight: 800;
-            line-height: 1.3;
-            letter-spacing: -0.5px;
-            text-align: center;
-        }
-        
-        .about-info p {
-            color: var(--text-color);
-            line-height: 1.7;
-            margin-bottom: 12px;
-            font-size: 1.1rem;
-            text-align: center;
-            max-width: 100%;
-            width: 100%;
-        }
-        
-        .highlight {
-            color: var(--primary-color);
-            font-weight: 700;
-        }
-        
-        .about-details {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 25px;
-            margin-top: 30px;
-            width: 100%;
-            max-width: 100%;
-        }
-        
-        .detail-item {
-            background: var(--gold-light);
-            border-radius: 18px;
-            padding: 25px;
-            box-shadow: var(--shadow-light);
-            border: 1px solid rgba(232, 228, 213, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-        }
-        
-        .detail-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-        }
-        
-        .detail-item h4 {
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
-        
-        .detail-item h4 i {
-            color: white;
-            background: var(--gradient-purple);
-            width: 42px;
-            height: 42px;
-            min-width: 42px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 10px rgba(44, 26, 94, 0.3);
-        }
-        
-        .detail-item p {
-            color: var(--text-color);
-            line-height: 1.7;
-            font-size: 1.05rem;
-            text-align: right;
-            max-width: 100%;
-        }
-        
-        /* تصميم قسم الشواهد الوظيفية - توسيع وتحسين */
-        .certificates-section {
-            max-width: 100%;
-            margin: 0 auto;
-            width: 100%;
-        }
-        
-        .certificates-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-            margin-top: 20px;
-            width: 100%;
-            max-width: 100%;
-        }
-        
-        .certificate-item {
-            background: var(--card-bg);
-            border-radius: 18px;
-            padding: 25px;
-            border: 1px solid rgba(232, 228, 213, 0.8);
-            box-shadow: var(--shadow-medium);
-            transition: transform 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            border-top: 4px solid var(--primary-color);
-            width: 100%;
-            max-width: 100%;
-        }
-        
-        .certificate-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-heavy);
-        }
-        
-        .certificate-header-pdf {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid rgba(232, 228, 213, 0.8);
-            width: 100%;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        
-        .certificate-header-pdf h3 {
-            color: var(--secondary-color);
-            font-size: 1.4rem;
-            font-weight: 700;
-            flex: 1;
-            min-width: 250px;
-        }
-        
-        .certificate-actions {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        
-        .pdf-action-btn {
-            background: var(--gradient-purple);
-            color: white;
-            border: none;
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            box-shadow: 0 4px 8px rgba(44, 26, 94, 0.2);
-            flex-shrink: 0;
-        }
-        
-        .pdf-action-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 12px rgba(44, 26, 94, 0.3);
-        }
-        
-        .pdf-viewer {
-            width: 100%;
-            height: 550px;
-            border-radius: 12px;
-            border: 1px solid rgba(232, 228, 213, 0.8);
-            overflow: hidden;
-            background: #f9f9f9;
-            max-width: 100%;
-        }
-        
-        .pdf-viewer iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        /* تصميم قسم الدورات التربوية المحدث - تصغير 75% */
-        .courses-section {
-            max-width: 100%;
-            margin: 0 auto;
-        }
-        
-        .courses-description {
-            text-align: center;
-            margin-bottom: 30px;
-            color: var(--text-light);
-            font-size: 1.1rem;
-            max-width: 800px;
-            margin-right: auto;
-            margin-left: auto;
-            line-height: 1.7;
-        }
-        
-        .certificate-cards {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        .certificate-card {
-            background: white;
-            border-radius: 15px; /* تصغير */
-            overflow: hidden;
-            box-shadow: var(--shadow-heavy);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(232, 228, 213, 0.8);
-            position: relative;
-            transform: scale(0.85); /* تصغير البطاقات 75% */
-            transform-origin: center;
-        }
-        
-        .certificate-card:hover {
-            transform: scale(0.88) translateY(-5px); /* تعديل التحويم ليتناسب مع التصغير */
-            box-shadow: 0 20px 40px rgba(44, 26, 94, 0.2);
-        }
-        
-        .certificate-header {
-            background: var(--gradient-purple);
-            color: white;
-            padding: 15px 20px; /* تصغير */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid var(--accent-color);
-            min-height: 70px; /* تصغير */
-        }
-        
-        .certificate-title {
-            font-size: 1.05rem; /* تصغير 75% من 1.4rem */
-            font-weight: 700;
-            line-height: 1.3;
-            max-width: 70%;
-        }
-        
-        .download-btn-container {
-            display: flex;
-            gap: 8px;
-        }
-        
-        .download-btn {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: none;
-            padding: 8px 15px; /* تصغير */
-            border-radius: 25px; /* تصغير */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            backdrop-filter: blur(5px);
-            font-weight: 600;
-            font-size: 0.675rem; /* تصغير 75% من 0.9rem */
-            gap: 5px;
-        }
-        
-        .download-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(1.05);
-        }
-        
-        .certificate-image-container {
-            width: 100%;
-            padding: 20px; /* تصغير */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: linear-gradient(45deg, #f8f6f1, #f5f2ec);
-            min-height: 300px; /* تصغير */
-        }
-        
-        .certificate-image {
-            max-width: 100%;
-            max-height: 350px; /* تصغير من 500px */
-            border-radius: 8px; /* تصغير */
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-            border: 1px solid rgba(193, 154, 95, 0.3);
-            transition: transform 0.3s ease;
-        }
-        
-        .certificate-image:hover {
-            transform: scale(1.02);
-        }
-        
-        /* تصميم الأقسام الأخرى */
-        .intro-section, .planning-grid, .bio-grid, .strategy-container,
-        .tech-grid, .self-learning, .assessment-container {
-            max-width: 100%;
-            margin: 0 auto;
-        }
-        
-        /* تصميم قسم التقويم */
-        .evaluation-section {
-            max-width: 100%;
-            margin: 0 auto;
-        }
-        
-        .evaluation-card {
-            background: var(--purple-light);
-            border-radius: 18px;
-            padding: 30px;
-            margin-bottom: 20px;
-            box-shadow: var(--shadow-light);
-            border: 1px solid rgba(232, 228, 213, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .evaluation-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-        }
-        
-        .evaluation-card h3 {
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            font-size: 1.5rem;
-            line-height: 1.3;
-            font-weight: 700;
-        }
-        
-        .evaluation-card h3 i {
-            color: white;
-            background: var(--gradient-purple);
-            width: 48px;
-            height: 48px;
-            min-width: 48px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            box-shadow: 0 4px 10px rgba(44, 26, 94, 0.3);
-            margin-top: 2px;
-        }
-        
-        .evaluation-card p {
-            color: var(--text-color);
-            line-height: 1.8;
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-            text-align: justify;
-        }
-        
-        .evaluation-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 25px;
-            margin-top: 30px;
-        }
-        
-        .evaluation-item {
-            background: white;
-            border-radius: 16px;
-            padding: 25px;
-            border-left: 4px solid var(--accent-color);
-            box-shadow: var(--shadow-light);
-            transition: all 0.3s ease;
-        }
-        
-        .evaluation-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-        }
-        
-        .evaluation-item h4 {
-            color: var(--secondary-color);
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
-        
-        .evaluation-item ul {
-            list-style-type: none;
-            padding-right: 0;
-        }
-        
-        .evaluation-item li {
-            padding: 10px 0;
-            color: var(--text-color);
-            position: relative;
-            padding-right: 30px;
-            font-size: 1.05rem;
-            line-height: 1.6;
-            border-bottom: 1px solid rgba(232, 228, 213, 0.5);
-        }
-        
-        .evaluation-item li:before {
-            content: "✓";
-            color: var(--primary-color);
-            position: absolute;
-            right: 0;
-            top: 10px;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-        
-        /* تصميم قسم التقنية */
-        .technology-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 25px;
-            margin-top: 30px;
-        }
-        
-        .technology-card {
-            background: white;
-            border-radius: 18px;
-            padding: 28px;
-            box-shadow: var(--shadow-medium);
-            border: 1px solid rgba(232, 228, 213, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .technology-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-heavy);
-        }
-        
-        .technology-card h4 {
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-size: 1.4rem;
-            line-height: 1.3;
-            font-weight: 700;
-        }
-        
-        .technology-card h4 i {
-            color: white;
-            background: var(--gradient-gold);
-            width: 50px;
-            height: 50px;
-            min-width: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            box-shadow: 0 4px 10px rgba(156, 124, 60, 0.3);
-        }
-        
-        .technology-card p {
-            color: var(--text-color);
-            line-height: 1.8;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            text-align: justify;
-        }
-        
-        .tools-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 20px;
-        }
-        
-        .tool-tag {
-            background: var(--gold-light);
-            color: var(--secondary-color);
-            padding: 8px 16px;
-            border-radius: 30px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            border: 1px solid rgba(193, 154, 95, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .tool-tag:hover {
-            background: var(--accent-color);
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        /* تصميم قسم المبادرات */
-        .initiatives-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 25px;
-            margin-top: 30px;
-        }
-        
-        .initiative-card {
-            background: var(--purple-light);
-            border-radius: 18px;
-            padding: 28px;
-            border: 1px solid rgba(232, 228, 213, 0.5);
-            box-shadow: var(--shadow-light);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .initiative-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-        }
-        
-        .initiative-card h4 {
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-size: 1.4rem;
-            line-height: 1.3;
-            font-weight: 700;
-        }
-        
-        .initiative-card h4 i {
-            color: white;
-            background: var(--gradient-purple);
-            width: 50px;
-            height: 50px;
-            min-width: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            box-shadow: 0 4px 10px rgba(44, 26, 94, 0.3);
-        }
-        
-        .initiative-card p {
-            color: var(--text-color);
-            line-height: 1.8;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            text-align: justify;
-        }
-        
-        /* تصميم قسم الطلاب */
-        .students-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 25px;
-            margin-top: 30px;
-        }
-        
-        .student-card {
-            background: white;
-            border-radius: 18px;
-            padding: 28px;
-            box-shadow: var(--shadow-medium);
-            border: 1px solid rgba(232, 228, 213, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .student-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-heavy);
-        }
-        
-        .student-card h4 {
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-size: 1.4rem;
-            line-height: 1.3;
-            font-weight: 700;
-        }
-        
-        .student-card h4 i {
-            color: white;
-            background: linear-gradient(135deg, #6B5B95 0%, #8A7AB5 100%);
-            width: 50px;
-            height: 50px;
-            min-width: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            box-shadow: 0 4px 10px rgba(107, 91, 149, 0.3);
-        }
-        
-        .student-card p {
-            color: var(--text-color);
-            line-height: 1.8;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            text-align: justify;
-        }
-        
-        /* تصميم قسم التعلم الذاتي */
-        .self-learning-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 25px;
-            margin-top: 30px;
-        }
-        
-        .learning-card {
-            background: var(--gold-light);
-            border-radius: 18px;
-            padding: 28px;
-            border: 1px solid rgba(232, 228, 213, 0.5);
-            box-shadow: var(--shadow-light);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .learning-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-medium);
-        }
-        
-        .learning-card h4 {
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-size: 1.4rem;
-            line-height: 1.3;
-            font-weight: 700;
-        }
-        
-        .learning-card h4 i {
-            color: white;
-            background: var(--gradient-gold);
-            width: 50px;
-            height: 50px;
-            min-width: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            box-shadow: 0 4px 10px rgba(156, 124, 60, 0.3);
-        }
-        
-        .learning-card p {
-            color: var(--text-color);
-            line-height: 1.8;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            text-align: justify;
-        }
-        
-        /* تصميم قسم التقييم الذاتي */
-        .assessment-container {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 25px;
-            margin-top: 30px;
-        }
-        
-        .assessment-card {
-            background: white;
-            border-radius: 18px;
-            padding: 28px;
-            box-shadow: var(--shadow-medium);
-            border: 1px solid rgba(232, 228, 213, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .assessment-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-heavy);
-        }
-        
-        .strength {
-            border-top: 4px solid #6B5B95;
-        }
-        
-        .improvement {
-            border-top: 4px solid #9C7C3C;
-        }
-        
-        .plan {
-            border-top: 4px solid #2C1A5E;
-        }
-        
-        .assessment-card h4 {
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-size: 1.4rem;
-            line-height: 1.3;
-            font-weight: 700;
-        }
-        
-        .assessment-card h4 i {
-            background: rgba(255, 255, 255, 0.9);
-            width: 50px;
-            height: 50px;
-            min-width: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            margin-top: 2px;
-            color: var(--secondary-color);
-            box-shadow: 0 4px 10px rgba(44, 26, 94, 0.1);
-        }
-        
-        .assessment-card ul {
-            list-style-type: none;
-            padding-right: 15px;
-        }
-        
-        .assessment-card li {
-            padding: 12px 0;
-            color: var(--text-color);
-            position: relative;
-            padding-right: 30px;
-            border-bottom: 1px solid rgba(232, 228, 213, 0.5);
-            font-size: 1.05rem;
-            line-height: 1.6;
-        }
-        
-        .assessment-card li:before {
-            content: "•";
-            color: var(--secondary-color);
-            position: absolute;
-            right: 0;
-            top: 12px;
-            font-size: 1.8rem;
-        }
-        
-        /* تصميم الخاتمة */
-        .conclusion-card {
-            background: var(--card-bg);
-            border-radius: 20px;
-            padding: 35px 30px;
-            margin-top: 35px;
-            text-align: center;
-            border: 1px solid rgba(232, 228, 213, 0.5);
-            box-shadow: var(--shadow-medium);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .conclusion-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--gradient-gold);
-        }
-        
-        .conclusion-card h3 {
-            color: var(--secondary-color);
-            margin-bottom: 25px;
-            font-size: 1.9rem;
-            line-height: 1.3;
-            font-weight: 800;
-        }
-        
-        .conclusion-card p {
-            color: var(--text-color);
-            line-height: 1.8;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            text-align: right;
-        }
-        
-        /* الفوتر */
-        .footer {
-            text-align: center;
-            padding: 25px 20px;
-            margin-top: 25px;
-            color: var(--text-light);
-            border-top: 1px solid rgba(232, 228, 213, 0.5);
-            font-size: 0.95rem;
-            background: var(--card-bg);
-            border-radius: 15px;
-            margin-bottom: 20px;
-            line-height: 1.6;
-            box-shadow: var(--shadow-light);
-        }
-        
-        /* الأنيميشن */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        
-        @keyframes floating {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        .fade-in-element {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-        
-        .fade-in-element.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* تأثير ذهبي للعبارات */
-        @keyframes gold-glow {
-            0% { text-shadow: 0 0 5px rgba(193, 154, 95, 0.3); }
-            50% { text-shadow: 0 0 15px rgba(193, 154, 95, 0.7), 0 0 25px rgba(156, 124, 60, 0.5); }
-            100% { text-shadow: 0 0 5px rgba(193, 154, 95, 0.3); }
-        }
-        
-        .message.active {
-            opacity: 1;
-            transform: translateY(0);
-            animation: gold-glow 3s infinite alternate;
-        }
-        
-        /* تصميم متجاوب */
-        @media (min-width: 576px) {
-            .container {
-                padding: 0 25px;
-            }
-            
-            .main-content {
-                padding: 35px 30px;
-            }
-            
-            .nav-icon {
-                min-width: 65px; /* تم التصغير */
-                padding: 8px 10px; /* تم التصغير */
-            }
-            
-            .nav-icon span {
-                font-size: 0.65rem; /* تم التصغير */
-            }
-            
-            .logo-title {
-                font-size: 1.1rem; /* تم التصغير */
-            }
-            
-            .logo-subtitle {
-                font-size: 1.4rem; /* تم التصغير */
-            }
-            
-            .section-title {
-                font-size: 2.1rem;
-            }
-            
-            .about-header {
-                flex-direction: row;
-                text-align: right;
-                align-items: center;
-            }
-            
-            .about-info h3,
-            .about-info p {
-                text-align: right;
-            }
-            
-            .avatar {
-                width: 170px;
-                height: 170px;
-                font-size: 4rem;
-            }
-            
-            .about-info h3 {
-                font-size: 1.8rem; /* تم التصغير من 2.1rem */
-            }
-            
-            .about-details {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .certificates-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .certificate-cards {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .evaluation-grid,
-            .technology-grid,
-            .initiatives-container,
-            .students-grid,
-            .self-learning-grid,
-            .assessment-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (min-width: 768px) {
-            .fixed-top-bar {
-                padding: 15px 0; /* تم التصغير */
-                height: 120px; /* تم التصغير من 160px */
-            }
-            
-            .fade-messages {
-                font-size: 1.8rem; /* تم التصغير من 2.4rem */
-                height: 80px; /* تم التصغير من 100px */
-            }
-            
-            .navbar {
-                height: 75px; /* تم التصغير من 95px */
-                padding: 0;
-                top: 120px; /* تم التعديل ليتناسب مع تصغير الشريط العلوي */
-            }
-            
-            .nav-container {
-                flex-direction: row;
-                justify-content: space-between;
-                padding: 0 25px; /* تم التصغير */
-                height: 75px; /* تم التصغير من 95px */
-                gap: 0;
-            }
-            
-            .logo {
-                width: auto;
-                justify-content: flex-start;
-            }
-            
-            .nav-icons-container {
-                width: auto;
-                max-width: 75%;
-            }
-            
-            .logo-title {
-                font-size: 1.2rem; /* تم التصغير */
-            }
-            
-            .logo-subtitle {
-                font-size: 1.5rem; /* تم التصغير */
-            }
-            
-            .main-content {
-                padding: 40px 35px;
-                margin-top: 195px; /* تم التعديل ليتناسب مع تصغير الهيدر */
-            }
-            
-            .nav-indicator-container {
-                top: 195px; /* تعديل الموقع ليصبح تحت الهيدر مباشرة */
-            }
-            
-            .section-title {
-                font-size: 2.3rem;
-            }
-            
-            .about-details {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            .bio-grid {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 30px;
-            }
-            
-            .planning-grid {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 30px;
-            }
-            
-            .strategy-container {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 30px;
-            }
-            
-            .tech-grid {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                gap: 30px;
-            }
-            
-            /* توسيع قسم الشواهد الوظيفية */
-            .certificates-grid {
-                grid-template-columns: 1fr;
-                gap: 35px;
-            }
-            
-            .certificate-item {
-                padding: 30px;
-            }
-            
-            .pdf-viewer {
-                height: 600px;
-            }
-            
-            .certificate-cards {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .evaluation-grid,
-            .technology-grid,
-            .initiatives-container,
-            .students-grid,
-            .self-learning-grid,
-            .assessment-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (min-width: 992px) {
-            .nav-icons-container {
-                max-width: 80%;
-            }
-            
-            .nav-icon {
-                min-width: 70px; /* تم التصغير من 80px */
-                padding: 8px 12px; /* تم التصغير */
-            }
-            
-            .nav-icon span {
-                font-size: 0.7rem; /* تم التصغير */
-            }
-            
-            .about-details {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            .bio-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-            
-            .planning-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            .strategy-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .tech-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            /* توسيع قسم الشواهد الوظيفية للشاشات الكبيرة */
-            .certificates-grid {
-                grid-template-columns: 1fr;
-                max-width: 100%;
-            }
-            
-            .certificate-item {
-                max-width: 100%;
-                padding: 35px;
-            }
-            
-            .pdf-viewer {
-                height: 650px;
-            }
-            
-            .certificate-cards {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            .evaluation-grid,
-            .technology-grid,
-            .initiatives-container,
-            .students-grid,
-            .self-learning-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .assessment-container {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        @media (min-width: 1200px) {
-            .nav-icon {
-                min-width: 75px; /* تم التصغير من 85px */
-            }
-            
-            .logo-title {
-                font-size: 1.3rem; /* تم التصغير */
-            }
-            
-            .logo-subtitle {
-                font-size: 1.6rem; /* تم التصغير */
-            }
-            
-            /* توسيع قسم نبذة عني للشاشات الكبيرة جداً */
-            .about-card {
-                padding: 40px 35px;
-            }
-            
-            .about-info h3 {
-                font-size: 2rem; /* تم التصغير من 2.3rem */
-            }
-            
-            .about-info p {
-                font-size: 1.15rem;
-            }
-            
-            .detail-item {
-                padding: 28px;
-            }
-            
-            .planning-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            .strategy-container {
-                grid-template-columns: repeat(4, 1fr);
-            }
-            
-            /* توسيع قسم الشواهد الوظيفية للشاشات الكبيرة جداً */
-            .certificates-grid {
-                max-width: 100%;
-            }
-            
-            .certificate-item {
-                padding: 40px;
-            }
-            
-            .pdf-viewer {
-                height: 700px;
-            }
-            
-            .certificate-cards {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            
-            .evaluation-grid,
-            .technology-grid,
-            .initiatives-container,
-            .students-grid,
-            .self-learning-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        @media (max-height: 600px) and (orientation: landscape) {
-            .fixed-top-bar {
-                padding: 8px 0; /* تم التصغير */
-                height: 100px; /* تم التصغير من 120px */
-            }
-            
-            .fade-messages {
-                height: 70px; /* تم التصغير من 80px */
-                font-size: 1.4rem; /* تم التصغير */
-            }
-            
-            .navbar {
-                height: auto;
-                min-height: 55px; /* تم التصغير من 65px */
-                top: 100px; /* تم التعديل */
-            }
-            
-            .nav-container {
-                flex-direction: row;
-                padding: 8px 12px; /* تم التصغير */
-            }
-            
-            .logo-icon {
-                width: 40px; /* تم التصغير من 45px */
-                height: 40px; /* تم التصغير من 45px */
-                min-width: 40px; /* تم التصغير */
-            }
-            
-            .logo-icon i {
-                font-size: 1.1rem; /* تم التصغير */
-            }
-            
-            .logo-title {
-                font-size: 1rem; /* تم التصغير */
-            }
-            
-            .logo-subtitle {
-                font-size: 1.2rem; /* تم التصغير */
-            }
-            
-            .nav-icon {
-                min-width: 60px; /* تم التصغير من 65px */
-                height: 40px; /* تم التصغير من 45px */
-                padding: 5px 7px; /* تم التصغير */
-            }
-            
-            .nav-icon i {
-                font-size: 0.9rem; /* تم التصغير */
-                margin-bottom: 2px;
-            }
-            
-            .nav-icon span {
-                font-size: 0.6rem; /* تم التصغير */
-            }
-            
-            .main-content {
-                margin-top: 155px; /* تم التعديل */
-            }
-            
-            .nav-indicator-container {
-                top: 155px; /* تعديل الموقع */
-            }
-            
-            .pdf-viewer {
-                height: 350px;
-            }
-            
-            /* تعديلات قسم الدورات للشاشات الأفقية */
-            .certificate-card {
-                transform: scale(0.75);
-            }
-            
-            .certificate-card:hover {
-                transform: scale(0.78) translateY(-5px);
-            }
-            
-            .certificate-title {
-                font-size: 0.9rem;
-            }
-            
-            .download-btn {
-                font-size: 0.6rem;
-                padding: 6px 12px;
-            }
-        }
-        
-        @media (max-width: 767px) {
-            .fixed-top-bar {
-                padding: 10px 0;
-                height: 110px; /* تم التصغير من 140px */
-            }
-            
-            .top-bar-container {
-                padding: 0 15px;
-            }
-            
-            .fade-messages {
-                font-size: 1.5rem; /* تم التصغير من 1.8rem */
-                height: 80px; /* تم التصغير من 100px */
-            }
-            
-            .navbar {
-                top: 110px; /* تم التعديل */
-            }
-            
-            .main-content {
-                margin-top: 175px; /* تم التعديل */
-                padding: 30px 20px;
-            }
-            
-            .nav-indicator-container {
-                top: 175px; /* تعديل الموقع */
-            }
-            
-            /* تعديلات قسم الشواهد الوظيفية للشاشات الصغيرة */
-            .certificates-grid {
-                gap: 25px;
-            }
-            
-            .certificate-item {
-                padding: 20px;
-            }
-            
-            .certificate-header-pdf {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 15px;
-            }
-            
-            .certificate-header-pdf h3 {
-                min-width: 100%;
-                text-align: center;
-            }
-            
-            .certificate-actions {
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .pdf-viewer {
-                height: 400px;
-            }
-            
-            /* تعديلات قسم الدورات للشاشات الصغيرة */
-            .certificate-card {
-                transform: scale(0.9);
-            }
-            
-            .certificate-card:hover {
-                transform: scale(0.93) translateY(-5px);
-            }
-            
-            .certificate-title {
-                font-size: 0.95rem;
-            }
-            
-            .download-btn {
-                font-size: 0.65rem;
-                padding: 7px 12px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .fixed-top-bar {
-                height: 100px; /* تم التصغير من 120px */
-            }
-            
-            .fade-messages {
-                font-size: 1.3rem; /* تم التصغير من 1.5rem */
-                height: 70px; /* تم التصغير من 80px */
-            }
-            
-            .message {
-                white-space: normal;
-                text-align: center;
-                line-height: 1.3;
-                padding: 0 10px;
-            }
-            
-            .navbar {
-                top: 100px; /* تم التعديل */
-            }
-            
-            .main-content {
-                margin-top: 165px; /* تم التعديل */
-                padding: 25px 15px;
-            }
-            
-            .nav-indicator-container {
-                top: 165px; /* تعديل الموقع */
-            }
-            
-            /* تعديلات قسم نبذة عني للشاشات الصغيرة جداً */
-            .about-card {
-                padding: 25px 20px;
-            }
-            
-            .avatar {
-                width: 120px;
-                height: 120px;
-                font-size: 3rem;
-            }
-            
-            .about-info h3 {
-                font-size: 1.4rem; /* تم التصغير من 1.6rem */
-            }
-            
-            .about-info p {
-                font-size: 1rem;
-            }
-            
-            .detail-item {
-                padding: 20px;
-            }
-            
-            /* تعديلات قسم الشواهد الوظيفية للشاشات الصغيرة جداً */
-            .certificates-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .certificate-item {
-                padding: 18px;
-            }
-            
-            .pdf-viewer {
-                height: 350px;
-            }
-            
-            /* تعديلات قسم الدورات للشاشات الصغيرة جداً */
-            .certificate-cards {
-                grid-template-columns: 1fr;
-            }
-            
-            .certificate-card {
-                transform: scale(0.85);
-            }
-            
-            .certificate-card:hover {
-                transform: scale(0.88) translateY(-5px);
-            }
-            
-            .certificate-title {
-                font-size: 0.85rem;
-            }
-            
-            .certificate-header {
-                flex-direction: column;
-                gap: 10px;
-                padding: 12px 15px;
-            }
-            
-            .certificate-title {
-                max-width: 100%;
-                text-align: center;
-            }
-        }
-        
-        /* إضافات خاصة */
-        .no-select {
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-        
-        * {
-            -webkit-overflow-scrolling: touch;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>أداة إصدار التقارير والشواهد</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{font-family:'Cairo',sans-serif;background: linear-gradient(135deg, #f0f9f6 0%, #e8f4f0 50%, #d4ebe2 100%);direction:rtl;overflow-x:hidden;min-height:100vh;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
+.wrapper{max-width:850px;margin:auto;padding:15px;width:100%;}
+
+/* شريط الأخبار العلوي - محسن للأجهزة المحمولة */
+.top-marquee{
+position:fixed;top:0;left:0;right:0;width:100%;background:linear-gradient(135deg, #022e22 0%, #044a35 100%);color:#fff;
+padding:10px 5px;font-size:12px;z-index:300;overflow:hidden;height:45px;
+white-space:nowrap;border-bottom:3px solid #ffd166;box-shadow:0 4px 12px rgba(2, 46, 34, 0.25);
+display:flex;align-items:center;
+}
+.marquee-inner{
+display:inline-block;
+padding-left:2%;
+animation:newsScroll 30s linear infinite;
+color:#e8f4f0;font-weight:500;
+}
+@keyframes newsScroll{
+0%{transform:translateX(-100%);}
+100%{transform:translateX(100%);}
+}
+.top-marquee:hover .marquee-inner{animation-play-state:paused;}
+
+/* شريط التحكم العلوي - متجاوب تماماً */
+.control-bar{
+position:fixed;top:45px;left:0;right:0;width:100%;z-index:250;
+background:linear-gradient(135deg, #ffffff 0%, #f5fcf9 100%);
+padding:10px 15px;display:flex;justify-content:space-between;align-items:center;
+box-shadow:0 4px 15px rgba(4, 74, 53, 0.12);border-bottom:2px solid #d0e6de;
+backdrop-filter:blur(5px);
+}
+
+/* تصميم الجانب الأيمن */
+.right-section {
+display: flex;
+align-items: center;
+gap: 15px;
+flex: 1;
+justify-content: space-between;
+}
+
+/* عنوان التطبيق */
+.app-title {
+background: linear-gradient(135deg, #e8f4f0 0%, #d4ebe2 100%);
+color: #044a35;
+padding: 6px 12px;
+border-radius: 8px;
+font-size: 11px; /* حجم أصغر */
+font-weight: 700;
+border-right: 3px solid #ffd166;
+display: flex;
+align-items: center;
+gap: 8px;
+box-shadow: 0 3px 8px rgba(6, 109, 77, 0.15);
+flex-shrink: 0;
+max-width: 180px;
+text-align: center;
+justify-content: center;
+}
+
+.app-title i {
+color: #066d4d;
+font-size: 12px; /* أيقونة أصغر */
+}
+
+/* مجموعة الأزرار */
+.btn-group{
+display:flex;flex-wrap:nowrap;gap:6px;justify-content:flex-end;align-items:center;
+}
+
+/* مجموعة زوج الأزرار */
+.btn-pair {
+display: flex;
+gap: 6px;
+flex: 0 0 auto;
+}
+
+button.main-btn{
+background:linear-gradient(135deg, #066d4d 0%, #05553d 100%);color:#fff;border:none;
+padding:10px 8px;font-size:12px;border-radius:10px;cursor:pointer;min-width:110px;
+transition:all 0.3s ease;font-weight:600;position:relative;overflow:hidden;
+box-shadow:0 4px 10px rgba(6, 109, 77, 0.25);display:flex;flex-direction:column;align-items:center;gap:4px;
+border:1px solid rgba(255,255,255,0.1);flex:0 0 auto;
+}
+button.main-btn::after{
+content:'';position:absolute;top:0;left:0;width:100%;height:100%;
+background:linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+transform:translateX(-100%);
+}
+button.main-btn:hover::after{animation:buttonShine 0.6s;}
+@keyframes buttonShine{100%{transform:translateX(100%);}}
+button.main-btn:hover{
+background:linear-gradient(135deg, #05553d 0%, #044a35 100%);transform:translateY(-3px);
+box-shadow:0 6px 15px rgba(6, 109, 77, 0.35);
+}
+button.main-btn:active{transform:translateY(-1px);}
+
+.btn-icon{font-size:16px;}
+.btn-text{font-size:11px;font-weight:700;}
+
+/* تصميم الأزرار بنصف العرض */
+.half-btn {
+max-width: 100px !important;
+min-width: 90px !important;
+padding: 8px 6px !important;
+flex: 0 0 auto;
+}
+
+.half-btn .btn-icon {
+font-size: 14px !important;
+}
+
+.half-btn .btn-text {
+font-size: 10px !important;
+}
+
+/* زر حفظ بيانات المعلم خاص */
+#saveTeacherBtn{background:linear-gradient(135deg, #2a7b5e 0%, #1e6b4f 100%);}
+#saveTeacherBtn:hover{background:linear-gradient(135deg, #1e6b4f 0%, #15563f 100%);}
+
+/* زر الدعم الفني */
+#supportBtn{background:linear-gradient(135deg, #5a67d8 0%, #4c51bf 100%);}
+#supportBtn:hover{background:linear-gradient(135deg, #4c51bf 0%, #434190 100%);}
+
+/* زر المسح */
+#clearBtn{background:linear-gradient(135deg, #f0ad4e 0%, #ec971f 100%);}
+#clearBtn:hover{background:linear-gradient(135deg, #ec971f 0%, #d58512 100%);}
+
+/* تصميم خاص لأزرار PDF وواتساب */
+#pdfBtn{background:linear-gradient(135deg, #d9534f 0%, #c9302c 100%);}
+#pdfBtn:hover{background:linear-gradient(135deg, #c9302c 0%, #ac2925 100%);}
+
+#whatsappBtn{background:linear-gradient(135deg, #25D366 0%, #128C7E 100%);}
+#whatsappBtn:hover{background:linear-gradient(135deg, #128C7E 0%, #075E54 100%);}
+
+/* تحسين واجهة الإدخال */
+.input-section{
+background:#ffffff;padding:20px;border-radius:18px;margin-top:110px; /* تم تعديل margin-top من 130px إلى 110px */
+border:2px solid #e0f0ea;box-shadow:0 8px 25px rgba(4, 74, 53, 0.1);
+position:relative;overflow:hidden;
+}
+.input-section::before{
+content:'';position:absolute;top:0;right:0;width:100%;height:4px;
+background:linear-gradient(to left, #066d4d, #ffd166);
+}
+
+.input-section h2{
+color:#044a35;font-size:20px;margin-bottom:25px;padding-bottom:15px;
+border-bottom:3px solid #e0f0ea;text-align:center;font-weight:800;
+position:relative;
+}
+.input-section h2::after{
+content:'';position:absolute;bottom:-3px;right:0;width:100px;height:3px;
+background:linear-gradient(to left, #066d4d, #ffd166);border-radius:2px;
+}
+
+.form-group{margin-bottom:20px;}
+.form-group label{
+font-size:14px;font-weight:700;margin-bottom:8px;display:block;color:#083024;
+display:flex;align-items:center;gap:10px;padding-right:8px;
+position:relative;
+}
+.form-group label i{
+color:#066d4d;font-size:15px;background:#f0f9f6;padding:6px;border-radius:8px;
+border:1px solid #d4ebe2;
+}
+
+.form-group label::before{
+content:'';width:8px;height:8px;background:#ffd166;border-radius:50%;
+display:inline-block;margin-left:6px;box-shadow:0 0 6px #ffd166;
+}
+
+input,select,textarea{
+width:100%;padding:12px;margin-top:6px;border:2px solid #d4ebe2;border-radius:10px;
+font-size:14px;background:#f9fcfb;transition:all 0.3s;font-family:'Cairo', sans-serif;
+color:#083024;box-shadow:inset 0 2px 5px rgba(0,0,0,0.05);-webkit-appearance:none;
+}
+input:focus,select:focus,textarea:focus{
+outline:none;border-color:#066d4d;box-shadow:0 0 0 3px rgba(6,109,77,0.15), inset 0 2px 5px rgba(0,0,0,0.05);
+background:#ffffff;transform:translateY(-2px);
+}
+textarea{height:100px;resize:none;overflow:hidden;line-height:1.6;}
+
+.auto-buttons{display:flex;gap:10px;margin-top:10px;}
+.auto-btn{
+flex:1;padding:10px;background:linear-gradient(135deg, #f0f9f6 0%, #e0f0ea 100%);
+border:2px solid #b8d9cd;color:#066d4d;border-radius:10px;font-size:13px;cursor:pointer;
+font-weight:700;transition:all 0.3s;display:flex;align-items:center;justify-content:center;gap:8px;
+position:relative;overflow:hidden;
+}
+.auto-btn:hover{
+background:linear-gradient(135deg, #e0f0ea 0%, #d0e6de 100%);border-color:#066d4d;
+transform:translateY(-2px);box-shadow:0 4px 10px rgba(6, 109, 77, 0.2);
+}
+.auto-btn:active{transform:translateY(0);}
+.auto-btn i{font-size:13px;}
+
+.form-row{
+display:grid;grid-template-columns:1fr 1fr;gap:15px;
+}
+
+/* تلميحات للأزرار */
+button[title] {
+position: relative;
+}
+button[title]:hover::after {
+content: attr(title);
+position: absolute;
+bottom: calc(100% + 10px);
+right: 50%;
+transform: translateX(50%);
+background: rgba(4, 58, 42, 0.95);
+color: white;
+padding: 8px 12px;
+border-radius: 8px;
+font-size: 11px;
+white-space: nowrap;
+z-index: 1000;
+border: 1px solid #044a35;
+box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+max-width:200px;
+}
+button[title]:hover::before {
+content: '';
+position: absolute;
+bottom: calc(100% + 2px);
+right: 50%;
+transform: translateX(50%);
+border: 6px solid transparent;
+border-top-color: rgba(4, 58, 42, 0.95);
+z-index: 1000;
+}
+
+/* إشعارات */
+.notification {
+position: fixed;
+top: 100px; /* تم تعديل من 110px إلى 100px */
+right: 10px;
+left: 10px;
+background: linear-gradient(135deg, #066d4d 0%, #044a35 100%);
+color: white;
+padding: 12px 18px;
+border-radius: 10px;
+box-shadow: 0 6px 20px rgba(4, 74, 53, 0.3);
+z-index: 1000;
+display: flex;
+align-items: center;
+gap: 10px;
+font-weight: 600;
+transform: translateX(150%);
+transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+border-right: 5px solid #ffd166;
+text-align:center;
+justify-content:center;
+}
+.notification.show {
+transform: translateX(0);
+}
+.notification i {
+font-size: 18px;
+}
+
+/* نافذة الدعم الفني */
+.support-modal {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(0, 0, 0, 0.7);
+z-index: 1001;
+justify-content: center;
+align-items: center;
+padding: 15px;
+}
+
+.support-content {
+background: white;
+border-radius: 15px;
+padding: 25px;
+width: 100%;
+max-width: 500px;
+box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+position: relative;
+max-height: 90vh;
+overflow-y: auto;
+}
+
+.support-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 20px;
+padding-bottom: 15px;
+border-bottom: 2px solid #e0f0ea;
+}
+
+.support-header h3 {
+color: #044a35;
+font-size: 20px;
+font-weight: 800;
+}
+
+.close-support {
+background: none;
+border: none;
+font-size: 24px;
+color: #066d4d;
+cursor: pointer;
+width: 30px;
+height: 30px;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50%;
+transition: all 0.3s;
+}
+
+.close-support:hover {
+background-color: #e8f4f0;
+}
+
+.support-form .form-group {
+margin-bottom: 20px;
+}
+
+.support-actions {
+display: flex;
+gap: 15px;
+margin-top: 25px;
+}
+
+.support-action-btn {
+flex: 1;
+padding: 14px;
+border-radius: 10px;
+border: none;
+color: white;
+font-weight: 700;
+font-size: 14px;
+cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+transition: all 0.3s;
+box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.email-btn {
+background: linear-gradient(135deg, #d44646 0%, #b52a2a 100%);
+}
+
+.email-btn:hover {
+background: linear-gradient(135deg, #b52a2a 0%, #9c1f1f 100%);
+transform: translateY(-3px);
+}
+
+.whatsapp-support-btn {
+background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+}
+
+.whatsapp-support-btn:hover {
+background: linear-gradient(135deg, #128C7E 0%, #075E54 100%);
+transform: translateY(-3px);
+}
+
+.support-info {
+background: #f8fdfa;
+border-radius: 10px;
+padding: 15px;
+margin-top: 20px;
+border-right: 4px solid #ffd166;
+}
+
+.support-info p {
+margin-bottom: 8px;
+font-size: 14px;
+color: #044a35;
+}
+
+.support-info i {
+color: #066d4d;
+margin-left: 8px;
+}
+
+/* أنماط البحث والتصنيف */
+#reportSearchContainer {
+position: relative;
+margin-bottom: 10px;
+}
+
+#searchResults {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+right: 0;
+background: white;
+border: 1px solid #ddd;
+border-radius: 6px;
+max-height: 200px;
+overflow-y: auto;
+z-index: 1000;
+box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+#searchResults div {
+padding: 8px 12px;
+cursor: pointer;
+border-bottom: 1px solid #eee;
+}
+
+#searchResults div:hover {
+background-color: #f0f9f6 !important;
+color: #066d4d;
+}
+
+#searchResults div:last-child {
+border-bottom: none;
+}
+
+#reportSearch:focus {
+outline: none;
+border-color: #066d4d;
+box-shadow: 0 0 0 2px rgba(6, 109, 77, 0.2);
+}
+
+/* تحسينات للأجهزة المحمولة */
+@media (max-width: 768px) {
+.control-bar {
+top: 45px;
+padding: 8px;
+flex-direction: column;
+gap: 10px;
+height: auto;
+}
+
+.right-section {
+width: 100%;
+flex-direction: column;
+gap: 10px;
+}
+
+.app-title {
+max-width: 100%;
+width: 100%;
+font-size: 10px;
+padding: 5px 10px;
+}
+
+.btn-group {
+width: 100%;
+justify-content: space-between;
+}
+
+.btn-pair {
+width: 48%;
+gap: 4px;
+}
+
+button.main-btn {
+flex: 1;
+max-width: none;
+min-width: 0;
+padding: 8px 4px;
+}
+
+.half-btn {
+flex: 1;
+max-width: none !important;
+min-width: 0 !important;
+}
+
+.btn-icon {
+font-size: 12px !important;
+}
+
+.btn-text {
+font-size: 9px !important;
+}
+
+.input-section {
+margin-top: 100px;
+padding: 15px;
+border-radius: 15px;
+}
+
+.input-section h2 {
+font-size: 18px;
+margin-bottom: 20px;
+}
+
+.form-row {
+grid-template-columns: 1fr;
+gap: 15px;
+}
+
+.notification {
+top: 90px;
+padding: 10px 15px;
+font-size: 14px;
+}
+
+.support-content {
+padding: 20px;
+max-height: 85vh;
+}
+
+.support-actions {
+flex-direction: column;
+}
+
+.support-action-btn {
+width: 100%;
+}
+
+#searchResults {
+max-height: 150px;
+font-size: 13px;
+}
+}
+
+@media (max-width: 480px) {
+.top-marquee {
+font-size: 11px;
+padding: 8px 5px;
+height: 40px;
+}
+
+.marquee-inner {
+animation-duration: 35s;
+}
+
+.app-title {
+font-size: 9px;
+padding: 4px 8px;
+}
+
+.btn-group {
+flex-wrap: wrap;
+}
+
+.btn-pair {
+width: 100%;
+margin-bottom: 5px;
+}
+
+button.main-btn {
+padding: 7px 3px;
+font-size: 10px;
+flex: 1 1 calc(50% - 4px);
+}
+
+.btn-icon {
+font-size: 11px !important;
+}
+
+.btn-text {
+font-size: 8px !important;
+}
+
+.input-section {
+margin-top: 90px;
+padding: 12px;
+}
+
+input, select, textarea {
+padding: 10px;
+font-size: 13px;
+}
+
+.form-group label {
+font-size: 13px;
+}
+
+.form-group label i {
+font-size: 13px;
+padding: 5px;
+}
+
+.auto-btn {
+padding: 8px;
+font-size: 12px;
+}
+
+.support-header h3 {
+font-size: 18px;
+}
+
+.support-action-btn {
+padding: 12px;
+font-size: 13px;
+}
+}
+
+@media (max-width: 320px) {
+.control-bar {
+gap: 4px;
+}
+
+.btn-pair {
+gap: 3px;
+}
+
+button.main-btn {
+flex: 1 1 100%;
+margin-bottom: 4px;
+}
+
+.input-section {
+margin-top: 80px;
+}
+}
+
+/* iPhone X/XS/11 Pro/12 mini/13 mini - ارتفاع الشاشة */
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+.top-marquee {
+padding-top: env(safe-area-inset-top);
+height: calc(45px + env(safe-area-inset-top));
+}
+
+.control-bar {
+top: calc(45px + env(safe-area-inset-top));
+}
+
+.input-section {
+margin-top: calc(100px + env(safe-area-inset-top));
+}
+}
+
+/* iPhone 12/13/14 - ارتفاع الشاشة */
+@media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
+.top-marquee {
+padding-top: env(safe-area-inset-top);
+height: calc(45px + env(safe-area-inset-top));
+}
+
+.control-bar {
+top: calc(45px + env(safe-area-inset-top));
+}
+
+.input-section {
+margin-top: calc(100px + env(safe-area-inset-top));
+}
+}
+
+/* iPhone 12/13/14 Pro Max - شاشات كبيرة */
+@media only screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) {
+.top-marquee {
+padding-top: env(safe-area-inset-top);
+height: calc(45px + env(safe-area-inset-top));
+}
+
+.control-bar {
+top: calc(45px + env(safe-area-inset-top));
+}
+
+.input-section {
+margin-top: calc(100px + env(safe-area-inset-top));
+}
+}
+
+/* قسم PDF - تم التعديل لضمان ظهوره بشكل صحيح */
+#report-content{
+width:100%;margin:20px auto;background:#ffffff !important;
+-webkit-print-color-adjust: exact !important;
+print-color-adjust: exact !important;
+}
+
+.header{
+background:#083024 !important;padding:8px;min-height:140px;position:relative;color:#fff !important;text-align:center;overflow:hidden;
+display:flex;align-items:center;justify-content:center;
+-webkit-print-color-adjust: exact !important;
+print-color-adjust: exact !important;
+}
+.header img{width:155px;}
+
+.header-school-title{
+position:absolute;bottom:36px;right:8px;font-size:12px;font-weight:600;
+color:#ffffff !important;
+}
+.header-school{
+position:absolute;bottom:20px;right:8px;font-size:12px;font-weight:700;
+color:#ffffff !important;
+}
+.header-education{
+position:absolute;bottom:8px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:700;
+color:#d7f2ea !important;
+}
+.header-date-box{
+position:absolute;top:6px;left:10px;font-size:11px;text-align:right;line-height:1.3;
+color:#ffffff !important;
+}
+
+.info-grid{
+display:grid;grid-template-columns:repeat(4,1fr);
+gap:4px;margin-top:10px;
+}
+.info-grid2{
+display:grid;grid-template-columns:repeat(3,1fr);
+gap:4px;margin-bottom:8px;margin-top:10px;
+}
+
+.info-box{
+background:#e8f2ee !important;border-radius:6px;height:34px;
+display:flex;flex-direction:column;justify-content:center;align-items:center;
+border:1px solid rgba(6,109,77,0.3) !important;
+  -webkit-print-color-adjust: exact !important;
+print-color-adjust: exact !important;
+}
+.info-title{
+font-size:9px;font-weight:700;color:#083024 !important;
+-webkit-print-color-adjust: exact !important;
+print-color-adjust: exact !important;
+}
+.info-value{
+font-size:10px;font-weight:700;color:#000000 !important;
+-webkit-print-color-adjust: exact !important;
+print-color-adjust: exact !important;
+}
+
+.objective-box{
+background:#f3f9f6 !important;border:1px solid rgba(6,109,77,0.35) !important;
+padding:6px 10px;border-radius:8px;margin-bottom:10px;
+min-height:120px;max-height:120px;overflow:hidden;
+-webkit-print-color-adjust: exact !important;
+print-color-adjust: exact !important;
+}
+.objective-title{
+text-align:center;font-size:14px;font-weight:700;
+color:#083024 !important;
+}
+.objective-content{
+font-size:13px;line-height:1.6;
+color:#000000 !important;
+}
+
+.report-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0;}
+.report-box{
+background:#ffffff !important;border-radius:8px;padding:6px;
+border:1px solid rgba(6,109,77,0.35) !important;min-height:130px;max-height:130px;overflow:hidden;
+-webkit-print-color-adjust: exact !important;
+print-color-adjust: exact !important;
+}
+.report-box-title{
+text-align:center;font-size:13px;font-weight:700;
+color:#083024 !important;
+}
+.report-box-content{
+font-size:13px;line-height:1.6;
+color:#000000 !important;
+}
+
+.image-evidence-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.image-box{
+min-height:140px;max-height:140px;border:1px dashed #066d4d !important;border-radius:8px;
+display:flex;align-items:center;justify-content:center;background:#ffffff !important;
+font-size:12px;color:#666 !important;overflow:hidden;
+-webkit-print-color-adjust: exact !important;
+print-color-adjust: exact !important;
+}
+.image-box img{max-width:100%;max-height:100%;object-fit:contain;}
+
+.signature-section{margin-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.signature-box{
+text-align:center;font-size:12px;
+color:#083024 !important;font-weight:700;
+}
+.signature-line{
+margin-top:6px;border-top:1px solid #083024 !important;width:80%;margin:auto;
+}
+.footer{
+text-align:center;font-size:10px;padding:6px;margin-top:20px;
+background:#083024 !important;color:#fff !important;
+-webkit-print-color-adjust: exact !important;
+print-color-adjust: exact !important;
+}
+
+/* لضمان ظهور الألوان في PDF */
+.pdf-export * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+}
+
+/* منع التكبير التلقائي على iOS */
+input, select, textarea {
+font-size: 16px !important;
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  select,
+  textarea,
+  input {
+    font-size: 16px !important;
+  }
+}
+</style>
 </head>
-<body class="no-select">
-    <!-- Fixed Top Bar - Updated (4x larger, no close button) - WHITE BACKGROUND -->
-    <div class="fixed-top-bar">
-        <div class="top-bar-container">
-            <div class="fade-messages">
-                <!-- العبارات الأصلية -->
-                <div class="message active">كلّ طالب يستحق فرصة للتميّز</div>
-                <div class="message">التعليم رحلة… ودوري أن أجعلها ممتعة</div>
-                <div class="message">كل فكرة عظيمة تبدأ بسؤال</div>
-                <div class="message">التقنية وسيلة لتمكين التعلم</div>
-                <div class="message">التقييم من أجل التعلّم وليس لمجرّد الحكم</div>
-                
-                <!-- العبارات الجديدة المطلوبة -->
-                <div class="message">التعلّم المرن يفتح أبواب الإبداع</div>
-                <div class="message">التفكير النقدي أساس اتخاذ القرار</div>
-                <div class="message">المتعلم شريك في التعلم… وليس متلقياً فقط</div>
-                <div class="message">الرياضيات ليست أرقاماً فقط… بل تفكير ومنطق</div>
-                <div class="message">كل مسألة رياضية فرصة لحل مشكلة من واقع الحياة</div>
-                <div class="message">عندما يفهم الطالب الفكرة… تصبح الأرقام صديقة له</div>
-                <div class="message">الرياضيات لغة الكون… ومفتاح الابتكار</div>
-                <div class="message">الخطأ في الرياضيات خطوة نحو الحل الصحيح</div>
-            </div>
-        </div>
-    </div>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <div class="logo-icon">
-                    <i class="fas fa-chalkboard-teacher"></i>
-                </div>
-                <div class="logo-text">
-                    <div class="logo-title">ملف الإنجاز المهني</div>
-                    <div class="logo-subtitle">المعلمة سارة الخالدي</div>
-                </div>
-            </div>
-            
-            <div class="nav-icons-container">
-                <div class="nav-icons">
-                    <a href="#" class="nav-icon active" data-target="about">
-                        <i class="fas fa-user-circle"></i>
-                        <span>نبذة عني</span>
-                    </a>
-                    <a href="#" class="nav-icon" data-target="intro">
-                        <i class="fas fa-home"></i>
-                        <span>المقدمة</span>
-                    </a>
-                    <a href="#" class="nav-icon" data-target="bio">
-                        <i class="fas fa-user-tie"></i>
-                        <span>السيرة</span>
-                    </a>
-                    <a href="#" class="nav-icon" data-target="planning">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>التخطيط</span>
-                    </a>
-                    <a href="#" class="nav-icon" data-target="certificates">
-                        <i class="fas fa-certificate"></i>
-                        <span>الشواهد</span>
-                    </a>
-                    <a href="#" class="nav-icon" data-target="courses">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>الدورات</span>
-                    </a>
-                    <a href="#" class="nav-icon" data-target="strategies">
-                        <i class="fas fa-chalkboard"></i>
-                        <span>استراتيجيات</span>
-                    </a>
-                    <a href="#" class="nav-icon" data-target="evaluation">
-                        <i class="fas fa-clipboard-check"></i>
-                        <span>التقويم</span>
-                    </a>
-                    <a href="#" class="nav-icon" data-target="technology">
-                        <i class="fas fa-laptop"></i>
-                        <span>التقنية</span>
-                    </a>
-                    <a href="#" class="nav-icon" data-target="initiatives">
-                        <i class="fas fa-lightbulb"></i>
-                        <span>المبادرات</span>
-                    </a>
-                    <a href="#" class="nav-icon" data-target="students">
-                        <i class="fas fa-users"></i>
-                        <span>الطلاب</span>
-                    </a>
-                    <a href="#" class="nav-icon" data-target="self-learning">
-                        <i class="fas fa-book"></i>
-                        <span>التعلم الذاتي</span>
-                    </a>
-                    <a href="#" class="nav-icon" data-target="assessment">
-                        <i class="fas fa-chart-line"></i>
-                        <span>التقييم</span>
-                    </a>
-                    <a href="#" class="nav-icon" data-target="conclusion">
-                        <i class="fas fa-flag"></i>
-                        <span>الخاتمة</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
+<body>
 
-    <!-- مؤشر التنقل - يظهر تحت الهيدر -->
-    <div class="nav-indicator-container">
-        <div class="nav-indicator">
-            <i class="fas fa-chevron-left"></i> اسحب للتنقل بين الأقسام
-        </div>
-    </div>
+<div class="top-marquee">
+<div class="marquee-inner">
+<i class="fas fa-bullhorn" style="margin-left:10px;"></i>
+اختر نوع التقرير المطلوب، ثم اضغط زر التعبئة لكل بند ليظهر النص الجاهز، وواصل الضغط لتبديل الصياغة حتى تجد الأنسب. عدّل النصوص عند الحاجة، وأدخل أي تقرير جديد يدوياً إذا لم يكن ضمن القائمة
+</div>
+</div>
 
-    <div class="container">
-        <div class="main-content">
-            <section id="about" class="section active">
-                <h2 class="section-title">نبذة عني</h2>
-                <div class="about-section">
-                    <div class="about-card">
-                        <div class="about-header">
-                            <div class="avatar">
-                                <i class="fas fa-chalkboard-teacher"></i>
-                            </div>
-                            <div class="about-info">
-                                <!-- تم تصغير اسم المعلمة -->
-                                <h3>سارة خويتم الخالدي</h3>
-                                <p><span class="highlight">التخصص:</span> رياضيات وإحصاء</p>
-                                <p><span class="highlight">المهنة:</span> معلمة رياضيات للمرحلة الابتدائية</p>
-                                <p><span class="highlight">الخبرة:</span> 4 سنوات في القطاع الخاص</p>
-                                <p>معلمة متخصصة في تدريس الرياضيات للمرحلة الابتدائية، أمتلك شغفاً كبيراً في تطوير مهارات الطلاب واستخدام أساليب تربوية حديثة.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="about-details">
-                            <div class="detail-item fade-in-element">
-                                <h4><i class="fas fa-heartbeat"></i> فلسفتي التعليمية</h4>
-                                <p>أؤمن بأن التعليم عملية إبداعية تهدف إلى تنمية التفكير النقدي والإبداعي لدى الطلاب، وليس مجرد نقل للمعرفة.</p>
-                            </div>
-                            
-                            <div class="detail-item fade-in-element">
-                                <h4><i class="fas fa-rocket"></i> منهجي في التدريس</h4>
-                                <p>أعتمد على استراتيجيات تعليمية متنوعة تراعي الفروق الفردية بين الطلاب، مع التركيز على التعلم النشط والتطبيقات العملية.</p>
-                            </div>
-                            
-                            <div class="detail-item fade-in-element">
-                                <h4><i class="fas fa-trophy"></i> إنجازاتي التربوية</h4>
-                                <p>حصلت على تقدير "المعلم المتميز" في القطاع الخاص، وساهمت في رفع معدل نجاح طلابي في اختبارات الرياضيات بنسبة 40%.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <section id="intro" class="section">
-                <h2 class="section-title">المقدمة</h2>
-                <div class="intro-section">
-                    <div class="intro-card fade-in-element">
-                        <h3><i class="fas fa-question-circle"></i> رؤيتي التعليمية</h3>
-                        <p>أتطلع إلى إنشاء جيل من الطلاب المتمكنين في الرياضيات، القادرين على تطبيق المفاهيم الرياضية في حياتهم اليومية.</p>
-                    </div>
-                    
-                    <div class="intro-card fade-in-element">
-                        <h3><i class="fas fa-bullseye"></i> رسالتي التربوية</h3>
-                        <p>تقديم تعليم رياضي متميز يلبي احتياجات جميع الطلاب، باستخدام استراتيجيات تدريس مبتكرة وتقنيات تعليمية حديثة.</p>
-                    </div>
-                    
-                    <div class="intro-card fade-in-element">
-                        <h3><i class="fas fa-star"></i> قيمي التعليمية</h3>
-                        <p>الإبداع، التميز، العدالة، التعاون، والمسؤولية. أؤمن بأهمية تقديم تعليم عالي الجودة لجميع الطلاب.</p>
-                    </div>
-                </div>
-            </section>
-            
-            <section id="bio" class="section">
-                <h2 class="section-title">السيرة المهنية المختصرة</h2>
-                <div class="bio-grid">
-                    <div class="bio-card fade-in-element">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h4>المؤهل العلمي</h4>
-                        <p>بكالوريوس - تخصص رياضيات وإحصاء - جامعة الطائف</p>
-                    </div>
-                    
-                    <div class="bio-card fade-in-element">
-                        <i class="fas fa-book"></i>
-                        <h4>التخصص الدقيق</h4>
-                        <p>معلمة رياضيات للمرحلة الابتدائية - متخصصة في تدريس الرياضيات التطبيقية والتفاعلية</p>
-                    </div>
-                    
-                    <div class="bio-card fade-in-element">
-                        <i class="fas fa-briefcase"></i>
-                        <h4>المسيرة المهنية</h4>
-                        <p>4 سنوات في القطاع الخاص - تدريس الرياضيات لطلاب المرحلة الابتدائية في مدارس النخبة الخاصة</p>
-                    </div>
-                    
-                    <div class="bio-card fade-in-element">
-                        <i class="fas fa-chalkboard"></i>
-                        <h4>المهارات التخصصية</h4>
-                        <p>تصميم مناهج رياضية تفاعلية - استخدام تقنيات التعليم الحديثة - تقييم وتطوير الأداء التعليمي</p>
-                    </div>
-                </div>
-            </section>
-            
-            <section id="planning" class="section">
-                <h2 class="section-title">التخطيط للتدريس</h2>
-                <div class="planning-grid">
-                    <div class="plan-card fade-in-element">
-                        <h4><i class="fas fa-file-alt"></i> تحضير درس متكامل</h4>
-                        <ul>
-                            <li>تحليل المحتوى وتحديد الأهداف التعليمية</li>
-                            <li>تصميم أنشطة تعليمية تفاعلية متنوعة</li>
-                            <li>إعداد وسائل تعليمية مبتكرة وجذابة</li>
-                            <li>تخطيط أساليب تقييم متنوعة</li>
-                            <li>إعداد مواد إثرائية وداعمة</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="plan-card fade-in-element">
-                        <h4><i class="fas fa-calendar"></i> توزيع المنهج الدراسي</h4>
-                        <ul>
-                            <li>توزيع المقرر على الأسابيع الدراسية</li>
-                            <li>مراعاة المناسبات والأحداث المدرسية</li>
-                            <li>تخصيص أوقات للمراجعة والتقييم</li>
-                            <li>التنسيق مع فريق العمل</li>
-                            <li>مراعاة الفروق الفردية</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="plan-card fade-in-element">
-                        <h4><i class="fas fa-tasks"></i> خطة تطوير الأداء</h4>
-                        <ul>
-                            <li>تحديد أهداف تطويرية لكل فصل</li>
-                            <li>تخطيط برامج تدريبية مستمرة</li>
-                            <li>تصميم أنشطة تعاونية مع الزملاء</li>
-                            <li>متابعة التطور المهني المستمر</li>
-                            <li>توثيق التجارب الناجحة</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            
-            <section id="certificates" class="section">
-                <h2 class="section-title">الشواهد الوظيفية</h2>
-                <div class="certificates-section">
-                    <div class="certificates-grid">
-                        <div class="certificate-item fade-in-element">
-                            <div class="certificate-header-pdf">
-                                <h3>ملف الخطط العلاجية</h3>
-                                <div class="certificate-actions">
-                                    <a href="https://drive.google.com/file/d/1fq66Do1rcTUCRFAevBp-_PXc0lfpFoNl/view?usp=drivesdk" target="_blank" class="pdf-action-btn" title="فتح في نافذة جديدة">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </a>
-                                    <a href="https://drive.google.com/file/d/1fq66Do1rcTUCRFAevBp-_PXc0lfpFoNl/view?usp=drivesdk" download class="pdf-action-btn" title="تحميل الملف">
-                                        <i class="fas fa-download"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="pdf-viewer">
-                                <iframe src="https://drive.google.com/file/d/1fq66Do1rcTUCRFAevBp-_PXc0lfpFoNl/preview" allow="autoplay"></iframe>
-                            </div>
-                        </div>
-                        
-                        <div class="certificate-item fade-in-element">
-                            <div class="certificate-header-pdf">
-                                <h3>رفع الحد الأدنى من المهارات</h3>
-                                <div class="certificate-actions">
-                                    <a href="https://drive.google.com/file/d/1AbGGbzLThaQLP_MTu-UWOPGXT9PrOA-T/view?usp=drivesdk" target="_blank" class="pdf-action-btn" title="فتح في نافذة جديدة">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </a>
-                                    <a href="https://drive.google.com/file/d/1AbGGbzLThaQLP_MTu-UWOPGXT9PrOA-T/view?usp=drivesdk" download class="pdf-action-btn" title="تحميل الملف">
-                                        <i class="fas fa-download"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="pdf-viewer">
-                                <iframe src="https://drive.google.com/file/d/1AbGGbzLThaQLP_MTu-UWOPGXT9PrOA-T/preview" allow="autoplay"></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <section id="courses" class="section">
-                <h2 class="section-title">الدورات التربوية</h2>
-                
-                <div class="courses-description fade-in-element">
-                    <p>في هذا القسم يمكنك عرض شهادات الدورات التربوية التي حصلت عليها مع إمكانية تنزيل نسخة PDF من كل شهادة.</p>
-                </div>
-                
-                <div class="courses-section">
-                    <div class="certificate-cards">
-                        <!-- شهادة القياس والتقويم -->
-                        <div class="certificate-card fade-in-element">
-                            <div class="certificate-header">
-                                <div class="certificate-title">شهادة القياس والتقويم التربوي</div>
-                                <div class="download-btn-container">
-                                    <a href="https://drive.google.com/file/d/1Px7knwhc94ZVEtk1ZWzbS3B94w8OvAEJ/view?usp=drivesdk" download class="download-btn">
-                                        <i class="fas fa-download"></i> تنزيل PDF
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="certificate-image-container">
-                                <img src="https://i.ibb.co/3yvHTMjM/IMG-2136.jpg" alt="شهادة القياس والتقويم التربوي" class="certificate-image">
-                            </div>
-                        </div>
-                        
-                        <!-- شهادة ممارسات فاعلة لمعلم المستقبل -->
-                        <div class="certificate-card fade-in-element">
-                            <div class="certificate-header">
-                                <div class="certificate-title">ممارسات فاعلة لمعلم المستقبل</div>
-                                <div class="download-btn-container">
-                                    <a href="https://drive.google.com/file/d/1MYEG2jP1eXg00CaQe0fjsuiq2q6h2v-a/view?usp=drivesdk" download class="download-btn">
-                                        <i class="fas fa-download"></i> تنزيل PDF
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="certificate-image-container">
-                                <img src="https://i.ibb.co/HLXJHKYf/IMG-2135.jpg" alt="ممارسات فاعلة لمعلم المستقبل" class="certificate-image">
-                            </div>
-                        </div>
-                        
-                        <!-- شهادة مهارات تنفيذ التدريس في الطفولة المبكرة -->
-                        <div class="certificate-card fade-in-element">
-                            <div class="certificate-header">
-                                <div class="certificate-title">مهارات تنفيذ التدريس في الطفولة المبكرة</div>
-                                <div class="download-btn-container">
-                                    <a href="https://drive.google.com/file/d/1jIqEawrZGQepy6L85yhI3jrlX8at_ngN/view?usp=drivesdk" download class="download-btn">
-                                        <i class="fas fa-download"></i> تنزيل PDF
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="certificate-image-container">
-                                <img src="https://i.ibb.co/JWnw2h3z/IMG-2137.jpg" alt="مهارات تنفيذ التدريس في مدارس الطفولة المبكرة" class="certificate-image">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <section id="strategies" class="section">
-                <h2 class="section-title">استراتيجيات التدريس المستخدمة</h2>
-                <div class="strategy-container">
-                    <div class="strategy-card fade-in-element">
-                        <h4><i class="fas fa-running"></i> التعلم النشط التفاعلي</h4>
-                        <p>استخدام استراتيجيات مثل العصف الذهني، التعلم بالمشاريع، والتعلم القائم على حل المشكلات.</p>
-                    </div>
-                    
-                    <div class="strategy-card fade-in-element">
-                        <h4><i class="fas fa-users"></i> التعلم التعاوني المنظم</h4>
-                        <p>تنظيم الطلاب في مجموعات تعاونية متنوعة المهام لتطوير مهارات التواصل والعمل الجماعي.</p>
-                    </div>
-                    
-                    <div class="strategy-card fade-in-element">
-                        <h4><i class="fas fa-gamepad"></i> التعليم الترفيهي</h4>
-                        <p>دمج الألعاب التعليمية في العملية التعليمية مثل "سودوكو الأطفال" و"لعبة الضرب السريع".</p>
-                    </div>
-                    
-                    <div class="strategy-card fade-in-element">
-                        <h4><i class="fas fa-lightbulb"></i> التعلم السياقي</h4>
-                        <p>ربط الدروس الرياضية بحياة الطلاب اليومية من خلال أمثلة واقعية وتطبيقات عملية.</p>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- قسم التقويم المحدث -->
-            <section id="evaluation" class="section">
-                <h2 class="section-title">التقويم والاختبارات</h2>
-                <div class="evaluation-section">
-                    <div class="evaluation-card fade-in-element">
-                        <h3><i class="fas fa-clipboard-check"></i> فلسفتي في التقويم</h3>
-                        <p>أحرص على تنويع أساليب التقويم بما يحقق العدالة ويراعي الفروق الفردية بين طالباتي، حيث أستخدم التقويم التشخيصي في بداية الدروس للتعرف على مستوياتهن، وأطبق التقويم التكويني أثناء الشرح من خلال الأسئلة الشفوية، أوراق العمل، والأنشطة الصفية.</p>
-                        <p>كما أعتمد على التقويم الختامي عبر الاختبارات القصيرة والمهام الأدائية، وأقوم بتحليل نتائج التقويم للاستفادة منها في تحسين أساليب تدريسي ووضع الخطط العلاجية المناسبة.</p>
-                    </div>
-                    
-                    <div class="evaluation-grid">
-                        <div class="evaluation-item fade-in-element">
-                            <h4>التقويم التشخيصي</h4>
-                            <ul>
-                                <li>تقويم قبلي لتحديد مستوى الطالبات</li>
-                                <li>تحديد نقاط القوة والضعف</li>
-                                <li>تصميم خطط تعليمية فردية</li>
-                                <li>تحديد الاحتياجات التعليمية</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="evaluation-item fade-in-element">
-                            <h4>التقويم التكويني</h4>
-                            <ul>
-                                <li>أسئلة شفوية أثناء الشرح</li>
-                                <li>أوراق العمل التطبيقية</li>
-                                <li>أنشطة صفية تفاعلية</li>
-                                <li>متابعة التقدم اليومي</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="evaluation-item fade-in-element">
-                            <h4>التقويم الختامي</h4>
-                            <ul>
-                                <li>اختبارات قصيرة دورية</li>
-                                <li>مهام أدائية عملية</li>
-                                <li>مشاريع تعليمية</li>
-                                <li>تقارير التقدم الشامل</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="evaluation-item fade-in-element">
-                            <h4>تحليل النتائج</h4>
-                            <ul>
-                                <li>تحليل إحصائي للنتائج</li>
-                                <li>تحديد مجالات التحسين</li>
-                                <li>وضع خطط علاجية</li>
-                                <li>تطوير أساليب التدريس</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- قسم التقنية المحدث -->
-            <section id="technology" class="section">
-                <h2 class="section-title">توظيف التقنية في التعليم</h2>
-                <div class="technology-grid">
-                    <div class="technology-card fade-in-element">
-                        <h4><i class="fas fa-laptop"></i> رؤيتي في توظيف التقنية</h4>
-                        <p>أوظف التقنيات التعليمية الحديثة في تدريس مادة الرياضيات بهدف تبسيط المفاهيم المجردة وزيادة دافعية التعلم لدى طالباتي، حيث أستخدم العروض التقديمية التفاعلية، المنصات التعليمية الرقمية، وبرامج تمثيل الرسوم البيانية.</p>
-                        <p>كما أستثمر السبورة الذكية والتطبيقات التعليمية في تنفيذ الأنشطة الصفية، وأكلف الطالبات بمهام رقمية تعزز التعلم الذاتي والتعاوني.</p>
-                        
-                        <div class="tools-list">
-                            <span class="tool-tag">العروض التقديمية التفاعلية</span>
-                            <span class="tool-tag">المنصات التعليمية الرقمية</span>
-                            <span class="tool-tag">برامج الرسوم البيانية</span>
-                            <span class="tool-tag">السبورة الذكية</span>
-                            <span class="tool-tag">التطبيقات التعليمية</span>
-                            <span class="tool-tag">المهام الرقمية</span>
-                        </div>
-                    </div>
-                    
-                    <div class="technology-card fade-in-element">
-                        <h4><i class="fas fa-chart-line"></i> أهداف الاستخدام التقني</h4>
-                        <p>تهدف ممارساتي التقنية إلى تحويل بيئة التعلم إلى مساحة تفاعلية جذابة، حيث يصبح الطالب مشاركاً فعالاً في بناء المعرفة بدلاً من متلقٍ سلبي.</p>
-                        
-                        <ul style="list-style-type: none; padding-right: 0;">
-                            <li style="padding: 10px 0; color: var(--text-color); position: relative; padding-right: 30px;">
-                                <i class="fas fa-check" style="color: var(--primary-color); position: absolute; right: 0; top: 12px;"></i>
-                                <strong>تبسيط المفاهيم الرياضية:</strong> تحويل المفاهيم المجردة إلى مرئيات تفاعلية
-                            </li>
-                            <li style="padding: 10px 0; color: var(--text-color); position: relative; padding-right: 30px;">
-                                <i class="fas fa-check" style="color: var(--primary-color); position: absolute; right: 0; top: 12px;"></i>
-                                <strong>زيادة الدافعية:</strong> جعل عملية التعلم أكثر تشويقاً وتفاعلاً
-                            </li>
-                            <li style="padding: 10px 0; color: var(--text-color); position: relative; padding-right: 30px;">
-                                <i class="fas fa-check" style="color: var(--primary-color); position: absolute; right: 0; top: 12px;"></i>
-                                <strong>تعزيز التعلم الذاتي:</strong> تمكين الطالبات من التعلم وفق سرعتهن الخاصة
-                            </li>
-                            <li style="padding: 10px 0; color: var(--text-color); position: relative; padding-right: 30px;">
-                                <i class="fas fa-check" style="color: var(--primary-color); position: absolute; right: 0; top: 12px;"></i>
-                                <strong>تنمية المهارات الرقمية:</strong> إعداد الطالبات لعالم تقني متطور
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- قسم المبادرات المحدث -->
-            <section id="initiatives" class="section">
-                <h2 class="section-title">المبادرات الصفية والمدرسية</h2>
-                <div class="initiatives-container">
-                    <div class="initiative-card fade-in-element">
-                        <h4><i class="fas fa-lightbulb"></i> مشاركتي في المبادرات التعليمية</h4>
-                        <p>أشارك بفاعلية في المبادرات التعليمية الهادفة إلى رفع مستوى التحصيل الدراسي في مادة الرياضيات، مثل مبادرات علاج التعثر الدراسي وتنمية المهارات الأساسية.</p>
-                        <p>كما أحرص على تقديم مبادرات وأنشطة إبداعية، وتنفيذ مسابقات تعليمية تسهم في تنمية التفكير المنطقي وتعزيز روح التنافس الإيجابي بين الطالبات.</p>
-                    </div>
-                    
-                    <div class="initiative-card fade-in-element">
-                        <h4><i class="fas fa-hands-helping"></i> مبادرات علاج التعثر الدراسي</h4>
-                        <p>أقوم بتصميم وتنفيذ مبادرات متخصصة لعلاج صعوبات التعلم في الرياضيات، تشمل جلسات تقوية فردية وجماعية، وأنشطة علاجية مكثفة تركز على المهارات الأساسية التي تعاني منها الطالبات.</p>
-                    </div>
-                    
-                    <div class="initiative-card fade-in-element">
-                        <h4><i class="fas fa-trophy"></i> المسابقات التعليمية</h4>
-                        <p>أنظم مسابقات صفية ومدرسية دورية في الرياضيات تهدف إلى تنمية التفكير المنطقي والإبداعي، وتعزيز الثقة بالنفس، وتحفيز الطالبات على التفوق والتميز في المادة.</p>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- قسم الطلاب المحدث -->
-            <section id="students" class="section">
-                <h2 class="section-title">العناية بالطلاب</h2>
-                <div class="students-grid">
-                    <div class="student-card fade-in-element">
-                        <h4><i class="fas fa-heart"></i> العلاقات التربوية الإيجابية</h4>
-                        <p>أعمل على بناء علاقات تربوية إيجابية مع طالباتي قائمة على الاحترام المتبادل، وأحرص على توفير بيئة صفية آمنة ومحفزة على التعلم.</p>
-                        <p>أراعي الفروق الفردية بين الطالبات، وأدعم الطالبات المتعثرات بخطط علاجية مناسبة، كما أعمل على تنمية مهارات التفكير العليا لدى الطالبات المتفوقات، وتعزيز السلوك الإيجابي والانضباط داخل الصف.</p>
-                    </div>
-                    
-                    <div class="student-card fade-in-element">
-                        <h4><i class="fas fa-users"></i> بيئة التعلم الداعمة</h4>
-                        <p>أخلق في صفي بيئة تعليمية داعمة تشجع على المشاركة والتعبير عن الرأي، حيث يشعر كل طالب بالأمان النفسي والثقة في قدراته.</p>
-                        <p>أستخدم أساليب التعزيز الإيجابي، وأشجع الحوار البناء، وأهتم بتعزيز القيم التربوية والأخلاقية إلى جانب المهارات الأكاديمية.</p>
-                    </div>
-                    
-                    <div class="student-card fade-in-element">
-                        <h4><i class="fas fa-graduation-cap"></i> رعاية المتفوقات</h4>
-                        <p>أصمم برامج إثرائية خاصة للطالبات المتفوقات تشمل أنشطة متقدمة، ومشاريع بحثية مصغرة، ومشاركات في المسابقات المحلية والعالمية.</p>
-                        <p>أعمل على تنمية مهارات القيادة والبحث العلمي والإبداع لدى هذه الفئة، وأوفر لها فرصاً للتطور والتقدم المستمر.</p>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- قسم التعلم الذاتي المحدث -->
-            <section id="self-learning" class="section">
-                <h2 class="section-title">التعلم الذاتي والتطوير المهني</h2>
-                <div class="self-learning-grid">
-                    <div class="learning-card fade-in-element">
-                        <h4><i class="fas fa-book-open"></i> استراتيجيات التعلم الذاتي</h4>
-                        <p>أسعى إلى تطوير أدائي المهني بشكل مستمر من خلال التعلم الذاتي، حيث أحرص على الاطلاع على أحدث الاستراتيجيات في تدريس الرياضيات، والمشاركة في الدورات التدريبية وورش العمل التربوية.</p>
-                        <p>كما أطبق ما أكتسبه من معارف ومهارات جديدة في ممارساتي الصفية، وأوثق ذلك في ملفي المهني بما يعكس نمواً مهنياً مستداماً.</p>
-                    </div>
-                    
-                    <div class="learning-card fade-in-element">
-                        <h4><i class="fas fa-graduation-cap"></i> مصادر التعلم المستمر</h4>
-                        <p>أتواصل مع مصادر التعلم المتنوعة مثل المجلات التربوية المتخصصة، المنصات التعليمية الإلكترونية، المؤتمرات والندوات العلمية، وبرامج التطوير المهني التي تقدمها الجهات التعليمية.</p>
-                        <p>أحرص على تنويع مصادر معرفتي لتشمل أحدث التطورات في مجال تدريس الرياضيات والتربية بشكل عام.</p>
-                    </div>
-                    
-                    <div class="learning-card fade-in-element">
-                        <h4><i class="fas fa-chart-line"></i> التطبيق والتوثيق</h4>
-                        <p>لا يقتصر تطويري المهني على الاكتساب النظري فحسب، بل أحرص على تطبيق كل فكرة جديدة في صفي، وتقييم نتائجها، وتوثيق التجارب الناجحة لتعميم الفائدة.</p>
-                        <p>أحتفظ بسجل لتطوري المهني يتضمن الدورات، الشهادات، التجارب التطبيقية، والتغذية الراجعة من الزملاء والطلاب.</p>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- قسم التقييم الذاتي -->
-            <section id="assessment" class="section">
-                <h2 class="section-title">التقييم الذاتي والتطوير المهني</h2>
-                <div class="assessment-container">
-                    <div class="assessment-card strength fade-in-element">
-                        <h4><i class="fas fa-check-circle"></i> نقاط القوة</h4>
-                        <ul>
-                            <li>تبسيط المفاهيم المعقدة</li>
-                            <li>استخدام التقنيات التعليمية</li>
-                            <li>بناء علاقات إيجابية</li>
-                            <li>التخطيط الاستراتيجي</li>
-                            <li>المرونة والتكيف</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="assessment-card improvement fade-in-element">
-                        <h4><i class="fas fa-tools"></i> مجالات التطوير</h4>
-                        <ul>
-                            <li>البحث العلمي التربوي</li>
-                            <li>تحليلات البيانات التعليمية</li>
-                            <li>التعلم بالمشاريع</li>
-                            <li>مجتمعات التعلم العالمية</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="assessment-card plan fade-in-element">
-                        <h4><i class="fas fa-calendar-check"></i> خطة التطوير</h4>
-                        <ul>
-                            <li>ماجستير في مناهج الرياضيات</li>
-                            <li>منصة تعليمية تفاعلية</li>
-                            <li>دليل استراتيجيات التدريس</li>
-                            <li>زيارات تبادلية للمدارس</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            
-            <section id="conclusion" class="section">
-                <h2 class="section-title">الخاتمة والتطلعات</h2>
-                <div class="conclusion-card">
-                    <h3>رحلة الإبداع التربوي المستمرة</h3>
-                    <p>تمثل مسيرتي التعليمية رحلة متواصلة من التعلم والتطوير، حيث أسعى دائماً إلى تجويد ممارساتي التعليمية والارتقاء بمستوى أدائي المهني.</p>
-                    <p>أتطلع إلى المساهمة الفعالة في تطوير التعليم الرياضي على مستوى المدرسة والمجتمع المحلي، من خلال تبني المبادرات التربوية المبتكرة.</p>
-                    <p>أهدف إلى ترسيخ ثقافة التميز والإبداع في تدريس الرياضيات، وجعلها مادة محببة ومفهومة لجميع الطلاب.</p>
-                    <div style="margin-top: 25px; padding-top: 20px; border-top: 2px solid rgba(232, 228, 213, 0.8);">
-                        <p style="font-weight: 700; color: var(--secondary-color); font-size: 1.1rem;">
-                            المعلمة<br>
-                            <span style="color: var(--secondary-color); font-size: 1.2rem;">سارة خويتم الخالدي</span><br>
-                            معلمة رياضيات - المرحلة الابتدائية<br>
-                            ديسمبر 2025
-                        </p>
-                    </div>
-                </div>
-            </section>
+<div class="control-bar">
+    <!-- تم إزالة الجانب الأيمن (execution-text) الذي كان يحتوي على "أداة إصدار التقارير التربوية" -->
+    
+    <!-- الجانب الأيسر فقط: الأزرار والعنوان -->
+    <div class="right-section">
+        <!-- العبارة الجديدة - تم التعديل -->
+        <div class="app-title">
+            <i class="fas fa-user-tie"></i>
+            تنفيذ: المعلم فهد الخالدي
         </div>
         
-        <div class="footer">
-            <p>© 2025 ملف الإنجاز المهني - المعلمة سارة خويتم الخالدي</p>
-            <p>جميع الحقوق محفوظة | تم التحديث في ديسمبر 2025</p>
-            <div style="margin-top: 15px;">
-                <i class="fas fa-envelope" style="margin: 0 10px; color: var(--secondary-color);"></i>
-                <i class="fas fa-phone" style="margin: 0 10px; color: var(--secondary-color);"></i>
-                <i class="fas fa-globe" style="margin: 0 10px; color: var(--secondary-color);"></i>
+        <!-- مجموعة الأزرار المعدلة -->
+        <div class="btn-group">
+            <!-- زوج الأزرار الصغيرة -->
+            <div class="btn-pair">
+                <button class="main-btn half-btn" id="saveTeacherBtn" onclick="saveTeacherData()" title="حفظ بيانات إدارة التعليم، اسم المدرسة، الصف، المادة، المستهدفون، المكان">
+                    <i class="fas fa-chalkboard-teacher btn-icon"></i>
+                    <span class="btn-text">حفظ بيانات المعلم</span>
+                </button>
+                <button class="main-btn half-btn" id="clearBtn" onclick="clearData()" title="مسح جميع البيانات المدخلة">
+                    <i class="fas fa-trash-alt btn-icon"></i>
+                    <span class="btn-text">مسح</span>
+                </button>
             </div>
+            
+            <!-- الأزرار العادية -->
+            <button class="main-btn" id="supportBtn" onclick="openSupportModal()" title="الدعم الفني والتواصل مع المطور">
+                <i class="fas fa-headset btn-icon"></i>
+                <span class="btn-text">الدعم الفني</span>
+            </button>
+            <button class="main-btn" id="pdfBtn" onclick="downloadPDF()" title="تحويل التقرير إلى PDF وتنزيله">
+                <i class="fas fa-file-pdf btn-icon"></i>
+                <span class="btn-text">تنزيل PDF</span>
+            </button>
+            <button class="main-btn" id="whatsappBtn" onclick="sharePDFWhatsApp()" title="مشاركة التقرير عبر واتساب">
+                <i class="fab fa-whatsapp btn-icon"></i>
+                <span class="btn-text">مشاركة واتساب</span>
+            </button>
         </div>
     </div>
+</div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const navIcons = document.querySelectorAll('.nav-icon');
-            const sections = document.querySelectorAll('.section');
-            const navIndicator = document.querySelector('.nav-indicator');
-            const navIconsContainer = document.querySelector('.nav-icons');
-            
-            // إخفاء مؤشر التنقل بعد 10 ثوانٍ
-            let indicatorTimeout = setTimeout(() => {
-                if (navIndicator && navIndicator.parentElement) {
-                    navIndicator.parentElement.style.display = 'none';
-                }
-            }, 10000); // 10 ثواني بدلاً من 5
-            
-            // إخفاء المؤشر عند النقر على أي قسم
-            function hideIndicator() {
-                if (navIndicator && navIndicator.parentElement) {
-                    navIndicator.parentElement.style.display = 'none';
-                    clearTimeout(indicatorTimeout); // إلغاء المؤقت
-                }
-            }
-            
-            // إخفاء المؤشر عند التمرير الأفقي في شريط التنقل
-            let scrollTimeout;
-            navIconsContainer.addEventListener('scroll', function() {
-                hideIndicator();
-                
-                // إلغاء أي مؤقتات سابقة
-                clearTimeout(scrollTimeout);
-                
-                // إخفاء المؤشر لمدة 500 مللي بعد التمرير
-                scrollTimeout = setTimeout(hideIndicator, 500);
-            });
-            
-            // إخفاء المؤشر عند التمرير الرأسي للصفحة
-            let scrollTimeoutVertical;
-            window.addEventListener('scroll', function() {
-                hideIndicator();
-                
-                // إلغاء أي مؤقتات سابقة
-                clearTimeout(scrollTimeoutVertical);
-                
-                // إخفاء المؤشر لمدة 500 مللي بعد التمرير
-                scrollTimeoutVertical = setTimeout(hideIndicator, 500);
-            });
-            
-            function loadSection(targetId) {
-                navIcons.forEach(item => item.classList.remove('active'));
-                
-                const targetIcon = document.querySelector(`.nav-icon[data-target="${targetId}"]`);
-                if (targetIcon) {
-                    targetIcon.classList.add('active');
-                }
-                
-                sections.forEach(section => section.classList.remove('active'));
-                
-                const targetSection = document.getElementById(targetId);
-                if (targetSection) {
-                    targetSection.classList.add('active');
-                }
-                
-                setTimeout(() => {
-                    const currentFadeElements = targetSection.querySelectorAll('.fade-in-element');
-                    currentFadeElements.forEach((el, index) => {
-                        setTimeout(() => {
-                            el.classList.add('visible');
-                        }, index * 50);
-                    });
-                }, 100);
-                
-                // إخفاء مؤشر التنقل عند التبديل بين الأقسام
-                hideIndicator();
-                
-                if (window.innerWidth < 768) {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-            
-            navIcons.forEach(icon => {
-                icon.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('data-target');
-                    loadSection(targetId);
-                    
-                    // إخفاء مؤشر التنقل عند النقر على أي قسم
-                    hideIndicator();
-                });
-                
-                icon.addEventListener('touchstart', function() {
-                    this.style.opacity = '0.8';
-                });
-                
-                icon.addEventListener('touchend', function() {
-                    this.style.opacity = '1';
-                });
-            });
-            
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -30px 0px'
+<!-- إشعارات -->
+<div class="notification" id="saveNotification">
+<i class="fas fa-check-circle"></i>
+<span>تم حفظ بيانات المعلم بنجاح!</span>
+</div>
+
+<!-- نافذة الدعم الفني -->
+<div class="support-modal" id="supportModal">
+<div class="support-content">
+<div class="support-header">
+<h3><i class="fas fa-headset" style="margin-left:10px;"></i>الدعم الفني</h3>
+<button class="close-support" onclick="closeSupportModal()">×</button>
+</div>
+
+<div class="support-form">
+<div class="form-group">
+<label for="supportName"><i class="fas fa-user"></i>الاسم الكامل</label>
+<input type="text" id="supportName" placeholder="أدخل اسمك الكامل">
+</div>
+
+<div class="form-group">
+<label for="supportPhone"><i class="fas fa-phone"></i>رقم التواصل</label>
+<input type="tel" id="supportPhone" placeholder="أدخل رقم الجوال أو الهاتف">
+</div>
+
+<div class="form-group">
+<label for="supportIssue"><i class="fas fa-exclamation-circle"></i>تفاصيل المشكلة</label>
+<textarea id="supportIssue" rows="4" placeholder="صف مشكلتك بالتفصيل..."></textarea>
+</div>
+
+<div class="support-info">
+<p><i class="fas fa-envelope"></i>البريد الإلكتروني: iFahadenglish@gmail.com</p>
+<p><i class="fab fa-whatsapp"></i>واتساب: +966597077245</p>
+</div>
+
+<div class="support-actions">
+<button class="support-action-btn email-btn" onclick="sendEmailSupport()">
+<i class="fas fa-envelope"></i>مراسلة عبر البريد
+</button>
+<button class="support-action-btn whatsapp-support-btn" onclick="sendWhatsAppSupport()">
+<i class="fab fa-whatsapp"></i>مراسلة عبر واتساب
+</button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="wrapper">
+<div class="input-section">
+  
+  <h2><i class="fas fa-tools" style="margin-left:10px;"></i>أداة إصدار التقارير التربوية</h2>
+  
+  <div class="form-group">
+    <label><i class="fas fa-file-alt"></i>اسم التقرير</label>
+    
+    <!-- التصنيف العام - تم إصلاح النص وإضافة خيار "تقارير أخرى" -->
+    <select id="reportCategory" oninput="handleReportCategory()" style="margin-bottom:10px;">
+        <option value="">اختر تصنيف التقرير</option>
+        <option value="التقارير التعليمية الصفية">أولا: التقارير التعليمية الصفية</option>
+        <option value="التقارير العلاجية والدعم الفردي">ثانيا: التقارير العلاجية والدعم الفردي</option>
+        <option value="التقارير التحفيزية والسلوكية">ثالثا: التقارير التحفيزية والسلوكية</option>
+        <option value="تقارير الأنشطة غير الصفية">رابعا: تقارير الأنشطة غير الصفية</option>
+        <option value="تقارير التواصل مع أولياء الأمور والمجتمع">خامسا: تقارير التواصل مع أولياء الأمور والمجتمع</option>
+        <option value="التقارير التخطيطية والتنظيمية">سادسا: التقارير التخطيطية والتنظيمية</option>
+        <option value="تقارير التقييم والمتابعة">سابعا: تقارير التقييم والمتابعة</option>
+        <option value="تقارير التدريب والتطوير المهني">ثامنا: تقارير التدريب والتطوير المهني</option>
+        <option value="تقارير توظيف التكنولوجيا">تاسعا: تقارير توظيف التكنولوجيا</option>
+        <option value="تقارير البحث والتطوير المناهجي">عاشرا: تقارير البحث والتطوير المناهجي</option>
+        <option value="تقارير الجودة واللجان">حادي عشر: تقارير الجودة واللجان</option>
+        <option value="تقارير الأمن والسلامة">ثاني عشر: تقارير الأمن والسلامة</option>
+        <option value="أخرى">تقارير أخرى (إدخال يدوي)</option>
+    </select>
+    
+    <!-- حقل البحث - متاح دائمًا -->
+    <div id="reportSearchContainer" style="display:block; margin-bottom:10px; position:relative;">
+        <input type="text" id="reportSearch" placeholder="ابحث عن تقرير..." style="width:100%; padding:10px; border:1px solid #d4ebe2; border-radius:6px; font-size:14px;">
+        <div id="searchResults" style="display:none; position:absolute; top:100%; left:0; right:0; background:white; border:1px solid #ddd; border-radius:6px; max-height:200px; overflow-y:auto; z-index:1000; box-shadow:0 4px 12px rgba(0,0,0,0.1);"></div>
+    </div>
+    
+    <!-- قائمة التقارير المنسدلة -->
+    <select id="reportType" oninput="handleReportType()" style="display:none;">
+        <option value="">اختر تقريرًا</option>
+    </select>
+    
+    <!-- حقل الإدخال للنوع "أخرى" -->
+    <input id="reportTypeInput" placeholder="أدخل اسم التقرير" oninput="updateReport()" style="display:none; margin-top:8px;">
+  </div>
+  
+  <div class="form-group">
+    <label><i class="fas fa-university"></i>إدارة التعليم</label>
+    <select id="education" oninput="updateReport()">
+      <option>الإدارة العامة للتعليم بمنطقة مكة المكرمة</option>
+      <option>الإدارة العامة للتعليم بمنطقة الرياض</option>
+      <option>الإدارة العامة للتعليم بمنطقة المدينة المنورة</option>
+      <option>الإدارة العامة للتعليم بالمنطقة الشرقية</option>
+      <option>الإدارة العامة للتعليم بمنطقة القصيم</option>
+      <option>الإدارة العامة للتعليم بمنطقة عسير</option>
+      <option>الإدارة العامة للتعليم بمنطقة تبوك</option>
+      <option>الإدارة العامة للتعليم بمنطقة حائل</option>
+      <option>الإدارة العامة للتعليم بمنطقة الحدود الشمالية</option>
+      <option>الإدارة العامة للتعليم بمنطقة جازان</option>
+      <option>الإدارة العامة للتعليم بمنطقة نجران</option>
+      <option>الإدارة العامة للتعليم بمنطقة الباحة</option>
+      <option>الإدارة العامة للتعليم بمنطقة الجوف</option>
+      <option>الإدارة العامة للتعليم بمحافظة الأحساء</option>
+      <option>الإدارة العامة للتعليم بمحافظة الطائف</option>
+      <option>الإدارة العامة للتعليم بمحافظة جدة</option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label><i class="fas fa-school"></i>اسم المدرسة</label>
+    <input id="school" value="سعيد بن العاص" placeholder="أدخل اسم المدرسة" oninput="updateReport()">
+  </div>
+  
+  <div class="form-row">
+    <div class="form-group">
+      <label><i class="fas fa-chalkboard-teacher"></i>صفة المعلّم</label>
+      <select id="teacherType" oninput="updateReport()">
+        <option selected>المعلم</option>
+        <option>المعلمة</option>
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label><i class="fas fa-user"></i>اسم المعلّم</label>
+      <input id="teacher" value="فهد الخالدي" placeholder="اسم المعلم" oninput="updateReport()">
+    </div>
+  </div>
+  
+  <div class="form-row">
+    <div class="form-group">
+      <label><i class="fas fa-user-tie"></i>صفة المدير</label>
+      <select id="principalType" oninput="updateReport()">
+        <option selected>المدير</option>
+        <option>المديرة</option>
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label><i class="fas fa-user-cog"></i>اسم المدير</label>
+      <input id="principal" value="نايف اللحياني" placeholder="اسم مدير المدرسة" oninput="updateReport()">
+    </div>
+  </div>
+  
+  <div class="form-row">
+    <div class="form-group">
+      <label><i class="fas fa-users-class"></i>الصف</label>
+      <input id="grade" placeholder="مثال: ٥/٣" oninput="updateReport()">
+    </div>
+    
+    <div class="form-group">
+      <label><i class="fas fa-calendar-alt"></i>الفصل الدراسي</label>
+      <select id="term" oninput="updateReport()">
+        <option></option><option>الأول</option><option>الثاني</option>
+      </select>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label><i class="fas fa-book"></i>المادة</label>
+    <input id="subject" placeholder="مثال: لغتي – علوم – رياضيات" oninput="updateReport()">
+  </div>
+  
+  <div class="form-row">
+    <div class="form-group">
+      <label><i class="fas fa-bullseye"></i>المستهدفون</label>
+      <input id="target" placeholder="مثال: جميع طلاب الصف" oninput="updateReport()">
+    </div>
+    
+    <div class="form-group">
+      <label><i class="fas fa-user-check"></i>عدد الحضور</label>
+      <input id="count" placeholder="مثال: ٢٥ طالب" oninput="updateReport()">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label><i class="fas fa-map-marker-alt"></i>مكان التنفيذ</label>
+    <input id="place" placeholder="مثال: داخل الصف – المختبر" oninput="updateReport()">
+  </div>
+  
+  <div class="form-group">
+    <label><i class="fas fa-flag"></i>الهدف التربوي</label>
+    <textarea id="goal" placeholder="أدخل الهدف التربوي" oninput="updateReport()"></textarea>
+    <div class="auto-buttons"><button class="auto-btn" onclick="autoFill('goal')"><i class="fas fa-magic"></i>تعبئة ذكية</button></div>
+  </div>
+  
+  <div class="form-group">
+    <label><i class="fas fa-file-signature"></i>نبذة مختصرة</label>
+    <textarea id="summary" placeholder="أدخل نبذة مختصرة" oninput="updateReport()"></textarea>
+    <div class="auto-buttons"><button class="auto-btn" onclick="autoFill('summary')"><i class="fas fa-magic"></i>تعبئة ذكية</button></div>
+  </div>
+  
+  <div class="form-group">
+    <label><i class="fas fa-tasks"></i>إجراءات التنفيذ</label>
+    <textarea id="steps" placeholder="كيف تم تنفيذ النشاط؟" oninput="updateReport()"></textarea>
+    <div class="auto-buttons"><button class="auto-btn" onclick="autoFill('steps')"><i class="fas fa-magic"></i>تعبئة ذكية</button></div>
+  </div>
+  
+  <div class="form-group">
+    <label><i class="fas fa-chess-board"></i>الاستراتيجيات</label>
+    <textarea id="strategies" placeholder="ما هي الاستراتيجيات" oninput="updateReport()"></textarea>
+    <div class="auto-buttons"><button class="auto-btn" onclick="autoFill('strategies')"><i class="fas fa-magic"></i>تعبئة ذكية</button></div>
+  </div>
+  
+  <div class="form-row">
+    <div class="form-group">
+      <label><i class="fas fa-thumbs-up"></i>نقاط القوة</label>
+      <textarea id="strengths" placeholder="نقاط القوة" oninput="updateReport()"></textarea>
+      <div class="auto-buttons"><button class="auto-btn" onclick="autoFill('strengths')"><i class="fas fa-magic"></i>تعبئة ذكية</button></div>
+    </div>
+    
+    <div class="form-group">
+      <label><i class="fas fa-tools"></i>نقاط التحسين</label>
+      <textarea id="improve" placeholder="نقاط تحتاج تطوير" oninput="updateReport()"></textarea>
+      <div class="auto-buttons"><button class="auto-btn" onclick="autoFill('improve')"><i class="fas fa-magic"></i>تعبئة ذكية</button></div>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label><i class="fas fa-lightbulb"></i>التوصيات</label>
+    <textarea id="recomm" placeholder="توصيات مستقبلية" oninput="updateReport()"></textarea>
+    <div class="auto-buttons"><button class="auto-btn" onclick="autoFill('recomm')"><i class="fas fa-magic"></i>تعبئة ذكية</button></div>
+  </div>
+  
+  <div class="form-row">
+    <div class="form-group">
+      <label><i class="fas fa-camera"></i>الصورة 1</label>
+      <input type="file" accept="image/*" placeholder="ارفع صورة" onchange="loadImage(this,'imgBox1')">
+    </div>
+    
+    <div class="form-group">
+      <label><i class="fas fa-camera"></i>الصورة 2</label>
+      <input type="file" accept="image/*" placeholder="ارفع صورة" onchange="loadImage(this,'imgBox2')">
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- قسم PDF المعدل -->
+<div id="report-content" class="wrapper pdf-export" style="display:none;">
+
+<div class="header">
+<img src="https://i.ibb.co/1fc5gB6v/9-C92-E57-B-23-FA-479-D-A024-1-D5-F871-B4-F8-D.png">
+<div class="header-school-title">اسم المدرسة</div>
+<div class="header-school" id="schoolBox"></div>
+<div class="header-education" id="educationBox"></div>
+<div class="header-date-box">
+<span id="hDate"></span><br>
+<span id="gDate"></span>
+</div>
+</div>
+
+<div class="info-grid">
+<div class="info-box"><div class="info-title">الفصل</div><div class="info-value" id="termBox"></div></div>
+<div class="info-box"><div class="info-title">الصف</div><div class="info-value" id="gradeBox"></div></div>
+<div class="info-box"><div class="info-title">المادة</div><div class="info-value" id="subjectBox"></div></div>
+<div class="info-box"><div class="info-title">التقرير</div><div class="info-value" id="reportTypeBox"></div></div>
+</div>
+
+<div class="info-grid2">
+<div class="info-box"><div class="info-title">المستهدفون</div><div class="info-value" id="targetBox"></div></div>
+<div class="info-box"><div class="info-title">العدد</div><div class="info-value" id="countBox"></div></div>
+<div class="info-box"><div class="info-title">المكان</div><div class="info-value" id="placeBox"></div></div>
+</div>
+
+<div class="objective-box"><div class="objective-title">الهدف التربوي</div><div class="objective-content" id="goalBox"></div></div>
+
+<div class="report-row">
+<div class="report-box"><div class="report-box-title">النبذة</div><div class="report-box-content" id="summaryBox"></div></div>
+<div class="report-box"><div class="report-box-title">إجراءات التنفيذ</div><div class="report-box-content" id="stepsBox"></div></div>
+</div>
+
+<div class="report-row">
+<div class="report-box"><div class="report-box-title">الاستراتيجيات</div><div class="report-box-content" id="strategiesBox"></div></div>
+<div class="report-box"><div class="report-box-title">نقاط القوة</div><div class="report-box-content" id="strengthsBox"></div></div>
+</div>
+
+<div class="report-row">
+<div class="report-box"><div class="report-box-title">نقاط التحسين</div><div class="report-box-content" id="improveBox"></div></div>
+<div class="report-box"><div class="report-box-title">التوصيات</div><div class="report-box-content" id="recommBox"></div></div>
+</div>
+
+<div class="image-evidence-grid">
+<div class="image-box" id="imgBox1">صورة توثيقية ١</div>
+<div class="image-box" id="imgBox2">صورة توثيقية ٢</div>
+</div>
+
+<div class="signature-section">
+<div class="signature-box"><div id="teacherTypeBox"></div><span id="teacherBox"></span><div class="signature-line"></div></div>
+<div class="signature-box"><div id="principalTypeBox"></div><span id="principalBox"></span><div class="signature-line"></div></div>
+</div>
+
+<div class="footer">وزارة التعليم – المملكة العربية السعودية</div>
+</div>
+
+<script>
+// كائن يحتوي على جميع التقارير مصنفة
+const allReportsByCategory = {
+    "التقارير التعليمية الصفية": [
+        "تقرير أنشطة صفية",
+        "تقرير توزيع وقت الحصة",
+        "تقرير درس تم تنفيذه",
+        "تقرير تعليم تعاوني بين الطلاب",
+        "تقرير المشاركات بين الطلاب",
+        "تقرير توزيع المنهج",
+        "تقرير الفصول المقلوبة",
+        "تقرير تنفيذ درس تطبيقي",
+        "تقرير تفعيل الفصول الافتراضية",
+        "تقرير التعليم المدمج",
+        "تقرير التعليم عن بعد",
+        "تقرير استخدام أنظمة إدارة التعلم",
+        "تقرير إدارة الوقت في الصف",
+        "تقرير تنظيم البيئة الصفية",
+        "تقرير إدارة الموارد التعليمية",
+        "تقرير إدارة السلوك الصفي",
+        "تقرير الأنشطة التفاعلية",
+        "تقرير العروض العملية",
+        "تقرير التعلم التعاوني",
+        "تقرير التعلم الذاتي الموجه",
+        "تقرير الألعاب التعليمية الرقمية"
+    ],
+    "التقارير العلاجية والدعم الفردي": [
+        "تقرير خطة علاجية",
+        "تقرير سجل الخطط العلاجية",
+        "تقرير رعاية الطلاب المتأخرين دراسيًا",
+        "تقرير دراسة حالة",
+        "تقرير معرفة الميول والاتجاهات",
+        "تقرير التحليل الاحتياجات التدريبية",
+        "تقرير دعم الطلاب ذوي الإعاقة"
+    ],
+    "التقارير التحفيزية والسلوكية": [
+        "تقرير تحفيز الطلاب",
+        "تقرير تعزيز السلوك الإيجابي",
+        "تقرير نظام الحوافز والمكافآت",
+        "تقرير برنامج الدعم النفسي",
+        "تقرير تحسين نتائج العلوم في الاختبارات الوطنية (نافس)",
+        "تقرير تحسين نتائج الرياضيات في الاختبارات الوطنية (نافس)",
+        "تقرير تحسين نتائج اللغة العربية في الاختبارات الوطنية (نافس)"
+    ],
+    "تقارير الأنشطة غير الصفية": [
+        "تقرير نشاط إثرائي",
+        "تقرير رعاية الموهوبين",
+        "تقرير المبادرات والابتكار",
+        "تقرير تفعيل المنصات التعليمية",
+        "تقرير حصة النشاط",
+        "تقرير تفعيل حصص النشاط",
+        "تقرير تنفيذ إذاعة مدرسية",
+        "تقرير الزيارات الميدانية",
+        "تقرير مبادرة تطوعية",
+        "تقرير الاحتفال باليوم الوطني",
+        "تقرير المعلم الصغير"
+    ],
+    "تقارير التواصل مع أولياء الأمور والمجتمع": [
+        "تقرير التواصل مع ولي الأمر",
+        "تقرير إشعار ولي الأمر عن مستوى ابنه",
+        "تقرير سجل التواصل مع أولياء الأمور",
+        "تقرير حضور اجتماع أولياء الأمور",
+        "تقرير الشراكات المهنية",
+        "تقرير مجتمعات التعلم",
+        "تقرير المجتمعات المهنية"
+    ],
+    "التقارير التخطيطية والتنظيمية": [
+        "تقرير خطة أسبوعية",
+        "تقرير تفعيل الخطة الأسبوعية",
+        "تقرير تخطيط المشاريع التعليمية",
+        "تقرير تخطيط الرحلات التعليمية",
+        "تقرير إدارة الاجتماعات",
+        "تقرير المناوبة والفسحة",
+        "تقرير الإشراف اليومي",
+        "تقرير إدارة الأزمات"
+    ],
+    "تقارير التقييم والمتابعة": [
+        "تقرير كشف المتابعة",
+        "تقرير تصنيف الطلاب",
+        "تقرير تنفيذ اختبار تحسن",
+        "تقرير سجل الدرجات الإلكتروني",
+        "تقرير تحليل النتائج",
+        "تقرير مقارنة السلاسل الزمنية",
+        "تقرير قياس الأثر التعليمي",
+        "تقرير مؤشرات الأداء التعليمي",
+        "تقرير تقييم المخرجات التعليمية",
+        "تقرير تقييم المشاريع الطلابية",
+        "تقرير تقييم الأداء العملي",
+        "تقرير تقييم المحافظ الإلكترونية",
+        "تقرير التقييم الإلكتروني",
+        "تقرير تحليل نتائج الاختبارات التشخيصية",
+        "تقرير تحليل الاختبارات التحصيلية"
+    ],
+    "تقارير التدريب والتطوير المهني": [
+        "تقرير حضور دورات وورش تدريبية",
+        "تقرير الورش التدريبية التي قدمتها",
+        "تقرير التدريب على الاختبارات المعيارية",
+        "تقرير التدريب على المناهج الحديثة",
+        "تقرير نقل أثر التدريب",
+        "تقرير متابعة الدورات العالمية",
+        "تقرير التطوير المهني المستمر",
+        "تقرير المشاركة في المؤتمرات التعليمية",
+        "تقرير حضور الندوات العلمية",
+        "تقرير المشاركة في البحث التربوي"
+    ],
+    "تقارير توظيف التكنولوجيا": [
+        "تقرير المحتوى الرقمي المنتج",
+        "تقرير إنتاج المحتوى الرقمي",
+        "تقرير استخدام أنظمة إدارة التعلم",
+        "تقرير التقييم الإلكتروني",
+        "تقرير الواقع المعزز في التعليم",
+        "تقرير الألعاب التعليمية الرقمية",
+        "تقرير توظيف الذكاء الاصطناعي"
+    ],
+    "تقارير البحث والتطوير المناهجي": [
+        "تقرير تصميم الوحدات التعليمية",
+        "تقرير إعداد المواد التعليمية",
+        "تقرير تطوير المناهج الإثرائية",
+        "تقرير إعداد بنك الأسئلة",
+        "تقرير تصميم الأنشطة اللاصفية"
+    ],
+    "تقارير الجودة واللجان": [
+        "تقرير عضوية لجنة التميز والجودة",
+        "تقرير عضوية لجنة التدقيق",
+        "تقرير إدارة الموارد التعليمية"
+    ],
+    "تقارير الأمن والسلامة": [
+        "تقرير إجراءات السلامة في الصف",
+        "تقرير الرعاية الصحية في المدرسة",
+        "تقرير جرد المختبرات وغرف المصادر"
+    ]
+};
+
+// إنشاء قائمة بجميع التقارير لاستخدامها في البحث العام
+const allReports = [];
+for (const category in allReportsByCategory) {
+    allReportsByCategory[category].forEach(report => {
+        allReports.push(report);
+    });
+}
+
+// كائن يحتوي على النصوص الذكية لكل نوع تقرير
+const autoTextsByReportType = {};
+
+// النصوص الافتراضية
+const defaultTexts = {
+    goal: ["الهدف التربوي"],
+    summary: ["النبذة المختصرة"],
+    steps: ["إجراءات التنفيذ"],
+    strategies: ["الاستراتيجيات"],
+    strengths: ["نقاط القوة"],
+    improve: ["نقاط التحسين"],
+    recomm: ["التوصيات"]
+};
+
+let counters = {goal:0,summary:0,steps:0,strategies:0,strengths:0,improve:0,recomm:0};
+let currentReportType = "";
+
+function getCurrentTexts() {
+    const reportType = document.getElementById('reportType').value;
+    return autoTextsByReportType[reportType] || defaultTexts;
+}
+
+function autoFill(id){
+    const texts = getCurrentTexts();
+    if (texts[id] && texts[id].length > 0) {
+        counters[id] = (counters[id] + 1) % texts[id].length;
+        document.getElementById(id).value = texts[id][counters[id]];
+        updateReport();
+    } else {
+        alert("لا توجد نصوص ذكية متاحة لهذا الحقل في التقرير الحالي");
+    }
+}
+
+// دالة معالجة اختيار التصنيف - تم إصلاحها لدعم خيار "أخرى"
+function handleReportCategory() {
+    const categorySelect = document.getElementById('reportCategory');
+    const reportTypeSelect = document.getElementById('reportType');
+    const reportTypeInput = document.getElementById('reportTypeInput');
+    const reportSearchContainer = document.getElementById('reportSearchContainer');
+    
+    if (categorySelect.value === "أخرى") {
+        // إخفاء قائمة التقارير المنسدلة وإظهار حقل الإدخال اليدوي
+        reportTypeSelect.style.display = 'none';
+        reportTypeInput.style.display = 'block';
+        reportSearchContainer.style.display = 'none';
+        
+        // تفريغ قائمة التقارير المنسدلة
+        reportTypeSelect.innerHTML = '<option value="أخرى">أخرى</option>';
+        reportTypeSelect.value = "أخرى";
+        handleReportType();
+    } else if (categorySelect.value) {
+        // إظهار قائمة التقارير المنسدلة وحقل البحث وإخفاء حقل الإدخال اليدوي
+        reportTypeSelect.style.display = 'block';
+        reportTypeInput.style.display = 'none';
+        reportSearchContainer.style.display = 'block';
+        
+        // تحديث قائمة التقارير بناءً على التصنيف المختار
+        const reports = allReportsByCategory[categorySelect.value] || [];
+        updateReportTypeOptions(reports);
+        
+        // إعادة تعيين قيمة حقل البحث
+        document.getElementById('reportSearch').value = '';
+        document.getElementById('searchResults').style.display = 'none';
+    } else {
+        // إخفاء جميع الحقول
+        reportTypeSelect.style.display = 'none';
+        reportTypeInput.style.display = 'none';
+        reportSearchContainer.style.display = 'none';
+        reportTypeSelect.innerHTML = '<option value="">اختر تقريرًا</option>';
+    }
+}
+
+// دالة تحديث خيارات قائمة التقارير
+function updateReportTypeOptions(reports) {
+    const reportTypeSelect = document.getElementById('reportType');
+    reportTypeSelect.innerHTML = '<option value="">اختر تقريرًا</option>';
+    
+    reports.forEach(report => {
+        const option = document.createElement('option');
+        option.value = report;
+        option.textContent = report;
+        reportTypeSelect.appendChild(option);
+    });
+}
+
+// دالة البحث الفوري في التقارير - تم إصلاحها
+function handleReportSearch() {
+    const reportSearch = document.getElementById('reportSearch');
+    const searchResults = document.getElementById('searchResults');
+    const categorySelect = document.getElementById('reportCategory');
+    const reportTypeSelect = document.getElementById('reportType');
+    
+    const searchTerm = reportSearch.value.trim().toLowerCase();
+    
+    if (searchTerm === '') {
+        searchResults.style.display = 'none';
+        searchResults.innerHTML = '';
+        return;
+    }
+    
+    let filteredReports = [];
+    
+    // إذا كان هناك تصنيف محدد، نبحث فقط في تقارير ذلك التصنيف
+    if (categorySelect.value && categorySelect.value !== "أخرى") {
+        const reports = allReportsByCategory[categorySelect.value] || [];
+        filteredReports = reports.filter(report => 
+            report.toLowerCase().includes(searchTerm)
+        );
+    } else if (categorySelect.value === "أخرى") {
+        // إذا كان التصنيف "أخرى"، لا نعرض نتائج بحث
+        filteredReports = [];
+    } else {
+        // إذا لم يكن هناك تصنيف محدد، نبحث في جميع التقارير
+        filteredReports = allReports.filter(report => 
+            report.toLowerCase().includes(searchTerm)
+        );
+    }
+    
+    if (filteredReports.length > 0) {
+        searchResults.innerHTML = '';
+        filteredReports.forEach(report => {
+            const div = document.createElement('div');
+            div.textContent = report;
+            div.style.padding = '8px 12px';
+            div.style.cursor = 'pointer';
+            div.style.borderBottom = '1px solid #eee';
+            div.onmouseover = () => div.style.backgroundColor = '#f0f9f6';
+            div.onmouseout = () => div.style.backgroundColor = 'white';
+            div.onclick = () => {
+                reportTypeSelect.value = report;
+                reportSearch.value = '';
+                searchResults.style.display = 'none';
+                handleReportType();
             };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, observerOptions);
-            
-            document.querySelectorAll('.fade-in-element').forEach(element => {
-                observer.observe(element);
-            });
-            
-            setTimeout(() => {
-                document.querySelectorAll('#about .fade-in-element').forEach((el, index) => {
-                    setTimeout(() => {
-                        el.classList.add('visible');
-                    }, index * 150);
-                });
-            }, 300);
-            
-            let lastScrollTop = 0;
-            const navbar = document.querySelector('.navbar');
-            const fixedTopBar = document.querySelector('.fixed-top-bar');
-            
-            window.addEventListener('scroll', function() {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                
-                if (scrollTop > lastScrollTop && scrollTop > 100) {
-                    navbar.style.transform = 'translateY(-100%)';
-                    navbar.style.transition = 'transform 0.3s ease';
-                    fixedTopBar.style.transform = 'translateY(-100%)';
-                    fixedTopBar.style.transition = 'transform 0.3s ease';
-                } else {
-                    navbar.style.transform = 'translateY(0)';
-                    fixedTopBar.style.transform = 'translateY(0)';
-                }
-                
-                lastScrollTop = scrollTop;
-            });
-            
-            // Fixed Top Bar Functionality - Updated
-            const messages = document.querySelectorAll('.message');
-            
-            if (fixedTopBar && messages.length > 0) {
-                let currentMessageIndex = 0;
-                
-                function rotateMessages() {
-                    messages[currentMessageIndex].classList.remove('active');
-                    currentMessageIndex = (currentMessageIndex + 1) % messages.length;
-                    messages[currentMessageIndex].classList.add('active');
-                }
-                
-                let messageInterval = setInterval(rotateMessages, 4000);
-                
-                messages.forEach(message => {
-                    message.addEventListener('click', function() {
-                        clearInterval(messageInterval);
-                        messageInterval = setInterval(rotateMessages, 4000);
-                    });
+            searchResults.appendChild(div);
+        });
+        searchResults.style.display = 'block';
+    } else {
+        searchResults.innerHTML = '<div style="padding:12px; color:#666; text-align:center;">لا توجد نتائج</div>';
+        searchResults.style.display = 'block';
+    }
+}
+
+// إضافة مستمع حدث للبحث عند الكتابة
+document.getElementById('reportSearch').addEventListener('input', handleReportSearch);
+
+// إخفاء نتائج البحث عند النقر خارجها
+document.addEventListener('click', function(event) {
+    const searchResults = document.getElementById('searchResults');
+    const reportSearch = document.getElementById('reportSearch');
+    
+    if (!event.target.closest('#reportSearchContainer')) {
+        searchResults.style.display = 'none';
+    }
+});
+
+function handleReportType(){
+    const reportTypeSelect = document.getElementById('reportType');
+    const reportTypeInput = document.getElementById('reportTypeInput');
+    
+    currentReportType = reportTypeSelect.value;
+    
+    // إعادة تعيين العدادات عند تغيير نوع التقرير
+    counters = {goal:0,summary:0,steps:0,strategies:0,strengths:0,improve:0,recomm:0};
+    
+    updateReport();
+}
+
+function updateReport(){
+    document.getElementById('educationBox').innerText = document.getElementById('education').value;
+    document.getElementById('schoolBox').innerText = document.getElementById('school').value;
+    document.getElementById('termBox').innerText = document.getElementById('term').value;
+    document.getElementById('gradeBox').innerText = document.getElementById('grade').value;
+    document.getElementById('subjectBox').innerText = document.getElementById('subject').value;
+    document.getElementById('targetBox').innerText = document.getElementById('target').value;
+    document.getElementById('countBox').innerText = document.getElementById('count').value;
+    document.getElementById('placeBox').innerText = document.getElementById('place').value;
+    document.getElementById('teacherBox').innerText = document.getElementById('teacher').value;
+    document.getElementById('principalBox').innerText = document.getElementById('principal').value;
+    document.getElementById('teacherTypeBox').innerText = document.getElementById('teacherType').value;
+    document.getElementById('principalTypeBox').innerText = document.getElementById('principalType').value;
+    
+    const reportTypeSelect = document.getElementById('reportType');
+    const reportTypeInput = document.getElementById('reportTypeInput');
+    const categorySelect = document.getElementById('reportCategory');
+    let reportType = "";
+    
+    if (categorySelect.value === "أخرى") {
+        reportType = reportTypeInput.value || "تقرير";
+        document.getElementById('reportTypeBox').innerText = reportType;
+    } else {
+        reportType = reportTypeSelect.value;
+        document.getElementById('reportTypeBox').innerText = reportType;
+    }
+    
+    document.getElementById('goalBox').innerText = document.getElementById('goal').value;
+    document.getElementById('summaryBox').innerText = document.getElementById('summary').value;
+    document.getElementById('stepsBox').innerText = document.getElementById('steps').value;
+    document.getElementById('strategiesBox').innerText = document.getElementById('strategies').value;
+    document.getElementById('strengthsBox').innerText = document.getElementById('strengths').value;
+    document.getElementById('improveBox').innerText = document.getElementById('improve').value;
+    document.getElementById('recommBox').innerText = document.getElementById('recomm').value;
+}
+
+function loadImage(input,target){
+    let r = new FileReader();
+    r.onload = () => document.getElementById(target).innerHTML = `<img src="${r.result}">`;
+    r.readAsDataURL(input.files[0]);
+}
+
+// دالة جديدة لحفظ بيانات المعلم فقط
+function saveTeacherData(){
+    // البيانات التي سيتم حفظها
+    const teacherData = {
+        education: document.getElementById('education').value,
+        school: document.getElementById('school').value,
+        grade: document.getElementById('grade').value,
+        subject: document.getElementById('subject').value,
+        target: document.getElementById('target').value,
+        place: document.getElementById('place').value
+    };
+    
+    // حفظ البيانات في localStorage
+    localStorage.setItem('teacherData', JSON.stringify(teacherData));
+    
+    // عرض إشعار النجاح
+    showNotification('تم حفظ بيانات المعلم بنجاح!');
+    
+    console.log('بيانات المعلم المحفوظة:', teacherData);
+}
+
+// دالة لعرض الإشعارات
+function showNotification(message) {
+    const notification = document.getElementById('saveNotification');
+    notification.querySelector('span').textContent = message;
+    notification.classList.add('show');
+    
+    setTimeout(() => {
+        notification.classList.remove('show');
+    }, 3000);
+}
+
+// دالة لتحميل بيانات المعلم المحفوظة عند تشغيل الصفحة
+function loadTeacherData() {
+    const savedData = localStorage.getItem('teacherData');
+    
+    if (savedData) {
+        const teacherData = JSON.parse(savedData);
+        
+        document.getElementById('education').value = teacherData.education || '';
+        document.getElementById('school').value = teacherData.school || '';
+        document.getElementById('grade').value = teacherData.grade || '';
+        document.getElementById('subject').value = teacherData.subject || '';
+        document.getElementById('target').value = teacherData.target || '';
+        document.getElementById('place').value = teacherData.place || '';
+        
+        updateReport();
+        console.log('بيانات المعلم المحملة:', teacherData);
+    }
+}
+
+// وظائف الدعم الفني
+function openSupportModal() {
+    document.getElementById('supportModal').style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // منع التمرير عند فتح النافذة
+}
+
+function closeSupportModal() {
+    document.getElementById('supportModal').style.display = 'none';
+    document.body.style.overflow = 'auto'; // إعادة التمرير
+}
+
+// إغلاق النافذة عند النقر خارجها
+document.getElementById('supportModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeSupportModal();
+    }
+});
+
+// إرسال بريد إلكتروني
+function sendEmailSupport() {
+    const name = document.getElementById('supportName').value || 'مستخدم بدون اسم';
+    const phone = document.getElementById('supportPhone').value || 'لم يتم تقديمه';
+    const issue = document.getElementById('supportIssue').value || 'لا توجد تفاصيل';
+    
+    const subject = encodeURIComponent('طلب دعم فني - أداة إصدار التقارير');
+    const body = encodeURIComponent(`الاسم: ${name}\nرقم التواصل: ${phone}\n\nتفاصيل المشكلة:\n${issue}\n\n---\nتم الإرسال من أداة إصدار التقارير`);
+    
+    window.location.href = `mailto:iFahadenglish@gmail.com?subject=${subject}&body=${body}`;
+    
+    // إغلاق النافذة بعد إرسال البريد
+    setTimeout(closeSupportModal, 500);
+}
+
+// إرسال رسالة واتساب
+function sendWhatsAppSupport() {
+    const name = document.getElementById('supportName').value || 'مستخدم بدون اسم';
+    const phone = document.getElementById('supportPhone').value || 'لم يتم تقديمه';
+    const issue = document.getElementById('supportIssue').value || 'لا توجد تفاصيل';
+    
+    const message = encodeURIComponent(`طلب دعم فني - أداة إصدار التقارير\n\nالاسم: ${name}\nرقم التواصل: ${phone}\n\nتفاصيل المشكلة:\n${issue}\n\n---\nتم الإرسال من أداة إصدار التقارير`);
+    
+    window.open(`https://wa.me/966597077245?text=${message}`, '_blank');
+    
+    // إغلاق النافذة بعد فتح الواتساب
+    setTimeout(closeSupportModal, 500);
+}
+
+function clearData(){
+    if(confirm("هل أنت متأكد من مسح جميع البيانات؟")){
+        localStorage.clear();
+        location.reload();
+    }
+}
+
+function downloadPDF(){
+    document.querySelector('.control-bar').style.visibility = 'hidden';
+    document.querySelector('.top-marquee').style.visibility = 'hidden';
+    document.body.style.margin = "0";
+    document.body.style.background = "white";
+
+    // إظهار قسم PDF قبل التحميل
+    const reportContent = document.getElementById('report-content');
+    reportContent.style.display = 'block';
+    reportContent.style.visibility = 'visible';
+    reportContent.style.opacity = '1';
+    reportContent.style.position = 'relative';
+    reportContent.style.top = '0';
+    reportContent.style.left = '0';
+
+    // الحصول على اسم التقرير لاستخدامه كاسم للملف
+    const reportTypeSelect = document.getElementById('reportType');
+    const reportTypeInput = document.getElementById('reportTypeInput');
+    const categorySelect = document.getElementById('reportCategory');
+    let reportName = "";
+    
+    if (categorySelect.value === "أخرى") {
+        reportName = reportTypeInput.value || "تقرير";
+    } else if (reportTypeSelect.value) {
+        reportName = reportTypeSelect.value;
+    } else {
+        reportName = "تقرير";
+    }
+    
+    // تنظيف اسم الملف من الأحرف غير المسموح بها
+    const cleanFileName = reportName.replace(/[\/\\:*?"<>|]/g, '_');
+
+    html2pdf().set({
+        filename: cleanFileName + ".pdf",
+        html2canvas: {
+            scale: 3,
+            useCORS: true,
+            scrollY: 0,
+            backgroundColor: '#ffffff',
+            onclone: function(clonedDoc) {
+                clonedDoc.getElementById('report-content').style.background = '#ffffff';
+                clonedDoc.querySelectorAll('*').forEach(el => {
+                    el.style.color = '';
+                    el.style.backgroundColor = '';
                 });
             }
-            
-            loadSection('about');
-        });
-        
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                document.body.style.opacity = '1';
-                document.body.style.transition = 'opacity 0.3s ease';
-            }, 100);
-        });
-    </script>
+        },
+        jsPDF: {unit: "mm", format: "a4", orientation: "portrait"}
+    })
+    .from(reportContent)
+    .save()
+    .then(() => {
+        document.querySelector('.control-bar').style.visibility = 'visible';
+        document.querySelector('.top-marquee').style.visibility = 'visible';
+        document.body.style.margin = "";
+        document.body.style.background = "#f9fcfb";
+        reportContent.style.display = 'none';
+        showNotification("تم تنزيل التقرير بصيغة PDF ✓");
+    });
+}
+
+async function sharePDFWhatsApp(){
+    document.querySelector('.control-bar').style.visibility = 'hidden';
+    document.querySelector('.top-marquee').style.visibility = 'hidden';
+    document.body.style.margin = "0";
+    document.body.style.background = "white";
+
+    const reportContent = document.getElementById('report-content');
+    reportContent.style.display = 'block';
+    reportContent.style.visibility = 'visible';
+    reportContent.style.opacity = '1';
+    reportContent.style.position = 'relative';
+    reportContent.style.top = '0';
+    reportContent.style.left = '0';
+
+    // الحصول على اسم التقرير لاستخدامه في الرسالة
+    const reportTypeSelect = document.getElementById('reportType');
+    const reportTypeInput = document.getElementById('reportTypeInput');
+    const categorySelect = document.getElementById('reportCategory');
+    let reportName = "";
+    
+    if (categorySelect.value === "أخرى") {
+        reportName = reportTypeInput.value || "تقرير";
+    } else if (reportTypeSelect.value) {
+        reportName = reportTypeSelect.value;
+    } else {
+        reportName = "تقرير";
+    }
+
+    await html2pdf().set({
+        margin: 0,
+        image: {type: "jpeg", quality: 1},
+        html2canvas: {
+            scale: 3,
+            scrollY: 0,
+            useCORS: true,
+            backgroundColor: '#ffffff',
+            onclone: function(clonedDoc) {
+                clonedDoc.getElementById('report-content').style.background = '#ffffff';
+            }
+        },
+        jsPDF: {unit: "mm", format: "a4", orientation: "portrait"}
+    })
+    .from(reportContent)
+    .toPdf()
+    .output('blob')
+    .then((pdfBlob) => {
+        document.querySelector('.control-bar').style.visibility = 'visible';
+        document.querySelector('.top-marquee').style.visibility = 'visible';
+        document.body.style.margin = "";
+        document.body.style.background = "#f9fcfb";
+        reportContent.style.display = 'none';
+
+        let file = new File([pdfBlob], reportName + ".pdf", {type: "application/pdf"});
+        if(navigator.canShare && navigator.canShare({files:[file]})){
+            navigator.share({
+                files:[file], 
+                title: reportName,
+                text: "تقرير: " + reportName
+            });
+        } else {
+            let url = URL.createObjectURL(pdfBlob);
+            window.open(`https://wa.me/?text=${encodeURIComponent("تقرير: " + reportName + "\n\n" + url)}`, "_blank");
+        }
+    });
+}
+
+async function loadDates(){
+    let g = new Date();
+    document.getElementById('gDate').innerText = g.toLocaleDateString('ar-EG') + " م";
+    try {
+        let r = await fetch(`https://api.aladhan.com/v1/gToH?date=${g.getDate()}-${g.getMonth()+1}-${g.getFullYear()}`);
+        let j = await r.json();
+        let h = j.data.hijri;
+        document.getElementById('hDate').innerText = `${h.weekday.ar} ${h.day} ${h.month.ar} ${h.year} هـ`;
+    } catch {
+        document.getElementById('hDate').innerText = "--";
+    }
+}
+
+// عند تحميل الصفحة
+window.onload = function() {
+    loadDates();
+    loadTeacherData(); // تحميل بيانات المعلم المحفوظة
+    updateReport();
+    
+    // تحسين الأداء على الأجهزة المحمولة
+    if ('ontouchstart' in window) {
+        document.body.classList.add('touch-device');
+    }
+}
+</script>
+
 </body>
 </html>
