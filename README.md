@@ -89,35 +89,47 @@
             right: 0;
             left: 0;
             z-index: 1000;
-            transition: all 0.4s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             background: var(--blue-gradient);
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
             border-bottom: 3px solid var(--accent);
             opacity: 1;
             transform: translateY(0);
+            height: 70px;
         }
 
         .main-header.hidden {
             transform: translateY(-100%);
             opacity: 0;
+            pointer-events: none;
         }
 
         .main-header.visible {
             transform: translateY(0);
             opacity: 1;
+            pointer-events: all;
+        }
+
+        /* تأثير إضافي عند التمرير */
+        .main-header.scrolled {
+            height: 60px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(10px);
+            background: linear-gradient(135deg, rgba(26, 58, 95, 0.95), rgba(42, 79, 122, 0.95));
         }
 
         .header-container {
             max-width: 100%;
             margin: 0 auto;
             padding: 0 15px;
+            height: 100%;
         }
 
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 0;
+            height: 100%;
             position: relative;
         }
 
@@ -138,6 +150,11 @@
             background-clip: text;
             text-align: center;
             flex: 1;
+            transition: all 0.3s ease;
+        }
+
+        .main-header.scrolled .logo-title h1 {
+            font-size: 1.1rem;
         }
 
         /* زر الترجمة والوضع الليلي في أقصى الزاوية اليمنى العلوية */
@@ -178,6 +195,11 @@
             -webkit-overflow-scrolling: touch;
             scrollbar-width: none;
             -ms-overflow-style: none;
+            transition: all 0.3s ease;
+        }
+
+        .main-header.scrolled .nav-container {
+            background: linear-gradient(90deg, rgba(26, 58, 95, 0.85), rgba(42, 79, 122, 0.85));
         }
 
         .nav-container::-webkit-scrollbar {
@@ -193,7 +215,7 @@
 
         .nav-item {
             flex: 0 0 auto;
-            padding: 10px 12px;
+            padding: 12px 15px;
             text-decoration: none;
             color: white;
             font-weight: 600;
@@ -220,12 +242,14 @@
 
         .nav-item:hover {
             background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
         }
 
         .nav-item.active {
             background: var(--yellow-gradient);
             color: var(--primary-dark);
             box-shadow: 0 -4px 8px rgba(245, 215, 110, 0.3);
+            transform: translateY(-2px);
         }
 
         .nav-item.active::before {
@@ -238,6 +262,15 @@
             height: 3px;
             background: var(--primary-dark);
             border-radius: 2px;
+        }
+
+        .main-header.scrolled .nav-item {
+            padding: 10px 12px;
+            font-size: 0.6rem;
+        }
+
+        .main-header.scrolled .nav-item i {
+            font-size: 0.7rem;
         }
 
         /* ========== HERO SECTION WITH KEY PHRASES ========== */
@@ -305,12 +338,33 @@
             backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
+            animation: fadeIn 0.6s ease backwards;
         }
 
         .phrase-item:hover {
             background: rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .phrase-item:nth-child(1) { animation-delay: 0.1s; }
+        .phrase-item:nth-child(2) { animation-delay: 0.2s; }
+        .phrase-item:nth-child(3) { animation-delay: 0.3s; }
+        .phrase-item:nth-child(4) { animation-delay: 0.4s; }
+        .phrase-item:nth-child(5) { animation-delay: 0.5s; }
+        .phrase-item:nth-child(6) { animation-delay: 0.6s; }
+        .phrase-item:nth-child(7) { animation-delay: 0.7s; }
 
         .hero-actions {
             display: flex;
@@ -1519,12 +1573,24 @@
                 padding-top: 60px;
             }
             
+            .main-header {
+                height: 60px;
+            }
+            
+            .main-header.scrolled {
+                height: 55px;
+            }
+            
             .header-content {
                 padding: 8px 0;
             }
             
             .logo-title h1 {
                 font-size: 1.1rem;
+            }
+            
+            .main-header.scrolled .logo-title h1 {
+                font-size: 1rem;
             }
             
             .lang-btn, .theme-btn {
@@ -1831,52 +1897,51 @@
     <!-- باقي المحتوى -->
     <main>
         <!-- Hero Section with Key Phrases -->
-        <section class="hero-section">
-            <div class="hero-content">
-                <h1 class="hero-title" id="heroTitle">الملف المهني للمعلم فهد الخالدي</h1>
-                <p class="hero-subtitle" id="heroSubtitle">معلم متخصص في اللغة الإنجليزية مع 13+ سنة خبرة في تطوير أساليب التعليم الحديثة</p>
-                
-                <!-- Key Phrases Section -->
-                <div class="key-phrases">
-                    <div class="phrase-item">مصمم لاختبارات محاكية للرخصة المهنية العامة والخاصة باللغة الإنجليزية تفاعلية مع تغذية راجعة فورية.</div>
-                    <div class="phrase-item">مبتكر أدوات واختبارات إلكترونية للطلاب تعزز التفاعل وتحقق نواتج تعلم حقيقية.</div>
-                    <div class="phrase-item">صانع أداة إلكترونية لإصدار التقارير التربوية بأكثر من 100 تقرير ذكي يخدم المعلم في التوثيق والتقييم.</div>
-                    <div class="phrase-item">عضو في لجنة التميز المدرسي ومسهم في تطوير المبادرات التعليمية.</div>
-                    <div class="phrase-item">حاصل على 95 في اختبار الرخصة المهنية تخصص اللغة الإنجليزية.</div>
-                    <div class="phrase-item">شغفي للتعلم والتطوير هو الوقود الذي يدفعني نحو التميز والابتكار في الميدان التعليمي.</div>
-                    <div class="phrase-item">أتبع التعليم القائم على المشاريع وتنمية مهارات القرن الحادي والعشرين لبناء متعلم منتج وفعّال.</div>
-                </div>
-                
-                <div class="hero-actions">
-                    <a href="#projects" class="btn btn-primary">
-                        <i class="fas fa-laptop-code"></i>
-                        <span id="viewWorkBtn">استعرض أعمالي</span>
-                    </a>
-                    <a href="#contact" class="btn btn-secondary">
-                        <i class="fas fa-envelope"></i>
-                        <span id="contactBtn">تواصل معي</span>
-                    </a>
-                </div>
-                
-                <div class="hero-stats">
-                    <div class="hero-stat">
-                        <span class="number">13+</span>
-                        <span class="label" id="heroStat1">سنوات خبرة</span>
+        <section id="about" class="active">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-title" id="heroTitle">الملف المهني للمعلم فهد الخالدي</h1>
+                    <p class="hero-subtitle" id="heroSubtitle">معلم متخصص في اللغة الإنجليزية مع 13+ سنة خبرة في تطوير أساليب التعليم الحديثة</p>
+                    
+                    <!-- Key Phrases Section -->
+                    <div class="key-phrases">
+                        <div class="phrase-item">مصمم لاختبارات محاكية للرخصة المهنية العامة والخاصة باللغة الإنجليزية تفاعلية مع تغذية راجعة فورية.</div>
+                        <div class="phrase-item">مبتكر أدوات واختبارات إلكترونية للطلاب تعزز التفاعل وتحقق نواتج تعلم حقيقية.</div>
+                        <div class="phrase-item">صانع أداة إلكترونية لإصدار التقارير التربوية بأكثر من 100 تقرير ذكي يخدم المعلم في التوثيق والتقييم.</div>
+                        <div class="phrase-item">عضو في لجنة التميز المدرسي ومسهم في تطوير المبادرات التعليمية.</div>
+                        <div class="phrase-item">حاصل على 95 في اختبار الرخصة المهنية تخصص اللغة الإنجليزية.</div>
+                        <div class="phrase-item">شغفي للتعلم والتطوير هو الوقود الذي يدفعني نحو التميز والابتكار في الميدان التعليمي.</div>
+                        <div class="phrase-item">أتبع التعليم القائم على المشاريع وتنمية مهارات القرن الحادي والعشرين لبناء متعلم منتج وفعّال.</div>
                     </div>
-                    <div class="hero-stat">
-                        <span class="number">390+</span>
-                        <span class="label" id="heroStat2">ساعة تدريب</span>
+                    
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fas fa-laptop-code"></i>
+                            <span id="viewWorkBtn">استعرض أعمالي</span>
+                        </a>
+                        <a href="#contact" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i>
+                            <span id="contactBtn">تواصل معي</span>
+                        </a>
                     </div>
-                    <div class="hero-stat">
-                        <span class="number">105+</span>
-                        <span class="label" id="heroStat3">ساعات تطوعية</span>
+                    
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <span class="number">13+</span>
+                            <span class="label" id="heroStat1">سنوات خبرة</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="number">390+</span>
+                            <span class="label" id="heroStat2">ساعة تدريب</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="number">105+</span>
+                            <span class="label" id="heroStat3">ساعات تطوعية</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- About Section -->
-        <section id="about" class="active">
             <h2 class="section-title" id="aboutTitle">نبذة عني</h2>
             <div class="card fade-in-up">
                 <div class="profile-header">
@@ -2481,20 +2546,6 @@
     }
     </script>
 
-    <!-- ملف Manifest لتطبيق PWA -->
-    <script>
-        // تسجيل Service Worker لتطبيق PWA
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/sw.js').then(function(registration) {
-                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                }, function(err) {
-                    console.log('ServiceWorker registration failed: ', err);
-                });
-            });
-        }
-    </script>
-
     <script>
         // بيانات الترجمة الكاملة
         const translations = {
@@ -2817,92 +2868,6 @@
         const navTestimonials = document.getElementById('navTestimonials');
         const navContact = document.getElementById('navContact');
 
-        // عناصر المهارات
-        const skillCat1 = document.getElementById('skillCat1');
-        const skillCat2 = document.getElementById('skillCat2');
-        const skill1 = document.getElementById('skill1');
-        const skill2 = document.getElementById('skill2');
-        const skill3 = document.getElementById('skill3');
-        const skill4 = document.getElementById('skill4');
-        const skill5 = document.getElementById('skill5');
-        const skill6 = document.getElementById('skill6');
-        const skill7 = document.getElementById('skill7');
-        const skill8 = document.getElementById('skill8');
-
-        // عناصر المشاريع
-        const project1Title = document.getElementById('project1Title');
-        const project1Desc = document.getElementById('project1Desc');
-        const project1Link = document.getElementById('project1Link');
-        const project2Title = document.getElementById('project2Title');
-        const project2Desc1 = document.getElementById('project2Desc1');
-        const project3Title = document.getElementById('project3Title');
-        const project3Desc = document.getElementById('project3Desc');
-        const project3Link1 = document.getElementById('project3Link1');
-        const project3Link2 = document.getElementById('project3Link2');
-
-        // عناصر التوصيات
-        const testimonial1Text = document.getElementById('testimonial1Text');
-        const testimonial1Author = document.getElementById('testimonial1Author');
-        const testimonial1Position = document.getElementById('testimonial1Position');
-        const testimonial2Text = document.getElementById('testimonial2Text');
-        const testimonial2Author = document.getElementById('testimonial2Author');
-        const testimonial2Position = document.getElementById('testimonial2Position');
-        const testimonial3Text = document.getElementById('testimonial3Text');
-        const testimonial3Author = document.getElementById('testimonial3Author');
-        const testimonial3Position = document.getElementById('testimonial3Position');
-
-        // عناصر الاتصال
-        const contactSubtitle = document.getElementById('contactSubtitle');
-        const contactEmail = document.getElementById('contactEmail');
-        const contactPhone = document.getElementById('contactPhone');
-
-        // عناصر الفوتر
-        const footerName = document.getElementById('footerName');
-        const footerDesc = document.getElementById('footerDesc');
-
-        // عناصر المعرض التفاعلي
-        const scrollUpText = document.getElementById('scrollUpText');
-        const scrollDownText = document.getElementById('scrollDownText');
-        const exitFullscreenText = document.getElementById('exitFullscreenText');
-        const galleryCaption1 = document.getElementById('galleryCaption1');
-        const galleryCaption2 = document.getElementById('galleryCaption2');
-        const galleryCaption3 = document.getElementById('galleryCaption3');
-
-        // عناصر قسم الخبرات
-        const exp1Title = document.getElementById('exp1Title');
-        const exp1Location = document.getElementById('exp1Location');
-        const exp2Title = document.getElementById('exp2Title');
-        const exp2Location = document.getElementById('exp2Location');
-        const exp3Title = document.getElementById('exp3Title');
-        const exp3Location = document.getElementById('exp3Location');
-        const exp4Title = document.getElementById('exp4Title');
-        const exp4Location = document.getElementById('exp4Location');
-
-        // عناصر التصفية
-        const filterAll = document.getElementById('filterAll');
-        const filterInteractive = document.getElementById('filterInteractive');
-        const filterStrategies = document.getElementById('filterStrategies');
-        const filterPresentations = document.getElementById('filterPresentations');
-        const filterParticipations = document.getElementById('filterParticipations');
-        const filterTools = document.getElementById('filterTools');
-
-        // عناصر CTA
-        const viewWorkBtn = document.getElementById('viewWorkBtn');
-        const contactBtn = document.getElementById('contactBtn');
-
-        // عناصر المشاركات الجديدة
-        const participation1Title = document.getElementById('participation1Title');
-        const participation1Desc = document.getElementById('participation1Desc');
-        const participation2Title = document.getElementById('participation2Title');
-        const participation2Desc = document.getElementById('participation2Desc');
-
-        // عناصر أقسام التدريب
-        const trainingCategory1 = document.getElementById('trainingCategory1');
-        const trainingCategory2 = document.getElementById('trainingCategory2');
-
-        // عناصر العبارات الرئيسية
-        const phraseItems = document.querySelectorAll('.phrase-item');
-
         // تحديث أيقونة الوضع الليلي
         function updateThemeIcon() {
             themeBtn.innerHTML = currentTheme === 'light' ? 
@@ -2964,100 +2929,6 @@
             navTestimonials.textContent = t.navTestimonials;
             navContact.textContent = t.navContact;
             
-            // تحديث المهارات
-            skillCat1.textContent = t.skillCat1;
-            skillCat2.textContent = t.skillCat2;
-            skill1.textContent = t.skill1;
-            skill2.textContent = t.skill2;
-            skill3.textContent = t.skill3;
-            skill4.textContent = t.skill4;
-            skill5.textContent = t.skill5;
-            skill6.textContent = t.skill6;
-            skill7.textContent = t.skill7;
-            skill8.textContent = t.skill8;
-            
-            // تحديث المشاريع
-            project1Title.textContent = t.project1Title;
-            project1Desc.textContent = t.project1Desc;
-            project1Link.textContent = t.project1Link;
-            project2Title.textContent = t.project2Title;
-            project2Desc1.innerHTML = t.project2Desc1;
-            project3Title.textContent = t.project3Title;
-            project3Desc.textContent = t.project3Desc;
-            project3Link1.textContent = t.project3Link1;
-            project3Link2.textContent = t.project3Link2;
-            
-            // تحديث التوصيات
-            testimonial1Text.textContent = t.testimonial1Text;
-            testimonial1Author.textContent = t.testimonial1Author;
-            testimonial1Position.textContent = t.testimonial1Position;
-            testimonial2Text.textContent = t.testimonial2Text;
-            testimonial2Author.textContent = t.testimonial2Author;
-            testimonial2Position.textContent = t.testimonial2Position;
-            testimonial3Text.textContent = t.testimonial3Text;
-            testimonial3Author.textContent = t.testimonial3Author;
-            testimonial3Position.textContent = t.testimonial3Position;
-            
-            // تحديث الاتصال
-            contactSubtitle.textContent = t.contactSubtitle;
-            contactEmail.textContent = t.contactEmail;
-            contactPhone.textContent = t.contactPhone;
-            
-            // تحديث الفوتر
-            footerName.textContent = t.footerName;
-            footerDesc.textContent = t.footerDesc;
-            
-            // تحديث المعرض التفاعلي
-            scrollUpText.textContent = t.scrollUpText;
-            scrollDownText.textContent = t.scrollDownText;
-            exitFullscreenText.textContent = t.exitFullscreenText;
-            galleryCaption1.textContent = t.galleryCaption1;
-            galleryCaption2.textContent = t.galleryCaption2;
-            galleryCaption3.textContent = t.galleryCaption3;
-            
-            // تحديث قسم الخبرات
-            exp1Title.textContent = t.exp1Title;
-            exp1Location.textContent = t.exp1Location;
-            exp2Title.textContent = t.exp2Title;
-            exp2Location.textContent = t.exp2Location;
-            exp3Title.textContent = t.exp3Title;
-            exp3Location.textContent = t.exp3Location;
-            exp4Title.textContent = t.exp4Title;
-            exp4Location.textContent = t.exp4Location;
-            
-            // تحديث أزرار التصفية
-            filterAll.textContent = t.filterAll;
-            filterInteractive.textContent = t.filterInteractive;
-            filterStrategies.textContent = t.filterStrategies;
-            filterPresentations.textContent = t.filterPresentations;
-            filterParticipations.textContent = t.filterParticipations;
-            filterTools.textContent = t.filterTools;
-            
-            // تحديث أزرار CTA
-            viewWorkBtn.textContent = t.viewWorkBtn;
-            contactBtn.textContent = t.contactBtn;
-            
-            // تحديث المشاركات الجديدة
-            participation1Title.textContent = t.participation1Title;
-            participation1Desc.textContent = t.participation1Desc;
-            participation2Title.textContent = t.participation2Title;
-            participation2Desc.textContent = t.participation2Desc;
-            
-            // تحديث أقسام التدريب
-            trainingCategory1.textContent = t.trainingCategory1;
-            trainingCategory2.textContent = t.trainingCategory2;
-            
-            // تحديث العبارات الرئيسية
-            if (phraseItems.length === 7) {
-                phraseItems[0].textContent = t.phrase1;
-                phraseItems[1].textContent = t.phrase2;
-                phraseItems[2].textContent = t.phrase3;
-                phraseItems[3].textContent = t.phrase4;
-                phraseItems[4].textContent = t.phrase5;
-                phraseItems[5].textContent = t.phrase6;
-                phraseItems[6].textContent = t.phrase7;
-            }
-            
             // تحديث اتجاه النص
             document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
             document.documentElement.lang = lang;
@@ -3085,7 +2956,7 @@
         // تحديث أيقونة الوضع الليلي عند التحميل
         updateThemeIcon();
 
-        // التنقل بين الأقسام
+        // ========== FIXED NAVIGATION ==========
         document.querySelectorAll(".nav-item").forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -3101,10 +2972,13 @@
                 
                 // إظهار القسم المحدد
                 const targetSection = link.getAttribute('data-section');
-                document.getElementById(targetSection).classList.add("active");
-                
-                // إضافة تأثير التمرير السلس
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                const targetElement = document.getElementById(targetSection);
+                if (targetElement) {
+                    targetElement.classList.add("active");
+                    
+                    // إضافة تأثير التمرير السلس
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
             });
         });
 
@@ -3115,6 +2989,7 @@
         window.addEventListener('scroll', function() {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             
+            // تأثير fade in/out للهيدر
             if (scrollTop > lastScrollTop && scrollTop > 100) {
                 // التمرير لأسفل - إخفاء الهيدر
                 header.classList.remove('visible');
@@ -3125,211 +3000,15 @@
                 header.classList.add('visible');
             }
             
-            // إضافة تأثير عند الوصول إلى أعلى الصفحة
-            if (scrollTop < 50) {
-                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.15)';
+            // تأثير تغيير الحجم عند التمرير
+            if (scrollTop > 50) {
+                header.classList.add('scrolled');
             } else {
-                header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.2)';
+                header.classList.remove('scrolled');
             }
             
             lastScrollTop = scrollTop;
         });
-
-        // ========== IMPROVED TOUCH SCROLL FOR NAVIGATION ==========
-        let isDragging = false;
-        let startX;
-        let scrollLeft;
-
-        navScroll.addEventListener('touchstart', (e) => {
-            isDragging = true;
-            startX = e.touches[0].pageX - navScroll.offsetLeft;
-            scrollLeft = navScroll.scrollLeft;
-            navScroll.style.scrollBehavior = 'auto';
-        });
-
-        navScroll.addEventListener('touchmove', (e) => {
-            if (!isDragging) return;
-            e.preventDefault();
-            const x = e.touches[0].pageX - navScroll.offsetLeft;
-            const walk = (x - startX) * 2;
-            navScroll.scrollLeft = scrollLeft - walk;
-        });
-
-        navScroll.addEventListener('touchend', () => {
-            isDragging = false;
-            navScroll.style.scrollBehavior = 'smooth';
-        });
-
-        // ========== INITIALIZE GALLERY ==========
-        function initGallery() {
-            const galleryScroll = document.getElementById('galleryScroll');
-            const scrollUpBtn = document.getElementById('scrollUpBtn');
-            const scrollDownBtn = document.getElementById('scrollDownBtn');
-            const galleryIndicator = document.getElementById('galleryIndicator');
-            
-            // إنشاء نقاط المؤشر
-            const galleryItems = galleryScroll.querySelectorAll('.gallery-item');
-            galleryItems.forEach((_, index) => {
-                const dot = document.createElement('div');
-                dot.classList.add('indicator-dot');
-                if (index === 0) dot.classList.add('active');
-                dot.addEventListener('click', () => {
-                    scrollToItem(index);
-                });
-                galleryIndicator.appendChild(dot);
-            });
-            
-            const dots = galleryIndicator.querySelectorAll('.indicator-dot');
-            
-            // وظيفة التمرير إلى عنصر محدد
-            function scrollToItem(index) {
-                const item = galleryItems[index];
-                galleryScroll.scrollTo({
-                    top: item.offsetTop - galleryScroll.offsetTop,
-                    behavior: 'smooth'
-                });
-                updateActiveDot(index);
-            }
-            
-            // تحديث النقطة النشطة
-            function updateActiveDot(index) {
-                dots.forEach(dot => dot.classList.remove('active'));
-                dots[index].classList.add('active');
-            }
-            
-            // التمرير لأعلى
-            scrollUpBtn.addEventListener('click', () => {
-                const currentScroll = galleryScroll.scrollTop;
-                const itemHeight = galleryItems[0].offsetHeight + 20;
-                
-                // البحث عن العنصر الحالي
-                let currentIndex = 0;
-                for (let i = 0; i < galleryItems.length; i++) {
-                    if (galleryItems[i].offsetTop - galleryScroll.offsetTop >= currentScroll) {
-                        currentIndex = i;
-                        break;
-                    }
-                }
-                
-                // التمرير للعنصر السابق
-                if (currentIndex > 0) {
-                    scrollToItem(currentIndex - 1);
-                }
-            });
-            
-            // التمرير لأسفل
-            scrollDownBtn.addEventListener('click', () => {
-                const currentScroll = galleryScroll.scrollTop;
-                const itemHeight = galleryItems[0].offsetHeight + 20;
-                
-                // البحث عن العنصر الحالي
-                let currentIndex = 0;
-                for (let i = 0; i < galleryItems.length; i++) {
-                    if (galleryItems[i].offsetTop - galleryScroll.offsetTop >= currentScroll) {
-                        currentIndex = i;
-                        break;
-                    }
-                }
-                
-                // التمرير للعنصر التالي
-                if (currentIndex < galleryItems.length - 1) {
-                    scrollToItem(currentIndex + 1);
-                }
-            });
-            
-            // تحديث النقطة النشطة أثناء التمرير
-            galleryScroll.addEventListener('scroll', () => {
-                const scrollPosition = galleryScroll.scrollTop;
-                
-                for (let i = 0; i < galleryItems.length; i++) {
-                    const item = galleryItems[i];
-                    const itemTop = item.offsetTop - galleryScroll.offsetTop;
-                    const itemBottom = itemTop + item.offsetHeight;
-                    
-                    if (scrollPosition >= itemTop && scrollPosition < itemBottom) {
-                        updateActiveDot(i);
-                        break;
-                    }
-                }
-            });
-        }
-
-        // ========== INITIALIZE PORTFOLIO FILTER ==========
-        function initPortfolioFilter() {
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const portfolioItems = document.querySelectorAll('.portfolio-item');
-            
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    // إزالة النشط من جميع الأزرار
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    // إضافة النشط للزر المحدد
-                    this.classList.add('active');
-                    
-                    const filterValue = this.getAttribute('data-filter');
-                    
-                    portfolioItems.forEach(item => {
-                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                            item.style.display = 'block';
-                            setTimeout(() => {
-                                item.style.opacity = '1';
-                                item.style.transform = 'translateY(0)';
-                            }, 100);
-                        } else {
-                            item.style.opacity = '0';
-                            item.style.transform = 'translateY(20px)';
-                            setTimeout(() => {
-                                item.style.display = 'none';
-                            }, 300);
-                        }
-                    });
-                });
-            });
-        }
-
-        // ========== INITIALIZE TESTIMONIAL SLIDER ==========
-        function initTestimonialSlider() {
-            const testimonialSlides = document.getElementById('testimonialSlides');
-            const testimonialPrev = document.getElementById('testimonialPrev');
-            const testimonialNext = document.getElementById('testimonialNext');
-            let currentSlide = 0;
-            const totalSlides = testimonialSlides.children.length;
-            
-            function updateSlider() {
-                testimonialSlides.style.transform = `translateX(-${currentSlide * 100}%)`;
-            }
-            
-            testimonialNext.addEventListener('click', () => {
-                currentSlide = (currentSlide + 1) % totalSlides;
-                updateSlider();
-            });
-            
-            testimonialPrev.addEventListener('click', () => {
-                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-                updateSlider();
-            });
-            
-            // تبديل تلقائي كل 5 ثواني
-            setInterval(() => {
-                currentSlide = (currentSlide + 1) % totalSlides;
-                updateSlider();
-            }, 5000);
-        }
-
-        // ========== INITIALIZE SCROLL ANIMATIONS ==========
-        function initScrollAnimations() {
-            const fadeElements = document.querySelectorAll('.fade-in-up');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            fadeElements.forEach(el => observer.observe(el));
-        }
 
         // ========== BACK TO TOP BUTTON ==========
         const backToTopBtn = document.getElementById('backToTop');
@@ -3355,11 +3034,23 @@
             scrollProgressBar.style.width = scrolled + '%';
         });
 
+        // ========== INITIALIZE EVERYTHING ON LOAD ==========
+        document.addEventListener('DOMContentLoaded', function() {
+            // تحميل اللغة الافتراضية
+            loadLanguage(currentLang);
+            
+            // تحميل ملف PDF
+            loadPdf();
+            
+            // تحسين تجربة اللمس
+            improveTouchExperience();
+        });
+
         // ========== PDF MANAGEMENT ==========
-        
-        // تحميل PDF عند بدء الصفحة
         function loadPdf() {
             const pdfContainer = document.getElementById('pdfContainer');
+            
+            if (!pdfContainer) return;
             
             // رابط PDF مع إعدادات لإخفاء جميع العناصر
             const pdfUrl = 'https://drive.google.com/file/d/109O8XbxTbS6R3ZyO6SgKzZYYJpa6d7Ty/preview?rm=minimal&toolbar=0&navpanes=0&view=FitH';
@@ -3384,70 +3075,40 @@
             iframe.onload = function() {
                 console.log('تم تحميل ملف PDF بنجاح');
                 iframe.style.opacity = '1';
-                
-                // إخفاء أي عناصر Google Drive بعد التحميل
-                setTimeout(() => {
-                    try {
-                        // محاولة إخفاء أي عناصر زائدة عبر JavaScript
-                        const style = document.createElement('style');
-                        style.textContent = `
-                            /* إخفاء سهم Google Drive */
-                            .ndfHFb-c4YZDc-Wrql6b { display: none !important; }
-                            /* إخفاء شريط العنوان */
-                            .ndfHFb-c4YZDc-ToZjC { display: none !important; }
-                            /* إخفاء أي أزرار زائدة */
-                            .ndfHFb-c4YZDc-aTv5jf { display: none !important; }
-                        `;
-                        document.head.appendChild(style);
-                    } catch (e) {
-                        // تجاهل الأخطاء
-                    }
-                }, 1000);
             };
         }
-        
-        // Fullscreen Functionality
+
+        // ========== FULLSCREEN FUNCTIONALITY ==========
         const fullscreenBtn = document.getElementById('fullscreenBtn');
         const exitFullscreenBtn = document.getElementById('exitFullscreenBtn');
         const pdfContainer = document.getElementById('pdfContainer');
         const fullscreenControls = document.getElementById('fullscreenControls');
         const body = document.body;
         
-        // إدارة وضع ملء الشاشة
         let isFullscreen = false;
         
-        fullscreenBtn.addEventListener('click', toggleFullscreen);
-        exitFullscreenBtn.addEventListener('click', exitFullscreen);
+        if (fullscreenBtn) {
+            fullscreenBtn.addEventListener('click', toggleFullscreen);
+        }
+        
+        if (exitFullscreenBtn) {
+            exitFullscreenBtn.addEventListener('click', exitFullscreen);
+        }
         
         function toggleFullscreen() {
             if (!isFullscreen) {
-                // حفظ حالة الصفحة الحالية
-                const iframe = document.getElementById('pdfViewer');
-                
                 // استخدام Fullscreen API
                 if (pdfContainer.requestFullscreen) {
                     pdfContainer.requestFullscreen();
                 } else if (pdfContainer.webkitRequestFullscreen) { /* Safari */
                     pdfContainer.webkitRequestFullscreen();
-                } else if (pdfContainer.msRequestFullscreen) { /* IE11 */
-                    pdfContainer.msRequestFullscreen();
                 }
                 
                 pdfContainer.classList.add('fullscreen');
-                fullscreenControls.classList.add('show');
-                fullscreenBtn.style.display = 'none';
+                if (fullscreenControls) fullscreenControls.classList.add('show');
+                if (fullscreenBtn) fullscreenBtn.style.display = 'none';
                 body.style.overflow = 'hidden';
                 isFullscreen = true;
-                
-                // تحديث رابط الـ iframe للوضع كامل الشاشة
-                setTimeout(() => {
-                    if (iframe) {
-                        const newUrl = iframe.src.replace('view=FitH', '') + '&view=FitH';
-                        if (iframe.src !== newUrl) {
-                            iframe.src = newUrl;
-                        }
-                    }
-                }, 100);
             }
         }
         
@@ -3457,13 +3118,11 @@
                     document.exitFullscreen();
                 } else if (document.webkitExitFullscreen) { /* Safari */
                     document.webkitExitFullscreen();
-                } else if (document.msExitFullscreen) { /* IE11 */
-                    document.msExitFullscreen();
                 }
                 
                 pdfContainer.classList.remove('fullscreen');
-                fullscreenControls.classList.remove('show');
-                fullscreenBtn.style.display = 'flex';
+                if (fullscreenControls) fullscreenControls.classList.remove('show');
+                if (fullscreenBtn) fullscreenBtn.style.display = 'flex';
                 body.style.overflow = 'auto';
                 isFullscreen = false;
             }
@@ -3472,12 +3131,9 @@
         // الاستماع لتغييرات وضع ملء الشاشة
         document.addEventListener('fullscreenchange', handleFullscreenChange);
         document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
-        document.addEventListener('msfullscreenchange', handleFullscreenChange);
         
         function handleFullscreenChange() {
-            if (!document.fullscreenElement && 
-                !document.webkitFullscreenElement && 
-                !document.msFullscreenElement) {
+            if (!document.fullscreenElement && !document.webkitFullscreenElement) {
                 if (isFullscreen) {
                     exitFullscreen();
                 }
@@ -3496,14 +3152,6 @@
             // تحسين استجابة اللمس
             document.documentElement.style.touchAction = 'manipulation';
             
-            // منع الزوم المزدوج على الأزرار
-            document.addEventListener('dblclick', function(e) {
-                if (e.target.tagName === 'BUTTON' || e.target.closest('button') || 
-                    e.target.tagName === 'A' || e.target.closest('a')) {
-                    e.preventDefault();
-                }
-            }, { passive: false });
-            
             // تحسين تجربة اللمس للأزرار
             const buttons = document.querySelectorAll('button, .btn, .nav-item');
             buttons.forEach(button => {
@@ -3517,26 +3165,6 @@
             });
         }
 
-        // ========== PRELOAD IMAGES ==========
-        function preloadImages() {
-            const images = document.querySelectorAll('img');
-            images.forEach(img => {
-                // إزالة أي تأخير في تحميل الصور
-                img.style.opacity = '1';
-                // إذا كانت الصورة قد تم تحميلها بالفعل، تأكد من إظهارها
-                if (img.complete) {
-                    img.style.opacity = '1';
-                } else {
-                    img.addEventListener('load', function() {
-                        this.style.opacity = '1';
-                    });
-                    img.addEventListener('error', function() {
-                        console.error('Error loading image: ', this.src);
-                    });
-                }
-            });
-        }
-
         // ========== RESPONSIVE HANDLING ==========
         function handleResize() {
             const isMobile = window.innerWidth <= 768;
@@ -3544,60 +3172,15 @@
             if (isMobile) {
                 // تحسينات للجوال
                 document.body.style.paddingTop = '60px';
-                
-                // تقليل حجم النصوص في العبارات الرئيسية
-                const phraseItems = document.querySelectorAll('.phrase-item');
-                phraseItems.forEach(item => {
-                    item.style.fontSize = '0.7rem';
-                    item.style.padding = '6px 12px';
-                });
             } else {
                 // إعادة الضبط لسطح المكتب
                 document.body.style.paddingTop = '70px';
-                
-                const phraseItems = document.querySelectorAll('.phrase-item');
-                phraseItems.forEach(item => {
-                    item.style.fontSize = '0.8rem';
-                    item.style.padding = '8px 15px';
-                });
             }
         }
 
-        // ========== INITIALIZE EVERYTHING ON LOAD ==========
-        document.addEventListener('DOMContentLoaded', function() {
-            // تحميل اللغة الافتراضية
-            loadLanguage(currentLang);
-            
-            // تهيئة جميع المكونات
-            preloadImages();
-            initGallery();
-            initPortfolioFilter();
-            initTestimonialSlider();
-            initScrollAnimations();
-            loadPdf();
-            improveTouchExperience();
-            
-            // استدعاء الدالة عند تحميل الصفحة وتغيير الحجم
-            handleResize();
-            window.addEventListener('resize', handleResize);
-            
-            // تنفيذ الإخفاء بعد تحميل الصفحة
-            setTimeout(() => {
-                const style = document.createElement('style');
-                style.textContent = `
-                    /* إخفاء جميع عناصر Google Drive غير المرغوب فيها */
-                    [role="button"][aria-label*="Google"] { display: none !important; }
-                    [class*="ndfHFb"] { display: none !important; }
-                    [href*="drive.google.com"] { display: none !important; }
-                    [aria-label*="فتح"] { display: none !important; }
-                    
-                    /* إخفاء أي عناصر أعلى الـ iframe */
-                    iframe body > div:first-child { display: none !important; }
-                    iframe body > a:first-child { display: none !important; }
-                `;
-                document.head.appendChild(style);
-            }, 2000);
-        });
+        // استدعاء الدالة عند تحميل الصفحة وتغيير الحجم
+        window.addEventListener('load', handleResize);
+        window.addEventListener('resize', handleResize);
     </script>
 </body>
 </html>
