@@ -1,68 +1,84 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>الملف المهني | فهد الخالدي - معلم متخصص في اللغة الإنجليزية</title>
-    <meta name="description" content="فهد الخالدي - معلم متخصص في اللغة الإنجليزية مع 13+ سنة خبرة في تطوير أساليب التعليم الحديثة. اكتشف ملفي المهني وإنجازاتي التعليمية.">
-    
-    <!-- تحسينات SEO -->
-    <meta property="og:title" content="فهد الخالدي - معلم متخصص في اللغة الإنجليزية">
-    <meta property="og:description" content="معلم متخصص في اللغة الإنجليزية مع 13+ سنة خبرة في تطوير أساليب التعليم الحديثة">
-    <meta property="og:image" content="https://i.ibb.co/k66psVmZ/20220817-151032.jpg">
-    <meta property="og:url" content="https://fahad-alkhaldi.com">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="فهد الخالدي - معلم متخصص في اللغة الإنجليزية">
-    <meta name="twitter:description" content="معلم متخصص في اللغة الإنجليزية مع 13+ سنة خبرة في تطوير أساليب التعليم الحديثة">
-    <meta name="twitter:image" content="https://i.ibb.co/k66psVmZ/20220817-151032.jpg">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#1A3A5F">
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>🏆 كأس العالم 2026 — التوقع التفاعلي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js">
+    </script>
     <style>
-        :root {
-            /* الألوان المحدثة */
-            --primary: #1A3A5F;
-            --primary-dark: #0F2A47;
-            --primary-light: #2A4F7A;
-            --accent: #F5D76E;
-            --accent-dark: #E6C860;
-            --accent-light: #FFE89D;
-            --bg: #FFFFFF;
-            --card-bg: #FFFFFF;
-            --text: #1A1A1A;
-            --light-text: #666666;
-            --border: #E6E6E6;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            --shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.1);
-            --gradient: linear-gradient(135deg, #1A3A5F, #F5D76E);
-            --gradient-dark: linear-gradient(135deg, #0F2A47, #E6C860);
-            --gradient-light: linear-gradient(135deg, #2A4F7A, #FFE89D);
-            --yellow-gradient: linear-gradient(135deg, #F5D76E, #FFE89D);
-            --blue-gradient: linear-gradient(135deg, #1A3A5F, #2A4F7A);
-        }
-
-        /* أنماط الوضع الليلي */
-        :root[data-theme="dark"] {
-            --bg: #0A0A0A;
-            --card-bg: #1A1A1A;
-            --text: #F5F5F5;
-            --light-text: #A0A0A0;
-            --border: #333333;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            --shadow-hover: 0 10px 15px rgba(0, 0, 0, 0.4);
-        }
-
+        /* ============================================================
+           ROOT & RESET (PROFESSIONAL DARK THEME)
+           ============================================================ */
         * {
-            box-sizing: border-box;
-            font-family: 'Tajawal', Tahoma, Arial, sans-serif;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :root {
+            /* --- اللون الأساسي --- */
+            --bg-primary: #0a0e17;
+            --bg-secondary: #111927;
+            --bg-card: rgba(17, 25, 40, 0.85);
+            --bg-card-hover: rgba(30, 45, 70, 0.92);
+            --bg-input: rgba(255, 255, 255, 0.04);
+
+            /* --- الذهبي --- */
+            --gold: #d4a745;
+            --gold-light: #f0d080;
+            --gold-glow: rgba(212, 167, 69, 0.15);
+            --gold-gradient: linear-gradient(135deg, #e8c86a, #c99a2e);
+
+            /* --- النصوص --- */
+            --text-primary: #edf2f7;
+            --text-secondary: #8a9bb5;
+            --text-muted: #5a6f8c;
+
+            /* --- الحالات --- */
+            --success: #2ecc71;
+            --success-bg: rgba(46, 204, 113, 0.10);
+            --danger: #e74c3c;
+            --danger-bg: rgba(231, 76, 60, 0.10);
+            --info: #4a9eff;
+            --info-bg: rgba(74, 158, 255, 0.10);
+            --penalty: #f39c12;
+            --penalty-bg: rgba(243, 156, 18, 0.15);
+
+            /* --- الحدود والظلال --- */
+            --border-subtle: rgba(255, 255, 255, 0.04);
+            --border-gold: rgba(212, 167, 69, 0.20);
+            --shadow-card: 0 12px 48px rgba(0, 0, 0, 0.50), 0 0 0 1px rgba(255, 255, 255, 0.02);
+            --shadow-glow: 0 0 60px rgba(212, 167, 69, 0.04);
+
+            /* --- الحجوم --- */
+            --radius-lg: 24px;
+            --radius-md: 16px;
+            --radius-sm: 10px;
+            --radius-xs: 6px;
+
+            /* --- الانتقالات --- */
+            --transition: all 0.30s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* --- الوضع الفاتح (المحسّن) --- */
+        [data-theme="light"] {
+            --bg-primary: #f4f6f9;
+            --bg-secondary: #ffffff;
+            --bg-card: rgba(255, 255, 255, 0.92);
+            --bg-card-hover: rgba(255, 255, 255, 0.98);
+            --bg-input: rgba(0, 0, 0, 0.02);
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --border-subtle: rgba(0, 0, 0, 0.06);
+            --border-gold: rgba(212, 167, 69, 0.30);
+            --shadow-card: 0 12px 48px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.02);
+            --shadow-glow: 0 0 60px rgba(212, 167, 69, 0.06);
+            --gold-glow: rgba(212, 167, 69, 0.12);
         }
 
         html {
@@ -70,1366 +86,952 @@
         }
 
         body {
-            background: var(--bg);
-            color: var(--text);
+            font-family: 'Cairo', 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            font-size: 14px;
             line-height: 1.7;
-            overflow-x: hidden;
-            padding-top: 80px;
-            transition: background 0.3s ease, color 0.3s ease;
+            transition: var(--transition);
+            padding: 0;
+            margin: 0;
         }
 
-        /* ========== FIXED HEADER WITH FADE EFFECT ========== */
-        .main-header {
-            position: fixed;
-            top: 20;
-            right: 0;
-            left: 0;
-            z-index: 1000;
-            background: var(--blue-gradient);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
-            border-bottom: 3px solid var(--accent);
-            transition: transform 0.4s ease, opacity 0.4s ease;
-            transform: translateY(0);
-            opacity: 1;
+        /* ============================================================
+           سكرول بار
+           ============================================================ */
+        ::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 10px;
         }
 
-        .main-header.hidden {
-            transform: translateY(-100%);
-            opacity: 0;
-        }
-
-        .header-container {
-            max-width: 100%;
+        /* ============================================================
+           حاوية التطبيق
+           ============================================================ */
+        .app-container {
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 16px 48px;
+            width: 100%;
         }
 
-        .header-top {
+        /* ============================================================
+           الهيدر العلوي (صورة الكأس)
+           ============================================================ */
+        .top-bar {
+            width: 100%;
+            min-height: 120px;
+            padding: 12px 24px;
+            position: relative;
+            overflow: hidden;
+            background: var(--bg-secondary);
+            border-bottom: 2px solid var(--gold);
+            box-shadow: 0 8px 40px rgba(212, 167, 69, 0.06);
+            display: flex;
+            align-items: center;
+        }
+        .top-bar .trophy-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%;
+            opacity: 0.15;
+            z-index: 0;
+            pointer-events: none;
+            filter: brightness(0.6) saturate(0.8);
+        }
+        .top-bar .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 14, 23, 0.88) 0%, rgba(10, 14, 23, 0.40) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+        .top-bar .top-bar-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 0;
+            flex-wrap: wrap;
+            gap: 12px;
+            position: relative;
+            z-index: 2;
         }
-
-        .logo-section {
+        .top-bar .top-bar-title {
+            font-size: 1.2rem;
+            font-weight: 900;
+            color: #fff;
             display: flex;
             align-items: center;
-            gap: 15px;
-            flex: 1;
-            justify-content: center;
+            gap: 10px;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.30);
+            padding: 6px 20px 6px 24px;
+            border-radius: 60px;
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            letter-spacing: 0.5px;
         }
-
-        .logo-section h1 {
-            font-size: 1.3rem;
-            font-weight: 800;
-            margin: 0;
-            background: var(--yellow-gradient);
+        .top-bar .top-bar-title .icon {
+            font-size: 1.4rem;
+        }
+        .top-bar .top-bar-title .gold-text {
+            background: var(--gold-gradient);
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             background-clip: text;
+            color: transparent;
+            text-shadow: none;
         }
-
-        .header-actions {
+        .top-bar .top-bar-sub {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.25);
+            padding: 6px 18px;
+            border-radius: 60px;
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             display: flex;
+            align-items: center;
             gap: 8px;
         }
+        .top-bar .top-bar-sub .emoji {
+            font-size: 1.1rem;
+        }
 
-        .lang-btn, .theme-btn {
-            background: rgba(255, 255, 255, 0.15);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 6px 10px;
-            border-radius: 6px;
+        [data-theme="light"] .top-bar {
+            background: #ffffff;
+            border-bottom-color: var(--gold);
+            box-shadow: 0 8px 40px rgba(212, 167, 69, 0.10);
+        }
+        [data-theme="light"] .top-bar .overlay {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.90) 0%, rgba(255, 255, 255, 0.50) 100%);
+        }
+        [data-theme="light"] .top-bar .top-bar-title,
+        [data-theme="light"] .top-bar .top-bar-sub {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.80);
+            border-color: rgba(0, 0, 0, 0.04);
+            text-shadow: none;
+        }
+        [data-theme="light"] .top-bar .top-bar-title .gold-text {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* ============================================================
+           الهيدر اللاصق
+           ============================================================ */
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 14, 23, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 0 0 28px 28px;
+            padding: 14px 24px;
+            margin: 0 -16px 24px;
+            border-bottom: 1px solid var(--border-gold);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.40);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            transition: var(--transition);
+        }
+        [data-theme="light"] .sticky-header {
+            background: rgba(255, 255, 255, 0.92);
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.04);
+        }
+        .sticky-header .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .sticky-header .brand h1 {
+            font-size: 1.15rem;
+            font-weight: 900;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.3px;
+        }
+        .sticky-header .brand .sub {
+            font-size: 0.55rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            display: block;
+            margin-top: -2px;
+            letter-spacing: 0.3px;
+        }
+        .sticky-header .header-actions {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .sticky-header .header-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            color: var(--text-secondary);
+            padding: 8px 16px;
+            border-radius: 40px;
+            font-size: 0.7rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             display: flex;
             align-items: center;
-            gap: 5px;
-            backdrop-filter: blur(10px);
-            font-size: 0.75rem;
-            min-width: 50px;
-            justify-content: center;
+            gap: 6px;
+            font-family: inherit;
+            backdrop-filter: blur(4px);
         }
-
-        .lang-btn:hover, .theme-btn:hover {
-            background: rgba(255, 255, 255, 0.25);
+        .sticky-header .header-btn:hover {
+            background: var(--gold-glow);
+            border-color: var(--gold);
+            color: var(--gold-light);
             transform: translateY(-2px);
         }
-
-        /* ========== NAVIGATION BAR ========== */
-        .nav-container {
-            background: linear-gradient(90deg, rgba(26, 58, 95, 0.95), rgba(42, 79, 122, 0.95));
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
+        [data-theme="light"] .sticky-header .header-btn {
+            background: rgba(0, 0, 0, 0.03);
+            border-color: rgba(0, 0, 0, 0.06);
+            color: var(--text-secondary);
+        }
+        [data-theme="light"] .sticky-header .header-btn:hover {
+            background: var(--gold-glow);
+            border-color: var(--gold);
+            color: var(--gold);
         }
 
-        .nav-container::-webkit-scrollbar {
-            display: none;
-        }
-
-        .nav-scroll {
-            display: flex;
-            gap: 0;
-            padding: 0 10px;
-            min-width: max-content;
-        }
-
-        .nav-item {
-            flex: 0 0 auto;
-            padding: 10px 12px;
-            text-decoration: none;
-            color: white;
-            font-weight: 600;
-            font-size: 0.65rem;
-            transition: all 0.3s ease;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 4px;
-            min-width: 70px;
-            white-space: nowrap;
-            border-left: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .nav-item:last-child {
-            border-left: none;
-        }
-
-        .nav-item i {
-            font-size: 0.8rem;
-            transition: all 0.3s ease;
-        }
-
-        .nav-item:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .nav-item.active {
-            background: var(--yellow-gradient);
-            color: var(--primary-dark);
-            box-shadow: 0 -4px 8px rgba(245, 215, 110, 0.3);
-        }
-
-        .nav-item.active::before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            right: 50%;
-            transform: translateX(50%);
-            width: 30px;
-            height: 3px;
-            background: var(--primary-dark);
-            border-radius: 2px;
-        }
-
-        /* ========== HERO SECTION WITH KEY PHRASES ========== */
-        .hero-section {
-            background: var(--blue-gradient);
-            color: white;
-            border-radius: 20px;
-            padding: 30px 20px;
-            margin: 20px auto 30px;
-            text-align: center;
-            position: relative;
+        /* ============================================================
+           شريط الأخبار
+           ============================================================ */
+        .news-ticker-wrapper {
+            background: var(--gold-glow);
+            border: 1px solid var(--border-gold);
+            border-radius: 60px;
+            padding: 6px 20px;
+            margin-bottom: 24px;
             overflow: hidden;
-            box-shadow: var(--shadow-hover);
-            max-width: 1200px;
-        }
-
-        .hero-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
-            background-size: cover;
-        }
-
-        .hero-content {
+            box-shadow: var(--shadow-glow);
             position: relative;
-            z-index: 1;
+            min-height: 38px;
+            backdrop-filter: blur(4px);
+        }
+        .news-ticker {
+            display: inline-block;
+            white-space: nowrap;
+            animation: tickerScroll 70s linear infinite;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        .news-ticker span {
+            display: inline-block;
+            padding: 0 16px;
+        }
+        .news-ticker .sep {
+            color: var(--gold);
+            opacity: 0.25;
+        }
+        .news-ticker .today-highlight {
+            color: var(--gold-light);
+            font-weight: 700;
+        }
+        .news-ticker .match-highlight {
+            color: var(--info);
+            font-weight: 600;
+        }
+        @keyframes tickerScroll {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+        .news-ticker-wrapper:hover .news-ticker {
+            animation-play-state: paused;
         }
 
-        .hero-title {
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 12px;
-            background: var(--yellow-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-subtitle {
-            font-size: 1rem;
-            margin-bottom: 20px;
-            opacity: 0.9;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .key-phrases {
+        /* ============================================================
+           أدوات التحكم
+           ============================================================ */
+        .controls-bar {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin: 20px 0;
+            gap: 12px;
+            margin-bottom: 24px;
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            border-radius: var(--radius-lg);
+            padding: 16px 24px;
+            border: 1px solid var(--border-subtle);
+            box-shadow: var(--shadow-card);
+            transition: var(--transition);
         }
-
-        .phrase-item {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 8px 15px;
-            border-radius: 20px;
+        .controls-bar .control-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            align-items: center;
+            flex: 1;
+            min-width: 160px;
+        }
+        .controls-bar .control-group label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+        .controls-bar select,
+        .controls-bar input {
+            padding: 8px 16px;
+            border-radius: 40px;
+            border: 1px solid var(--border-subtle);
+            background: var(--bg-input);
+            color: var(--text-primary);
             font-size: 0.8rem;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
+            outline: none;
+            transition: var(--transition);
+            font-family: inherit;
+            flex: 1;
+            min-width: 120px;
+            backdrop-filter: blur(4px);
+        }
+        .controls-bar select:focus,
+        .controls-bar input:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px var(--gold-glow);
+        }
+        .controls-bar select option {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
         }
 
-        .phrase-item:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
+        /* ============================================================
+           أزرار الإدارة
+           ============================================================ */
+        .admin-controls {
+            display: none;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            padding: 16px 20px;
+            background: var(--gold-glow);
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-md);
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-direction: column;
+            backdrop-filter: blur(4px);
         }
-
-        .hero-actions {
+        .admin-controls.visible {
             display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 25px;
+        }
+        .admin-controls .admin-info {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
             flex-wrap: wrap;
         }
+        .admin-controls .admin-info .badge-admin {
+            background: var(--gold-glow);
+            color: var(--gold-light);
+            padding: 2px 14px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 0.65rem;
+            border: 1px solid var(--border-gold);
+        }
+        .admin-btn {
+            padding: 8px 22px;
+            border-radius: 60px;
+            border: none;
+            background: var(--gold-gradient);
+            color: #0a0e1a;
+            font-weight: 700;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 4px 16px rgba(212, 167, 69, 0.15);
+        }
+        .admin-btn:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 8px 32px rgba(212, 167, 69, 0.25);
+        }
+        .admin-btn.danger {
+            background: linear-gradient(135deg, var(--danger), #c0392b);
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(231, 76, 60, 0.20);
+        }
+        .admin-btn.danger:hover {
+            box-shadow: 0 8px 32px rgba(231, 76, 60, 0.30);
+        }
+        .admin-btn.secondary {
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-subtle);
+            box-shadow: none;
+        }
+        .admin-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.10);
+        }
+        .admin-btn.success {
+            background: linear-gradient(135deg, var(--success), #27ae60);
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(46, 204, 113, 0.20);
+        }
+        .admin-btn.success:hover {
+            box-shadow: 0 8px 32px rgba(46, 204, 113, 0.30);
+        }
+        .admin-btn.bracket-btn {
+            background: linear-gradient(135deg, #8e44ad, #6c3483);
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(142, 68, 173, 0.20);
+        }
+        .admin-btn.bracket-btn:hover {
+            box-shadow: 0 8px 32px rgba(142, 68, 173, 0.30);
+        }
 
-        .btn {
-            padding: 12px 25px;
+        /* ============================================================
+           الأقسام المنبثقة (أرشيف - مكررات)
+           ============================================================ */
+        .archive-section,
+        .duplicates-section {
+            width: 100%;
+            margin-top: 10px;
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: var(--radius-md);
+            padding: 14px 18px;
+            display: none;
+            backdrop-filter: blur(4px);
+        }
+        .archive-section.visible,
+        .duplicates-section.visible {
+            display: block;
+        }
+        .archive-section .archive-title,
+        .duplicates-section .dup-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .archive-section .archive-title {
+            color: var(--success);
+        }
+        .duplicates-section .dup-title {
+            color: var(--danger);
+        }
+        .archive-section .archive-title .count-badge,
+        .duplicates-section .dup-title .count-badge {
+            background: rgba(255, 255, 255, 0.04);
+            padding: 0 12px;
+            border-radius: 40px;
+            font-size: 0.65rem;
+        }
+        .archive-section .archive-title .count-badge {
+            color: var(--success);
+        }
+        .duplicates-section .dup-title .count-badge {
+            color: var(--danger);
+        }
+
+        .archive-item {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: var(--radius-sm);
+            padding: 10px 16px;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+            border: 1px solid var(--border-subtle);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        .archive-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--border-gold);
+        }
+        .archive-item .match-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+        .archive-item .match-info .flag {
+            font-size: 1.1rem;
+        }
+        .archive-item .match-info .winner {
+            color: var(--success);
+        }
+        .archive-item .match-info .loser {
+            color: var(--danger);
+        }
+        .archive-item .score {
+            font-weight: 800;
+            color: var(--gold-light);
+            font-size: 0.85rem;
+        }
+        .archive-item .penalty-score {
+            font-size: 0.7rem;
+            color: var(--penalty);
+            background: var(--penalty-bg);
+            padding: 1px 10px;
             border-radius: 30px;
             font-weight: 700;
-            text-decoration: none;
-            transition: all 0.3s ease;
+        }
+        .archive-item .stats {
+            display: flex;
+            gap: 14px;
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+        }
+        .archive-item .stats .correct {
+            color: var(--success);
+        }
+        .archive-item .stats .wrong {
+            color: var(--danger);
+        }
+        .archive-item .accuracy {
+            font-weight: 700;
+            color: var(--gold-light);
+            font-size: 0.7rem;
+            padding: 2px 12px;
+            border-radius: 40px;
+            background: var(--gold-glow);
+        }
+
+        .duplicates-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.7rem;
+        }
+        .duplicates-table th {
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-secondary);
+            padding: 8px 6px;
+            text-align: center;
+            font-weight: 700;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .duplicates-table td {
+            padding: 6px 4px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-subtle);
+            font-size: 0.65rem;
+        }
+        .duplicates-table .dup-user {
+            font-weight: 700;
+            color: var(--gold-light);
+        }
+        .duplicates-table .dup-match {
+            color: var(--text-secondary);
+        }
+        .duplicates-table .dup-preds {
+            font-size: 0.6rem;
+            color: var(--text-secondary);
+        }
+        .duplicates-table .dup-count {
+            font-weight: 800;
+            color: var(--danger);
+        }
+        .duplicates-empty {
+            text-align: center;
+            padding: 16px;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+        }
+
+        /* ============================================================
+           مشاركة الروابط
+           ============================================================ */
+        .share-all-container {
+            display: none;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            padding: 14px 20px;
+            background: var(--gold-glow);
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-md);
+            align-items: center;
+            justify-content: space-between;
+            backdrop-filter: blur(4px);
+        }
+        .share-all-container.visible {
+            display: flex;
+        }
+        .share-all-btn {
+            padding: 10px 28px;
+            border-radius: 60px;
+            border: none;
+            background: var(--gold-gradient);
+            color: #0a0e1a;
+            font-weight: 800;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            font-size: 0.9rem;
-            border: none;
-            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(212, 167, 69, 0.15);
+        }
+        .share-all-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 40px rgba(212, 167, 69, 0.25);
         }
 
-        .btn-primary {
-            background: var(--yellow-gradient);
-            color: var(--primary-dark);
-            box-shadow: 0 4px 10px rgba(245, 215, 110, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(245, 215, 110, 0.4);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(10px);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-3px);
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-top: 25px;
-            flex-wrap: wrap;
-        }
-
-        .hero-stat {
-            text-align: center;
-            min-width: 100px;
-        }
-
-        .hero-stat .number {
-            font-size: 1.6rem;
-            font-weight: 800;
-            display: block;
-            background: var(--yellow-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-stat .label {
-            font-size: 0.8rem;
-            opacity: 0.8;
-        }
-
-        /* ========== MAIN CONTENT ========== */
-        main {
-            max-width: 1200px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-
-        /* Sections */
-        section {
+        /* ============================================================
+           كلمة السر
+           ============================================================ */
+        .password-overlay {
             display: none;
-            animation: fadeInUp 0.6s ease;
-            padding: 20px 0;
-        }
-
-        section.active {
-            display: block;
-        }
-
-        .section-title {
-            text-align: center;
-            color: var(--primary);
-            margin-bottom: 25px;
-            font-size: 1.8rem;
-            font-weight: 800;
-            position: relative;
-            padding-bottom: 12px;
-        }
-
-        .section-title::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            right: 50%;
-            transform: translateX(50%);
-            width: 70px;
-            height: 3px;
-            background: var(--yellow-gradient);
-            border-radius: 2px;
-        }
-
-        /* Cards */
-        .card {
-            background: var(--card-bg);
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            border-right: 4px solid transparent;
-            border: 1px solid var(--border);
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-            border-right-color: var(--accent);
-        }
-
-        /* Profile Section */
-        .profile-header {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .profile-img {
-            width: 130px;
-            height: 130px;
-            margin: 0 auto 15px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 3px solid var(--accent);
-            box-shadow: 0 6px 15px rgba(245, 215, 110, 0.3);
-        }
-
-        .profile-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .profile-info h2 {
-            font-size: 1.3rem;
-            color: var(--primary);
-            margin-bottom: 5px;
-        }
-
-        .profile-info .title {
-            font-size: 0.9rem;
-            color: var(--accent-dark);
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .bio {
-            text-align: justify;
-            font-size: 0.9rem;
-            line-height: 1.7;
-            color: var(--text);
-            margin: 15px 0;
-        }
-
-        .badge {
-            display: inline-block;
-            background: var(--yellow-gradient);
-            color: var(--primary-dark);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: 700;
-            margin: 12px 0;
-            box-shadow: 0 3px 8px rgba(245, 215, 110, 0.3);
-            font-size: 0.85rem;
-        }
-
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 15px;
-            margin-top: 25px;
-        }
-
-        .stat-card {
-            background: linear-gradient(135deg, var(--card-bg), var(--bg));
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border-top: 3px solid var(--accent);
-            border: 1px solid var(--border);
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .stat-number {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: var(--primary);
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            color: var(--light-text);
-            font-weight: 600;
-        }
-
-        /* Vision Section */
-        .vision-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .vision-item {
-            background: linear-gradient(135deg, var(--card-bg), var(--bg));
-            padding: 25px;
-            border-radius: 12px;
-            text-align: center;
-            border-top: 4px solid var(--accent);
-            transition: all 0.3s ease;
-            border: 1px solid var(--border);
-        }
-
-        .vision-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .vision-item i {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 15px;
-        }
-
-        .vision-item h3 {
-            color: var(--primary);
-            margin-bottom: 12px;
-            font-size: 1.2rem;
-        }
-
-        .vision-item p {
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        /* Timeline */
-        .timeline {
-            position: relative;
-            padding-right: 25px;
-        }
-
-        .timeline::before {
-            content: "";
-            position: absolute;
-            right: 12px;
+            position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
             bottom: 0;
-            width: 2px;
-            background: var(--yellow-gradient);
-            border-radius: 2px;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(20px);
+            z-index: 99999;
+            justify-content: center;
+            align-items: center;
+            animation: fadeInModal 0.3s ease;
         }
-
-        .timeline-item {
-            background: var(--card-bg);
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 15px;
-            position: relative;
-            box-shadow: var(--shadow);
-            border-right: 2px solid var(--accent);
-            border: 1px solid var(--border);
+        .password-overlay.active {
+            display: flex;
         }
-
-        .timeline-item::before {
-            content: "";
-            position: absolute;
-            right: -20px;
-            top: 20px;
-            width: 10px;
-            height: 10px;
-            background: var(--accent);
-            border-radius: 50%;
-            box-shadow: 0 0 0 3px rgba(245, 215, 110, 0.2);
+        .password-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-lg);
+            padding: 36px 32px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.60);
         }
-
-        .timeline-date {
-            color: var(--accent-dark);
-            font-weight: 700;
-            font-size: 0.8rem;
+        .password-box .lock-icon {
+            font-size: 3.2rem;
+            display: block;
+            margin-bottom: 12px;
+        }
+        .password-box .p-title {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--gold-light);
             margin-bottom: 6px;
         }
-
-        .timeline-content h3 {
-            font-size: 0.9rem;
-            color: var(--primary);
-            margin-bottom: 5px;
+        .password-box .p-sub {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
         }
-
-        .timeline-content p {
-            color: var(--light-text);
-            font-size: 0.8rem;
-        }
-
-        /* Skills */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
-        }
-
-        .skill-category {
-            background: linear-gradient(135deg, var(--card-bg), var(--bg));
-            padding: 20px;
-            border-radius: 10px;
-            border-top: 3px solid var(--accent);
-            border: 1px solid var(--border);
-        }
-
-        .skill-category h3 {
-            color: var(--primary);
-            margin-bottom: 12px;
-            font-size: 1.1rem;
-        }
-
-        .skill-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .skill-list li {
-            padding: 6px 0;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.85rem;
-        }
-
-        .skill-list li:last-child {
-            border-bottom: none;
-        }
-
-        .skill-list li i {
-            color: var(--accent);
-            font-size: 0.8rem;
-        }
-
-        /* Achievements Section */
-        .achievement-card {
-            background: linear-gradient(135deg, var(--card-bg), var(--bg));
-            border-right: 4px solid var(--accent);
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
-        }
-
-        .achievement-year {
-            background: var(--accent);
-            color: var(--primary-dark);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: 700;
-            display: inline-block;
-            margin-bottom: 15px;
-            font-size: 0.8rem;
-            box-shadow: 0 3px 8px rgba(245, 215, 110, 0.3);
-        }
-
-        .achievement-content p {
-            line-height: 1.8;
-            text-align: justify;
-            font-size: 0.9rem;
-            color: var(--text);
-            margin: 0;
-        }
-
-        /* ملف الإنجاز Section */
-        .portfolio-section {
-            background: linear-gradient(135deg, var(--card-bg), var(--bg));
-            border-right: 4px solid var(--accent);
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
-        }
-
-        .portfolio-title {
-            color: var(--primary);
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-            text-align: center;
-        }
-
-        .portfolio-subtitle {
-            text-align: center;
-            color: var(--light-text);
-            margin-bottom: 25px;
+        .password-box input {
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 60px;
+            border: 1px solid var(--border-subtle);
+            background: var(--bg-input);
+            color: var(--text-primary);
             font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        .pdf-container {
-            background: var(--card-bg);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: var(--shadow-hover);
-            border: 1px solid var(--border);
-        }
-
-        .pdf-header {
-            background: var(--blue-gradient);
-            color: white;
-            padding: 20px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .pdf-header h2 {
-            margin: 0;
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
-
-        .pdf-actions {
-            display: flex;
-            gap: 15px;
-        }
-
-        .pdf-embed-container {
-            position: relative;
-            width: 100%;
-            height: 75vh;
-            min-height: 500px;
-            background: #f8f9fa;
-            overflow: hidden;
-        }
-
-        .pdf-embed-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            display: block;
-        }
-
-        /* Training Section */
-        .certificates-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .certificate-item {
-            background: var(--card-bg);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            border: 1px solid var(--border);
-        }
-
-        .certificate-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .certificate-image {
-            width: 100%;
-            height: 200px;
-            object-fit: contain;
-            background-color: #f9f9f9;
-            padding: 10px;
-        }
-
-        .certificate-content {
-            padding: 15px;
-        }
-
-        .certificate-title {
-            color: var(--primary);
-            margin-bottom: 10px;
-            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+            font-family: inherit;
             text-align: center;
-        }
-
-        .certificate-download {
-            display: block;
-            text-align: center;
-            margin-top: 10px;
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            transition: all 0.3s ease;
-            background: var(--yellow-gradient);
-            color: var(--primary-dark);
-            padding: 8px 15px;
-            border-radius: 20px;
-        }
-
-        .certificate-download:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(245, 215, 110, 0.3);
-        }
-
-        .training-category {
-            margin-bottom: 30px;
-        }
-
-        .training-category-title {
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-            text-align: center;
-            padding-bottom: 8px;
-            border-bottom: 2px solid var(--accent);
-        }
-
-        /* Tech Section */
-        .tech-card {
-            background: linear-gradient(135deg, var(--card-bg), var(--bg));
-            border-right: 4px solid var(--accent);
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
-        }
-
-        /* ========== PROJECTS SECTION ========== */
-        .portfolio-filters {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            padding: 8px 16px;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            font-size: 0.85rem;
-        }
-
-        .filter-btn:hover, .filter-btn.active {
-            background: var(--yellow-gradient);
-            color: var(--primary-dark);
-            border-color: var(--accent);
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .portfolio-item {
-            background: var(--card-bg);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            border: 1px solid var(--border);
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .portfolio-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .portfolio-content {
-            padding: 15px;
-        }
-
-        .portfolio-content h3 {
-            color: var(--primary);
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-
-        .portfolio-content p {
-            color: var(--light-text);
-            font-size: 0.9rem;
-            line-height: 1.6;
-            margin-bottom: 10px;
-        }
-
-        .project-link {
-            display: inline-block;
-            margin-top: 10px;
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            transition: all 0.3s ease;
-        }
-
-        .project-link:hover {
-            color: var(--accent-dark);
-            text-decoration: underline;
-        }
-
-        /* Gallery */
-        .gallery-container {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            overflow: hidden;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .gallery-scroll {
-            display: flex;
-            flex-direction: column;
-            max-height: 500px;
-            overflow-y: auto;
-            scroll-behavior: smooth;
-            padding: 10px;
-            background: var(--card-bg);
-            border-radius: 12px;
-        }
-
-        .gallery-scroll::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .gallery-scroll::-webkit-scrollbar-track {
-            background: var(--border);
-            border-radius: 10px;
-        }
-
-        .gallery-scroll::-webkit-scrollbar-thumb {
-            background: var(--accent);
-            border-radius: 10px;
-        }
-
-        .gallery-scroll::-webkit-scrollbar-thumb:hover {
-            background: var(--accent-dark);
-        }
-
-        .gallery-item {
-            margin-bottom: 20px;
-            text-align: center;
-            background: var(--card-bg);
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease;
-            border: 1px solid var(--border);
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .gallery-item img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .gallery-caption {
-            margin-top: 10px;
-            font-size: 0.9rem;
-            color: var(--text);
-            font-weight: 500;
-        }
-
-        .gallery-controls {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .gallery-btn {
-            background: var(--yellow-gradient);
-            color: var(--primary-dark);
-            border: none;
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(245, 215, 110, 0.3);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .gallery-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(245, 215, 110, 0.4);
-        }
-
-        /* Testimonials Section */
-        .testimonial-slider {
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-        }
-
-        .testimonial-slides {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-
-        .testimonial-slide {
-            min-width: 100%;
-            padding: 20px;
-            background: linear-gradient(135deg, var(--card-bg), var(--bg));
-            border-top: 3px solid var(--accent);
-            box-shadow: var(--shadow);
-            border-radius: 10px;
-            border: 1px solid var(--border);
-        }
-
-        .testimonial-content {
-            margin-bottom: 12px;
-        }
-
-        .testimonial-content p {
-            font-style: italic;
-            line-height: 1.6;
-            color: var(--text);
-            font-size: 0.9rem;
-        }
-
-        .testimonial-author {
-            text-align: left;
-        }
-
-        .testimonial-author strong {
-            display: block;
-            color: var(--primary);
-            font-size: 0.9rem;
-        }
-
-        .testimonial-author span {
-            font-size: 0.8rem;
-            color: var(--light-text);
-        }
-
-        .testimonial-controls {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .testimonial-control {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .testimonial-control:hover {
-            background: var(--yellow-gradient);
-            color: var(--primary-dark);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--blue-gradient);
-            color: white;
-            text-align: center;
-            padding: 25px 20px;
-            margin-top: 40px;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .copyright {
-            margin-top: 15px;
-            opacity: 0.8;
-            font-size: 0.85rem;
-        }
-
-        /* زر العودة للأعلى */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            width: 50px;
-            height: 50px;
-            background: var(--yellow-gradient);
-            color: var(--primary-dark);
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            z-index: 1000;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            letter-spacing: 6px;
             font-size: 1.2rem;
         }
-
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
+        .password-box input:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px var(--gold-glow);
+        }
+        .password-box .p-btn {
+            margin-top: 16px;
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 60px;
+            background: var(--gold-gradient);
+            color: #0a0e1a;
+            font-weight: 800;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+        .password-box .p-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 32px rgba(212, 167, 69, 0.25);
+        }
+        .password-box .p-error {
+            margin-top: 12px;
+            color: var(--danger);
+            font-size: 0.85rem;
+            font-weight: 600;
+            min-height: 24px;
+        }
+        .password-box .p-close {
+            margin-top: 12px;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            cursor: pointer;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+        .password-box .p-close:hover {
+            color: var(--text-primary);
         }
 
-        .back-to-top:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-        }
-
-        /* مؤشر تقدم التمرير */
-        .scroll-progress {
+        /* ============================================================
+           نافذة إدخال الاسم
+           ============================================================ */
+        .name-modal-overlay {
+            display: none;
             position: fixed;
             top: 0;
+            left: 0;
             right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.80);
+            backdrop-filter: blur(20px);
+            z-index: 99998;
+            justify-content: center;
+            align-items: center;
+            animation: fadeInModal 0.3s ease;
+        }
+        .name-modal-overlay.active {
+            display: flex;
+        }
+        .name-modal-content {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-lg);
+            padding: 36px 32px;
+            max-width: 420px;
+            width: 95%;
+            text-align: center;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.60);
+        }
+        .name-modal-content .name-icon {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 12px;
+        }
+        .name-modal-content .name-title {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: var(--gold-light);
+            margin-bottom: 6px;
+        }
+        .name-modal-content .name-sub {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+        .name-modal-content input {
             width: 100%;
-            height: 3px;
+            padding: 14px 20px;
+            border-radius: 60px;
+            border: 1px solid var(--border-subtle);
+            background: var(--bg-input);
+            color: var(--text-primary);
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+            font-family: inherit;
+            text-align: center;
+        }
+        .name-modal-content input:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px var(--gold-glow);
+        }
+        .name-modal-content .name-btn {
+            margin-top: 16px;
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 60px;
+            background: var(--gold-gradient);
+            color: #0a0e1a;
+            font-weight: 800;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+        .name-modal-content .name-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 32px rgba(212, 167, 69, 0.25);
+        }
+        .name-modal-content .name-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .name-modal-content .name-error {
+            margin-top: 12px;
+            color: var(--danger);
+            font-size: 0.85rem;
+            font-weight: 600;
+            min-height: 24px;
+        }
+        .name-modal-content .name-close {
+            margin-top: 12px;
             background: transparent;
-            z-index: 1001;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            cursor: pointer;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+        .name-modal-content .name-close:hover {
+            color: var(--text-primary);
+        }
+        .name-modal-content .user-status {
+            padding: 10px 16px;
+            border-radius: 60px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 12px 0;
+        }
+        .name-modal-content .user-status.existing {
+            background: var(--success-bg);
+            color: var(--success);
+            border: 1px solid rgba(46, 204, 113, 0.15);
+        }
+        .name-modal-content .user-status.new {
+            background: var(--gold-glow);
+            color: var(--gold-light);
+            border: 1px solid var(--border-gold);
         }
 
-        .scroll-progress-bar {
-            height: 100%;
-            width: 0%;
-            background: var(--yellow-gradient);
-            transition: width 0.1s ease;
-        }
-
-        /* تحسينات للوضع الليلي */
-        :root[data-theme="dark"] .card {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
-        }
-
-        :root[data-theme="dark"] .stat-card,
-        :root[data-theme="dark"] .vision-item,
-        :root[data-theme="dark"] .skill-category,
-        :root[data-theme="dark"] .achievement-card,
-        :root[data-theme="dark"] .tech-card,
-        :root[data-theme="dark"] .portfolio-item,
-        :root[data-theme="dark"] .testimonial-slide,
-        :root[data-theme="dark"] .gallery-item {
-            background: linear-gradient(135deg, #1E1E1E, #2A2A2A);
-        }
-
-        /* أنماط إضافية للمشاركات */
-        .participation-images {
+        /* ============================================================
+           التبويبات
+           ============================================================ */
+        .tabs-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 15px;
+            gap: 10px;
+            margin: 20px 0 24px;
+            align-items: center;
         }
-
-        .participation-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        /* أنماط إضافية للإنجازات */
-        .achievement-images {
+        .tabs {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 20px;
+            gap: 8px;
+            flex: 1;
+        }
+        .tab-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-subtle);
+            padding: 10px 22px;
+            border-radius: 60px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: var(--transition);
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(4px);
+        }
+        .tab-btn:hover {
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text-primary);
+            transform: translateY(-1px);
+        }
+        .tab-btn.active {
+            background: var(--gold-glow);
+            border-color: var(--gold);
+            color: var(--gold-light);
+            box-shadow: 0 0 30px rgba(212, 167, 69, 0.04);
+        }
+        .day-filter-tabs {
+            display: none;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 4px;
+            border-radius: 40px;
+            border: 1px solid var(--border-subtle);
+        }
+        .day-filter-tabs.visible {
+            display: flex;
+        }
+        .day-filter-tabs .day-btn {
+            padding: 6px 16px;
+            border-radius: 30px;
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            font-size: 0.65rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+        .day-filter-tabs .day-btn:hover {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.04);
+        }
+        .day-filter-tabs .day-btn.active {
+            background: var(--gold-glow);
+            color: var(--gold-light);
         }
 
-        .achievement-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        .tab-content {
+            display: none;
+            animation: fadeUp 0.4s ease;
         }
-
-        /* ========== RESPONSIVE DESIGN ========== */
-        @media (max-width: 768px) {
-            body {
-                padding-top: 70px;
-            }
-            
-            .header-top {
-                padding: 8px 0;
-            }
-            
-            .logo-section h1 {
-                font-size: 1.1rem;
-            }
-            
-            .lang-btn, .theme-btn {
-                padding: 5px 8px;
-                font-size: 0.7rem;
-                min-width: 45px;
-            }
-            
-            .nav-item {
-                padding: 8px 10px;
-                min-width: 65px;
-                font-size: 0.6rem;
-            }
-            
-            .nav-item i {
-                font-size: 0.7rem;
-            }
-            
-            .hero-section {
-                padding: 20px 15px;
-                margin: 15px 10px 20px;
-                border-radius: 15px;
-            }
-            
-            .hero-title {
-                font-size: 1.4rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 0.9rem;
-            }
-            
-            .key-phrases {
-                gap: 8px;
-            }
-            
-            .phrase-item {
-                padding: 6px 12px;
-                font-size: 0.7rem;
-            }
-            
-            .hero-actions {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 250px;
-                justify-content: center;
-                padding: 10px 20px;
-            }
-            
-            .hero-stats {
-                gap: 15px;
-            }
-            
-            .hero-stat {
-                min-width: 80px;
-            }
-            
-            .hero-stat .number {
-                font-size: 1.3rem;
-            }
-            
-            .section-title {
-                font-size: 1.4rem;
-            }
-            
-            .card {
-                padding: 15px;
-            }
-            
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .back-to-top {
-                bottom: 20px;
-                left: 20px;
-                width: 45px;
-                height: 45px;
-                font-size: 1rem;
-            }
-            
-            .pdf-embed-container {
-                height: 60vh;
-                min-height: 400px;
-            }
-            
-            .pdf-header {
-                padding: 15px;
-                flex-direction: column;
-                text-align: center;
-                gap: 10px;
-            }
-            
-            .pdf-header h2 {
-                font-size: 1.1rem;
-            }
-            
-            .pdf-actions {
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .certificates-grid {
-                grid-template-columns: 1fr;
-            }
+        .tab-content.active {
+            display: block;
         }
-
-        @media (max-width: 480px) {
-            body {
-                padding-top: 65px;
-            }
-            
-            .header-top {
-                flex-direction: column;
-                gap: 10px;
-                padding: 10px 0;
-            }
-            
-            .logo-section h1 {
-                font-size: 1rem;
-            }
-            
-            .nav-item {
-                min-width: 60px;
-                padding: 6px 8px;
-                font-size: 0.55rem;
-            }
-            
-            .nav-item span {
-                font-size: 0.5rem;
-            }
-            
-            .hero-title {
-                font-size: 1.2rem;
-            }
-            
-            .key-phrases {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .phrase-item {
-                width: 100%;
-                max-width: 300px;
-                text-align: center;
-            }
-            
-            .hero-stat .number {
-                font-size: 1.1rem;
-            }
-            
-            .hero-stat .label {
-                font-size: 0.7rem;
-            }
-            
-            .gallery-container {
-                max-height: 350px;
-            }
-            
-            .gallery-btn {
-                padding: 8px 15px;
-                font-size: 0.8rem;
-            }
-            
-            .back-to-top {
-                bottom: 15px;
-                left: 15px;
-                width: 40px;
-                height: 40px;
-            }
-            
-            .pdf-embed-container {
-                height: 50vh;
-                min-height: 300px;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
+        @keyframes fadeUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(16px);
             }
             to {
                 opacity: 1;
@@ -1437,1371 +1039,7702 @@
             }
         }
 
-        /* إصلاحات iOS */
-        @supports (-webkit-touch-callout: none) {
-            .hero-section,
-            .card,
-            .portfolio-item,
-            .btn {
-                -webkit-transform: translateZ(0);
-                transform: translateZ(0);
+        .section-title {
+            font-size: 1.2rem;
+            font-weight: 800;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .section-title .gold {
+            color: var(--gold);
+        }
+        .section-title .badge-count {
+            background: var(--gold-glow);
+            color: var(--gold-light);
+            font-size: 0.65rem;
+            padding: 2px 14px;
+            border-radius: 40px;
+            font-weight: 600;
+            border: 1px solid var(--border-gold);
+        }
+
+        /* ============================================================
+           لوحة المتصدرين — محسّنة وجمالية
+           ============================================================ */
+        .leaderboard-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-lg);
+            padding: 28px 28px 20px;
+            margin: 0 0 28px 0;
+            box-shadow: var(--shadow-card), var(--shadow-glow);
+            transition: var(--transition);
+            backdrop-filter: blur(12px);
+            position: relative;
+            overflow: hidden;
+        }
+        .leaderboard-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%);
+            pointer-events: none;
+            border-radius: 50%;
+        }
+        .leaderboard-section .lb-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .leaderboard-section .lb-header .title {
+            font-size: 1.3rem;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .leaderboard-section .lb-header .title .trophy {
+            font-size: 1.8rem;
+        }
+        .leaderboard-section .lb-header .title span {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .leaderboard-section .lb-header .lb-stats {
+            display: flex;
+            gap: 18px;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .leaderboard-section .lb-header .lb-stats .stat {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .leaderboard-section .lb-header .lb-stats .stat .num {
+            color: var(--gold-light);
+            font-weight: 800;
+        }
+        .leaderboard-section .lb-header .lb-stats .share-btn {
+            background: var(--gold-glow);
+            border: 1px solid var(--border-gold);
+            color: var(--gold-light);
+            padding: 4px 18px;
+            border-radius: 40px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+        .leaderboard-section .lb-header .lb-stats .share-btn:hover {
+            background: rgba(212, 167, 69, 0.20);
+            border-color: var(--gold);
+        }
+
+        .lb-period-tabs {
+            display: flex;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 4px;
+            border-radius: 40px;
+            border: 1px solid var(--border-subtle);
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        .lb-period-tabs .period-btn {
+            padding: 6px 18px;
+            border-radius: 30px;
+            border: none;
+            background: transparent;
+            color: var(--text-secondary);
+            font-size: 0.65rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+        .lb-period-tabs .period-btn:hover {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.04);
+        }
+        .lb-period-tabs .period-btn.active {
+            background: var(--gold-glow);
+            color: var(--gold-light);
+        }
+        .lb-period-tabs .analytics-trigger {
+            background: rgba(74, 158, 255, 0.08);
+            border: 1px solid rgba(74, 158, 255, 0.15);
+            color: var(--info);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            margin-right: 4px;
+        }
+        .lb-period-tabs .analytics-trigger:hover {
+            background: rgba(74, 158, 255, 0.16);
+            border-color: rgba(74, 158, 255, 0.30);
+            transform: translateY(-1px);
+        }
+
+        /* بطاقة البطل */
+        .champion-card {
+            background: linear-gradient(145deg, rgba(212, 167, 69, 0.08), rgba(212, 167, 69, 0.01));
+            border: 1px solid var(--gold);
+            border-radius: var(--radius-lg);
+            padding: 24px 28px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            flex-wrap: wrap;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+            box-shadow: 0 0 60px rgba(212, 167, 69, 0.04);
+            cursor: pointer;
+        }
+        .champion-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 80px rgba(212, 167, 69, 0.08);
+        }
+        .champion-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(212, 167, 69, 0.08), transparent 70%);
+            pointer-events: none;
+            border-radius: 50%;
+        }
+        .champion-card .rank-badge {
+            font-size: 2.8rem;
+            min-width: 64px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .champion-card .avatar {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: var(--gold-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #0a0e1a;
+            box-shadow: 0 0 40px rgba(212, 167, 69, 0.25);
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+        .champion-card .info {
+            flex: 1;
+            min-width: 180px;
+            position: relative;
+            z-index: 1;
+        }
+        .champion-card .info .name {
+            font-size: 1.25rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            cursor: pointer;
+        }
+        .champion-card .info .name .badge {
+            font-size: 0.5rem;
+            padding: 2px 14px;
+            border-radius: 40px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .champion-card .info .name .badge.gold {
+            background: var(--gold-glow);
+            color: var(--gold-light);
+            border: 1px solid var(--border-gold);
+        }
+        .champion-card .info .name .badge.precision {
+            background: var(--success-bg);
+            color: var(--success);
+            border: 1px solid rgba(46, 204, 113, 0.15);
+        }
+        .champion-card .info .name .badge.speed {
+            background: var(--info-bg);
+            color: var(--info);
+            border: 1px solid rgba(74, 158, 255, 0.15);
+        }
+        .champion-card .info .stats-row {
+            display: flex;
+            gap: 22px;
+            margin-top: 8px;
+            flex-wrap: wrap;
+        }
+        .champion-card .info .stats-row .item {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .champion-card .info .stats-row .item strong {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+        .champion-card .info .stats-row .item .highlight {
+            color: var(--gold-light);
+        }
+        .champion-card .info .stats-row .item .arrow-up {
+            color: var(--success);
+            font-weight: 900;
+        }
+        .champion-card .info .stats-row .item .arrow-down {
+            color: var(--danger);
+            font-weight: 900;
+        }
+        .champion-card .info .stats-row .item .arrow-unchanged {
+            color: var(--text-secondary);
+        }
+        .champion-card .progress-wrapper {
+            width: 100%;
+            margin-top: 12px;
+        }
+        .champion-card .progress-wrapper .progress-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+        .champion-card .progress-bar {
+            width: 100%;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .champion-card .progress-bar .fill {
+            height: 100%;
+            background: var(--gold-gradient);
+            border-radius: 10px;
+            transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 0%;
+        }
+        .champion-card .compare-btn {
+            background: rgba(74, 158, 255, 0.06);
+            border: 1px solid rgba(74, 158, 255, 0.12);
+            color: var(--info);
+            padding: 4px 14px;
+            border-radius: 40px;
+            font-size: 0.6rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .champion-card .compare-btn:hover {
+            background: rgba(74, 158, 255, 0.12);
+            border-color: var(--info);
+            transform: translateY(-1px);
+        }
+
+        /* قائمة اللاعبين */
+        .players-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 12px;
+            transition: all 0.3s ease;
+        }
+        .players-list.compact-mode {
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 6px;
+        }
+        .players-list.compact-mode .player-card {
+            padding: 8px 10px;
+            gap: 8px;
+            border-radius: var(--radius-sm);
+        }
+        .players-list.compact-mode .player-card .rank {
+            font-size: 0.8rem;
+            min-width: 20px;
+        }
+        .players-list.compact-mode .player-card .avatar-sm {
+            width: 28px;
+            height: 28px;
+            font-size: 0.6rem;
+        }
+        .players-list.compact-mode .player-card .info-sm .name-sm {
+            font-size: 0.7rem;
+        }
+        .players-list.compact-mode .player-card .info-sm .sub-sm {
+            font-size: 0.5rem;
+            gap: 6px;
+        }
+        .players-list.compact-mode .player-card .points-sm {
+            font-size: 0.65rem;
+            padding: 1px 8px;
+            min-width: 28px;
+        }
+        .players-list.compact-mode .player-card .progress-mini {
+            width: 30px;
+            height: 3px;
+        }
+        .players-list.compact-mode .player-card .info-sm .name-sm .mini-badge {
+            font-size: 0.35rem;
+            padding: 0px 5px;
+        }
+        .players-list.compact-mode .champion-card {
+            padding: 12px;
+            gap: 12px;
+        }
+        .players-list.compact-mode .champion-card .rank-badge {
+            font-size: 1.8rem;
+            min-width: 40px;
+        }
+        .players-list.compact-mode .champion-card .avatar {
+            width: 44px;
+            height: 44px;
+            font-size: 1.2rem;
+        }
+        .players-list.compact-mode .champion-card .info .name {
+            font-size: 0.9rem;
+        }
+        .players-list.compact-mode .champion-card .info .stats-row .item {
+            font-size: 0.6rem;
+        }
+        .players-list.compact-mode .champion-card .progress-wrapper .progress-label {
+            font-size: 0.55rem;
+        }
+        .players-list.compact-mode .champion-card .progress-bar {
+            height: 4px;
+        }
+
+        .player-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+            backdrop-filter: blur(4px);
+        }
+        .player-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--border-gold);
+            transform: translateX(-4px);
+        }
+        .player-card .rank {
+            font-size: 1rem;
+            font-weight: 800;
+            min-width: 34px;
+            color: var(--text-secondary);
+        }
+        .player-card .rank.gold {
+            color: #FFD700;
+        }
+        .player-card .rank.silver {
+            color: #C0C0C0;
+        }
+        .player-card .rank.bronze {
+            color: #CD7F32;
+        }
+        .player-card .rank.tie {
+            color: var(--gold-light);
+            font-size: 0.8rem;
+        }
+        .player-card .avatar-sm {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(212, 167, 69, 0.15), rgba(212, 167, 69, 0.03));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            flex-shrink: 0;
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+        .player-card .avatar-sm.gold-border {
+            border-color: #FFD700;
+        }
+        .player-card .avatar-sm.silver-border {
+            border-color: #C0C0C0;
+        }
+        .player-card .avatar-sm.bronze-border {
+            border-color: #CD7F32;
+        }
+        .player-card .info-sm {
+            flex: 1;
+            min-width: 0;
+        }
+        .player-card .info-sm .name-sm {
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+        .player-card .info-sm .name-sm .mini-badge {
+            font-size: 0.4rem;
+            padding: 1px 10px;
+            border-radius: 40px;
+            font-weight: 700;
+        }
+        .player-card .info-sm .name-sm .mini-badge.gold {
+            background: var(--gold-glow);
+            color: var(--gold-light);
+        }
+        .player-card .info-sm .name-sm .mini-badge.green {
+            background: var(--success-bg);
+            color: var(--success);
+        }
+        .player-card .info-sm .name-sm .mini-badge.blue {
+            background: var(--info-bg);
+            color: var(--info);
+        }
+        .player-card .info-sm .sub-sm {
+            font-size: 0.6rem;
+            color: var(--text-secondary);
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .player-card .info-sm .sub-sm .highlight {
+            color: var(--gold-light);
+            font-weight: 600;
+        }
+        .player-card .info-sm .sub-sm .arrow-up {
+            color: var(--success);
+            font-weight: 900;
+        }
+        .player-card .info-sm .sub-sm .arrow-down {
+            color: var(--danger);
+            font-weight: 900;
+        }
+        .player-card .info-sm .sub-sm .arrow-unchanged {
+            color: var(--text-secondary);
+        }
+        .player-card .points-sm {
+            background: var(--gold-gradient);
+            padding: 2px 16px;
+            border-radius: 40px;
+            font-weight: 800;
+            font-size: 0.8rem;
+            color: #0a0e1a;
+            min-width: 40px;
+            text-align: center;
+        }
+        .player-card .progress-mini {
+            width: 60px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 4px;
+        }
+        .player-card .progress-mini .fill-mini {
+            height: 100%;
+            background: var(--gold-gradient);
+            border-radius: 10px;
+            transition: width 0.6s ease;
+            width: 0%;
+        }
+        .player-card .current-user-indicator {
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            bottom: -1px;
+            border: 2px solid var(--gold);
+            border-radius: var(--radius-md);
+            pointer-events: none;
+            opacity: 0;
+            transition: var(--transition);
+            box-shadow: 0 0 40px rgba(212, 167, 69, 0.08);
+        }
+        .player-card .current-user-indicator.active {
+            opacity: 1;
+        }
+        .player-card .pulse-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--success);
+            animation: pulseDot 1.5s infinite;
+        }
+        @keyframes pulseDot {
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.4;
+                transform: scale(0.8);
+            }
+        }
+        .player-card .compare-btn {
+            background: rgba(74, 158, 255, 0.06);
+            border: 1px solid rgba(74, 158, 255, 0.12);
+            color: var(--info);
+            padding: 3px 12px;
+            border-radius: 40px;
+            font-size: 0.55rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 3px;
+            flex-shrink: 0;
+        }
+        .player-card .compare-btn:hover {
+            background: rgba(74, 158, 255, 0.12);
+            border-color: var(--info);
+        }
+
+        /* ============================================================
+           المقارنة
+           ============================================================ */
+        .compare-container {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+            margin: 16px 0;
+        }
+        .compare-player {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: var(--radius-md);
+            padding: 18px 22px;
+            flex: 1;
+            min-width: 200px;
+            border: 1px solid var(--border-subtle);
+            transition: var(--transition);
+        }
+        .compare-player:hover {
+            border-color: var(--border-gold);
+        }
+        .compare-player h3 {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--gold-light);
+            text-align: center;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .compare-player .stat-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            border-bottom: 1px solid var(--border-subtle);
+            font-size: 0.8rem;
+        }
+        .compare-player .stat-row .label {
+            color: var(--text-secondary);
+        }
+        .compare-player .stat-row .value {
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .compare-player .stat-row .value.gold {
+            color: var(--gold-light);
+        }
+        .compare-player .stat-row .value.green {
+            color: var(--success);
+        }
+        .compare-player .stat-row .value.red {
+            color: var(--danger);
+        }
+        .compare-vs {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+        }
+        .compare-select {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .compare-select select {
+            padding: 10px 18px;
+            border-radius: 60px;
+            border: 1px solid var(--border-subtle);
+            background: var(--bg-input);
+            color: var(--text-primary);
+            font-size: 0.8rem;
+            outline: none;
+            transition: var(--transition);
+            font-family: inherit;
+            flex: 1;
+            min-width: 140px;
+        }
+        .compare-select select:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px var(--gold-glow);
+        }
+        .compare-select select option {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+        }
+
+        /* ============================================================
+           المباريات — مع دعم ضربات الترجيح
+           ============================================================ */
+        .matches-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 18px;
+        }
+        .match-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            border-radius: var(--radius-lg);
+            padding: 18px 20px;
+            border: 1px solid var(--border-subtle);
+            transition: var(--transition);
+            box-shadow: var(--shadow-card);
+        }
+        .match-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--border-gold);
+        }
+        .match-card.live {
+            border-color: var(--danger);
+            box-shadow: 0 0 40px rgba(231, 76, 60, 0.08);
+        }
+        .match-card.finished-match {
+            border-color: rgba(46, 204, 113, 0.20);
+            opacity: 0.85;
+            cursor: pointer;
+        }
+        .match-card.finished-match:hover {
+            opacity: 1;
+            transform: translateY(-4px);
+            border-color: var(--gold);
+        }
+        .match-card.has-penalties {
+            border-color: var(--penalty);
+            border-width: 2px;
+        }
+        .match-teams {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            background: rgba(0, 0, 0, 0.20);
+            padding: 12px 16px;
+            border-radius: 60px;
+            backdrop-filter: blur(4px);
+        }
+        .match-team {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            flex: 1;
+            justify-content: center;
+        }
+        .match-team .flag {
+            font-size: 1.3rem;
+        }
+        .match-team.winner-team {
+            color: var(--success);
+        }
+        .match-team.loser-team {
+            color: var(--danger);
+        }
+        .match-score {
+            background: var(--gold-gradient);
+            padding: 2px 18px;
+            border-radius: 40px;
+            font-weight: 800;
+            font-size: 0.9rem;
+            color: #0a0e1a;
+            min-width: 50px;
+            text-align: center;
+        }
+        .match-score.live {
+            background: linear-gradient(135deg, var(--danger), #c0392b);
+            animation: pulseScore 1.2s infinite;
+            color: #fff;
+        }
+        .match-score.finished {
+            background: linear-gradient(135deg, var(--success), #27ae60);
+            color: #fff;
+        }
+        .match-score.penalties {
+            background: linear-gradient(135deg, var(--penalty), #e67e22);
+            color: #fff;
+        }
+        .match-score.upcoming {
+            background: var(--gold-gradient);
+            color: #0a0e1a;
+        }
+        .penalty-detail {
+            font-size: 0.7rem;
+            color: var(--penalty);
+            background: var(--penalty-bg);
+            padding: 2px 14px;
+            border-radius: 30px;
+            margin-top: 6px;
+            display: inline-block;
+            font-weight: 700;
+        }
+        @keyframes pulseScore {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 30px rgba(231, 76, 60, 0.20);
+            }
+        }
+        .match-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .match-meta .tag {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 4px 16px;
+            border-radius: 40px;
+            font-size: 0.6rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-subtle);
+        }
+        .match-meta .tag.finished-tag {
+            color: var(--success);
+            background: var(--success-bg);
+            border-color: rgba(46, 204, 113, 0.10);
+        }
+        .match-meta .tag.stadium-tag {
+            color: var(--info);
+            background: var(--info-bg);
+            border-color: rgba(74, 158, 255, 0.10);
+        }
+        .match-meta .tag.penalty-tag {
+            color: var(--penalty);
+            background: var(--penalty-bg);
+            border-color: rgba(243, 156, 18, 0.20);
+        }
+        .match-meta .timer {
+            font-family: 'Courier New', monospace;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+        }
+        .match-meta .timer.live {
+            color: var(--danger);
+            animation: pulseText 1s infinite;
+        }
+        @keyframes pulseText {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.4;
+            }
+        }
+
+        /* أزرار التوقع */
+        .predict-btn-wrap {
+            display: flex;
+            gap: 8px;
+            margin-top: 14px;
+            flex-wrap: wrap;
+        }
+        .predict-btn-wrap .predict-btn {
+            flex: 1;
+            justify-content: center;
+            padding: 10px 14px;
+            font-size: 0.7rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-family: inherit;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid var(--border-gold);
+            background: rgba(212, 167, 69, 0.06);
+            color: var(--gold-light);
+            min-width: 80px;
+        }
+        .predict-btn-wrap .predict-btn:hover:not(:disabled) {
+            background: rgba(212, 167, 69, 0.14);
+            transform: translateY(-2px);
+        }
+        .predict-btn-wrap .predict-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background: rgba(100, 100, 100, 0.08);
+            color: var(--text-muted);
+            border-color: var(--border-subtle);
+            transform: none !important;
+        }
+        .predict-btn-wrap .predict-btn.submitted {
+            opacity: 0.6;
+            cursor: not-allowed;
+            background: rgba(100, 100, 100, 0.08);
+            color: var(--text-muted);
+            border-color: var(--border-subtle);
+        }
+        .predict-btn-wrap .predict-btn.submitted::after {
+            content: " ✅";
+        }
+        .predict-btn-wrap .edit-btn {
+            flex: 0 1 auto;
+            justify-content: center;
+            padding: 10px 18px;
+            font-size: 0.65rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-family: inherit;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid rgba(46, 204, 113, 0.20);
+            background: var(--success-bg);
+            color: var(--success);
+            min-width: 60px;
+            display: none;
+        }
+        .predict-btn-wrap .edit-btn.visible {
+            display: inline-flex;
+        }
+        .predict-btn-wrap .edit-btn:hover:not(:disabled) {
+            background: rgba(46, 204, 113, 0.16);
+            transform: translateY(-2px);
+        }
+        .predict-btn-wrap .edit-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+        .predict-btn-wrap .view-btn {
+            flex: 1;
+            justify-content: center;
+            padding: 10px 14px;
+            font-size: 0.7rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-family: inherit;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid rgba(74, 158, 255, 0.10);
+            background: rgba(74, 158, 255, 0.04);
+            color: var(--info);
+        }
+        .predict-btn-wrap .view-btn:hover {
+            background: rgba(74, 158, 255, 0.10);
+            border-color: rgba(74, 158, 255, 0.20);
+        }
+        .predict-btn-wrap .share-link-btn {
+            background: rgba(74, 158, 255, 0.06);
+            border: 1px solid rgba(74, 158, 255, 0.10);
+            color: var(--info);
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .predict-btn-wrap .share-link-btn:hover {
+            background: rgba(74, 158, 255, 0.10);
+            border-color: rgba(74, 158, 255, 0.20);
+            transform: translateY(-2px);
+        }
+        .predict-btn-wrap .btn-group {
+            display: flex;
+            gap: 6px;
+            flex: 1;
+        }
+        .predict-btn-wrap .btn-group .predict-btn {
+            flex: 1;
+        }
+        .predict-btn-wrap .btn-group .edit-btn {
+            flex: 0 1 auto;
+        }
+
+        .copy-toast {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(46, 204, 113, 0.95);
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            z-index: 99999;
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.30);
+            animation: fadeInModal 0.3s ease;
+            backdrop-filter: blur(12px);
+            display: none;
+        }
+        .copy-toast.show {
+            display: block;
+        }
+
+        /* ============================================================
+           المجموعات
+           ============================================================ */
+        .groups-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 20px;
+        }
+        .group-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            border-radius: var(--radius-lg);
+            padding: 18px 20px;
+            border: 1px solid var(--border-subtle);
+            transition: var(--transition);
+            box-shadow: var(--shadow-card);
+        }
+        .group-card:hover {
+            border-color: var(--border-gold);
+        }
+        .group-card .group-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 14px;
+            color: var(--gold-light);
+        }
+        .standings-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.65rem;
+        }
+        .standings-table th {
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-secondary);
+            padding: 8px 4px;
+            text-align: center;
+            font-weight: 700;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .standings-table td {
+            padding: 6px 4px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-subtle);
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+        .standings-table .team-cell {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            justify-content: flex-start;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .standings-table .team-cell span:last-child {
+            color: var(--text-primary);
+        }
+        .standings-table td:last-child {
+            color: var(--gold);
+            font-weight: 800;
+        }
+
+        /* ============================================================
+           الهدافين
+           ============================================================ */
+        .scorers-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+        }
+        .scorers-table th {
+            background: var(--gold-glow);
+            color: var(--gold-light);
+            padding: 14px 12px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            border-bottom: 2px solid var(--border-gold);
+        }
+        .scorers-table td {
+            padding: 12px 10px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-subtle);
+            color: var(--text-primary);
+        }
+        .scorers-table .medal {
+            font-size: 1.2rem;
+        }
+        .scorers-table .player-name {
+            font-weight: 700;
+            color: var(--gold-light);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+        }
+        .scorers-table .goals {
+            font-weight: 800;
+            color: var(--gold);
+            font-size: 1.1rem;
+        }
+        .scorers-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* ============================================================
+           شجرة البطولة — المحسّنة (بدون مكررات)
+           ============================================================ */
+        .bracket-wrapper {
+            display: none;
+            width: 100%;
+            margin-top: 12px;
+            padding: 14px;
+            background: rgba(0, 0, 0, 0.30);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-gold);
+            backdrop-filter: blur(8px);
+        }
+        .bracket-wrapper.visible {
+            display: block;
+        }
+        .bracket-tree {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 30px;
+            overflow-x: auto;
+            padding: 30px 20px;
+            background: linear-gradient(145deg, rgba(10, 14, 23, 0.60), rgba(0, 0, 0, 0.40));
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-gold);
+            position: relative;
+            min-height: 400px;
+        }
+        .bracket-tree::before {
+            content: "🏆";
+            position: absolute;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.4rem;
+            opacity: 0.04;
+        }
+        .bracket-round {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            min-width: 200px;
+            position: relative;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: var(--radius-md);
+            padding: 16px 14px 12px 14px;
+            border: 1px solid var(--border-subtle);
+            transition: var(--transition);
+        }
+        .bracket-round:hover {
+            border-color: rgba(212, 167, 69, 0.10);
+            background: rgba(255, 255, 255, 0.03);
+        }
+        .bracket-round-title {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: var(--gold-light);
+            text-align: center;
+            border-bottom: 2px solid var(--border-gold);
+            padding-bottom: 8px;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+            text-shadow: 0 0 30px rgba(212, 167, 69, 0.03);
+        }
+        .bracket-match-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            padding: 10px 14px;
+            font-size: 0.7rem;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        }
+        .bracket-match-item:hover {
+            border-color: var(--gold);
+            background: rgba(212, 167, 69, 0.06);
+            transform: scale(1.02) translateY(-2px);
+            box-shadow: 0 8px 32px rgba(212, 167, 69, 0.06);
+        }
+        .bracket-match-item .teams {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 6px;
+        }
+        .bracket-match-item .teams .team {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: 600;
+            font-size: 0.7rem;
+        }
+        .bracket-match-item .teams .team .flag {
+            font-size: 1rem;
+        }
+        .bracket-match-item .teams .team.winner-team {
+            color: var(--success);
+        }
+        .bracket-match-item .teams .team.loser-team {
+            color: var(--danger);
+        }
+        .bracket-match-item .teams .vs {
+            color: var(--text-secondary);
+            font-size: 0.45rem;
+            font-weight: 700;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1px 10px;
+            border-radius: 20px;
+        }
+        .bracket-match-item .score {
+            text-align: center;
+            font-size: 0.7rem;
+            color: var(--gold-light);
+            font-weight: 800;
+            background: var(--gold-glow);
+            border-radius: 20px;
+            padding: 2px 10px;
+            margin-top: 2px;
+        }
+        .bracket-match-item .penalty-score {
+            text-align: center;
+            font-size: 0.6rem;
+            color: var(--penalty);
+            font-weight: 600;
+            background: var(--penalty-bg);
+            border-radius: 20px;
+            padding: 1px 8px;
+            margin-top: 1px;
+        }
+        .bracket-match-item .status {
+            text-align: center;
+            font-size: 0.45rem;
+            color: var(--text-secondary);
+            margin-top: 2px;
+        }
+        .bracket-match-item .status.finished {
+            color: var(--success);
+        }
+        .bracket-match-item .status.live {
+            color: var(--danger);
+            animation: pulseText 1s infinite;
+        }
+        .bracket-match-item .match-winner {
+            font-size: 0.55rem;
+            color: var(--gold);
+            font-weight: 700;
+            text-align: center;
+            border-top: 1px dashed var(--border-subtle);
+            padding-top: 4px;
+            margin-top: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .bracket-tree {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                padding: 16px 10px;
+            }
+            .bracket-round {
+                min-width: 100%;
+                gap: 10px;
+                padding: 12px 8px;
+            }
+            .bracket-match-item {
+                font-size: 0.6rem;
+                padding: 8px 10px;
+            }
+            .bracket-match-item .teams .team .flag {
+                font-size: 0.8rem;
+            }
+            .bracket-round-title {
+                font-size: 0.7rem;
+            }
+            .bracket-match-item .teams .team {
+                font-size: 0.6rem;
+            }
+        }
+
+        /* ============================================================
+           التوقعات
+           ============================================================ */
+        .predictions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .prediction-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            border-radius: var(--radius-md);
+            padding: 16px 18px;
+            border: 1px solid var(--border-subtle);
+            transition: var(--transition);
+            cursor: pointer;
+            box-shadow: var(--shadow-card);
+        }
+        .prediction-card:hover {
+            border-color: var(--border-gold);
+            transform: translateY(-3px);
+        }
+        .prediction-card .user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+        .prediction-card .user .avatar-p {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--gold-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #0a0e1a;
+            font-size: 0.8rem;
+        }
+        .prediction-card .user .name-p {
+            font-weight: 700;
+        }
+        .prediction-card .prediction-text {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+        .prediction-card .status-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            padding: 2px 14px;
+            border-radius: 40px;
+            font-weight: 700;
+            margin-top: 6px;
+        }
+        .prediction-card .status-badge.correct {
+            background: var(--success-bg);
+            color: var(--success);
+        }
+        .prediction-card .status-badge.wrong {
+            background: var(--danger-bg);
+            color: var(--danger);
+        }
+        .prediction-card .status-badge.pending {
+            background: var(--gold-glow);
+            color: var(--gold-light);
+        }
+        .prediction-card.correct {
+            border-color: var(--success) !important;
+            background: var(--success-bg) !important;
+        }
+        .prediction-card.wrong {
+            border-color: var(--danger) !important;
+            background: var(--danger-bg) !important;
+        }
+        .prediction-card.pending {
+            border-color: var(--border-gold) !important;
+            background: var(--gold-glow) !important;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 48px 20px;
+            color: var(--text-secondary);
+            background: rgba(255, 255, 255, 0.01);
+            border-radius: var(--radius-lg);
+            border: 1px dashed var(--border-subtle);
+            grid-column: 1/-1;
+        }
+        .empty-state .icon {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* ============================================================
+           النوافذ المنبثقة (مودال)
+           ============================================================ */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(20px);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            animation: fadeInModal 0.3s ease;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        @keyframes fadeInModal {
+            from {
+                opacity: 0;
+                transform: scale(0.96);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .modal-content {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-lg);
+            padding: 28px 32px;
+            max-width: 620px;
+            width: 95%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.60);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .modal-content.compact-mode {
+            padding: 12px !important;
+            max-width: 420px !important;
+        }
+        .modal-content.compact-mode .modal-title {
+            font-size: 0.8rem !important;
+            margin-bottom: 4px !important;
+            padding-top: 0 !important;
+        }
+        .modal-content.compact-mode .modal-teams {
+            padding: 3px 8px !important;
+            gap: 4px !important;
+            margin-bottom: 4px !important;
+            border-radius: 30px !important;
+        }
+        .modal-content.compact-mode .modal-teams .m-team {
+            font-size: 0.55rem !important;
+        }
+        .modal-content.compact-mode .modal-teams .m-team .flag {
+            font-size: 0.7rem !important;
+        }
+        .modal-content.compact-mode .modal-teams .m-vs {
+            font-size: 0.35rem !important;
+        }
+        .modal-content.compact-mode .modal-close {
+            width: 18px !important;
+            height: 18px !important;
+            font-size: 0.6rem !important;
+            top: 4px !important;
+            left: 6px !important;
+        }
+        .modal-content.compact-mode .modal-compact-btn {
+            top: 3px !important;
+            right: 28px !important;
+            padding: 1px 6px !important;
+            font-size: 0.4rem !important;
+        }
+        .modal-compact-btn {
+            position: absolute;
+            top: 12px;
+            right: 56px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-subtle);
+            color: var(--text-secondary);
+            padding: 4px 12px;
+            border-radius: 40px;
+            font-size: 0.55rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
+            display: none;
+            z-index: 10;
+        }
+        .modal-compact-btn.visible {
+            display: block;
+        }
+        .modal-compact-btn:hover {
+            background: var(--gold-glow);
+            border-color: var(--gold);
+            color: var(--gold-light);
+        }
+        .modal-close {
+            position: absolute;
+            top: 12px;
+            left: 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1.4rem;
+            cursor: pointer;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            z-index: 10;
+        }
+        .modal-close:hover {
+            background: var(--danger-bg);
+            color: var(--danger);
+        }
+        .modal-title {
+            text-align: center;
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--gold-light);
+            margin-bottom: 16px;
+            padding-top: 6px;
+        }
+        .modal-teams {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 14px;
+            background: rgba(0, 0, 0, 0.15);
+            padding: 12px 16px;
+            border-radius: 60px;
+            margin-bottom: 16px;
+            backdrop-filter: blur(4px);
+        }
+        .modal-teams .m-team {
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.9rem;
+        }
+        .modal-teams .m-team .flag {
+            font-size: 1.4rem;
+        }
+        .modal-teams .m-vs {
+            color: var(--text-secondary);
+            font-size: 0.7rem;
+        }
+
+        .predictions-table-wrapper {
+            overflow-x: auto;
+            margin-top: 8px;
+        }
+        .predictions-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.7rem;
+            direction: rtl;
+        }
+        .predictions-table th {
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-secondary);
+            padding: 6px 4px;
+            text-align: center;
+            font-weight: 700;
+            border-bottom: 2px solid var(--border-gold);
+            font-size: 0.6rem;
+        }
+        .predictions-table td {
+            padding: 4px 4px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-subtle);
+            font-size: 0.6rem;
+        }
+        .predictions-table .status-correct {
+            color: var(--success);
+            font-weight: 700;
+        }
+        .predictions-table .status-wrong {
+            color: var(--danger);
+            font-weight: 700;
+        }
+        .predictions-table .user-name {
+            font-weight: 800;
+            color: var(--gold-light) !important;
+            cursor: pointer;
+        }
+        .predictions-table .user-name:hover {
+            text-decoration: underline;
+        }
+        .predictions-table .prediction-text {
+            font-weight: 600;
+        }
+        .predictions-table .prediction-text.correct {
+            color: var(--success);
+        }
+        .predictions-table .prediction-text.wrong {
+            color: var(--danger);
+        }
+        .predictions-table .time-cell {
+            font-size: 0.5rem;
+            color: var(--text-secondary);
+            font-family: monospace;
+            white-space: nowrap;
+        }
+        .scorers-detail {
+            margin: 8px 0;
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 8px;
+        }
+        .scorers-detail .goal-item {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 2px 12px;
+            border-radius: 40px;
+            margin: 2px 4px;
+        }
+        .scorers-detail .goal-item .minute {
+            color: var(--gold-light);
+            font-weight: 700;
+        }
+        .scorers-detail .goal-item .type {
+            font-size: 0.55rem;
+            color: var(--text-secondary);
+        }
+
+        .modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .modal-options label {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 12px 18px;
+            border-radius: 60px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .modal-options label:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: var(--border-subtle);
+        }
+        .modal-options input[type="radio"] {
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border: 2px solid var(--text-secondary);
+            border-radius: 50%;
+            flex-shrink: 0;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+        }
+        .modal-options input[type="radio"]:checked {
+            border-color: var(--gold);
+            background: var(--gold);
+        }
+        .modal-options input[type="radio"]:checked::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #0a0e1a;
+            font-weight: 900;
+            font-size: 10px;
+        }
+        .modal-options .opt-label {
+            font-weight: 600;
+        }
+        .modal-options .opt-sub {
+            font-size: 0.6rem;
+            color: var(--text-secondary);
+        }
+        .modal-input {
+            margin-bottom: 16px;
+        }
+        .modal-input input {
+            width: 100%;
+            padding: 12px 18px;
+            border-radius: 60px;
+            border: 1px solid var(--border-subtle);
+            background: var(--bg-input);
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            outline: none;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+        .modal-input input:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px var(--gold-glow);
+        }
+        .modal-submit {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 60px;
+            background: var(--gold-gradient);
+            color: #0a0e1a;
+            font-weight: 800;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: inherit;
+            box-shadow: 0 4px 20px rgba(212, 167, 69, 0.15);
+        }
+        .modal-submit:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 40px rgba(212, 167, 69, 0.25);
+        }
+        .modal-submit:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .modal-message {
+            margin-top: 12px;
+            text-align: center;
+            font-size: 0.8rem;
+            padding: 8px 14px;
+            border-radius: 40px;
+            font-weight: 600;
+        }
+        .modal-message.success {
+            color: var(--success);
+            background: var(--success-bg);
+        }
+        .modal-message.error {
+            color: var(--danger);
+            background: var(--danger-bg);
+        }
+        .modal-message.warning {
+            color: var(--gold-light);
+            background: var(--gold-glow);
+        }
+        .modal-message.info {
+            color: var(--info);
+            background: var(--info-bg);
+        }
+
+        .predictions-stats {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 12px 0 16px;
+            flex-wrap: wrap;
+        }
+        .predictions-stats .stat-item {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            background: rgba(255, 255, 255, 0.02);
+            padding: 6px 16px;
+            border-radius: 40px;
+        }
+
+        /* ============================================================
+           إحصائيات الفرق
+           ============================================================ */
+        .team-stats-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-card);
+            font-size: 0.7rem;
+        }
+        .team-stats-table th {
+            background: var(--gold-glow);
+            color: var(--gold-light);
+            padding: 12px 8px;
+            text-align: center;
+            border-bottom: 2px solid var(--border-gold);
+        }
+        .team-stats-table td {
+            padding: 8px 6px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .team-stats-table .team-name {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            justify-content: center;
+            font-weight: 700;
+        }
+        .team-stats-table .stat-highlight {
+            color: var(--gold-light);
+            font-weight: 800;
+        }
+
+        /* ============================================================
+           فوتير
+           ============================================================ */
+        .footer {
+            margin-top: 48px;
+            text-align: center;
+            font-size: 0.6rem;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-subtle);
+            padding-top: 24px;
+            cursor: pointer;
+            transition: var(--transition);
+            user-select: none;
+        }
+        .footer:hover {
+            color: var(--gold-light);
+        }
+
+        /* ============================================================
+           عناصر إضافية
+           ============================================================ */
+        .click-hint {
+            font-size: 0.55rem;
+            color: var(--text-secondary);
+            opacity: 0.4;
+            margin-top: 4px;
+            text-align: center;
+        }
+        .click-hint:hover {
+            opacity: 0.8;
+        }
+        .player-card-clickable:hover .click-hint {
+            opacity: 0.8;
+        }
+
+        .player-prediction-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            padding: 10px 16px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            transition: var(--transition);
+        }
+        .player-prediction-item:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: var(--border-gold);
+        }
+        .player-prediction-item .num {
+            font-weight: 800;
+            color: var(--text-secondary);
+            min-width: 32px;
+            font-size: 0.75rem;
+        }
+        .player-prediction-item .match-info {
+            flex: 1;
+        }
+        .player-prediction-item .match-info .teams {
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+        .player-prediction-item .match-info .teams .flag {
+            font-size: 1.1rem;
+        }
+        .player-prediction-item .match-info .teams .winner {
+            color: var(--success);
+        }
+        .player-prediction-item .match-info .teams .loser {
+            color: var(--danger);
+        }
+        .player-prediction-item .match-info .pred {
+            font-size: 0.7rem;
+            color: var(--gold-light);
+            font-weight: 600;
+        }
+        .player-prediction-item .match-info .status {
+            font-size: 0.6rem;
+            padding: 2px 12px;
+            border-radius: 40px;
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 2px;
+        }
+        .player-prediction-item .match-info .status.correct {
+            background: var(--success-bg);
+            color: var(--success);
+        }
+        .player-prediction-item .match-info .status.wrong {
+            background: var(--danger-bg);
+            color: var(--danger);
+        }
+        .player-prediction-item .match-info .status.pending {
+            background: var(--gold-glow);
+            color: var(--gold-light);
+        }
+        .player-prediction-item .time {
+            font-size: 0.55rem;
+            color: var(--text-secondary);
+            font-family: monospace;
+            white-space: nowrap;
+        }
+
+        /* ============================================================
+           التحليلات
+           ============================================================ */
+        .analytics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 8px;
+        }
+        .analytics-grid .chart-box {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: var(--radius-sm);
+            padding: 12px;
+            border: 1px solid var(--border-subtle);
+        }
+        .analytics-grid .chart-box .chart-title {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .analytics-grid .chart-box canvas {
+            max-height: 200px;
+            max-width: 100%;
+        }
+        .analytics-grid .chart-box.full-width {
+            grid-column: 1 / -1;
+        }
+        @media (max-width: 640px) {
+            .analytics-grid {
+                grid-template-columns: 1fr;
+            }
+            .analytics-grid .chart-box.full-width {
+                grid-column: 1;
+            }
+        }
+
+        .archive-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .archive-list .archive-item {
+            cursor: default;
+        }
+        .archive-list .archive-item .match-info .flag {
+            font-size: 1.2rem;
+        }
+        .archive-list .archive-item .score {
+            font-size: 0.9rem;
+        }
+        .archive-summary {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding: 8px 0 12px;
+            border-bottom: 1px solid var(--border-subtle);
+            margin-bottom: 12px;
+        }
+        .archive-summary .item {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+        }
+        .archive-summary .item strong {
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+        .archive-summary .item .highlight {
+            color: var(--gold-light);
+            font-weight: 700;
+        }
+
+        .player-analytics-section {
+            margin-top: 16px;
+            border-top: 1px solid var(--border-gold);
+            padding-top: 16px;
+        }
+        .player-analytics-section .select-player {
+            margin-bottom: 12px;
+        }
+        .player-analytics-section select {
+            width: 100%;
+            padding: 10px 18px;
+            border-radius: 60px;
+            border: 1px solid var(--border-subtle);
+            background: var(--bg-input);
+            color: var(--text-primary);
+            font-size: 0.8rem;
+            outline: none;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+        .player-analytics-section select:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px var(--gold-glow);
+        }
+        .player-analytics-section select option {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+        }
+        .player-analytics-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: var(--radius-sm);
+            padding: 12px 16px;
+            border: 1px solid var(--border-subtle);
+        }
+        .player-analytics-details .stat-item {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .player-analytics-details .stat-item .label {
+            font-weight: 600;
+        }
+        .player-analytics-details .stat-item .value {
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .player-analytics-details .stat-item .value.gold {
+            color: var(--gold-light);
+        }
+        .player-analytics-details .stat-item .value.green {
+            color: var(--success);
+        }
+        .player-analytics-details .stat-item .value.red {
+            color: var(--danger);
+        }
+        .player-analytics-details .prediction-trend {
+            grid-column: 1 / -1;
+            margin-top: 8px;
+            background: rgba(0, 0, 0, 0.20);
+            border-radius: var(--radius-sm);
+            padding: 8px 14px;
+        }
+        .player-analytics-details .prediction-trend .trend-label {
+            font-size: 0.65rem;
+            color: var(--text-secondary);
+        }
+        .player-analytics-details .prediction-trend .trend-value {
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--gold-light);
+        }
+
+        /* نسبة الفوز (تم إزالة التعادل) */
+        .win-probability {
+            margin: 12px 0 16px;
+            background: rgba(0, 0, 0, 0.15);
+            border-radius: var(--radius-sm);
+            padding: 12px 16px;
+        }
+        .win-probability .prob-title {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .win-probability .prob-bar {
+            display: flex;
+            height: 20px;
+            border-radius: 30px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.04);
+            margin-bottom: 6px;
+        }
+        .win-probability .prob-bar .segment {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.5rem;
+            font-weight: 700;
+            color: #0a0e1a;
+            transition: width 0.6s ease;
+            height: 100%;
+        }
+        .win-probability .prob-bar .segment.home {
+            background: var(--success);
+        }
+        .win-probability .prob-bar .segment.draw {
+            display: none;
+        }
+        .win-probability .prob-bar .segment.away {
+            background: var(--danger);
+        }
+        .win-probability .prob-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.55rem;
+            color: var(--text-secondary);
+        }
+        .win-probability .prob-labels .label {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .win-probability .prob-labels .dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+        .win-probability .prob-labels .dot.home {
+            background: var(--success);
+        }
+        .win-probability .prob-labels .dot.draw {
+            display: none;
+        }
+        .win-probability .prob-labels .dot.away {
+            background: var(--danger);
+        }
+        .win-probability .prob-labels .percent {
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .match-analytics-section {
+            margin-top: 16px;
+            border-top: 1px solid var(--border-gold);
+            padding-top: 16px;
+        }
+        .match-analytics-section .match-analytics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .match-analytics-section .match-analytics-grid .match-list {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: var(--radius-sm);
+            padding: 12px 16px;
+            border: 1px solid var(--border-subtle);
+        }
+        .match-analytics-section .match-analytics-grid .match-list .list-title {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 8px;
+            border-bottom: 1px solid var(--border-subtle);
+            padding-bottom: 4px;
+        }
+        .match-analytics-section .match-analytics-grid .match-list .match-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.6rem;
+            padding: 4px 0;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .match-analytics-section .match-analytics-grid .match-list .match-item .teams {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .match-analytics-section .match-analytics-grid .match-list .match-item .count {
+            font-weight: 700;
+            padding: 1px 10px;
+            border-radius: 20px;
+            font-size: 0.55rem;
+        }
+        .match-analytics-section .match-analytics-grid .match-list .match-item .count.correct {
+            color: var(--success);
+            background: var(--success-bg);
+        }
+        .match-analytics-section .match-analytics-grid .match-list .match-item .count.wrong {
+            color: var(--danger);
+            background: var(--danger-bg);
+        }
+        @media (max-width: 640px) {
+            .match-analytics-section .match-analytics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============================================================
+           استجابة
+           ============================================================ */
+        @media (max-width: 640px) {
+            .top-bar {
+                min-height: 90px;
+                padding: 8px 12px;
+            }
+            .top-bar .top-bar-content {
+                flex-wrap: wrap;
+                gap: 6px;
+            }
+            .top-bar .top-bar-title {
+                font-size: 0.8rem;
+                padding: 4px 14px;
+                gap: 6px;
+            }
+            .top-bar .top-bar-title .icon {
+                font-size: 1rem;
+            }
+            .top-bar .top-bar-sub {
+                font-size: 0.7rem;
+                padding: 4px 12px;
+            }
+            .app-container {
+                padding: 0 8px 32px;
+            }
+            .sticky-header {
+                padding: 10px 14px;
+                margin: 0 -8px 16px;
+                border-radius: 0 0 20px 20px;
+            }
+            .sticky-header .brand h1 {
+                font-size: 1rem;
+            }
+            .sticky-header .brand .sub {
+                font-size: 0.5rem;
+            }
+            .sticky-header .header-btn {
+                padding: 6px 12px;
+                font-size: 0.6rem;
+            }
+            .controls-bar {
+                padding: 12px 16px;
+            }
+            .controls-bar .control-group {
+                min-width: 100%;
+            }
+            .controls-bar select,
+            .controls-bar input {
+                font-size: 0.7rem;
+                padding: 6px 12px;
+            }
+            .share-all-container {
+                flex-direction: column;
+                text-align: center;
+                padding: 12px 16px;
+            }
+            .share-all-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .admin-controls {
+                flex-direction: column;
+                text-align: center;
+                padding: 12px 14px;
+            }
+            .admin-btn {
+                width: 100%;
+                justify-content: center;
+                font-size: 0.7rem;
+                padding: 6px 14px;
+            }
+            .tabs-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .tabs {
+                justify-content: center;
+            }
+            .day-filter-tabs {
+                justify-content: center;
+            }
+            .leaderboard-section {
+                padding: 16px;
+                margin: 0 0 20px 0;
+            }
+            .leaderboard-section .lb-header .title {
+                font-size: 1.1rem;
+            }
+            .leaderboard-section .lb-header .lb-stats {
+                font-size: 0.6rem;
+                gap: 8px;
+                flex-wrap: wrap;
+            }
+            .lb-period-tabs {
+                justify-content: center;
+            }
+            .champion-card {
+                padding: 16px 18px;
+                flex-direction: column;
+                text-align: center;
+                gap: 12px;
+            }
+            .champion-card .rank-badge {
+                font-size: 2.2rem;
+                min-width: auto;
+            }
+            .champion-card .avatar {
+                width: 56px;
+                height: 56px;
+                font-size: 1.4rem;
+            }
+            .champion-card .info .name {
+                font-size: 1rem;
+                justify-content: center;
+            }
+            .champion-card .info .stats-row {
+                justify-content: center;
+                gap: 12px;
+            }
+            .players-list {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+            .players-list.compact-mode {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 4px;
+            }
+            .player-card {
+                padding: 10px 12px;
+            }
+            .player-card .info-sm .name-sm {
+                font-size: 0.75rem;
+            }
+            .player-card .points-sm {
+                font-size: 0.7rem;
+                padding: 2px 10px;
+            }
+            .player-card .progress-mini {
+                width: 40px;
+            }
+            .tab-btn {
+                padding: 8px 14px;
+                font-size: 0.65rem;
+            }
+            .day-filter-tabs .day-btn {
+                padding: 4px 10px;
+                font-size: 0.6rem;
+            }
+            .matches-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+            .match-team {
+                font-size: 0.75rem;
+            }
+            .match-team .flag {
+                font-size: 1.1rem;
+            }
+            .groups-container {
+                grid-template-columns: 1fr;
+            }
+            .standings-table {
+                font-size: 0.55rem;
+            }
+            .standings-table th,
+            .standings-table td {
+                padding: 4px 2px;
+            }
+            .predictions-grid {
+                grid-template-columns: 1fr;
+            }
+            .modal-content {
+                padding: 20px;
+                max-width: 95%;
+            }
+            .modal-content.compact-mode {
+                padding: 8px !important;
+                max-width: 320px !important;
+            }
+            .modal-content.compact-mode .modal-teams .m-team {
+                font-size: 0.45rem !important;
+            }
+            .modal-content.compact-mode .predictions-table {
+                font-size: 0.4rem !important;
+            }
+            .modal-content.compact-mode .predictions-table th {
+                font-size: 0.35rem !important;
+                padding: 2px 1px !important;
+            }
+            .modal-content.compact-mode .predictions-table td {
+                font-size: 0.35rem !important;
+                padding: 1px 1px !important;
+            }
+            .modal-content.compact-mode .predictions-table .time-cell {
+                font-size: 0.3rem !important;
+            }
+            .modal-teams {
+                flex-wrap: wrap;
+                gap: 6px;
+            }
+            .modal-teams .m-team {
+                font-size: 0.8rem;
+            }
+            .modal-options label {
+                padding: 10px 14px;
+            }
+            .password-box {
+                padding: 24px 20px;
+            }
+            .predictions-stats {
+                gap: 8px;
+            }
+            .predictions-stats .stat-item {
+                font-size: 0.65rem;
+                padding: 4px 10px;
+            }
+            .modal-compact-btn {
+                top: 8px;
+                right: 36px;
+                padding: 3px 8px;
+                font-size: 0.45rem;
+            }
+            .modal-content.compact-mode .modal-compact-btn {
+                top: 2px;
+                right: 24px;
+                padding: 1px 5px;
+                font-size: 0.35rem !important;
+            }
+            .scorers-table {
+                font-size: 0.65rem;
+            }
+            .scorers-table th,
+            .scorers-table td {
+                padding: 6px 4px;
+            }
+            .team-stats-table {
+                font-size: 0.55rem;
+            }
+            .team-stats-table th,
+            .team-stats-table td {
+                padding: 4px 2px;
+            }
+            .predict-btn-wrap .predict-btn,
+            .predict-btn-wrap .view-btn,
+            .predict-btn-wrap .edit-btn {
+                font-size: 0.55rem !important;
+                padding: 6px 8px !important;
+                min-width: 50px !important;
+            }
+            .predict-btn-wrap .btn-group {
+                flex-wrap: wrap;
+            }
+            .duplicates-table {
+                font-size: 0.5rem;
+            }
+            .duplicates-table th,
+            .duplicates-table td {
+                padding: 3px 2px;
+            }
+            .modal-content .player-prediction-item {
+                font-size: 0.65rem !important;
+                padding: 6px 8px !important;
+            }
+            .name-modal-content {
+                padding: 20px;
+            }
+            .archive-item {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 4px;
+            }
+            .archive-item .stats {
+                gap: 8px;
+                flex-wrap: wrap;
+            }
+            .compare-container {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .compare-vs {
+                padding: 6px 0;
+                justify-content: center;
+            }
+            .compare-select {
+                flex-direction: column;
+            }
+            .compare-select select {
+                min-width: 100%;
+            }
+            .bracket-tree {
+                flex-direction: column;
+                align-items: center;
+                gap: 16px;
+                padding: 12px 6px;
+            }
+            .bracket-round {
+                min-width: 100%;
+                gap: 8px;
+                padding: 10px 6px;
+            }
+            .bracket-match-item {
+                font-size: 0.55rem;
+                padding: 6px 8px;
+            }
+            .bracket-match-item .teams .team .flag {
+                font-size: 0.7rem;
+            }
+            .bracket-round-title {
+                font-size: 0.65rem;
+            }
+        }
+        @media (min-width: 768px) {
+            .matches-grid {
+                grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            }
+            .players-list {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+            .players-list.compact-mode {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            }
+        }
+        @media (min-width: 1024px) {
+            .matches-grid {
+                grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
             }
         }
     </style>
 </head>
-
 <body>
-    <!-- Fixed Header -->
-    <header class="main-header">
-        <div class="header-container">
-            <div class="header-top">
-                <div class="logo-section">
-                    <h1 id="pageTitle">فهد الخالدي</h1>
-                </div>
-                <div class="header-actions">
-                    <button class="lang-btn" id="langBtn">
-                        <i class="fas fa-language"></i>
-                        <span>EN</span>
-                    </button>
-                    <button class="theme-btn" id="themeBtn">
-                        <i class="fas fa-moon"></i>
-                    </button>
-                </div>
-            </div>
-            
-            <!-- Navigation Bar -->
-            <div class="nav-container">
-                <div class="nav-scroll" id="navScroll">
-                    <a href="#about" class="nav-item active" data-section="about">
-                        <i class="fas fa-user"></i>
-                        <span id="navAbout">نبذة عني</span>
-                    </a>
-                    <a href="#vision" class="nav-item" data-section="vision">
-                        <i class="fas fa-eye"></i>
-                        <span id="navVision">الرؤية التعليمية</span>
-                    </a>
-                    <a href="#experience" class="nav-item" data-section="experience">
-                        <i class="fas fa-briefcase"></i>
-                        <span id="navExp">الخبرات</span>
-                    </a>
-                    <a href="#achievements" class="nav-item" data-section="achievements">
-                        <i class="fas fa-trophy"></i>
-                        <span id="navAchievements">الإنجازات</span>
-                    </a>
-                    <a href="#skills" class="nav-item" data-section="skills">
-                        <i class="fas fa-star"></i>
-                        <span id="navSkills">المهارات</span>
-                    </a>
-                    <a href="#portfolio" class="nav-item" data-section="portfolio">
-                        <i class="fas fa-folder-open"></i>
-                        <span id="navPortfolio">ملف الإنجاز</span>
-                    </a>
-                    <a href="#training" class="nav-item" data-section="training">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span id="navTrain">الدورات</span>
-                    </a>
-                    <a href="#tech" class="nav-item" data-section="tech">
-                        <i class="fas fa-desktop"></i>
-                        <span id="navTech">التقنية</span>
-                    </a>
-                    <a href="#projects" class="nav-item" data-section="projects">
-                        <i class="fas fa-laptop-code"></i>
-                        <span id="navProjects">معرض الأعمال</span>
-                    </a>
-                    <a href="#testimonials" class="nav-item" data-section="testimonials">
-                        <i class="fas fa-comments"></i>
-                        <span id="navTestimonials">التوصيات</span>
-                    </a>
-                    <a href="#contact" class="nav-item" data-section="contact">
-                        <i class="fas fa-envelope"></i>
-                        <span id="navContact">بيانات التواصل</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </header>
 
-    <!-- Scroll Progress -->
-    <div class="scroll-progress">
-        <div class="scroll-progress-bar"></div>
+    <!-- ===== الهيدر ===== -->
+    <div class="top-bar">
+        <img class="trophy-image" src="https://i.ibb.co/bRG2KtFw/IMG-3949.png" alt="كأس العالم 2026" />
+        <div class="overlay"></div>
+        <div class="top-bar-content">
+            <div class="top-bar-title"><span class="icon">🏆</span><span class="gold-text">كأس العالم 2026</span></div>
+            <div class="top-bar-sub"><span class="emoji">⚡</span> غرفة معلمي سعيد بن العاص</div>
+        </div>
     </div>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="hero-content">
-                <h1 class="hero-title" id="heroTitle">الملف المهني للمعلم فهد الخالدي</h1>
-                <p class="hero-subtitle" id="heroSubtitle">معلم متخصص في اللغة الإنجليزية مع 13+ سنة خبرة في تطوير أساليب التعليم الحديثة</p>
-                
-                <!-- Key Phrases -->
-                <div class="key-phrases">
-                    <div class="phrase-item">مصمم لاختبارات محاكية للرخصة المهنية العامة والخاصة باللغة الإنجليزية تفاعلية مع تغذية راجعة فورية.</div>
-                    <div class="phrase-item">مبتكر أدوات واختبارات إلكترونية للطلاب تعزز التفاعل وتحقق نواتج تعلم حقيقية.</div>
-                    <div class="phrase-item">صانع أداة إلكترونية لإصدار التقارير التربوية بأكثر من 100 تقرير ذكي يخدم المعلم في التوثيق والتقييم.</div>
-                    <div class="phrase-item">عضو في لجنة التميز المدرسي ومسهم في تطوير المبادرات التعليمية.</div>
-                    <div class="phrase-item">حاصل على 95 في اختبار الرخصة المهنية تخصص اللغة الإنجليزية.</div>
-                    <div class="phrase-item">شغفي للتعلم والتطوير هو الوقود الذي يدفعني نحو التميز والابتكار في الميدان التعليمي.</div>
-                    <div class="phrase-item">أتبع التعليم القائم على المشاريع وتنمية مهارات القرن الحادي والعشرين لبناء متعلم منتج وفعّال.</div>
-                </div>
-                
-                <div class="hero-actions">
-                    <a href="#projects" class="btn btn-primary">
-                        <i class="fas fa-laptop-code"></i>
-                        <span id="viewWorkBtn">استعرض أعمالي</span>
-                    </a>
-                    <a href="#contact" class="btn btn-secondary">
-                        <i class="fas fa-envelope"></i>
-                        <span id="contactBtn">تواصل معي</span>
-                    </a>
-                </div>
-                
-                <div class="hero-stats">
-                    <div class="hero-stat">
-                        <span class="number">13+</span>
-                        <span class="label" id="heroStat1">سنوات خبرة</span>
-                    </div>
-                    <div class="hero-stat">
-                        <span class="number">390+</span>
-                        <span class="label" id="heroStat2">ساعة تدريب</span>
-                    </div>
-                    <div class="hero-stat">
-                        <span class="number">105+</span>
-                        <span class="label" id="heroStat3">ساعات تطوعية</span>
-                    </div>
-                </div>
+    <div class="app-container">
+
+        <header class="sticky-header">
+            <div class="brand">
+                <div><h1>🏆 المتابعة التفاعلية</h1><span class="sub">⚡ تابع المباريات وتوقع النتائج</span></div>
             </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="active">
-            <h2 class="section-title" id="aboutTitle">نبذة عني</h2>
-            <div class="card">
-                <div class="profile-header">
-                    <div class="profile-img">
-                        <img src="https://i.ibb.co/k66psVmZ/20220817-151032.jpg" alt="صورة فهد الخالدي">
-                    </div>
-                    <div class="profile-info">
-                        <h2 id="name">فهد نغيمش حميد الخالدي</h2>
-                        <div class="title" id="jobTitle">معلم متقدم – تخصص اللغة الإنجليزية</div>
-                    </div>
-                </div>
-
-                <p class="bio" id="bioText">
-                    أؤمن أن التعليم ليس مجرد نقل معرفة، بل رسالة سامية لصناعة الأثر وبناء الإنسان. أطمح إلى أن أكون جزءًا فاعلًا في تطوير التعليم بالمملكة من خلال توظيف التقنيات الحديثة، وصناعة بيئات تعلم محفزة، تعزز التفكير النقدي والإبداعي، وتبني الثقة لدى الطالب. نظرتي المستقبلية تقوم على التعلم المستمر، وتطوير المهارات المهنية، ومواكبة التحولات الرقمية بما يخدم مخرجات التعليم وجودته في إطار رؤية المملكة 2030.
-                </p>
-
-                <div class="badge" id="badge">🏆 حاصل على درجة 95 في التخصص</div>
-
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <span class="stat-number">13+</span>
-                        <span class="stat-label" id="stat1">سنوات خبرة</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">390+</span>
-                        <span class="stat-label" id="stat2">ساعات تدريبية</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">105+</span>
-                        <span class="stat-label" id="stat3">ساعات تطوعية</span>
-                    </div>
-                </div>
+            <div class="header-actions">
+                <button class="header-btn" id="themeToggleBtn" onclick="toggleTheme()">🌙 الوضع المظلم</button>
+                <button class="header-btn" onclick="shareResults()">📤 مشاركة</button>
+                <button class="header-btn" onclick="location.reload()">🔄 تحديث</button>
             </div>
-        </section>
+        </header>
 
-        <!-- Vision Section -->
-        <section id="vision">
-            <h2 class="section-title" id="visionTitle">الرؤية التعليمية</h2>
-            <div class="card">
-                <div class="vision-content">
-                    <div class="vision-item">
-                        <i class="fas fa-lightbulb"></i>
-                        <h3 id="visionItem1Title">التعليم المتمركز حول الطالب</h3>
-                        <p id="visionItem1Desc">أؤمن بأن كل طالب فريد ويحتاج إلى أساليب تعلم مخصصة تناسب احتياجاته وقدراته.</p>
-                    </div>
-                    <div class="vision-item">
-                        <i class="fas fa-handshake"></i>
-                        <h3 id="visionItem2Title">الشراكة مع أولياء الأمور</h3>
-                        <p id="visionItem2Desc">التعاون مع الأسر أساسي لتحقيق النجاح التعليمي المستدام.</p>
-                    </div>
-                    <div class="vision-item">
-                        <i class="fas fa-chalkboard-teacher"></i>
-                        <h3 id="visionItem3Title">التعليم القائم على المشاريع</h3>
-                        <p id="visionItem3Desc">أدمج التعلم القائم على المشاريع لتعزيز التفكير النقدي وحل المشكلات.</p>
-                    </div>
-                    <div class="vision-item">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h3 id="visionItem4Title">التعلم المستمر</h3>
-                        <p id="visionItem4Desc">أؤمن بأن المعلم المتعلم باستمرار هو الأكثر قدرة على إلهام طلابه.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience">
-            <h2 class="section-title" id="experienceTitle">الخبرات المهنية</h2>
-            <div class="card">
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-date">2017 - الآن</div>
-                        <div class="timeline-content">
-                            <h3 id="exp1Title">معلم لغة إنجليزية – سعيد بن العاص</h3>
-                            <p id="exp1Location">مكة المكرمة</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">2015 - 2016</div>
-                        <div class="timeline-content">
-                            <h3 id="exp2Title">معلم لغة إنجليزية – ثانوية الأمير سعود بن عبدالمحسن</h3>
-                            <p id="exp2Location">الليث</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">2012 - 2014</div>
-                        <div class="timeline-content">
-                            <h3 id="exp3Title">معلم لغة إنجليزية – سعيد بن زيد</h3>
-                            <p id="exp3Location">عفيف</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">2011 - 2012</div>
-                        <div class="timeline-content">
-                            <h3 id="exp4Title">مترجم – وزارة الحج والعمرة</h3>
-                            <p id="exp4Location">مكة المكرمة</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Achievements Section -->
-        <section id="achievements">
-            <h2 class="section-title" id="achievementsTitle">الإنجازات</h2>
-            <div class="card">
-                <div class="achievement-card">
-                    <div class="achievement-year">2021</div>
-                    <div class="achievement-content">
-                        <p id="achievementText">
-                            في عام 2021 حصلتُ على ترقية إلى رتبة معلم متقدم بعد مسيرة مهنية امتدت لسنوات كمعلم ممارس، قدمت خلالها أداءً متميزًا أسهم في تطوير العملية التعليمية داخل المدرسة. جاءت هذه الترقية تقديرًا لجهودي في توظيف استراتيجيات تدريس حديثة تعزز مهارات التفكير النقدي والإبداعي لدى الطلاب، إضافة إلى قدرتي على تحليل نواتج التعلم وبناء خطط علاجية فردية أثمرت عن تحسين واضح في مستويات الطلاب.<br><br>
-
-                            وقد عكست هذه الترقية ثقة الجهة التعليمية بمهاراتي المهنية، خصوصًا في مجال تصميم أنشطة مبتكرة تُدمج مهارات الفهم العميق، والعمل التعاوني، والتعليم الذاتي داخل البيئة الصفية. كما كانت اعترافًا بدوري في تطوير البرامج التربوية والأنشطة التعليمية قبل عام 2021، ومساهمتي في بناء بيئة صفية محفزة يشعر فيها الطلاب بالأمان والرغبة في المشاركة والتعلم.<br><br>
-
-                            تعد هذه الترقية محطة مهمة في مسيرتي، لأنها لم تكن مجرد انتقال إلى مستوى وظيفي أعلى، بل كانت نتيجة تراكم خبرات وممارسات مهنية أثبتت أثرها على الطلاب وعلى منظومة التعليم داخل المدرسة. واليوم أواصل عملي كمعلم متقدم ملتزم بالتحسين المستمر، وتطبيق أفضل الممارسات التربوية، والمساهمة في رفع جودة التعليم وتحقيق نواتج تعلم أعلى.
-                        </p>
-                        
-                        <div class="achievement-images">
-                            <img src="https://i.ibb.co/hJVKBW78/1c52955c-eaa9-4550-b838-62f29861106d.jpg" alt="إنجاز 2021 - صورة 1" class="achievement-image">
-                            <img src="https://i.ibb.co/d05Gb47j/IMG-1817.jpg" alt="إنجاز 2021 - صورة 2" class="achievement-image">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills">
-            <h2 class="section-title" id="skillsTitle">المهارات والكفاءات</h2>
-            <div class="card">
-                <div class="skills-container">
-                    <div class="skill-category">
-                        <h3 id="skillCat1">المهارات التعليمية</h3>
-                        <ul class="skill-list">
-                            <li><i class="fas fa-check"></i> <span id="skill1">إتقان اللغة الإنجليزية تحدثاً وكتابة</span></li>
-                            <li><i class="fas fa-check"></i> <span id="skill2">تطوير خطط تدريس محفزة ومبتكرة</span></li>
-                            <li><i class="fas fa-check"></i> <span id="skill3">إدارة الصفوف بفاعلية</span></li>
-                            <li><i class="fas fa-check"></i> <span id="skill4">تشجيع التعلم الذاتي</span></li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3 id="skillCat2">المهارات التقنية</h3>
-                        <ul class="skill-list">
-                            <li><i class="fas fa-check"></i> <span id="skill5">استخدام أدوات القياس والتقويم الإلكترونية</span></li>
-                            <li><i class="fas fa-check"></i> <span id="skill6">دمج التقنية في التعليم</span></li>
-                            <li><i class="fas fa-check"></i> <span id="skill7">تصميم أنشطة تفاعلية</span></li>
-                            <li><i class="fas fa-check"></i> <span id="skill8">تطوير اختبارات إلكترونية</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ملف الإنجاز Section -->
-        <section id="portfolio">
-            <h2 class="section-title" id="portfolioTitle">ملف الإنجاز</h2>
-            <div class="card">
-                <div class="portfolio-section">
-                    <h3 class="portfolio-title">ملف الإنجاز المهني للمعلم فهد الخالدي</h3>
-                    <p class="portfolio-subtitle">
-                        ملف الإنجاز لعام ١٤٤٧ هـ - سيتم تحديث الملف بشكل دوري لإضافة المزيد من الشواهد
-                    </p>
-                    
-                    <div class="pdf-container">
-                        <div class="pdf-header">
-                            <h2>ملف الإنجاز المهني للمعلم فهد الخالدي</h2>
-                            <div class="pdf-actions">
-                                <button class="btn btn-primary" id="fullscreenBtn">
-                                    <i class="fas fa-expand"></i>
-                                    <span>ملء الشاشة</span>
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <div class="pdf-embed-container" id="pdfContainer">
-                            <!-- سيتم تحميل الـ PDF هنا -->
-                        </div>
-                        
-                        <div class="pdf-note">
-                            <div class="update-notice">
-                                <i class="fas fa-sync-alt"></i>
-                                سيتم تحديث الملف دوريًا
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Training Section -->
-        <section id="training">
-            <h2 class="section-title" id="trainingTitle">الدورات التدريبية</h2>
-            <div class="card">
-                <!-- قسم التدريب التربوي -->
-                <div class="training-category">
-                    <h3 class="training-category-title" id="trainingCategory1">تدريب تربوي</h3>
-                    <div class="certificates-grid">
-                        <!-- دورة 1 -->
-                        <div class="certificate-item">
-                            <img src="https://i.ibb.co/HLLRYMBb/Screenshot-2025-11-28-20-39-26-48-f541918c7893c52dbd1ee5d319333948.jpg" alt="شهادة مهارات التفكير الناقد" class="certificate-image">
-                            <div class="certificate-content">
-                                <h3 class="certificate-title">مهارات التفكير الناقد</h3>
-                                <a href="https://rb.gy/fo356i" class="certificate-download" target="_blank">تحميل الشهادة</a>
-                            </div>
-                        </div>
-                        
-                        <!-- دورة 2 -->
-                        <div class="certificate-item">
-                            <img src="https://i.ibb.co/B2PyP3MX/Screenshot-2025-11-28-20-39-52-63-f541918c7893c52dbd1ee5d319333948.jpg" alt="شهادة القياس والتقويم التربوي" class="certificate-image">
-                            <div class="certificate-content">
-                                <h3 class="certificate-title">القياس والتقويم التربوي</h3>
-                                <a href="https://rebrand.ly/kfo5ofx" class="certificate-download" target="_blank">تحميل الشهادة</a>
-                            </div>
-                        </div>
-                        
-                        <!-- دورة 3 -->
-                        <div class="certificate-item">
-                            <img src="https://i.ibb.co/WWZ1prn6/Screenshot-2025-11-28-20-40-12-19-f541918c7893c52dbd1ee5d319333948.jpg" alt="شهادة الاستراتيجيات الحديثة في تدريس أساسيات اللغة الإنجليزية" class="certificate-image">
-                            <div class="certificate-content">
-                                <h3 class="certificate-title">الاستراتيجيات الحديثة في تدريس أساسيات اللغة الإنجليزية</h3>
-                                <a href="https://rebrand.ly/m3ktvk8" class="certificate-download" target="_blank">تحميل الشهادة</a>
-                            </div>
-                        </div>
-                        
-                        <!-- دورة 4 -->
-                        <div class="certificate-item">
-                            <img src="https://i.ibb.co/v6DJ9dWj/Screenshot-2025-11-28-20-40-36-41-f541918c7893c52dbd1ee5d319333948.jpg" alt="شهادة البيئة الصفية الجاذبة" class="certificate-image">
-                            <div class="certificate-content">
-                                <h3 class="certificate-title">البيئة الصفية الجاذبة</h3>
-                                <a href="https://rebrand.ly/0hter6k" class="certificate-download" target="_blank">تحميل الشهادة</a>
-                            </div>
-                        </div>
-                        
-                        <!-- دورة 5 -->
-                        <div class="certificate-item">
-                            <img src="https://i.ibb.co/4nfpRyzC/Screenshot-2025-11-28-20-41-00-72-f541918c7893c52dbd1ee5d319333948.jpg" alt="شهادة تحليل أداء الطلاب وتقديم تغذية راجعة" class="certificate-image">
-                            <div class="certificate-content">
-                                <h3 class="certificate-title">تحليل أداء الطلاب وتقديم تغذية راجعة</h3>
-                                <a href="https://rebrand.ly/6as769g" class="certificate-download" target="_blank">تحميل الشهادة</a>
-                            </div>
-                        </div>
-                        
-                        <!-- دورة 6 -->
-                        <div class="certificate-item">
-                            <img src="https://i.ibb.co/GQvLQQBJ/Screenshot-2025-11-28-20-43-23-67-f541918c7893c52dbd1ee5d319333948.jpg" alt="شهادة مهارات التعامل مع أدوات القياس والتقويم الإلكترونية" class="certificate-image">
-                            <div class="certificate-content">
-                                <h3 class="certificate-title">مهارات التعامل مع أدوات القياس والتقويم الإلكترونية</h3>
-                                <a href="https://rebrand.ly/gyo6bx8" class="certificate-download" target="_blank">تحميل الشهادة</a>
-                            </div>
-                        </div>
-                        
-                        <!-- دورة 7 -->
-                        <div class="certificate-item">
-                            <img src="https://i.ibb.co/0VR7gkVJ/Screenshot-2025-11-28-20-43-45-67-f541918c7893c52dbd1ee5d319333948.jpg" alt="شهادة التنمية المهنية لمعلمي اللغة الإنجليزية" class="certificate-image">
-                            <div class="certificate-content">
-                                <h3 class="certificate-title">التنمية المهنية لمعلمي اللغة الإنجليزية</h3>
-                                <a href="https://rebrand.ly/cvaq07u" class="certificate-download" target="_blank">تحميل الشهادة</a>
-                            </div>
-                        </div>
-                        
-                        <!-- دورة 8 -->
-                        <div class="certificate-item">
-                            <img src="https://i.ibb.co/fzccMHsX/Screenshot-2025-11-28-20-44-11-62-f541918c7893c52dbd1ee5d319333948.jpg" alt="شهادة العبقرية في العملية التدريبية TOT" class="certificate-image">
-                            <div class="certificate-content">
-                                <h3 class="certificate-title">العبقرية في العملية التدريبية TOT</h3>
-                                <a href="https://rebrand.ly/3b4fce" class="certificate-download" target="_blank">تحميل الشهادة</a>
-                            </div>
-                        </div>
-                        
-                        <!-- دورة 9 -->
-                        <div class="certificate-item">
-                            <img src="https://i.ibb.co/jZqM8wg6/Screenshot-2025-11-28-20-44-30-11-f541918c7893c52dbd1ee5d319333948.jpg" alt="شهادة بناء الاختبار الجيد" class="certificate-image">
-                            <div class="certificate-content">
-                                <h3 class="certificate-title">بناء الاختبار الجيد</h3>
-                                <a href="https://rebrand.ly/jecmws4" class="certificate-download" target="_blank">تحميل الشهادة</a>
-                            </div>
-                        </div>
-                        
-                        <!-- دورة 10 -->
-                        <div class="certificate-item">
-                            <img src="https://i.ibb.co/LhNrvYBp/Screenshot-2025-11-28-20-44-48-81-f541918c7893c52dbd1ee5d319333948.jpg" alt="شهادة توظيف استراتيجيات التعليم في البيئة التدريبية الجاذبة" class="certificate-image">
-                            <div class="certificate-content">
-                                <h3 class="certificate-title">توظيف استراتيجيات التعليم في البيئة التدريبية الجاذبة</h3>
-                                <a href="https://2cm.es/1kaU8" class="certificate-download" target="_blank">تحميل الشهادة</a>
-                            </div>
-                        </div>
-                        
-                        <!-- دورة 11 -->
-                        <div class="certificate-item">
-                            <img src="https://i.ibb.co/N6F1RcZ5/Screenshot-2025-11-28-20-45-08-47-f541918c7893c52dbd1ee5d319333948.jpg" alt="شهادة تدريس مهاراتي التحدث والاستماع" class="certificate-image">
-                            <div class="certificate-content">
-                                <h3 class="certificate-title">تدريس مهاراتي التحدث والاستماع</h3>
-                                <a href="https://2cm.es/1kaUi" class="certificate-download" target="_blank">تحميل الشهادة</a>
-                            </div>
-                        </div>
-                        
-                        <!-- دورة 12 -->
-                        <div class="certificate-item">
-                            <img src="https://i.ibb.co/FLF62JB7/Screenshot-2025-11-28-20-45-33-32-f541918c7893c52dbd1ee5d319333948.jpg" alt="شهادة اللقاءات التخصصية - لغة انجليزية" class="certificate-image">
-                            <div class="certificate-content">
-                                <h3 class="certificate-title">اللقاءات التخصصية - لغة انجليزية</h3>
-                                <a href="https://2cm.es/1kaUn" class="certificate-download" target="_blank">تحميل الشهادة</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- قسم أخرى -->
-                <div class="training-category">
-                    <h3 class="training-category-title" id="trainingCategory2">أخرى</h3>
-                    <div class="certificates-grid">
-                        <!-- دورة 13 -->
-                        <div class="certificate-item">
-                            <img src="https://i.ibb.co/84tXzBZw/Screenshot-2025-11-28-20-42-57-73-f541918c7893c52dbd1ee5d319333948.jpg" alt="شهادة أساسيات الترجمة" class="certificate-image">
-                            <div class="certificate-content">
-                                <h3 class="certificate-title">أساسيات الترجمة</h3>
-                                <a href="https://rebrand.ly/ya3twae" class="certificate-download" target="_blank">تحميل الشهادة</a>
-                            </div>
-                        </div>
-                        
-                        <!-- دورة 14 -->
-                        <div class="certificate-item">
-                            <img src="https://i.ibb.co/XrpNtj7S/Screenshot-2025-11-28-20-45-52-18-f541918c7893c52dbd1ee5d319333948.jpg" alt="شهادة العمل التطوعي" class="certificate-image">
-                            <div class="certificate-content">
-                                <h3 class="certificate-title">شهادة العمل التطوعي</h3>
-                                <a href="https://2cm.es/1kaUv" class="certificate-download" target="_blank">تحميل الشهادة</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Tech Section -->
-        <section id="tech">
-            <h2 class="section-title" id="techTitle">التقنية</h2>
-            <div class="card">
-                <div class="tech-card">
-                    <p id="techText">
-                        أتمتع بشغف كبير تجاه التقنية والتعليم الرقمي، وأواكب أحدث التطورات في مجال الذكاء الاصطناعي وتطبيقاته التعليمية. أمتلك خبرة عملية في تصميم وتطوير أنشطة تفاعلية واختبارات إلكترونية باستخدام HTML وCSS وJavaScript، مما يثري تجربة التعلم ويجعلها أكثر تفاعلية وجاذبية للطلاب. أستخدم أدوات الذكاء الاصطناعي في تحليل أداء الطلاب وتصميم خطط تعليمية مخصصة، كما أصمم محتوى رقميًا مبتكرًا يتناسب مع احتياجات التعلم الحديثة. أسعى دائمًا لدمج التقنية في العملية التعليمية بطرق إبداعية تواكب متطلبات العصر الرقمي وتخدم أهداف رؤية المملكة 2030.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects">
-            <h2 class="section-title" id="projectsTitle">معرض الأعمال</h2>
-            <div class="card">
-                <!-- أزرار التصفية -->
-                <div class="portfolio-filters">
-                    <button class="filter-btn active" data-filter="all" id="filterAll">الكل</button>
-                    <button class="filter-btn" data-filter="interactive" id="filterInteractive">تفاعلية</button>
-                    <button class="filter-btn" data-filter="strategies" id="filterStrategies">استراتيجيات</button>
-                    <button class="filter-btn" data-filter="presentations" id="filterPresentations">عروض</button>
-                    <button class="filter-btn" data-filter="participations" id="filterParticipations">المشاركات</button>
-                    <button class="filter-btn" data-filter="tools" id="filterTools">أدوات</button>
-                </div>
-                
-                <div class="portfolio-grid">
-                    <!-- مشروع اختبار الرخصة المهنية التفاعلي -->
-                    <div class="portfolio-item" data-category="interactive">
-                        <img src="https://i.ibb.co/FLsfsgbL/IMG-1829.jpg" alt="اختبار الرخصة المهنية التفاعلي">
-                        <div class="portfolio-content">
-                            <h3 id="project1Title">مشروع: اختبار الرخصة المهنية التفاعلي</h3>
-                            <p id="project1Desc">مشروع تعليمي رقمي يهدف إلى محاكاة اختبار الرخصة المهنية للمعلمين، من خلال تقديم أسئلة تفاعلية مبنية على المعايير المعتمدة، مع تغذية راجعة فورية توضح السبب العلمي لكل إجابة صحيحة أو خاطئة، بما يسهم في رفع كفاءة المتدربين وتعزيز جاهزيتهم للاختبار الرسمي.</p>
-                            <a href="https://visionof2030-pixel.github.io/Professional-License-Exam/" class="project-link" target="_blank"><span id="project1Link">عرض المشروع</span> <i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                    
-                    <!-- مشروع أداة إصدار التقارير التربوية -->
-                    <div class="portfolio-item" data-category="tools">
-                        <img src="https://i.ibb.co/234z3fMn/90-CC5-CFA-696-B-4817-8255-0-C313-A4-AD9-F7.jpg" alt="أداة إصدار التقارير التربوية">
-                        <div class="portfolio-content">
-                            <h3>أداة إصدار التقارير التربوية</h3>
-                            <p>أداة إلكترونية ذكية تمكّن المعلم من توثيق جميع مهامه التربوية بسهولة واحترافية. توفر أكثر من 100 تقرير يغطي الاستراتيجيات التدريسية والاختبارات وأعمال المناوبة والإشراف. تحتوي على أكثر من 500 نص جاهز لصياغة التقارير تلقائياً وبعبارات تربوية دقيقة. تدعم إدخال التقارير اليدوي عند الحاجة لتخصيص أكبر. تتيح تصدير التقارير بصيغة PDF ومشاركتها مع المدير المباشر. وتعد وسيلة فعّالة لتسهيل التوثيق وتعزيز جودة العمل التربوي.</p>
-                            <a href="https://visionof2030-pixel.github.io/Reporting-Tool/" class="project-link" target="_blank">عرض الأداة <i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                    
-                    <!-- مشروع اختبار محاكي للرخصة المهنية للغة الإنجليزية -->
-                    <div class="portfolio-item" data-category="interactive">
-                        <img src="https://i.ibb.co/QjkdJknJ/CE0551-EC-D5-F1-4-A7-E-B42-C-CA66-C8252335.jpg" alt="اختبار محاكي للرخصة المهنية للغة الإنجليزية">
-                        <div class="portfolio-content">
-                            <h3>اختبار محاكي للرخصة المهنية - اللغة الإنجليزية</h3>
-                            <p>اختبار تجريبي محاكي للرخصة المهنية في تخصص اللغة الإنجليزية بتجربة تفاعلية ذكية. يوفّر للمتدرب دعماً تعليمياً متقدماً يشمل خاصية حذف إجابتين لزيادة فرص التركيز على الخيار الصحيح، بالإضافة إلى تلميحات إضافية عند الحاجة، وتغذية راجعة فورية تعزز التعلم الذاتي وتصحيح الأخطاء مباشرة. يهدف الاختبار إلى رفع جهوزية المتدربين للاختبار الفعلي، وتنمية مهاراتهم اللغوية والمعرفية، وتوفير تجربة تدريب عالية الموثوقية تحاكي بيئة الاختبار الرسمية.</p>
-                            <a href="https://visionof2030-pixel.github.io/Professional-English-exam-1/" class="project-link" target="_blank">عرض الاختبار <i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                    
-                    <!-- مشروع تطبيق الاستراتيجيات الحديثة في التعليم -->
-                    <div class="portfolio-item" data-category="strategies">
-                        <div class="portfolio-content">
-                            <h3 id="project2Title">تطبيق الاستراتيجيات الحديثة في التعليم</h3>
-                            <p id="project2Desc1" style="margin-bottom: 20px;">
-                                تُعدّ الاستراتيجيات الحديثة عنصرًا محوريًا في تطوير العملية التعليمية وتعزيز فاعلية التعلم داخل الصف؛ إذ تسهم في رفع مستوى التفاعل، وتحفيز الدافعية، وتنمية مهارات التفكير والعمل لدى الطلاب. ومن هذا المنطلق أحرص على توظيف مجموعة متنوعة من الأساليب التدريسية التي تجمع بين المتعة والفائدة، وتعتمد على التفاعل الإيجابي والمشاركة الفعّالة.<br><br>
-
-                                ويأتي التعلم القائم على التحفيز والتحدي كأحد الأساليب التي تسهم في ترسيخ المفاهيم بطريقة مشوقة، وتساعد الطلاب على التعلم بروح المنافسة الإيجابية. كما يمثل التعلم التعاوني ركيزة أساسية في بناء مهارات التواصل والعمل الجماعي، من خلال إتاحة الفرصة للطلاب لتبادل الآراء، ومناقشة الأفكار، وحل المشكلات بشكل جماعي. كذلك أحرص على توظيف التقنيات التعليمية الحديثة التي تسهم في عرض المحتوى بصورة جذابة، وتتيح تفاعل جميع الطلاب ومشاركتهم في تصحيح المفاهيم وبناء المعرفة بشكل مباشر.<br><br>
-
-                                وتعد هذه الممارسات نماذج من جملة من الاستراتيجيات التي أعمل على تنويعها داخل الحصة بما يراعي الفروق الفردية، ويحقق الأهداف التعليمية، ويهيئ بيئة تعليمية نشطة ومحفزة تسهم في تحسين مستوى التحصيل الدراسي وتعزيز مهارات القرن الحادي والعشرين.
-                            </p>
-                            
-                            <!-- معرض الصور التفاعلي -->
-                            <div class="gallery-container">
-                                <div class="gallery-scroll" id="galleryScroll">
-                                    <div class="gallery-item">
-                                        <img src="https://i.ibb.co/YrXjKC4/strategy7.jpg" alt="مهارات القرن الحادي والعشرين">
-                                        <div class="gallery-caption" id="galleryCaption1">تعزيز مهارات القرن الحادي والعشرين لدى الطلاب</div>
-                                    </div>
-                                    <div class="gallery-item">
-                                        <img src="https://i.ibb.co/DPWWd5Z9/strategy4.jpg" alt="أنشطة تعليمية تفاعلية">
-                                        <div class="gallery-caption" id="galleryCaption2">أنشطة تعليمية تفاعلية لتحسين مستوى التحصيل الدراسي</div>
-                                    </div>
-                                    <div class="gallery-item">
-                                        <img src="https://i.ibb.co/bR1Cn1WZ/strategy6.jpg" alt="بيئة تعليمية نشطة">
-                                        <div class="gallery-caption" id="galleryCaption3">إعداد بيئة تعليمية نشطة ومحفزة للطلاب</div>
-                                    </div>
-                                    <div class="gallery-item">
-                                        <img src="https://i.ibb.co/DyNDhNX/strategy1.jpg" alt="استراتيجية تعليمية تفاعلية">
-                                    </div>
-                                    <div class="gallery-item">
-                                        <img src="https://i.ibb.co/BK6XTNG0/strategy2.jpg" alt="التعلم التعاوني">
-                                    </div>
-                                    <div class="gallery-item">
-                                        <img src="https://i.ibb.co/LzbN9WYb/strategy3.jpg" alt="تقنيات تعليمية حديثة">
-                                    </div>
-                                    <div class="gallery-item">
-                                        <img src="https://i.ibb.co/C3bhdCFt/strategy5.jpg" alt="مهارات التفكير والعمل">
-                                    </div>
-                                </div>
-                                
-                                <div class="gallery-controls">
-                                    <button class="gallery-btn" id="scrollUpBtn">
-                                        <i class="fas fa-chevron-up"></i>
-                                        <span id="scrollUpText">تمرير للأعلى</span>
-                                    </button>
-                                    <button class="gallery-btn" id="scrollDownBtn">
-                                        <i class="fas fa-chevron-down"></i>
-                                        <span id="scrollDownText">تمرير للأسفل</span>
-                                    </button>
-                                </div>
-                                
-                                <div class="gallery-indicator" id="galleryIndicator">
-                                    <!-- سيتم إنشاء النقاط ديناميكيًا -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- مشروع عروض تقديمية -->
-                    <div class="portfolio-item" data-category="presentations">
-                        <img src="https://i.ibb.co/QxN76QX/74297-DE5-6-FD2-4839-AC44-664-FDDA70903.png" alt="عروض تقديمية">
-                        <div class="portfolio-content">
-                            <h3 id="project3Title">عروض تقديمية تفاعلية</h3>
-                            <p id="project3Desc">تصميم عروض تفاعلية جذابة للطلاب باستخدام أحدث الأدوات والتقنيات التعليمية. تتضمن هذه العروض أنشطة تفاعلية، ومقاطع فيديو تعليمية، وأسئلة تقييم فورية لضمان مشاركة فعالة من الطلاب.</p>
-                            <div class="project-links">
-                                <a href="https://visionof2030-pixel.github.io/English-quiz/" class="project-link" target="_blank"><span id="project3Link1">المشروع الأول</span> <i class="fas fa-external-link-alt"></i></a>
-                                <a href="https://ijassar36-cell.github.io/Test1/" class="project-link" target="_blank"><span id="project3Link2">المشروع الثاني</span> <i class="fas fa-external-link-alt"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- المشاركة الأولى -->
-                    <div class="portfolio-item" data-category="participations">
-                        <div class="portfolio-content">
-                            <h3 id="participation1Title">عضوية لجنة التميز والتفاعل المهني</h3>
-                            <p id="participation1Desc">جانب من مشاركتي بصفتي عضوًا في لجنة التميز المدرسية، دعمًا للتفاعل مع المجتمع المهني، وتعزيزًا للتعاون وتبادل الخبرات مع الزملاء، والمشاركة في المبادرات التعليمية التطويرية.</p>
-                            
-                            <div class="participation-images">
-                                <img src="https://i.ibb.co/tpsJXVFc/IMG-20250921-WA0004.jpg" alt="عضوية لجنة التميز والتفاعل المهني - صورة 1" class="participation-image">
-                                <img src="https://i.ibb.co/9kxKvxYz/IMG-20250921-WA0005.jpg" alt="عضوية لجنة التميز والتفاعل المهني - صورة 2" class="participation-image">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- المشاركة الثانية -->
-                    <div class="portfolio-item" data-category="participations">
-                        <div class="portfolio-content">
-                            <h3 id="participation2Title">تعزيز القيم الوطنية من خلال فعاليات اليوم الوطني</h3>
-                            <p id="participation2Desc">مشاركتي في فعاليات اليوم الوطني، تجسيدًا لقيم الانتماء والولاء للوطن، وتعزيزًا لدور المدرسة في غرس القيم الوطنية لدى الطلاب.</p>
-                            
-                            <div class="participation-images">
-                                <img src="https://i.ibb.co/SDTxLqxh/IMG-20250925-WA0098-1.jpg" alt="تعزيز القيم الوطنية من خلال فعاليات اليوم الوطني" class="participation-image">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section id="testimonials">
-            <h2 class="section-title" id="testimonialsTitle">التوصيات</h2>
-            <div class="card">
-                <div class="testimonial-slider">
-                    <div class="testimonial-slides" id="testimonialSlides">
-                        <div class="testimonial-slide">
-                            <div class="testimonial-content">
-                                <p id="testimonial1Text">"المعلم فهد يتميز بالإبداع والابتكار في أساليب التدريس، وقد قدم إضافة حقيقية لفريق العمل"</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <strong id="testimonial1Author">مدير المدرسة</strong>
-                                <span id="testimonial1Position">مدرسة سعيد بن العاص</span>
-                            </div>
-                        </div>
-                        <div class="testimonial-slide">
-                            <div class="testimonial-content">
-                                <p id="testimonial2Text">"لقد أحدثت استراتيجياته التعليمية فرقاً ملحوظاً في أداء الطلاب وحبهم للغة الإنجليزية"</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <strong id="testimonial2Author">منسق اللغة الإنجليزية</strong>
-                                <span id="testimonial2Position">إدارة التعليم</span>
-                            </div>
-                        </div>
-                        <div class="testimonial-slide">
-                            <div class="testimonial-content">
-                                <p id="testimonial3Text">"تميزه في استخدام التقنية جعل عملية التعلم أكثر متعة وفعالية للطلاب"</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <strong id="testimonial3Author">زملاء العمل</strong>
-                                <span id="testimonial3Position">فريق اللغة الإنجليزية</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="testimonial-controls">
-                        <button class="testimonial-control" id="testimonialPrev">
-                            <i class="fas fa-chevron-right"></i>
-                        </button>
-                        <button class="testimonial-control" id="testimonialNext">
-                            <i class="fas fa-chevron-left"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2 class="section-title" id="contactTitle">بيانات التواصل</h2>
-            <div class="card">
-                <div style="text-align: center; padding: 25px;">
-                    <h3 style="color: var(--primary); margin-bottom: 15px;" id="contactSubtitle">للتواصل</h3>
-                    <div style="font-size: 1rem; line-height: 2; color: var(--text);">
-                        <p><i class="fas fa-envelope" style="color: var(--accent);"></i> <span id="contactEmail">iFahadenglish@gmail.com</span></p>
-                        <p><i class="fas fa-phone" style="color: var(--accent);"></i> <span id="contactPhone">+966554449824</span></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop">
-        <i class="fas fa-chevron-up"></i>
-    </button>
-
-    <footer>
-        <div class="footer-content">
-            <h3 id="footerName">فهد الخالدي</h3>
-            <p id="footerDesc">معلم متخصص في اللغة الإنجليزية - تطوير التعليم من خلال التقنية والابتكار</p>
-            
-            <div class="copyright" id="footerText">
-                © 2024 جميع الحقوق محفوظة - فهد الخالدي
+        <!-- شريط الأخبار -->
+        <div class="news-ticker-wrapper" id="newsTickerWrapper">
+            <div class="news-ticker" id="newsTicker">
+                <span>🏆 كأس العالم 2026 — تابع المباريات وتوقع النتائج</span>
+                <span class="sep">|</span>
+                <span>🗳️ طريقة التوقع: اختر المباراة → أدخل اسمك → اختر الفائز (لا يوجد تعادل)</span>
+                <span class="sep">|</span>
+                <span>⏰ يمكنك التوقع حتى 5 دقائق قبل بداية المباراة (بتوقيت السعودية)</span>
+                <span class="sep">|</span>
+                <span>🏅 كل توقع صحيح = نقطة واحدة · تصدر لوحة المتصدرين!</span>
+                <span class="sep">|</span>
+                <span>👥 إذا سجلت باسم موجود مسبقاً، سيتم إضافة التوقع لذلك الاسم (تأكد من أنك أنت صاحبه)</span>
+                <span class="sep">|</span>
+                <span id="todayHighlights">📅 جاري تحميل توقعات اليوم...</span>
             </div>
         </div>
-    </footer>
 
+        <!-- ===== لوحة المتصدرين ===== -->
+        <div class="leaderboard-section" id="leaderboardSection">
+            <div class="lb-header">
+                <div class="title"><span class="trophy">🏆</span><span>لوحة المتصدرين</span></div>
+                <div class="lb-stats">
+                    <span class="stat">👥 <span class="num" id="lbTotalPlayers">0</span> لاعب</span>
+                    <span class="stat">📊 <span class="num" id="lbTotalPredictions">0</span> توقع</span>
+                    <button class="share-btn" onclick="shareResults()">📤 مشاركة</button>
+                </div>
+            </div>
+            <div class="lb-period-tabs">
+                <button class="period-btn active" data-period="all" onclick="setLeaderboardPeriod('all')">📊 ترتيب عام</button>
+                <button class="period-btn" data-period="24h" onclick="setLeaderboardPeriod('24h')">🕒 آخر 24 ساعة</button>
+                <button class="analytics-trigger" onclick="openAnalytics()">📊 تحليلات متقدمة</button>
+            </div>
+            <div id="leaderboardContainer"><div class="empty-state"><span class="icon">⏳</span> جاري تحميل الترتيب...</div></div>
+        </div>
+
+        <div class="controls-bar">
+            <div class="control-group">
+                <label>🏷️ المجموعة</label>
+                <select id="groupFilter">
+                    <option value="all">جميع المجموعات</option>
+                    <option value="A">المجموعة A</option><option value="B">المجموعة B</option>
+                    <option value="C">المجموعة C</option><option value="D">المجموعة D</option>
+                    <option value="E">المجموعة E</option><option value="F">المجموعة F</option>
+                    <option value="G">المجموعة G</option><option value="H">المجموعة H</option>
+                    <option value="I">المجموعة I</option><option value="J">المجموعة J</option>
+                    <option value="K">المجموعة K</option><option value="L">المجموعة L</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="admin-controls" id="adminControls">
+            <div class="admin-info">🛠️ <span>لوحة الإدارة</span><span class="badge-admin">👑 مدير</span></div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <button class="admin-btn" id="toggleCompactBtn" onclick="toggleCompactMode()">📐 تصغير للتصوير</button>
+                <button class="admin-btn danger" onclick="resetCompactMode()">🔄 إعادة الحجم الطبيعي</button>
+                <button class="admin-btn secondary" onclick="loadDuplicates()">🔍 التوقعات المكررة</button>
+                <button class="admin-btn" onclick="toggleArchive()">📦 الأرشيف</button>
+                <button class="admin-btn secondary" onclick="runTests()">🧪 اختبارات</button>
+                <button class="admin-btn bracket-btn" onclick="toggleBracketAdmin()">🏆 مسار البطولة</button>
+            </div>
+            <div class="duplicates-section" id="duplicatesSection">
+                <div class="dup-title">⚠️ التوقعات المكررة <span class="count-badge" id="dupCountBadge">0</span></div>
+                <div id="duplicatesContainer"><div class="duplicates-empty">⏳ جاري التحميل...</div></div>
+            </div>
+            <div class="archive-section" id="archiveSection">
+                <div class="archive-title">📦 أرشيف المباريات المنتهية <span class="count-badge" id="archiveCount">0</span></div>
+                <div id="archiveContainer"><div class="duplicates-empty">⏳ جاري التحميل...</div></div>
+            </div>
+            <!-- مسار البطولة داخل الإدارة -->
+            <div class="bracket-wrapper" id="bracketWrapper">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;flex-wrap:wrap;gap:6px;">
+                    <span style="font-size:0.85rem;font-weight:800;color:var(--gold-light);">🏆 مسار البطولة (بدون مباريات مكررة)</span>
+                    <button class="admin-btn secondary" style="padding:4px 14px;font-size:0.65rem;" onclick="document.getElementById('bracketWrapper').classList.remove('visible')">✕ إخفاء</button>
+                </div>
+                <div id="bracketContainer"><div class="empty-state"><span class="icon">⏳</span> جاري تحميل المخطط...</div></div>
+            </div>
+        </div>
+
+        <div class="share-all-container" id="shareAllContainer">
+            <div class="share-info">📋 <span>روابط مباريات اليوم والغد</span><span class="count" id="shareAllCount">0</span> مباراة</div>
+            <button class="share-all-btn" onclick="shareAllTodayTomorrow()">📤 نسخ جميع الروابط</button>
+        </div>
+
+        <div class="tabs-container">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="upcoming">⚡ القادمة والجارية</button>
+                <button class="tab-btn" data-tab="previous">📋 السابقة</button>
+                <button class="tab-btn" data-tab="standings">📊 ترتيب المجموعات</button>
+                <button class="tab-btn" data-tab="scorers">🏅 الهدافين</button>
+                <button class="tab-btn" data-tab="stats">📊 إحصائيات الفرق</button>
+                <button class="tab-btn" data-tab="predictions">🗳️ جميع التوقعات</button>
+            </div>
+            <div class="day-filter-tabs visible" id="dayFilterTabs">
+                <button class="day-btn active" data-day="all">📅 الكل</button>
+                <button class="day-btn" data-day="today">📌 اليوم</button>
+                <button class="day-btn" data-day="tomorrow">📌 غداً</button>
+                <button class="day-btn" data-day="week">📅 هذا الأسبوع</button>
+            </div>
+        </div>
+
+        <!-- تبويب المباريات القادمة -->
+        <div id="upcomingTab" class="tab-content active">
+            <div class="section-title">⚡ المباريات القادمة والجارية <span class="badge-count" id="upcomingCount">0</span></div>
+            <div id="matchesContainer" class="matches-grid"><div class="empty-state"><span class="icon">⏳</span> جاري تحميل المباريات...</div></div>
+        </div>
+
+        <!-- تبويب المباريات السابقة -->
+        <div id="previousTab" class="tab-content">
+            <div class="section-title">📋 المباريات السابقة <span class="badge-count" id="prevCount">0</span></div>
+            <div style="margin-bottom:16px;"><input type="text" id="prevSearchInput" placeholder="🔍 ابحث عن منتخب لعرض مبارياته السابقة..." style="width:100%;padding:12px 20px;border-radius:60px;border:1px solid var(--border-subtle);background:var(--bg-input);color:var(--text-primary);font-size:0.85rem;outline:none;transition:var(--transition);font-family:inherit;" /></div>
+            <div id="previousMatchesContainer" class="matches-grid"><div class="empty-state"><span class="icon">⏳</span> جاري تحميل المباريات السابقة...</div></div>
+        </div>
+
+        <!-- ترتيب المجموعات -->
+        <div id="standingsTab" class="tab-content">
+            <div class="section-title">📊 ترتيب المجموعات</div>
+            <div id="standingsContainer" class="groups-container"><div class="empty-state"><span class="icon">⏳</span> جاري حساب الترتيب...</div></div>
+        </div>
+
+        <!-- الهدافين -->
+        <div id="scorersTab" class="tab-content">
+            <div class="section-title">🏅 قائمة الهدافين <span class="badge-count" id="scorersCount">0</span></div>
+            <div id="scorersContainer"><div class="empty-state"><span class="icon">⏳</span> جاري تحميل الهدافين...</div></div>
+        </div>
+
+        <!-- إحصائيات الفرق -->
+        <div id="statsTab" class="tab-content">
+            <div class="section-title">📊 إحصائيات الفرق (الهجوم والدفاع)</div>
+            <div id="teamStatsContainer"><div class="empty-state"><span class="icon">⏳</span> جاري حساب الإحصائيات...</div></div>
+        </div>
+
+        <!-- جميع التوقعات -->
+        <div id="predictionsTab" class="tab-content">
+            <div class="section-title">🗳️ جميع التوقعات <span class="badge-count" id="predictionsCount">0</span></div>
+            <div id="allPredictions" class="predictions-grid"><div class="empty-state"><span class="icon">⏳</span> جاري تحميل التوقعات...</div></div>
+        </div>
+
+        <footer class="footer" id="footerTrigger">🏆 كأس العالم 2026 · غرفة معلمي سعيد بن العاص</footer>
+    </div>
+
+    <!-- ===== النوافذ المنبثقة ===== -->
+    <div class="password-overlay" id="passwordOverlay">
+        <div class="password-box">
+            <span class="lock-icon">🔒</span>
+            <div class="p-title">تأكيد الوصول</div>
+            <div class="p-sub">يرجى إدخال رمز الوصول للمتابعة</div>
+            <input type="password" id="passwordInput" placeholder="••••" maxlength="10" autofocus />
+            <button class="p-btn" id="passwordSubmitBtn">تأكيد</button>
+            <div class="p-error" id="passwordError"></div>
+            <button class="p-close" id="passwordCloseBtn">إلغاء</button>
+        </div>
+    </div>
+
+    <div class="name-modal-overlay" id="nameModal">
+        <div class="name-modal-content">
+            <span class="name-icon">👤</span>
+            <div class="name-title">أدخل اسمك</div>
+            <div class="name-sub">سيتم استخدام هذا الاسم لتسجيل توقعاتك ومتابعة نتائجك</div>
+            <input type="text" id="nameInput" placeholder="اكتب اسمك هنا..." maxlength="30" autofocus />
+            <div id="nameStatus" class="user-status" style="display:none;"></div>
+            <button class="name-btn" id="nameSubmitBtn">متابعة →</button>
+            <div class="name-error" id="nameError"></div>
+            <button class="name-close" id="nameCloseBtn">إلغاء</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="matchPredictionsModal">
+        <div class="modal-content" id="matchPredictionsContent">
+            <button class="modal-close" id="matchPredictionsCloseBtn">✕</button>
+            <button class="modal-compact-btn" id="modalCompactBtn" onclick="toggleModalCompact()">📐 تصغير</button>
+            <div class="modal-title">📋 توقعات المباراة</div>
+            <div class="modal-teams" id="matchPredictionsTeams">
+                <div class="m-team"><span class="flag" id="mpFlag1">🏁</span> <span id="mpTeam1">الفريق الأول</span></div>
+                <div class="m-vs">🆚</div>
+                <div class="m-team"><span class="flag" id="mpFlag2">🏁</span> <span id="mpTeam2">الفريق الثاني</span></div>
+            </div>
+            <div style="text-align:center;font-size:0.85rem;color:var(--gold-light);font-weight:700;margin:4px 0 8px;" id="mpResult">النتيجة: 0 - 0</div>
+            <div id="mpScorersDetail" class="scorers-detail"></div>
+            <div class="predictions-stats">
+                <span class="stat-item">✅ صحيح: <span class="num-correct" id="mpCorrectCount">0</span></span>
+                <span class="stat-item">❌ خاطئ: <span class="num-wrong" id="mpWrongCount">0</span></span>
+                <span class="stat-item">📊 المجموع: <span id="mpTotalCount">0</span></span>
+            </div>
+            <div id="matchPredictionsList" style="max-height:400px;overflow-y:auto;">
+                <div class="predictions-table-wrapper">
+                    <table class="predictions-table" id="predictionsTable">
+                        <thead><tr><th>المستخدم</th><th>التوقع</th><th>الحالة</th><th>الوقت</th></tr></thead>
+                        <tbody id="predictionsTableBody"><tr><td colspan="4" style="text-align:center;padding:20px;color:var(--text-secondary);">📭 لا توجد توقعات لهذه المباراة</td></tr></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="predictionModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalCloseBtn">✕</button>
+            <div class="modal-title" id="modalTitle">📝 توقع نتيجة المباراة</div>
+            <div style="text-align:center;font-size:0.8rem;color:var(--text-secondary);margin-bottom:8px;" id="modalUserGreeting">👤 مرحباً <span id="greetingName"></span></div>
+            <div class="modal-teams" id="modalTeams">
+                <div class="m-team"><span class="flag" id="modalFlag1">🏁</span> <span id="modalTeam1">الفريق الأول</span></div>
+                <div class="m-vs">🆚</div>
+                <div class="m-team"><span class="flag" id="modalFlag2">🏁</span> <span id="modalTeam2">الفريق الثاني</span></div>
+            </div>
+            <div style="text-align:center;font-size:0.75rem;color:var(--text-secondary);margin-bottom:14px;" id="modalDateTime">📅 التاريخ والوقت (بتوقيت السعودية)</div>
+            <div class="modal-options" id="modalOptions">
+                <label><input type="radio" name="prediction" value="HOME" /><span class="opt-label">🏆 <span id="optTeam1">الفريق الأول</span></span><span class="opt-sub">فوز</span></label>
+                <label><input type="radio" name="prediction" value="AWAY" /><span class="opt-label">🏆 <span id="optTeam2">الفريق الثاني</span></span><span class="opt-sub">فوز</span></label>
+                <!-- تم إزالة خيار التعادل بناءً على طلب المستخدم -->
+            </div>
+            <button class="modal-submit" id="modalSubmitBtn">💾 حفظ التوقع</button>
+            <div class="modal-message" id="modalMessage"></div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="playerPredictionsModal">
+        <div class="modal-content">
+            <button class="modal-close" id="playerModalCloseBtn">✕</button>
+            <div class="modal-title">📋 جميع توقعات <span id="playerModalName"></span></div>
+            <div style="text-align:center;font-size:0.8rem;color:var(--text-secondary);margin:4px 0 12px;">
+                ✅ صحيح: <span id="playerCorrectCount" style="color:var(--success);font-weight:800;">0</span> |
+                ❌ خاطئ: <span id="playerWrongCount" style="color:var(--danger);font-weight:800;">0</span> |
+                📊 عدد التوقعات الكلي: <span id="playerTotalCount" style="color:var(--gold-light);font-weight:800;">0</span>
+            </div>
+            <div id="playerPredictionsList" style="max-height:500px;overflow-y:auto;padding:4px 0;">
+                <div class="empty-state"><span class="icon">📭</span> لا توجد توقعات لهذا اللاعب</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== نافذة استعراض التوقعات (مع نسبة الفوز) ===== -->
+    <div class="modal-overlay" id="viewPredictionsModal">
+        <div class="modal-content">
+            <button class="modal-close" id="viewModalCloseBtn">✕</button>
+            <div class="modal-title">📋 توقعات المباراة</div>
+            <div class="modal-teams" id="viewModalTeams">
+                <div class="m-team"><span class="flag" id="viewFlag1">🏁</span> <span id="viewTeam1">الفريق الأول</span></div>
+                <div class="m-vs">🆚</div>
+                <div class="m-team"><span class="flag" id="viewFlag2">🏁</span> <span id="viewTeam2">الفريق الثاني</span></div>
+            </div>
+            <div style="text-align:center;font-size:0.8rem;color:var(--text-secondary);margin:8px 0 14px;">
+                عدد التوقعات: <span id="viewPredictionsCount" style="color:var(--gold-light);font-weight:800;">0</span>
+            </div>
+            <!-- نسبة الفوز (تم إزالة التعادل) -->
+            <div class="win-probability" id="winProbabilityContainer">
+                <div class="prob-title">📊 نسبة التوقعات (حسب نتائج المستخدمين)</div>
+                <div class="prob-bar" id="probBar">
+                    <div class="segment home" style="width:0%;">0%</div>
+                    <div class="segment away" style="width:0%;">0%</div>
+                </div>
+                <div class="prob-labels">
+                    <span class="label"><span class="dot home"></span> فوز <span id="probTeam1">الفريق الأول</span>: <span class="percent" id="probHomePercent">0%</span></span>
+                    <span class="label"><span class="dot away"></span> فوز <span id="probTeam2">الفريق الثاني</span>: <span class="percent" id="probAwayPercent">0%</span></span>
+                </div>
+            </div>
+            <div id="viewPredictionsList" style="max-height:400px;overflow-y:auto;">
+                <div class="empty-state"><span class="icon">📭</span> لا توجد توقعات لهذه المباراة</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="bracketMatchModal">
+        <div class="modal-content">
+            <button class="modal-close" id="bracketModalCloseBtn">✕</button>
+            <div class="modal-title">🏟️ تفاصيل المباراة</div>
+            <div id="bracketMatchDetail"><div class="empty-state"><span class="icon">⏳</span> جاري التحميل...</div></div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="testResultsModal">
+        <div class="modal-content">
+            <button class="modal-close" id="testResultsCloseBtn">✕</button>
+            <div class="modal-title">🧪 نتائج الاختبارات</div>
+            <div id="testResultsContent"><div class="empty-state"><span class="icon">⏳</span> جاري التشغيل...</div></div>
+        </div>
+    </div>
+
+    <!-- ===== نافذة التحليلات المتقدمة ===== -->
+    <div class="modal-overlay" id="analyticsModal">
+        <div class="modal-content" style="max-width:900px;">
+            <button class="modal-close" id="analyticsCloseBtn">✕</button>
+            <div class="modal-title">📊 تحليلات متقدمة</div>
+            <div id="analyticsContent">
+                <div class="analytics-grid">
+                    <div class="chart-box full-width">
+                        <div class="chart-title">📊 أكثر اللاعبين توقعاً</div>
+                        <canvas id="chartPlayerDistribution"></canvas>
+                    </div>
+                    <div class="chart-box full-width">
+                        <div class="chart-title">📈 تطور نقاط أفضل 5 لاعبين</div>
+                        <canvas id="chartPoints"></canvas>
+                    </div>
+                    <div class="chart-box full-width">
+                        <div class="chart-title">🔥 أكثر المباريات توقعاً</div>
+                        <canvas id="chartPopular"></canvas>
+                    </div>
+                    <div class="chart-box full-width">
+                        <div class="chart-title">🎯 نسبة التوقعات الصحيحة (أفضل 5)</div>
+                        <canvas id="chartAccuracy"></canvas>
+                    </div>
+                </div>
+                <div class="player-analytics-section" id="playerAnalyticsSection">
+                    <div class="select-player">
+                        <select id="playerAnalyticsSelect" onchange="updatePlayerAnalytics()">
+                            <option value="">-- اختر لاعباً --</option>
+                        </select>
+                    </div>
+                    <div id="playerAnalyticsDetails" class="player-analytics-details" style="display:none;"></div>
+                </div>
+                <div class="match-analytics-section" id="matchAnalyticsSection">
+                    <div class="match-analytics-grid" id="matchAnalyticsGrid"></div>
+                </div>
+                <div style="text-align:center;margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+                    <button class="tab-btn" onclick="document.getElementById('analyticsModal').classList.remove('active');document.body.style.overflow='';" style="background:var(--gold-glow);border-color:var(--border-gold);color:var(--gold-light);">إغلاق</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="compareModal">
+        <div class="modal-content" style="max-width:700px;">
+            <button class="modal-close" id="compareModalCloseBtn">✕</button>
+            <div class="modal-title">📊 مقارنة بين لاعبين</div>
+            <div class="compare-select">
+                <select id="compareSelect1"></select>
+                <select id="compareSelect2"></select>
+                <button class="admin-btn" onclick="renderCompare()" style="background:var(--gold-gradient);color:#0a0e1a;">مقارنة</button>
+            </div>
+            <div id="compareResult">
+                <div class="compare-container">
+                    <div class="compare-player" id="comparePlayer1">
+                        <h3 id="compareName1">👤 لاعب 1</h3>
+                        <div id="compareStats1"><div class="empty-state"><span class="icon">⏳</span> اختر لاعباً</div></div>
+                    </div>
+                    <div class="compare-vs">🆚</div>
+                    <div class="compare-player" id="comparePlayer2">
+                        <h3 id="compareName2">👤 لاعب 2</h3>
+                        <div id="compareStats2"><div class="empty-state"><span class="icon">⏳</span> اختر لاعباً</div></div>
+                    </div>
+                </div>
+            </div>
+            <button class="modal-submit" onclick="closeCompareModal()" style="margin-top:12px;">إغلاق</button>
+        </div>
+    </div>
+
+    <div class="copy-toast" id="copyToast">✅ تم نسخ الرابط!</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
+    </script>
     <script>
-        // بيانات الترجمة الكاملة
-        const translations = {
-            ar: {
-                pageTitle: "فهد الخالدي",
-                heroTitle: "الملف المهني للمعلم فهد الخالدي",
-                heroSubtitle: "معلم متخصص في اللغة الإنجليزية مع 13+ سنة خبرة في تطوير أساليب التعليم الحديثة",
-                heroStat1: "سنوات خبرة",
-                heroStat2: "ساعة تدريب",
-                heroStat3: "ساعات تطوعية",
-                aboutTitle: "نبذة عني",
-                visionTitle: "الرؤية التعليمية",
-                experienceTitle: "الخبرات المهنية",
-                achievementsTitle: "الإنجازات",
-                skillsTitle: "المهارات والكفاءات",
-                portfolioTitle: "ملف الإنجاز",
-                trainingTitle: "الدورات التدريبية",
-                projectsTitle: "معرض الأعمال",
-                testimonialsTitle: "التوصيات",
-                techTitle: "التقنية",
-                contactTitle: "بيانات التواصل",
-                name: "فهد نغيمش حميد الخالدي",
-                jobTitle: "معلم متقدم – تخصص اللغة الإنجليزية",
-                bioText: "أؤمن أن التعليم ليس مجرد نقل معرفة، بل رسالة سامية لصناعة الأثر وبناء الإنسان. أطمح إلى أن أكون جزءًا فاعلًا في تطوير التعليم بالمملكة من خلال توظيف التقنيات الحديثة، وصناعة بيئات تعلم محفزة، تعزز التفكير النقدي والإبداعي، وتبني الثقة لدى الطالب. نظرتي المستقبلية تقوم على التعلم المستمر، وتطوير المهارات المهنية، ومواكبة التحولات الرقمية بما يخدم مخرجات التعليم وجودته في إطار رؤية المملكة 2030.",
-                badge: "🏆 حاصل على درجة 95 في التخصص",
-                stat1: "سنوات خبرة",
-                stat2: "ساعات تدريبية",
-                stat3: "ساعات تطوعية",
-                visionItem1Title: "التعليم المتمركز حول الطالب",
-                visionItem1Desc: "أؤمن بأن كل طالب فريد ويحتاج إلى أساليب تعلم مخصصة تناسب احتياجاته وقدراته.",
-                visionItem2Title: "الشراكة مع أولياء الأمور",
-                visionItem2Desc: "التعاون مع الأسر أساسي لتحقيق النجاح التعليمي المستدام.",
-                visionItem3Title: "التعليم القائم على المشاريع",
-                visionItem3Desc: "أدمج التعلم القائم على المشاريع لتعزيز التفكير النقدي وحل المشكلات.",
-                visionItem4Title: "التعلم المستمر",
-                visionItem4Desc: "أؤمن بأن المعلم المتعلم باستمرار هو الأكثر قدرة على إلهام طلابه.",
-                achievementText: "في عام 2021 حصلتُ على ترقية إلى رتبة معلم متقدم بعد مسيرة مهنية امتدت لسنوات كمعلم ممارس، قدمت خلالها أداءً متميزًا أسهم في تطوير العملية التعليمية داخل المدرسة. جاءت هذه الترقية تقديرًا لجهودي في توظيف استراتيجيات تدريس حديثة تعزز مهارات التفكير النقدي والإبداعي لدى الطلاب، إضافة إلى قدرتي على تحليل نواتج التعلم وبناء خطط علاجية فردية أثمرت عن تحسين واضح في مستويات الطلاب.<br><br>وقد عكست هذه الترقية ثقة الجهة التعليمية بمهاراتي المهنية، خصوصًا في مجال تصميم أنشطة مبتكرة تُدمج مهارات الفهم العميق، والعمل التعاوني، والتعليم الذاتي داخل البيئة الصفية. كما كانت اعترافًا بدوري في تطوير البرامج التربوية والأنشطة التعليمية قبل عام 2021، ومساهمتي في بناء بيئة صفية محفزة يشعر فيها الطلاب بالأمان والرغبة في المشاركة والتعلم.<br><br>تعد هذه الترقية محطة مهمة في مسيرتي، لأنها لم تكن مجرد انتقال إلى مستوى وظيفي أعلى، بل كانت نتيجة تراكم خبرات وممارسات مهنية أثبتت أثرها على الطلاب وعلى منظومة التعليم داخل المدرسة. واليوم أواصل عملي كمعلم متقدم ملتزم بالتحسين المستمر، وتطبيق أفضل الممارسات التربوية، والمساهمة في رفع جودة التعليم وتحقيق نواتج تعلم أعلى.",
-                techText: "أتمتع بشغف كبير تجاه التقنية والتعليم الرقمي، وأواكب أحدث التطورات في مجال الذكاء الاصطناعي وتطبيقاته التعليمية. أمتلك خبرة عملية في تصميم وتطوير أنشطة تفاعلية واختبارات إلكترونية باستخدام HTML وCSS وJavaScript، مما يثري تجربة التعلم ويجعلها أكثر تفاعلية وجاذبية للطلاب. أستخدم أدوات الذكاء الاصطناعي في تحليل أداء الطلاب وتصميم خطط تعليمية مخصصة، كما أصمم محتوى رقميًا مبتكرًا يتناسب مع احتياجات التعلم الحديثة. أسعى دائمًا لدمج التقنية في العملية التعليمية بطرق إبداعية تواكب متطلبات العصر الرقمي وتخدم أهداف رؤية المملكة 2030.",
-                footerText: "© 2024 جميع الحقوق محفوظة - فهد الخالدي",
-                navAbout: "نبذة عني",
-                navVision: "الرؤية التعليمية",
-                navExp: "الخبرات",
-                navAchievements: "الإنجازات",
-                navSkills: "المهارات",
-                navPortfolio: "ملف الإنجاز",
-                navTrain: "الدورات",
-                navTech: "التقنية",
-                navProjects: "معرض الأعمال",
-                navTestimonials: "التوصيات",
-                navContact: "بيانات التواصل",
-                skillCat1: "المهارات التعليمية",
-                skillCat2: "المهارات التقنية",
-                skill1: "إتقان اللغة الإنجليزية تحدثاً وكتابة",
-                skill2: "تطوير خطط تدريس محفزة ومبتكرة",
-                skill3: "إدارة الصفوف بفاعلية",
-                skill4: "تشجيع التعلم الذاتي",
-                skill5: "استخدام أدوات القياس والتقويم الإلكترونية",
-                skill6: "دمج التقنية في التعليم",
-                skill7: "تصميم أنشطة تفاعلية",
-                skill8: "تطوير اختبارات إلكترونية",
-                project1Title: "مشروع: اختبار الرخصة المهنية التفاعلي",
-                project1Desc: "مشروع تعليمي رقمي يهدف إلى محاكاة اختبار الرخصة المهنية للمعلمين، من خلال تقديم أسئلة تفاعلية مبنية على المعايير المعتمدة، مع تغذية راجعة فورية توضح السبب العلمي لكل إجابة صحيحة أو خاطئة، بما يسهم في رفع كفاءة المتدربين وتعزيز جاهزيتهم للاختبار الرسمي.",
-                project1Link: "عرض المشروع",
-                project2Title: "تطبيق الاستراتيجيات الحديثة في التعليم",
-                project2Desc1: "تُعدّ الاستراتيجيات الحديثة عنصرًا محوريًا في تطوير العملية التعليمية وتعزيز فاعلية التعلم داخل الصف؛ إذ تسهم في رفع مستوى التفاعل، وتحفيز الدافعية، وتنمية مهارات التفكير والعمل لدى الطلاب. ومن هذا المنطلق أحرص على توظيف مجموعة متنوعة من الأساليب التدريسية التي تجمع بين المتعة والفائدة، وتعتمد على التفاعل الإيجابي والمشاركة الفعّالة.<br><br>ويأتي التعلم القائم على التحفيز والتحدي كأحد الأساليب التي تسهم في ترسيخ المفاهيم بطريقة مشوقة، وتساعد الطلاب على التعلم بروح المنافسة الإيجابية. كما يمثل التعلم التعاوني ركيزة أساسية في بناء مهارات التواصل والعمل الجماعي، من خلال إتاحة الفرصة للطلاب لتبادل الآراء، ومناقشة الأفكار، وحل المشكلات بشكل جماعي. كذلك أحرص على توظيف التقنيات التعليمية الحديثة التي تسهم في عرض المحتوى بصورة جذابة، وتتيح تفاعل جميع الطلاب ومشاركتهم في تصحيح المفاهيم وبناء المعرفة بشكل مباشر.<br><br>وتعد هذه الممارسات نماذج من جملة من الاستراتيجيات التي أعمل على تنويعها داخل الحصة بما يراعي الفروق الفردية، ويحقق الأهداف التعليمية، ويهيئ بيئة تعليمية نشطة ومحفزة تسهم في تحسين مستوى التحصيل الدراسي وتعزيز مهارات القرن الحادي والعشرين.",
-                project3Title: "عروض تقديمية تفاعلية",
-                project3Desc: "تصميم عروض تفاعلية جذابة للطلاب باستخدام أحدث الأدوات والتقنيات التعليمية. تتضمن هذه العروض أنشطة تفاعلية، ومقاطع فيديو تعليمية، وأسئلة تقييم فورية لضمان مشاركة فعالة من الطلاب.",
-                project3Link1: "المشروع الأول",
-                project3Link2: "المشروع الثاني",
-                testimonial1Text: "\"المعلم فهد يتميز بالإبداع والابتكار في أساليب التدريس، وقد قدم إضافة حقيقية لفريق العمل\"",
-                testimonial1Author: "مدير المدرسة",
-                testimonial1Position: "مدرسة سعيد بن العاص",
-                testimonial2Text: "\"لقد أحدثت استراتيجياته التعليمية فرقاً ملحوظاً في أداء الطلاب وحبهم للغة الإنجليزية\"",
-                testimonial2Author: "منسق اللغة الإنجليزية",
-                testimonial2Position: "إدارة التعليم",
-                testimonial3Text: "\"تميزه في استخدام التقنية جعل عملية التعلم أكثر متعة وفعالية للطلاب\"",
-                testimonial3Author: "زملاء العمل",
-                testimonial3Position: "فريق اللغة الإنجليزية",
-                contactSubtitle: "للتواصل",
-                contactEmail: "iFahadenglish@gmail.com",
-                contactPhone: "+966554449824",
-                footerName: "فهد الخالدي",
-                footerDesc: "معلم متخصص في اللغة الإنجليزية - تطوير التعليم من خلال التقنية والابتكار",
-                scrollUpText: "تمرير للأعلى",
-                scrollDownText: "تمرير للأسفل",
-                galleryCaption1: "تعزيز مهارات القرن الحادي والعشرين لدى الطلاب",
-                galleryCaption2: "أنشطة تعليمية تفاعلية لتحسين مستوى التحصيل الدراسي",
-                galleryCaption3: "إعداد بيئة تعليمية نشطة ومحفزة للطلاب",
-                exp1Title: "معلم لغة إنجليزية – سعيد بن العاص",
-                exp1Location: "مكة المكرمة",
-                exp2Title: "معلم لغة إنجليزية – ثانوية الأمير سعود بن عبدالمحسن",
-                exp2Location: "الليث",
-                exp3Title: "معلم لغة إنجليزية – سعيد بن زيد",
-                exp3Location: "عفيف",
-                exp4Title: "مترجم – وزارة الحج والعمرة",
-                exp4Location: "مكة المكرمة",
-                filterAll: "الكل",
-                filterInteractive: "تفاعلية",
-                filterStrategies: "استراتيجيات",
-                filterPresentations: "عروض",
-                filterParticipations: "المشاركات",
-                filterTools: "أدوات",
-                viewWorkBtn: "استعرض أعمالي",
-                contactBtn: "تواصل معي",
-                participation1Title: "عضوية لجنة التميز والتفاعل المهني",
-                participation1Desc: "جانب من مشاركتي بصفتي عضوًا في لجنة التميز المدرسية، دعمًا للتفاعل مع المجتمع المهني، وتعزيزًا للتعاون وتبادل الخبرات مع الزملاء، والمشاركة في المبادرات التعليمية التطويرية.",
-                participation2Title: "تعزيز القيم الوطنية من خلال فعاليات اليوم الوطني",
-                participation2Desc: "مشاركتي في فعاليات اليوم الوطني، تجسيدًا لقيم الانتماء والولاء للوطن، وتعزيزًا لدور المدرسة في غرس القيم الوطنية لدى الطلاب.",
-                trainingCategory1: "تدريب تربوي",
-                trainingCategory2: "أخرى",
-                phrase1: "مصمم لاختبارات محاكية للرخصة المهنية العامة والخاصة باللغة الإنجليزية تفاعلية مع تغذية راجعة فورية.",
-                phrase2: "مبتكر أدوات واختبارات إلكترونية للطلاب تعزز التفاعل وتحقق نواتج تعلم حقيقية.",
-                phrase3: "صانع أداة إلكترونية لإصدار التقارير التربوية بأكثر من 100 تقرير ذكي يخدم المعلم في التوثيق والتقييم.",
-                phrase4: "عضو في لجنة التميز المدرسي ومسهم في تطوير المبادرات التعليمية.",
-                phrase5: "حاصل على 95 في اختبار الرخصة المهنية تخصص اللغة الإنجليزية.",
-                phrase6: "شغفي للتعلم والتطوير هو الوقود الذي يدفعني نحو التميز والابتكار في الميدان التعليمي.",
-                phrase7: "أتبع التعليم القائم على المشاريع وتنمية مهارات القرن الحادي والعشرين لبناء متعلم منتج وفعّال."
-            },
-            en: {
-                pageTitle: "Fahad AlKhaldi",
-                heroTitle: "Professional Portfolio - Fahad AlKhaldi",
-                heroSubtitle: "English Language Specialist with 13+ Years Experience in Modern Teaching Methods",
-                heroStat1: "Years Experience",
-                heroStat2: "Training Hours",
-                heroStat3: "Volunteer Hours",
-                aboutTitle: "About Me",
-                visionTitle: "Educational Vision",
-                experienceTitle: "Professional Experience",
-                achievementsTitle: "Achievements",
-                skillsTitle: "Skills & Competencies",
-                portfolioTitle: "Portfolio File",
-                trainingTitle: "Training Courses",
-                projectsTitle: "Portfolio",
-                testimonialsTitle: "Testimonials",
-                techTitle: "Technology",
-                contactTitle: "Contact Information",
-                name: "Fahad Nughaimesh Humaid AlKhaldi",
-                jobTitle: "Advanced English Teacher",
-                bioText: "I believe that education is not merely about transferring knowledge, but a noble mission to make an impact and build individuals. I aspire to be an active part in developing education in the Kingdom by employing modern technologies, creating stimulating learning environments that enhance critical and creative thinking, and building student confidence. My future vision is based on continuous learning, developing professional skills, and keeping pace with digital transformations that serve educational outcomes and quality within the framework of Saudi Vision 2030.",
-                badge: "🏆 Achieved a score of 95 in specialization",
-                stat1: "Years of Experience",
-                stat2: "Training Hours",
-                stat3: "Volunteer Hours",
-                visionItem1Title: "Student-Centered Education",
-                visionItem1Desc: "I believe that every student is unique and needs customized learning methods that suit their needs and abilities.",
-                visionItem2Title: "Partnership with Parents",
-                visionItem2Desc: "Cooperation with families is essential to achieving sustainable educational success.",
-                visionItem3Title: "Project-Based Learning",
-                visionItem3Desc: "I integrate project-based learning to enhance critical thinking and problem-solving.",
-                visionItem4Title: "Continuous Learning",
-                visionItem4Desc: "I believe that a continuously learning teacher is the most capable of inspiring his students.",
-                achievementText: "In 2021, I was promoted to the rank of Senior Teacher after a professional career spanning years as a practicing teacher, during which I provided outstanding performance that contributed to the development of the educational process within the school. This promotion came in recognition of my efforts in employing modern teaching strategies that enhance students' critical and creative thinking skills, in addition to my ability to analyze learning outcomes and build individual remedial plans that resulted in a clear improvement in student levels.<br><br>This promotion reflected the educational authority's confidence in my professional skills, especially in designing innovative activities that integrate deep understanding skills, collaborative work, and self-learning within the classroom environment. It was also an acknowledgment of my role in developing educational programs and activities before 2021, and my contribution to building a stimulating classroom environment where students feel safe and eager to participate and learn.<br><br>This promotion is an important milestone in my career, as it was not just a transition to a higher functional level, but rather the result of accumulated experiences and professional practices that proved their impact on students and the educational system within the school. Today, I continue my work as a senior teacher committed to continuous improvement, applying the best educational practices, and contributing to raising the quality of education and achieving higher learning outcomes.",
-                techText: "I have a great passion for technology and digital education, and I keep up with the latest developments in the field of artificial intelligence and its educational applications. I have practical experience in designing and developing interactive activities and electronic tests using HTML, CSS, and JavaScript, which enriches the learning experience and makes it more interactive and attractive for students. I use AI tools to analyze student performance and design customized educational plans, and I also design innovative digital content that suits modern learning needs. I always strive to integrate technology into the educational process in creative ways that keep pace with the requirements of the digital age and serve the goals of Saudi Vision 2030.",
-                footerText: "© 2024 All Rights Reserved - Fahad AlKhaldi",
-                navAbout: "About Me",
-                navVision: "Educational Vision",
-                navExp: "Experience",
-                navAchievements: "Achievements",
-                navSkills: "Skills",
-                navPortfolio: "Portfolio File",
-                navTrain: "Training",
-                navTech: "Technology",
-                navProjects: "Portfolio",
-                navTestimonials: "Testimonials",
-                navContact: "Contact Info",
-                skillCat1: "Teaching Skills",
-                skillCat2: "Technical Skills",
-                skill1: "Proficiency in spoken and written English",
-                skill2: "Developing stimulating and innovative teaching plans",
-                skill3: "Effective classroom management",
-                skill4: "Encouraging self-learning",
-                skill5: "Using electronic measurement and assessment tools",
-                skill6: "Integrating technology into education",
-                skill7: "Designing interactive activities",
-                skill8: "Developing electronic tests",
-                project1Title: "Project: Interactive Professional License Exam",
-                project1Desc: "A digital educational project that aims to simulate the professional license exam for teachers, by providing interactive questions based on approved standards, with immediate feedback that explains the scientific reason for each correct or incorrect answer, which helps raise the efficiency of trainees and enhance their readiness for the official exam.",
-                project1Link: "View Project",
-                project2Title: "Applying Modern Strategies in Education",
-                project2Desc1: "Modern strategies are a pivotal element in developing the educational process and enhancing the effectiveness of learning in the classroom. They contribute to raising the level of interaction, stimulating motivation, and developing thinking and working skills among students. From this standpoint, I am keen to employ a variety of teaching methods that combine fun and benefit, and rely on positive interaction and effective participation.<br><br>Challenge-based learning comes as one of the methods that helps consolidate concepts in an exciting way and helps students learn with a spirit of positive competition. Cooperative learning also represents a fundamental pillar in building communication and teamwork skills, by providing students with the opportunity to exchange opinions, discuss ideas, and solve problems collectively. I also strive to employ modern educational technologies that contribute to presenting content in an attractive way, and allow all students to interact and participate in correcting concepts and building knowledge directly.<br><br>These practices are examples of a range of strategies that I work to diversify within the class, taking into account individual differences, achieving educational goals, and preparing an active and stimulating educational environment that contributes to improving academic achievement and enhancing 21st century skills.",
-                project3Title: "Interactive Presentations",
-                project3Desc: "Designing interactive and engaging presentations for students using the latest educational tools and technologies. These presentations include interactive activities, educational videos, and instant assessment questions to ensure effective student participation.",
-                project3Link1: "Project One",
-                project3Link2: "Project Two",
-                testimonial1Text: "\"Teacher Fahad is distinguished by creativity and innovation in teaching methods, and has made a real addition to the work team\"",
-                testimonial1Author: "School Principal",
-                testimonial1Position: "Saeed bin Al-Aas School",
-                testimonial2Text: "\"His educational strategies have made a noticeable difference in students' performance and their love for the English language\"",
-                testimonial2Author: "English Language Coordinator",
-                testimonial2Position: "Education Department",
-                testimonial3Text: "\"His excellence in using technology has made the learning process more enjoyable and effective for students\"",
-                testimonial3Author: "Colleagues",
-                testimonial3Position: "English Language Team",
-                contactSubtitle: "For Contact",
-                contactEmail: "iFahadenglish@gmail.com",
-                contactPhone: "+966554449824",
-                footerName: "Fahad AlKhaldi",
-                footerDesc: "English Language Specialist - Developing Education Through Technology and Innovation",
-                scrollUpText: "Scroll Up",
-                scrollDownText: "Scroll Down",
-                galleryCaption1: "Enhancing 21st century skills among students",
-                galleryCaption2: "Interactive educational activities to improve academic achievement",
-                galleryCaption3: "Preparing an active and stimulating educational environment for students",
-                exp1Title: "English Teacher – Saeed bin Al-Aas",
-                exp1Location: "Makkah",
-                exp2Title: "English Teacher – Prince Saud bin Abdulmohsen Secondary School",
-                exp2Location: "Al-Lith",
-                exp3Title: "English Teacher – Saeed bin Zaid",
-                exp3Location: "Afif",
-                exp4Title: "Translator – Ministry of Hajj and Umrah",
-                exp4Location: "Makkah",
-                filterAll: "All",
-                filterInteractive: "Interactive",
-                filterStrategies: "Strategies",
-                filterPresentations: "Presentations",
-                filterParticipations: "Participations",
-                filterTools: "Tools",
-                viewWorkBtn: "View My Work",
-                contactBtn: "Contact Me",
-                participation1Title: "Membership in Excellence and Professional Interaction Committee",
-                participation1Desc: "Aspects of my participation as a member of the School Excellence Committee, supporting interaction with the professional community, enhancing cooperation and exchange of experiences with colleagues, and participating in developmental educational initiatives.",
-                participation2Title: "Promoting National Values through National Day Activities",
-                participation2Desc: "My participation in National Day activities, embodying the values of belonging and loyalty to the homeland, and enhancing the school's role in instilling national values in students.",
-                trainingCategory1: "Educational Training",
-                trainingCategory2: "Other",
-                phrase1: "Designer of interactive professional license mock tests for general and English-specific tests with instant feedback.",
-                phrase2: "Innovator of electronic tools and tests for students that enhance interaction and achieve real learning outcomes.",
-                phrase3: "Creator of an electronic tool for issuing educational reports with over 100 smart reports that serve teachers in documentation and evaluation.",
-                phrase4: "Member of the School Excellence Committee and contributor to the development of educational initiatives.",
-                phrase5: "Achieved a score of 95 in the English specialization professional license test.",
-                phrase6: "My passion for learning and development is the fuel that drives me towards excellence and innovation in the educational field.",
-                phrase7: "I follow project-based education and the development of 21st century skills to build productive and effective learners."
+        // ============================================================
+        //  ============================================================
+        //  MATCH UTILS - دوال مساعدة لنتائج المباريات مع ضربات الترجيح
+        //  ============================================================
+        // ============================================================
+
+        /**
+         * تحديد الفائز في المباراة مع مراعاة ركلات الترجيح
+         * @param {Object} game - بيانات المباراة
+         * @param {number|string} game.home_score - نتيجة الفريق الأول
+         * @param {number|string} game.away_score - نتيجة الفريق الثاني
+         * @param {number|string} game.home_penalty_score - نتيجة ركلات الترجيح للفريق الأول
+         * @param {number|string} game.away_penalty_score - نتيجة ركلات الترجيح للفريق الثاني
+         * @returns {string} 'home' | 'away' | 'draw'
+         */
+        function getMatchWinner(game) {
+            const home = Number(game.home_score);
+            const away = Number(game.away_score);
+
+            // أولاً: التحقق من نتيجة الوقت الأصلي
+            if (home > away) return "home";
+            if (away > home) return "away";
+
+            // إذا كانت النتيجة متعادلة، نتحقق من ركلات الترجيح
+            const homePens = Number(game.home_penalty_score);
+            const awayPens = Number(game.away_penalty_score);
+
+            // التحقق من وجود ركلات ترجيح صالحة
+            if (!Number.isNaN(homePens) && !Number.isNaN(awayPens)) {
+                if (homePens > awayPens) return "home";
+                if (awayPens > homePens) return "away";
             }
+
+            // إذا لم يتم تحديد فائز، فهي تعادل
+            return "draw";
+        }
+
+        /**
+         * الحصول على النتيجة المعروضة مع تضمين ركلات الترجيح إذا وجدت
+         * @param {Object} game - بيانات المباراة
+         * @param {number|string} game.home_score - نتيجة الفريق الأول
+         * @param {number|string} game.away_score - نتيجة الفريق الثاني
+         * @param {number|string} game.home_penalty_score - نتيجة ركلات الترجيح للفريق الأول
+         * @param {number|string} game.away_penalty_score - نتيجة ركلات الترجيح للفريق الثاني
+         * @returns {string} النتيجة المنسقة
+         */
+        function getDisplayedResult(game) {
+            const home = Number(game.home_score);
+            const away = Number(game.away_score);
+
+            const homePens = Number(game.home_penalty_score);
+            const awayPens = Number(game.away_penalty_score);
+
+            // إذا كانت هناك ركلات ترجيح، نعرض النتيجة معها
+            if (!Number.isNaN(homePens) && !Number.isNaN(awayPens)) {
+                // التحقق من أن القيم ليست فارغة أو NaN
+                if (game.home_penalty_score !== null && game.home_penalty_score !== "" &&
+                    game.away_penalty_score !== null && game.away_penalty_score !== "") {
+                    return `${home}-${away} (${homePens}-${awayPens} pen)`;
+                }
+            }
+
+            return `${home}-${away}`;
+        }
+
+        /**
+         * التحقق من وجود ركلات ترجيح في المباراة
+         * @param {Object} game - بيانات المباراة
+         * @param {number|string} game.home_penalty_score - نتيجة ركلات الترجيح للفريق الأول
+         * @param {number|string} game.away_penalty_score - نتيجة ركلات الترجيح للفريق الثاني
+         * @returns {boolean} true إذا كانت هناك ركلات ترجيح صالحة
+         */
+        function hasPenaltyShootout(game) {
+            return (
+                game.home_penalty_score != null &&
+                game.away_penalty_score != null &&
+                game.home_penalty_score !== "" &&
+                game.away_penalty_score !== "" &&
+                !isNaN(Number(game.home_penalty_score)) &&
+                !isNaN(Number(game.away_penalty_score))
+            );
+        }
+
+        /**
+         * الحصول على اسم الفريق الفائز
+         * @param {Object} game - بيانات المباراة
+         * @param {string} game.home_team - اسم الفريق الأول
+         * @param {string} game.away_team - اسم الفريق الثاني
+         * @param {number|string} game.home_score - نتيجة الفريق الأول
+         * @param {number|string} game.away_score - نتيجة الفريق الثاني
+         * @param {number|string} game.home_penalty_score - نتيجة ركلات الترجيح للفريق الأول
+         * @param {number|string} game.away_penalty_score - نتيجة ركلات الترجيح للفريق الثاني
+         * @returns {string|null} اسم الفريق الفائز أو null في حالة التعادل
+         */
+        function getWinnerName(game) {
+            const winner = getMatchWinner(game);
+            if (winner === "home") return game.home_team || game.homeAr || game.team1;
+            if (winner === "away") return game.away_team || game.awayAr || game.team2;
+            return null;
+        }
+
+        /**
+         * الحصول على اسم الفريق الخاسر
+         * @param {Object} game - بيانات المباراة
+         * @param {string} game.home_team - اسم الفريق الأول
+         * @param {string} game.away_team - اسم الفريق الثاني
+         * @param {number|string} game.home_score - نتيجة الفريق الأول
+         * @param {number|string} game.away_score - نتيجة الفريق الثاني
+         * @param {number|string} game.home_penalty_score - نتيجة ركلات الترجيح للفريق الأول
+         * @param {number|string} game.away_penalty_score - نتيجة ركلات الترجيح للفريق الثاني
+         * @returns {string|null} اسم الفريق الخاسر أو null في حالة التعادل
+         */
+        function getLoserName(game) {
+            const winner = getMatchWinner(game);
+            if (winner === "home") return game.away_team || game.awayAr || game.team2;
+            if (winner === "away") return game.home_team || game.homeAr || game.team1;
+            return null;
+        }
+
+        /**
+         * التحقق من أن المباراة انتهت (لدينا نتيجة)
+         * @param {Object} game - بيانات المباراة
+         * @param {number|string} game.home_score - نتيجة الفريق الأول
+         * @param {number|string} game.away_score - نتيجة الفريق الثاني
+         * @returns {boolean} true إذا كانت المباراة منتهية
+         */
+        function isMatchFinished(game) {
+            return game.home_score !== undefined && game.home_score !== null &&
+                game.away_score !== undefined && game.away_score !== null &&
+                game.home_score !== "" && game.away_score !== "";
+        }
+
+        /**
+         * الحصول على الفريق الفائز كائن
+         * @param {Object} game - بيانات المباراة
+         * @param {string} game.home_team - اسم الفريق الأول
+         * @param {string} game.away_team - اسم الفريق الثاني
+         * @param {number|string} game.home_score - نتيجة الفريق الأول
+         * @param {number|string} game.away_score - نتيجة الفريق الثاني
+         * @param {number|string} game.home_penalty_score - نتيجة ركلات الترجيح للفريق الأول
+         * @param {number|string} game.away_penalty_score - نتيجة ركلات الترجيح للفريق الثاني
+         * @returns {Object|null} كائن الفريق الفائز أو null في حالة التعادل
+         */
+        function getWinnerObject(game) {
+            const winner = getMatchWinner(game);
+            if (winner === "home") {
+                return {
+                    name: game.home_team || game.homeAr || game.team1,
+                    score: game.home_score,
+                    penaltyScore: game.home_penalty_score
+                };
+            }
+            if (winner === "away") {
+                return {
+                    name: game.away_team || game.awayAr || game.team2,
+                    score: game.away_score,
+                    penaltyScore: game.away_penalty_score
+                };
+            }
+            return null;
+        }
+
+        /**
+         * الحصول على نتيجة المباراة مع تحديد نوع الانتهاء
+         * @param {Object} game - بيانات المباراة
+         * @param {number|string} game.home_score - نتيجة الفريق الأول
+         * @param {number|string} game.away_score - نتيجة الفريق الثاني
+         * @param {number|string} game.home_penalty_score - نتيجة ركلات الترجيح للفريق الأول
+         * @param {number|string} game.away_penalty_score - نتيجة ركلات الترجيح للفريق الثاني
+         * @returns {Object} { result: string, winner: string|null, hasPenalties: boolean }
+         */
+        function getMatchResult(game) {
+            const hasPenalties = hasPenaltyShootout(game);
+            const winner = getMatchWinner(game);
+            const displayResult = getDisplayedResult(game);
+
+            return {
+                result: displayResult,
+                winner: winner === "home" ? (game.home_team || game.homeAr || game.team1) :
+                    winner === "away" ? (game.away_team || game.awayAr || game.team2) : null,
+                winnerType: winner,
+                hasPenalties: hasPenalties,
+                isDraw: winner === "draw"
+            };
+        }
+
+        // ============================================================
+        //  STATE
+        // ============================================================
+        const state = {
+            previousGamesData: [],
+            allGames: [],
+            openfootballMatches: [],
+            predictions: [],
+            loaded: false,
+            penaltyMatches: {} // تخزين نتائج ضربات الترجيح
+        };
+        let userPredictionsMap = {};
+        let comparePlayer1 = '';
+        let comparePlayer2 = '';
+
+        // ============================================================
+        //  Supabase
+        // ============================================================
+        const SUPABASE_URL = "https://szjxwhsmefqpfcebtvei.supabase.co";
+        const SUPABASE_KEY = "sb_publishable_0um28lgPMHcjDOThT0UgDA_K-Y7Wmx3";
+
+        let supabaseClient = null;
+        try {
+            supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+        } catch (e) {
+            console.error("Supabase init error", e);
+        }
+
+        // ============================================================
+        //  CACHE
+        // ============================================================
+        const CACHE_KEY = "wc_cache_v2";
+        const CACHE_TIME = 5 * 60 * 1000;
+
+        function setCache(key, value) {
+            localStorage.setItem(key, JSON.stringify({
+                value,
+                time: Date.now()
+            }));
+        }
+
+        function getCache(key) {
+            try {
+                const raw = localStorage.getItem(key);
+                if (!raw) return null;
+                const parsed = JSON.parse(raw);
+                if (Date.now() - parsed.time > CACHE_TIME) return null;
+                return parsed.value;
+            } catch { return null; }
+        }
+
+        // ============================================================
+        //  SUBMITTED MATCHES - localStorage persistence
+        // ============================================================
+        function getSubmittedMatches() {
+            try {
+                const raw = localStorage.getItem('submitted_matches');
+                if (!raw) return [];
+                const parsed = JSON.parse(raw);
+                return Array.isArray(parsed) ? parsed : [];
+            } catch { return []; }
+        }
+
+        function addSubmittedMatch(matchId) {
+            const current = getSubmittedMatches();
+            if (!current.includes(matchId)) {
+                current.push(matchId);
+                localStorage.setItem('submitted_matches', JSON.stringify(current));
+            }
+        }
+
+        function removeSubmittedMatch(matchId) {
+            const current = getSubmittedMatches();
+            const filtered = current.filter(id => id !== matchId);
+            localStorage.setItem('submitted_matches', JSON.stringify(filtered));
+        }
+
+        function isMatchSubmitted(matchId) {
+            return getSubmittedMatches().includes(matchId);
+        }
+
+        // ============================================================
+        //  LOAD DATA
+        // ============================================================
+        async function loadPreviousGames() {
+            const cached = getCache("games");
+            if (cached) {
+                state.previousGamesData = cached;
+                return;
+            }
+            const res = await fetch("https://worldcup26.ir/get/games");
+            const data = await res.json();
+            const finished = (data.games || []).filter(g => g.finished === "TRUE");
+            state.previousGamesData = finished.map(g => ({
+                homeAr: g.home_team_name_en || g.home_team_name_fa,
+                awayAr: g.away_team_name_en || g.away_team_name_fa,
+                homeScore: parseInt(g.home_score || 0),
+                awayScore: parseInt(g.away_score || 0),
+                penaltyHome: g.penalty_home ? parseInt(g.penalty_home) : null,
+                penaltyAway: g.penalty_away ? parseInt(g.penalty_away) : null,
+                hasPenalties: g.penalty_home !== undefined && g.penalty_away !== undefined
+            }));
+            setCache("games", state.previousGamesData);
+        }
+
+        async function fetchOpenfootballData() {
+            const cached = getCache("openfootball");
+            if (cached) {
+                state.openfootballMatches = cached;
+                extractPenaltiesFromOpenfootball(cached);
+                return;
+            }
+            try {
+                const res = await fetch("https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json");
+                const data = await res.json();
+                state.openfootballMatches = data.matches || [];
+                extractPenaltiesFromOpenfootball(data.matches || []);
+                setCache("openfootball", state.openfootballMatches);
+            } catch (e) {
+                console.warn("⚠️ فشل تحميل بيانات openfootball:", e);
+                state.openfootballMatches = [];
+            }
+        }
+
+        function extractPenaltiesFromOpenfootball(matches) {
+            state.penaltyMatches = {};
+            for (let m of matches) {
+                if (m.penalty && m.penalty.home !== undefined && m.penalty.away !== undefined) {
+                    const h = translateToArabic(m.team1 || '');
+                    const a = translateToArabic(m.team2 || '');
+                    const key = `${h}_${a}`;
+                    state.penaltyMatches[key] = {
+                        home: parseInt(m.penalty.home),
+                        away: parseInt(m.penalty.away)
+                    };
+                    // أيضاً نحاول تخزينها حسب أسماء الفرق الأصلية
+                    const keyEn = `${m.team1}_${m.team2}`;
+                    state.penaltyMatches[keyEn] = {
+                        home: parseInt(m.penalty.home),
+                        away: parseInt(m.penalty.away)
+                    };
+                    // مباراة المغرب وهولندا
+                    if ((h === 'المغرب' && a === 'هولندا') || (h === 'هولندا' && a === 'المغرب')) {
+                        if (!state.penaltyMatches[`المغرب_هولندا`]) {
+                            state.penaltyMatches[`المغرب_هولندا`] = {
+                                home: parseInt(m.penalty.home),
+                                away: parseInt(m.penalty.away)
+                            };
+                        }
+                    }
+                    // مباراة ألمانيا وباراغواي
+                    if ((h === 'ألمانيا' && a === 'باراغواي') || (h === 'باراغواي' && a === 'ألمانيا')) {
+                        if (!state.penaltyMatches[`ألمانيا_باراغواي`]) {
+                            state.penaltyMatches[`ألمانيا_باراغواي`] = {
+                                home: parseInt(m.penalty.home),
+                                away: parseInt(m.penalty.away)
+                            };
+                        }
+                    }
+                }
+                // بعض المباريات قد تحوي نتيجة ضربات الترجيح في حقل آخر
+                if (m.penalty_shootout && m.penalty_shootout.home !== undefined && m.penalty_shootout.away !== undefined) {
+                    const h = translateToArabic(m.team1 || '');
+                    const a = translateToArabic(m.team2 || '');
+                    const key = `${h}_${a}`;
+                    state.penaltyMatches[key] = {
+                        home: parseInt(m.penalty_shootout.home),
+                        away: parseInt(m.penalty_shootout.away)
+                    };
+                    const keyEn = `${m.team1}_${m.team2}`;
+                    state.penaltyMatches[keyEn] = {
+                        home: parseInt(m.penalty_shootout.home),
+                        away: parseInt(m.penalty_shootout.away)
+                    };
+                }
+            }
+        }
+
+        async function getAllPredictions() {
+            const cached = getCache("predictions");
+            if (cached) {
+                state.predictions = cached;
+                return;
+            }
+            if (!supabaseClient) { state.predictions = []; return; }
+            try {
+                const { data } = await supabaseClient
+                    .from("predictions")
+                    .select("*")
+                    .limit(500);
+                state.predictions = data || [];
+                setCache("predictions", state.predictions);
+            } catch (e) {
+                console.warn("⚠️ فشل تحميل التوقعات:", e);
+                state.predictions = [];
+            }
+        }
+
+        // ============================================================
+        //  SAUDI TIME helpers
+        // ============================================================
+        function toSaudiTime(isoString) {
+            return new Date(isoString);
+        }
+
+        function getSaudiNow() {
+            return new Date();
+        }
+
+        function formatSaudiDate(isoString) {
+            const d = toSaudiTime(isoString);
+            const months = ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو',
+                'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'
+            ];
+            return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+        }
+
+        function formatSaudiTime(isoString) {
+            const d = toSaudiTime(isoString);
+            return `${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
+        }
+
+        function formatSaudiDateTime(isoString) {
+            return `${formatSaudiDate(isoString)} - ${formatSaudiTime(isoString)}`;
+        }
+
+        function isTodaySaudi(isoString) {
+            const d = toSaudiTime(isoString);
+            const now = getSaudiNow();
+            return d.getFullYear() === now.getFullYear() &&
+                d.getMonth() === now.getMonth() &&
+                d.getDate() === now.getDate();
+        }
+
+        function isTomorrowSaudi(isoString) {
+            const d = toSaudiTime(isoString);
+            const now = getSaudiNow();
+            const tomorrow = new Date(now);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            return d.getFullYear() === tomorrow.getFullYear() &&
+                d.getMonth() === tomorrow.getMonth() &&
+                d.getDate() === tomorrow.getDate();
+        }
+
+        function getSaudiDay(isoString) {
+            const d = toSaudiTime(isoString);
+            return ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'][d.getDay()];
+        }
+
+        // ============================================================
+        //  INIT
+        // ============================================================
+        async function init() {
+            console.log("🚀 INIT START (محسن)");
+            await Promise.all([
+                loadPreviousGamesFull(),
+                fetchOpenfootballData(),
+                getAllPredictions()
+            ]);
+            state.loaded = true;
+
+            updateScorers();
+            renderLeaderboard('all');
+            renderUpcoming();
+            calculateStandings();
+            renderTeamStats();
+            renderScorers();
+            renderBracket();
+            renderAllPredictions();
+            initTabs();
+            checkUrlForMatch();
+            startAutoUpdate();
+            updateNewsTicker();
+
+            console.log("✅ INIT DONE (محسن)");
+        }
+
+        // ============================================================
+        //  المتغيرات العامة
+        // ============================================================
+        const SECRET_CODE = "1406";
+        let isAuthorized = false;
+        let isCompactMode = false;
+        let isModalCompact = false;
+        let allGames = [];
+        let openfootballMatches = [];
+        let scorersDict = {};
+        let playerTeamMap = {};
+        let allPredictionsCache = [];
+        let currentMatchId = null,
+            currentTeam1 = '',
+            currentTeam2 = '',
+            currentTimeISO = '';
+        let currentDayFilter = 'all';
+        let isOpenfootballLoaded = false;
+        let isLoadingPrevious = false;
+        let isEditing = false;
+        let currentUserName = '';
+        let isNameVerified = false;
+        let chartInstances = {};
+        let currentLeaderboardPeriod = 'all';
+
+        const stadiums = {
+            "1": "ملعب آزتيكا (المكسيك)",
+            "2": "ملعب سيول (كوريا)",
+            "3": "ملعب تورنتو (كندا)",
+            "4": "ملعب لندن (إنجلترا)",
+            "5": "ملعب برلين (ألمانيا)",
+            "6": "ملعب بوينس آيرس (الأرجنتين)",
+            "7": "ملعب مدريد (إسبانيا)",
+            "8": "ملعب الرياض (السعودية)",
+            "9": "ملعب باريس (فرنسا)",
+            "10": "ملعب أبيدجان (ساحل العاج)",
+            "11": "ملعب الرباط (المغرب)",
+            "12": "ملعب سيدني (أستراليا)",
+            "13": "ملعب اسطنبول (تركيا)",
+            "14": "ملعب بروكسل (بلجيكا)",
+            "15": "ملعب الدوحة (قطر)",
+            "16": "ملعب واشنطن (أمريكا)"
         };
 
-        let currentLang = 'ar';
-        let currentTheme = localStorage.getItem('theme') || 'light';
-        
-        // تعيين الوضع الافتراضي
-        document.documentElement.setAttribute('data-theme', currentTheme);
-        
-        // تحديث أيقونة الوضع الليلي
-        function updateThemeIcon() {
-            const themeBtn = document.getElementById('themeBtn');
-            themeBtn.innerHTML = currentTheme === 'light' ? 
-                '<i class="fas fa-moon"></i>' : 
-                '<i class="fas fa-sun"></i>';
+        function getStadiumName(id) {
+            return stadiums[id] || `ملعب رقم ${id}`;
         }
-        
-        // وظيفة لتحميل اللغة
-        function loadLanguage(lang) {
-            const t = translations[lang];
-            
-            // تحديث جميع النصوص
-            const elements = {
-                pageTitle: document.getElementById('pageTitle'),
-                heroTitle: document.getElementById('heroTitle'),
-                heroSubtitle: document.getElementById('heroSubtitle'),
-                heroStat1: document.getElementById('heroStat1'),
-                heroStat2: document.getElementById('heroStat2'),
-                heroStat3: document.getElementById('heroStat3'),
-                aboutTitle: document.getElementById('aboutTitle'),
-                visionTitle: document.getElementById('visionTitle'),
-                experienceTitle: document.getElementById('experienceTitle'),
-                achievementsTitle: document.getElementById('achievementsTitle'),
-                skillsTitle: document.getElementById('skillsTitle'),
-                portfolioTitle: document.getElementById('portfolioTitle'),
-                trainingTitle: document.getElementById('trainingTitle'),
-                projectsTitle: document.getElementById('projectsTitle'),
-                testimonialsTitle: document.getElementById('testimonialsTitle'),
-                techTitle: document.getElementById('techTitle'),
-                contactTitle: document.getElementById('contactTitle'),
-                name: document.getElementById('name'),
-                jobTitle: document.getElementById('jobTitle'),
-                bioText: document.getElementById('bioText'),
-                badge: document.getElementById('badge'),
-                stat1: document.getElementById('stat1'),
-                stat2: document.getElementById('stat2'),
-                stat3: document.getElementById('stat3'),
-                visionItem1Title: document.getElementById('visionItem1Title'),
-                visionItem1Desc: document.getElementById('visionItem1Desc'),
-                visionItem2Title: document.getElementById('visionItem2Title'),
-                visionItem2Desc: document.getElementById('visionItem2Desc'),
-                visionItem3Title: document.getElementById('visionItem3Title'),
-                visionItem3Desc: document.getElementById('visionItem3Desc'),
-                visionItem4Title: document.getElementById('visionItem4Title'),
-                visionItem4Desc: document.getElementById('visionItem4Desc'),
-                achievementText: document.getElementById('achievementText'),
-                techText: document.getElementById('techText'),
-                footerText: document.getElementById('footerText'),
-                navAbout: document.getElementById('navAbout'),
-                navVision: document.getElementById('navVision'),
-                navExp: document.getElementById('navExp'),
-                navAchievements: document.getElementById('navAchievements'),
-                navSkills: document.getElementById('navSkills'),
-                navPortfolio: document.getElementById('navPortfolio'),
-                navTrain: document.getElementById('navTrain'),
-                navTech: document.getElementById('navTech'),
-                navProjects: document.getElementById('navProjects'),
-                navTestimonials: document.getElementById('navTestimonials'),
-                navContact: document.getElementById('navContact'),
-                skillCat1: document.getElementById('skillCat1'),
-                skillCat2: document.getElementById('skillCat2'),
-                skill1: document.getElementById('skill1'),
-                skill2: document.getElementById('skill2'),
-                skill3: document.getElementById('skill3'),
-                skill4: document.getElementById('skill4'),
-                skill5: document.getElementById('skill5'),
-                skill6: document.getElementById('skill6'),
-                skill7: document.getElementById('skill7'),
-                skill8: document.getElementById('skill8'),
-                project1Title: document.getElementById('project1Title'),
-                project1Desc: document.getElementById('project1Desc'),
-                project1Link: document.getElementById('project1Link'),
-                project2Title: document.getElementById('project2Title'),
-                project2Desc1: document.getElementById('project2Desc1'),
-                project3Title: document.getElementById('project3Title'),
-                project3Desc: document.getElementById('project3Desc'),
-                project3Link1: document.getElementById('project3Link1'),
-                project3Link2: document.getElementById('project3Link2'),
-                testimonial1Text: document.getElementById('testimonial1Text'),
-                testimonial1Author: document.getElementById('testimonial1Author'),
-                testimonial1Position: document.getElementById('testimonial1Position'),
-                testimonial2Text: document.getElementById('testimonial2Text'),
-                testimonial2Author: document.getElementById('testimonial2Author'),
-                testimonial2Position: document.getElementById('testimonial2Position'),
-                testimonial3Text: document.getElementById('testimonial3Text'),
-                testimonial3Author: document.getElementById('testimonial3Author'),
-                testimonial3Position: document.getElementById('testimonial3Position'),
-                contactSubtitle: document.getElementById('contactSubtitle'),
-                contactEmail: document.getElementById('contactEmail'),
-                contactPhone: document.getElementById('contactPhone'),
-                footerName: document.getElementById('footerName'),
-                footerDesc: document.getElementById('footerDesc'),
-                scrollUpText: document.getElementById('scrollUpText'),
-                scrollDownText: document.getElementById('scrollDownText'),
-                galleryCaption1: document.getElementById('galleryCaption1'),
-                galleryCaption2: document.getElementById('galleryCaption2'),
-                galleryCaption3: document.getElementById('galleryCaption3'),
-                exp1Title: document.getElementById('exp1Title'),
-                exp1Location: document.getElementById('exp1Location'),
-                exp2Title: document.getElementById('exp2Title'),
-                exp2Location: document.getElementById('exp2Location'),
-                exp3Title: document.getElementById('exp3Title'),
-                exp3Location: document.getElementById('exp3Location'),
-                exp4Title: document.getElementById('exp4Title'),
-                exp4Location: document.getElementById('exp4Location'),
-                filterAll: document.getElementById('filterAll'),
-                filterInteractive: document.getElementById('filterInteractive'),
-                filterStrategies: document.getElementById('filterStrategies'),
-                filterPresentations: document.getElementById('filterPresentations'),
-                filterParticipations: document.getElementById('filterParticipations'),
-                filterTools: document.getElementById('filterTools'),
-                viewWorkBtn: document.getElementById('viewWorkBtn'),
-                contactBtn: document.getElementById('contactBtn'),
-                participation1Title: document.getElementById('participation1Title'),
-                participation1Desc: document.getElementById('participation1Desc'),
-                participation2Title: document.getElementById('participation2Title'),
-                participation2Desc: document.getElementById('participation2Desc'),
-                trainingCategory1: document.getElementById('trainingCategory1'),
-                trainingCategory2: document.getElementById('trainingCategory2')
+
+        // ============================================================
+        //  دوال مساعدة للوقت
+        // ============================================================
+        function now() { return Date.now(); }
+
+        function matchTime(timeISO) { return new Date(timeISO).getTime(); }
+        const MATCH_DURATION = 105 * 60 * 1000;
+
+        function isMatchLive(timeISO) { const cur = now(); const start = matchTime(timeISO); return cur >= start && cur <=
+                start + MATCH_DURATION; }
+
+        function isMatchFinished(timeISO) { return now() > matchTime(timeISO) + MATCH_DURATION; }
+
+        function canPredict(timeISO) {
+            const start = matchTime(timeISO);
+            const nowTime = now();
+            const fiveMinutes = 5 * 60 * 1000;
+            return (start - nowTime) > fiveMinutes;
+        }
+
+        function getMatchStatus(m) {
+            const start = matchTime(m.timeISO);
+            const end = start + MATCH_DURATION;
+            const cur = now();
+            if (cur < start) {
+                const diff = start - cur;
+                const h = Math.floor(diff / 3600000);
+                const min = Math.floor((diff % 3600000) / 60000);
+                const s = Math.floor((diff % 60000) / 1000);
+                const fiveMin = 5 * 60 * 1000;
+                const remainingText = diff < fiveMin ? '⏳ تنطلق خلال أقل من 5 دقائق' : `⏱️ ${h}h ${min}m ${s}s`;
+                return { live: false, finished: false, text: remainingText };
+            } else if (cur <= end) {
+                return { live: true, finished: false, text: "🔴 تُلعب الآن" };
+            }
+            return { live: false, finished: true, text: "✅ انتهت" };
+        }
+
+        function upcomingMatches(arr) { return arr.filter(m => (matchTime(m.timeISO) + MATCH_DURATION) > now()); }
+
+        function isMatchTodayOrTomorrow(timeISO) {
+            return isTodaySaudi(timeISO) || isTomorrowSaudi(timeISO);
+        }
+
+        function isMatchToday(timeISO) { return isTodaySaudi(timeISO); }
+
+        function getDay(t) { return getSaudiDay(t); }
+
+        function getDateFmt(t) { return formatSaudiDate(t); }
+
+        function getTimeFromISO(t) { return formatSaudiTime(t); }
+
+        function getDateTimeDisplay(t) { return formatSaudiDateTime(t); }
+
+        function formatDate(isoString) {
+            if (!isoString) return 'تاريخ غير معروف';
+            const d = toSaudiTime(isoString);
+            return `${d.getDate()} ${['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'][d.getMonth()]} ${d.getFullYear()}، ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
+        }
+
+        // ============================================================
+        //  الترجمة والأعلام (مع إصلاح ترجمة الأرجنتين والبوسنة)
+        // ============================================================
+        const nameMapping = new Map([
+            ["مکزیک", "المكسيك"],
+            ["Mexico", "المكسيك"],
+            ["مكسيك", "المكسيك"],
+            ["آفریقای جنوبی", "جنوب أفريقيا"],
+            ["South Africa", "جنوب أفريقيا"],
+            ["افریقای جنوبی", "جنوب أفريقيا"],
+            ["آرژانتین", "الأرجنتين"],
+            ["Argentina", "الأرجنتين"],
+            ["ارژانتین", "الأرجنتين"],
+            ["الجزایر", "الجزائر"],
+            ["Algeria", "الجزائر"],
+            ["الجزائر", "الجزائر"],
+            ["اتریش", "النمسا"],
+            ["Austria", "النمسا"],
+            ["اتریش", "النمسا"],
+            ["اردن", "الأردن"],
+            ["Jordan", "الأردن"],
+            ["اردن", "الأردن"],
+            ["پرتغال", "البرتغال"],
+            ["پرتقال", "البرتغال"],
+            ["Portugal", "البرتغال"],
+            ["پرتغال", "البرتغال"],
+            ["کنگو دمکراتیک", "الكونغو الديمقراطية"],
+            ["جمهوری کنگو", "الكونغو الديمقراطية"],
+            ["DR Congo", "الكونغو الديمقراطية"],
+            ["کنگو", "الكونغو الديمقراطية"],
+            ["کانگو", "الكونغو الديمقراطية"],
+            ["دمکراتیک کنگو", "الكونغو الديمقراطية"],
+            ["کره جنوبی", "كوريا الجنوبية"],
+            ["South Korea", "كوريا الجنوبية"],
+            ["کره جنوبي", "كوريا الجنوبية"],
+            ["جمهوری چک", "التشيك"],
+            ["Czech Republic", "التشيك"],
+            ["چک", "التشيك"],
+            ["کانادا", "كندا"],
+            ["Canada", "كندا"],
+            ["بوسنی و هرزگوین", "البوسنة والهرسك"],
+            ["Bosnia and Herzegovina", "البوسنة والهرسك"],
+            ["بوسنی", "البوسنة والهرسك"],
+            ["بوسنة", "البوسنة والهرسك"],
+            ["آمریکا", "أمريكا"],
+            ["United States", "أمريكا"],
+            ["امریکا", "أمريكا"],
+            ["US", "أمريكا"],
+            ["عراق", "العراق"],
+            ["Iraq", "العراق"],
+            ["العراق", "العراق"],
+            ["سوئیس", "سويسرا"],
+            ["Switzerland", "سويسرا"],
+            ["سویس", "سويسرا"],
+            ["قطر", "قطر"],
+            ["Qatar", "قطر"],
+            ["برزیل", "البرازيل"],
+            ["Brazil", "البرازيل"],
+            ["برزیل", "البرازيل"],
+            ["مراکش", "المغرب"],
+            ["Morocco", "المغرب"],
+            ["مراكش", "المغرب"],
+            ["هائیتی", "هايتي"],
+            ["Haiti", "هايتي"],
+            ["هائیتی", "هايتي"],
+            ["اسکاتلند", "إسكتلندا"],
+            ["Scotland", "إسكتلندا"],
+            ["اسكاتلند", "إسكتلندا"],
+            ["استرالیا", "أستراليا"],
+            ["Australia", "أستراليا"],
+            ["استراليا", "أستراليا"],
+            ["ترکیه", "تركيا"],
+            ["Turkey", "تركيا"],
+            ["ترکیه", "تركيا"],
+            ["آلمان", "ألمانيا"],
+            ["Germany", "ألمانيا"],
+            ["المان", "ألمانيا"],
+            ["کوراساو", "كوراساو"],
+            ["Curaçao", "كوراساو"],
+            ["کوراسائو", "كوراساو"],
+            ["کوراساو", "كوراساو"],
+            ["ژاپن", "اليابان"],
+            ["Japan", "اليابان"],
+            ["ژاپن", "اليابان"],
+            ["هلند", "هولندا"],
+            ["Netherlands", "هولندا"],
+            ["هولندا", "هولندا"],
+            ["اکوادور", "الإكوادور"],
+            ["Ecuador", "الإكوادور"],
+            ["اكوادور", "الإكوادور"],
+            ["ساحل عاج", "ساحل العاج"],
+            ["Ivory Coast", "ساحل العاج"],
+            ["ساحل عاج", "ساحل العاج"],
+            ["سوئد", "السويد"],
+            ["Sweden", "السويد"],
+            ["سويد", "السويد"],
+            ["تونس", "تونس"],
+            ["Tunisia", "تونس"],
+            ["اسپانیا", "إسبانيا"],
+            ["Spain", "إسبانيا"],
+            ["اسبانيا", "إسبانيا"],
+            ["کیپ ورد", "الرأس الأخضر"],
+            ["Cape Verde", "الرأس الأخضر"],
+            ["کیپ ورد", "الرأس الأخضر"],
+            ["مصر", "مصر"],
+            ["Egypt", "مصر"],
+            ["بلژیک", "بلجيكا"],
+            ["Belgium", "بلجيكا"],
+            ["بلژیک", "بلجيكا"],
+            ["عربستان سعودی", "السعودية"],
+            ["سعودی", "السعودية"],
+            ["Saudi Arabia", "السعودية"],
+            ["السعودية", "السعودية"],
+            ["اروگوئه", "أوروغواي"],
+            ["اروگویه", "أوروغواي"],
+            ["Uruguay", "أوروغواي"],
+            ["اروگوئه", "أوروغواي"],
+            ["ایران", "إيران"],
+            ["Iran", "إيران"],
+            ["نیوزیلند", "نيوزيلندا"],
+            ["New Zealand", "نيوزيلندا"],
+            ["نیوزیلند", "نيوزيلندا"],
+            ["سنگال", "السنغال"],
+            ["Senegal", "السنغال"],
+            ["سنگال", "السنغال"],
+            ["فرانسه", "فرنسا"],
+            ["France", "فرنسا"],
+            ["فرانسه", "فرنسا"],
+            ["نروژ", "النرويج"],
+            ["Norway", "النرويج"],
+            ["نروژ", "النرويج"],
+            ["انگلستان", "إنجلترا"],
+            ["England", "إنجلترا"],
+            ["انگلستان", "إنجلترا"],
+            ["کرواسی", "كرواتيا"],
+            ["Croatia", "كرواتيا"],
+            ["کرواسی", "كرواتيا"],
+            ["پاناما", "بنما"],
+            ["Panama", "بنما"],
+            ["پاناما", "بنما"],
+            ["کلمبیا", "كولومبيا"],
+            ["Colombia", "كولومبيا"],
+            ["کلمبیا", "كولومبيا"],
+            ["ازبکستان", "أوزبكستان"],
+            ["Uzbekistan", "أوزبكستان"],
+            ["ازبکستان", "أوزبكستان"],
+            ["غنا", "غانا"],
+            ["Ghana", "غانا"],
+            ["پاراگوئه", "باراغواي"],
+            ["Paraguay", "باراغواي"],
+            ["پاراگوئه", "باراغواي"],
+            ["کرواتیا", "كرواتيا"],
+            ["کرواسی", "كرواتيا"],
+            ["غانا", "غانا"],
+            ["گینه", "غينيا"],
+            ["بنما", "بنما"],
+            ["پاناما", "بنما"],
+            ["کلمبیا", "كولومبيا"],
+            ["کلمبیا", "كولومبيا"],
+            ["ازبکستان", "أوزبكستان"],
+            ["ازبکستان", "أوزبكستان"],
+            ["دموکراتیک کنگو", "الكونغو الديمقراطية"],
+            ["جمهوری کنگو", "الكونغو الديمقراطية"],
+            ["کنگو دمکراتیک", "الكونغو الديمقراطية"],
+            ["کره جنوبی", "كوريا الجنوبية"],
+            ["کره", "كوريا الجنوبية"],
+            ["چک", "التشيك"],
+            ["تشیک", "التشيك"],
+            ["بوسنی", "البوسنة والهرسك"],
+            ["بوسني", "البوسنة والهرسك"],
+            ["هرزگوین", "البوسنة والهرسك"],
+            ["بوسنة", "البوسنة والهرسك"],
+            ["آمریکا", "أمريكا"],
+            ["امریکا", "أمريكا"],
+            ["عراق", "العراق"],
+            ["Iraq", "العراق"],
+            ["سوئیس", "سويسرا"],
+            ["سویس", "سويسرا"],
+            ["برزیل", "البرازيل"],
+            ["مراکش", "المغرب"],
+            ["مغرب", "المغرب"],
+            ["هایتی", "هايتي"],
+            ["هائیتی", "هايتي"],
+            ["اسکاتلند", "إسكتلندا"],
+            ["اسكاتلند", "إسكتلندا"],
+            ["استرالیا", "أستراليا"],
+            ["استراليا", "أستراليا"],
+            ["ترکیه", "تركيا"],
+            ["ترکیه", "تركيا"],
+            ["آلمان", "ألمانيا"],
+            ["کوراساو", "كوراساو"],
+            ["کوراسائو", "كوراساو"],
+            ["ژاپن", "اليابان"],
+            ["هلند", "هولندا"],
+            ["اکوادور", "الإكوادور"],
+            ["اكوادور", "الإكوادور"],
+            ["ساحل عاج", "ساحل العاج"],
+            ["سوئد", "السويد"],
+            ["تونس", "تونس"],
+            ["اسپانیا", "إسبانيا"],
+            ["اسبانيا", "إسبانيا"],
+            ["کیپ ورد", "الرأس الأخضر"],
+            ["مصر", "مصر"],
+            ["بلژیک", "بلجيكا"],
+            ["عربستان سعودی", "السعودية"],
+            ["سعودی", "السعودية"],
+            ["اروگوئه", "أوروغواي"],
+            ["اروگویه", "أوروغواي"],
+            ["ایران", "إيران"],
+            ["نیوزیلند", "نيوزيلندا"],
+            ["سنگال", "السنغال"],
+            ["فرانسه", "فرنسا"],
+            ["نروژ", "النرويج"],
+            ["انگلستان", "إنجلترا"],
+            ["انگلیس", "إنجلترا"],
+            ["پرتغال", "البرتغال"],
+            ["قطر", "قطر"],
+            ["کرواسی", "كرواتيا"],
+            ["گینه", "غينيا"],
+            ["مکزیک", "المكسيك"],
+            ["جنوب آفریقا", "جنوب أفريقيا"],
+            ["آفریقای جنوبی", "جنوب أفريقيا"],
+            ["الجزایر", "الجزائر"],
+            ["النمسا", "النمسا"],
+            ["الأردن", "الأردن"],
+            ["البرتغال", "البرتغال"],
+            ["الكونغو", "الكونغو الديمقراطية"],
+            ["كوريا", "كوريا الجنوبية"],
+            ["التشيك", "التشيك"],
+            ["كندا", "كندا"],
+            ["البوسنة", "البوسنة والهرسك"],
+            ["البوسنة والهرسك", "البوسنة والهرسك"],
+            ["الهرسك", "البوسنة والهرسك"],
+            ["أمريكا", "أمريكا"],
+            ["العراق", "العراق"],
+            ["سويسرا", "سويسرا"],
+            ["البرازيل", "البرازيل"],
+            ["المغرب", "المغرب"],
+            ["هايتي", "هايتي"],
+            ["إسكتلندا", "إسكتلندا"],
+            ["أستراليا", "أستراليا"],
+            ["تركيا", "تركيا"],
+            ["ألمانيا", "ألمانيا"],
+            ["كوراساو", "كوراساو"],
+            ["اليابان", "اليابان"],
+            ["هولندا", "هولندا"],
+            ["الإكوادور", "الإكوادور"],
+            ["ساحل العاج", "ساحل العاج"],
+            ["السويد", "السويد"],
+            ["تونس", "تونس"],
+            ["إسبانيا", "إسبانيا"],
+            ["الرأس الأخضر", "الرأس الأخضر"],
+            ["مصر", "مصر"],
+            ["بلجيكا", "بلجيكا"],
+            ["السعودية", "السعودية"],
+            ["أوروغواي", "أوروغواي"],
+            ["إيران", "إيران"],
+            ["نيوزيلندا", "نيوزيلندا"],
+            ["السنغال", "السنغال"],
+            ["فرنسا", "فرنسا"],
+            ["النرويج", "النرويج"],
+            ["إنجلترا", "إنجلترا"],
+            ["كرواتيا", "كرواتيا"],
+            ["بنما", "بنما"],
+            ["كولومبيا", "كولومبيا"],
+            ["أوزبكستان", "أوزبكستان"],
+            ["غانا", "غانا"],
+            ["باراغواي", "باراغواي"],
+            ["جمهورية الكونغو الديمقراطية", "الكونغو الديمقراطية"],
+            ["جمهورية الكونغو", "الكونغو الديمقراطية"],
+            ["الكونغو الديمقراطية", "الكونغو الديمقراطية"],
+            ["الرأس الأخضر", "الرأس الأخضر"],
+            ["باراجواي", "باراغواي"],
+            ["باراغواي", "باراغواي"],
+            ["السنغال", "السنغال"],
+            ["جمهورية الكونغو الديمقراطية", "الكونغو الديمقراطية"],
+            ["الأرجنتين", "الأرجنتين"]
+        ]);
+
+        const groupLetters = {
+            'A': 'أ',
+            'B': 'ب',
+            'C': 'ج',
+            'D': 'د',
+            'E': 'هـ',
+            'F': 'و',
+            'G': 'ز',
+            'H': 'ح',
+            'I': 'ط',
+            'J': 'ي',
+            'K': 'ك',
+            'L': 'ل'
+        };
+
+        function normalizeName(str) { if (!str) return "";
+            str = str.normalize("NFD").replace(/[\u064B-\u065F]/g, "");
+            str = str.replace(/[ى]/g, "ا").replace(/[أإآ]/g, "ا").replace(/ة/g, "ه").replace(/[ک]/g, "ك").replace(/[ی]/g, "ي")
+                .replace(/[ي]/g, "ي").replace(/[ئ]/g, "ي").replace(/[ؤ]/g, "و").replace(/[إ]/g, "ا").replace(/[آ]/g, "ا");
+            return str.trim().replace(/\s+/g, ' ');
+        }
+
+        function translateToArabic(raw) {
+            if (!raw) return "";
+            let trimmed = raw.trim();
+            if (nameMapping.has(trimmed)) return nameMapping.get(trimmed);
+            let normalized = normalizeName(trimmed);
+            for (let [key, value] of nameMapping) {
+                if (normalizeName(key) === normalized) return value;
+            }
+            let lower = trimmed.toLowerCase();
+            for (let [key, value] of nameMapping) {
+                if (key.toLowerCase() === lower) return value;
+            }
+            for (let [key, value] of nameMapping) {
+                if (normalized.includes(normalizeName(key)) || normalizeName(key).includes(normalized)) {
+                    return value;
+                }
+            }
+            console.warn(`⚠️ لم يتم العثور على ترجمة لـ: "${raw}"`);
+            return trimmed;
+        }
+
+        function translateBracketTeamName(name) {
+            if (!name) return name;
+            let match = name.match(/^Winner\s+Group\s+([A-L])$/i);
+            if (match) {
+                let groupLetter = match[1].toUpperCase();
+                let arabicLetter = groupLetters[groupLetter] || groupLetter;
+                return `متصدر المجموعة (${arabicLetter})`;
+            }
+            match = name.match(/^Runner-up\s+Group\s+([A-L])$/i);
+            if (match) {
+                let groupLetter = match[1].toUpperCase();
+                let arabicLetter = groupLetters[groupLetter] || groupLetter;
+                return `وصيف المجموعة (${arabicLetter})`;
+            }
+            match = name.match(/^3rd\s+Group\s+([A-L\/]+)$/i);
+            if (match) {
+                let groups = match[1].toUpperCase().split('/');
+                let arabicGroups = groups.map(g => groupLetters[g] || g).join('/');
+                return `ثالث المجموعة (${arabicGroups})`;
+            }
+            match = name.match(/^Group\s+([A-L])$/i);
+            if (match) {
+                let groupLetter = match[1].toUpperCase();
+                let arabicLetter = groupLetters[groupLetter] || groupLetter;
+                return `المجموعة (${arabicLetter})`;
+            }
+            return translateToArabic(name);
+        }
+
+        function getFlag(name) {
+            const map = {
+                "المكسيك": "🇲🇽",
+                "جنوب أفريقيا": "🇿🇦",
+                "الأرجنتين": "🇦🇷",
+                "الجزائر": "🇩🇿",
+                "النمسا": "🇦🇹",
+                "الأردن": "🇯🇴",
+                "البرتغال": "🇵🇹",
+                "الكونغو الديمقراطية": "🇨🇩",
+                "كوريا الجنوبية": "🇰🇷",
+                "التشيك": "🇨🇿",
+                "كندا": "🇨🇦",
+                "البوسنة والهرسك": "🇧🇦",
+                "أمريكا": "🇺🇸",
+                "العراق": "🇮🇶",
+                "سويسرا": "🇨🇭",
+                "قطر": "🇶🇦",
+                "البرازيل": "🇧🇷",
+                "المغرب": "🇲🇦",
+                "هايتي": "🇭🇹",
+                "إسكتلندا": "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
+                "أستراليا": "🇦🇺",
+                "تركيا": "🇹🇷",
+                "ألمانيا": "🇩🇪",
+                "كوراساو": "🇨🇼",
+                "اليابان": "🇯🇵",
+                "هولندا": "🇳🇱",
+                "الإكوادور": "🇪🇨",
+                "ساحل العاج": "🇨🇮",
+                "السويد": "🇸🇪",
+                "تونس": "🇹🇳",
+                "إسبانيا": "🇪🇸",
+                "الرأس الأخضر": "🇨🇻",
+                "مصر": "🇪🇬",
+                "بلجيكا": "🇧🇪",
+                "السعودية": "🇸🇦",
+                "أوروغواي": "🇺🇾",
+                "إيران": "🇮🇷",
+                "نيوزيلندا": "🇳🇿",
+                "السنغال": "🇸🇳",
+                "فرنسا": "🇫🇷",
+                "النرويج": "🇳🇴",
+                "إنجلترا": "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
+                "كرواتيا": "🇭🇷",
+                "بنما": "🇵🇦",
+                "كولومبيا": "🇨🇴",
+                "أوزبكستان": "🇺🇿",
+                "غانا": "🇬🇭",
+                "باراغواي": "🇵🇾"
             };
-            
-            // تحديث النصوص
-            for (const [key, element] of Object.entries(elements)) {
-                if (element && t[key]) {
-                    if (key === 'achievementText' || key === 'project2Desc1') {
-                        element.innerHTML = t[key];
-                    } else {
-                        element.textContent = t[key];
-                    }
-                }
-            }
-            
-            // تحديث العبارات الرئيسية
-            const phraseItems = document.querySelectorAll('.phrase-item');
-            if (phraseItems.length === 7) {
-                phraseItems[0].textContent = t.phrase1;
-                phraseItems[1].textContent = t.phrase2;
-                phraseItems[2].textContent = t.phrase3;
-                phraseItems[3].textContent = t.phrase4;
-                phraseItems[4].textContent = t.phrase5;
-                phraseItems[5].textContent = t.phrase6;
-                phraseItems[6].textContent = t.phrase7;
-            }
-            
-            // تحديث اتجاه النص
-            document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-            document.documentElement.lang = lang;
+            return map[name] || "🏁";
         }
-        
-        // ========== INITIALIZE ON LOAD ==========
-        document.addEventListener('DOMContentLoaded', function() {
-            // تحميل اللغة الافتراضية
-            loadLanguage(currentLang);
-            updateThemeIcon();
-            
-            // ========== FIXED HEADER SCROLL EFFECT ==========
-            let lastScrollTop = 0;
-            const header = document.querySelector('.main-header');
-            
-            window.addEventListener('scroll', function() {
-                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                
-                if (scrollTop > lastScrollTop && scrollTop > 100) {
-                    // التمرير لأسفل - إخفاء الهيدر
-                    header.classList.add('hidden');
-                } else {
-                    // التمرير لأعلى - إظهار الهيدر
-                    header.classList.remove('hidden');
-                }
-                
-                lastScrollTop = scrollTop;
-            });
-            
-            // ========== NAVIGATION BETWEEN SECTIONS ==========
-            document.querySelectorAll(".nav-item").forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    
-                    // إزالة النشط من جميع الروابط
-                    document.querySelectorAll(".nav-item").forEach(n => n.classList.remove("active"));
-                    
-                    // إضافة النشط للرابط المحدد
-                    link.classList.add("active");
-                    
-                    // إخفاء جميع الأقسام
-                    document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
-                    
-                    // إظهار القسم المحدد
-                    const targetSection = link.getAttribute('data-section');
-                    const sectionElement = document.getElementById(targetSection);
-                    if (sectionElement) {
-                        sectionElement.classList.add("active");
-                    }
-                    
-                    // التمرير السلس إلى الأعلى
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // ============================================================
+        //  بيانات المباريات الثابتة + دور الـ 32 (16 مباراة فقط)
+        // ============================================================
+        const rawMatches = [
+            // الجولات الثلاث الأولى
+            { id: 1, team1: "المكسيك", team2: "جنوب أفريقيا", time: "2026-06-11T22:00:00+03:00", round: "first",
+            roundLabel: "الجولة الأولى" },
+            { id: 2, team1: "الأرجنتين", team2: "الجزائر", time: "2026-06-11T04:00:00+03:00", round: "first",
+            roundLabel: "الجولة الأولى" },
+            { id: 3, team1: "النمسا", team2: "الأردن", time: "2026-06-11T07:00:00+03:00", round: "first",
+            roundLabel: "الجولة الأولى" },
+            { id: 4, team1: "البرتغال", team2: "الكونغو الديمقراطية", time: "2026-06-11T20:00:00+03:00", round: "first",
+            roundLabel: "الجولة الأولى" },
+            { id: 5, team1: "كوريا الجنوبية", team2: "التشيك", time: "2026-06-12T05:00:00+03:00", round: "first",
+            roundLabel: "الجولة الأولى" },
+            { id: 6, team1: "كندا", team2: "البوسنة والهرسك", time: "2026-06-12T22:00:00+03:00", round: "first",
+            roundLabel: "الجولة الأولى" },
+            { id: 7, team1: "أمريكا", team2: "العراق", time: "2026-06-13T04:00:00+03:00", round: "first",
+            roundLabel: "الجولة الأولى" },
+            { id: 8, team1: "سويسرا", team2: "قطر", time: "2026-06-13T22:00:00+03:00", round: "first",
+            roundLabel: "الجولة الأولى" },
+            { id: 9, team1: "البرازيل", team2: "المغرب", time: "2026-06-14T01:00:00+03:00", round: "first",
+            roundLabel: "الجولة الأولى" },
+            { id: 10, team1: "هايتي", team2: "إسكتلندا", time: "2026-06-14T04:00:00+03:00", round: "first",
+            roundLabel: "الجولة الأولى" },
+            { id: 11, team1: "أستراليا", team2: "تركيا", time: "2026-06-14T07:00:00+03:00", round: "first",
+            roundLabel: "الجولة الأولى" },
+            { id: 12, team1: "ألمانيا", team2: "كوراساو", time: "2026-06-14T20:00:00+03:00", round: "first",
+            roundLabel: "الجولة الأولى" },
+            { id: 13, team1: "اليابان", team2: "هولندا", time: "2026-06-14T23:00:00+03:00", round: "first",
+            roundLabel: "الجولة الأولى" },
+            { id: 14, team1: "الإكوادور", team2: "ساحل العاج", time: "2026-06-15T02:00:00+03:00", round: "first",
+            roundLabel: "الجولة الأولى" },
+            { id: 15, team1: "السويد", team2: "تونس", time: "2026-06-15T05:00:00+03:00", round: "first",
+            roundLabel: "الجولة الأولى" },
+            { id: 16, team1: "إسبانيا", team2: "الرأس الأخضر", time: "2026-06-15T19:00:00+03:00", round: "first",
+            roundLabel: "الجولة الأولى" },
+            { id: 17, team1: "مصر", team2: "بلجيكا", time: "2026-06-15T22:00:00+03:00", round: "first",
+            roundLabel: "الجولة الأولى" },
+            { id: 18, team1: "السعودية", team2: "أوروغواي", time: "2026-06-16T01:00:00+03:00", round: "first",
+            roundLabel: "الجولة الأولى" },
+            { id: 19, team1: "إيران", team2: "نيوزيلندا", time: "2026-06-16T04:00:00+03:00", round: "first",
+            roundLabel: "الجولة الأولى" },
+            { id: 20, team1: "السنغال", team2: "فرنسا", time: "2026-06-16T22:00:00+03:00", round: "first",
+            roundLabel: "الجولة الأولى" },
+            { id: 21, team1: "النرويج", team2: "العراق", time: "2026-06-17T01:00:00+03:00", round: "first",
+            roundLabel: "الجولة الأولى" },
+            { id: 22, team1: "الجزائر", team2: "الأرجنتين", time: "2026-06-17T04:00:00+03:00", round: "first",
+            roundLabel: "الجولة الأولى" },
+            { id: 23, team1: "الأردن", team2: "النمسا", time: "2026-06-17T07:00:00+03:00", round: "first",
+            roundLabel: "الجولة الأولى" },
+            { id: 24, team1: "البرتغال", team2: "كرواتيا", time: "2026-06-17T20:00:00+03:00", round: "first",
+            roundLabel: "الجولة الأولى" },
+            { id: 25, team1: "إنجلترا", team2: "كرواتيا", time: "2026-06-17T23:00:00+03:00", round: "first",
+            roundLabel: "الجولة الأولى" },
+            { id: 26, team1: "جنوب أفريقيا", team2: "التشيك", time: "2026-06-18T19:00:00+03:00", round: "second",
+            roundLabel: "الجولة الثانية" },
+            { id: 27, team1: "سويسرا", team2: "البوسنة والهرسك", time: "2026-06-18T22:00:00+03:00", round: "second",
+            roundLabel: "الجولة الثانية" },
+            { id: 28, team1: "قطر", team2: "كندا", time: "2026-06-19T01:00:00+03:00", round: "second",
+            roundLabel: "الجولة الثانية" },
+            { id: 29, team1: "المكسيك", team2: "كوريا الجنوبية", time: "2026-06-19T04:00:00+03:00", round: "second",
+            roundLabel: "الجولة الثانية" },
+            { id: 30, team1: "أستراليا", team2: "أمريكا", time: "2026-06-19T22:00:00+03:00", round: "second",
+            roundLabel: "الجولة الثانية" },
+            { id: 31, team1: "المغرب", team2: "إسكتلندا", time: "2026-06-20T01:00:00+03:00", round: "second",
+            roundLabel: "الجولة الثانية" },
+            { id: 32, team1: "البرازيل", team2: "هايتي", time: "2026-06-20T03:30:00+03:00", round: "second",
+            roundLabel: "الجولة الثانية" },
+            { id: 33, team1: "تركيا", team2: "باراغواي", time: "2026-06-20T06:00:00+03:00", round: "second",
+            roundLabel: "الجولة الثانية" },
+            { id: 34, team1: "السويد", team2: "هولندا", time: "2026-06-20T20:00:00+03:00", round: "second",
+            roundLabel: "الجولة الثانية" },
+            { id: 35, team1: "ساحل العاج", team2: "ألمانيا", time: "2026-06-20T23:00:00+03:00", round: "second",
+            roundLabel: "الجولة الثانية" },
+            { id: 36, team1: "الإكوادور", team2: "كوراساو", time: "2026-06-21T03:00:00+03:00", round: "second",
+            roundLabel: "الجولة الثانية" },
+            { id: 37, team1: "اليابان", team2: "تونس", time: "2026-06-21T07:00:00+03:00", round: "second",
+            roundLabel: "الجولة الثانية" },
+            { id: 38, team1: "إسبانيا", team2: "السعودية", time: "2026-06-21T19:00:00+03:00", round: "second",
+            roundLabel: "الجولة الثانية" },
+            { id: 39, team1: "بلجيكا", team2: "إيران", time: "2026-06-21T22:00:00+03:00", round: "second",
+            roundLabel: "الجولة الثانية" },
+            { id: 40, team1: "أوروغواي", team2: "الرأس الأخضر", time: "2026-06-22T01:00:00+03:00", round: "second",
+            roundLabel: "الجولة الثانية" },
+            { id: 41, team1: "مصر", team2: "نيوزيلندا", time: "2026-06-22T04:00:00+03:00", round: "second",
+            roundLabel: "الجولة الثانية" },
+            { id: 42, team1: "الأرجنتين", team2: "النمسا", time: "2026-06-22T20:00:00+03:00", round: "second",
+            roundLabel: "الجولة الثانية" },
+            { id: 43, team1: "العراق", team2: "فرنسا", time: "2026-06-23T00:00:00+03:00", round: "second",
+            roundLabel: "الجولة الثانية" },
+            { id: 44, team1: "النرويج", team2: "السنغال", time: "2026-06-23T03:00:00+03:00", round: "second",
+            roundLabel: "الجولة الثانية" },
+            { id: 45, team1: "الأردن", team2: "الجزائر", time: "2026-06-23T06:00:00+03:00", round: "second",
+            roundLabel: "الجولة الثانية" },
+            { id: 46, team1: "البرتغال", team2: "أوزبكستان", time: "2026-06-23T20:00:00+03:00", round: "second",
+            roundLabel: "الجولة الثانية" },
+            { id: 47, team1: "إنجلترا", team2: "غانا", time: "2026-06-23T23:00:00+03:00", round: "second",
+            roundLabel: "الجولة الثانية" },
+            { id: 48, team1: "بنما", team2: "كرواتيا", time: "2026-06-24T02:00:00+03:00", round: "second",
+            roundLabel: "الجولة الثانية" },
+            { id: 49, team1: "كولومبيا", team2: "الكونغو الديمقراطية", time: "2026-06-24T05:00:00+03:00", round: "second",
+            roundLabel: "الجولة الثانية" },
+            { id: 50, team1: "كندا", team2: "سويسرا", time: "2026-06-24T22:00:00+03:00", round: "third",
+            roundLabel: "الجولة الثالثة" },
+            { id: 51, team1: "قطر", team2: "البوسنة والهرسك", time: "2026-06-24T22:00:00+03:00", round: "third",
+            roundLabel: "الجولة الثالثة" },
+            { id: 52, team1: "المغرب", team2: "هايتي", time: "2026-06-25T01:00:00+03:00", round: "third",
+            roundLabel: "الجولة الثالثة" },
+            { id: 53, team1: "إسكتلندا", team2: "البرازيل", time: "2026-06-25T01:00:00+03:00", round: "third",
+            roundLabel: "الجولة الثالثة" },
+            { id: 54, team1: "جنوب أفريقيا", team2: "كوريا الجنوبية", time: "2026-06-25T04:00:00+03:00", round: "third",
+            roundLabel: "الجولة الثالثة" },
+            { id: 55, team1: "المكسيك", team2: "التشيك", time: "2026-06-25T04:00:00+03:00", round: "third",
+            roundLabel: "الجولة الثالثة" },
+            { id: 56, team1: "كوراساو", team2: "ساحل العاج", time: "2026-06-25T23:00:00+03:00", round: "third",
+            roundLabel: "الجولة الثالثة" },
+            { id: 57, team1: "ألمانيا", team2: "الإكوادور", time: "2026-06-25T23:00:00+03:00", round: "third",
+            roundLabel: "الجولة الثالثة" },
+            { id: 58, team1: "هولندا", team2: "تونس", time: "2026-06-26T02:00:00+03:00", round: "third",
+            roundLabel: "الجولة الثالثة" },
+            { id: 59, team1: "اليابان", team2: "السويد", time: "2026-06-26T02:00:00+03:00", round: "third",
+            roundLabel: "الجولة الثالثة" },
+            { id: 60, team1: "أمريكا", team2: "تركيا", time: "2026-06-26T05:00:00+03:00", round: "third",
+            roundLabel: "الجولة الثالثة" },
+            { id: 61, team1: "أستراليا", team2: "باراغواي", time: "2026-06-26T05:00:00+03:00", round: "third",
+            roundLabel: "الجولة الثالثة" },
+            { id: 62, team1: "فرنسا", team2: "النرويج", time: "2026-06-26T22:00:00+03:00", round: "third",
+            roundLabel: "الجولة الثالثة" },
+            { id: 63, team1: "السنغال", team2: "العراق", time: "2026-06-26T22:00:00+03:00", round: "third",
+            roundLabel: "الجولة الثالثة" },
+            { id: 64, team1: "السعودية", team2: "الرأس الأخضر", time: "2026-06-27T03:00:00+03:00", round: "third",
+            roundLabel: "الجولة الثالثة" },
+            { id: 65, team1: "إسبانيا", team2: "أوروغواي", time: "2026-06-27T03:00:00+03:00", round: "third",
+            roundLabel: "الجولة الثالثة" },
+            { id: 66, team1: "إيران", team2: "مصر", time: "2026-06-27T06:00:00+03:00", round: "third",
+            roundLabel: "الجولة الثالثة" },
+            { id: 67, team1: "نيوزيلندا", team2: "بلجيكا", time: "2026-06-27T06:00:00+03:00", round: "third",
+            roundLabel: "الجولة الثالثة" },
+            { id: 68, team1: "إنجلترا", team2: "بنما", time: "2026-06-28T00:00:00+03:00", round: "third",
+            roundLabel: "الجولة الثالثة" },
+            { id: 69, team1: "كرواتيا", team2: "غانا", time: "2026-06-28T00:00:00+03:00", round: "third",
+            roundLabel: "الجولة الثالثة" },
+            { id: 70, team1: "البرتغال", team2: "كولومبيا", time: "2026-06-28T02:30:00+03:00", round: "third",
+            roundLabel: "الجولة الثالثة" },
+            { id: 71, team1: "الكونغو الديمقراطية", team2: "أوزبكستان", time: "2026-06-28T02:30:00+03:00", round: "third",
+            roundLabel: "الجولة الثالثة" },
+            { id: 72, team1: "الجزائر", team2: "النمسا", time: "2026-06-28T05:00:00+03:00", round: "third",
+            roundLabel: "الجولة الثالثة" },
+            { id: 73, team1: "الأردن", team2: "الأرجنتين", time: "2026-06-28T05:00:00+03:00", round: "third",
+            roundLabel: "الجولة الثالثة" },
+
+            // ===== دور الـ 32 (16 مباراة فقط) =====
+            { id: 101, team1: "جنوب أفريقيا", team2: "كندا", time: "2026-06-28T22:00:00+03:00", round: "round32",
+                roundLabel: "دور الـ 32", stadium: "ملعب سوفي - إنجلوود" },
+            { id: 102, team1: "البرازيل", team2: "اليابان", time: "2026-06-29T20:00:00+03:00", round: "round32",
+                roundLabel: "دور الـ 32", stadium: "ملعب إن آر جي - هيوستن" },
+            { id: 103, team1: "ألمانيا", team2: "باراغواي", time: "2026-06-29T23:30:00+03:00", round: "round32",
+                roundLabel: "دور الـ 32", stadium: "ملعب جيليت - فوكسبورو" },
+            { id: 104, team1: "هولندا", team2: "المغرب", time: "2026-06-30T04:00:00+03:00", round: "round32",
+                roundLabel: "دور الـ 32", stadium: "ملعب بي بي في إيه - غوادالوبي" },
+            { id: 105, team1: "ساحل العاج", team2: "النرويج", time: "2026-06-30T20:00:00+03:00", round: "round32",
+                roundLabel: "دور الـ 32", stadium: "ملعب آيه تي آند تي - أرلينغتون" },
+            { id: 106, team1: "فرنسا", team2: "السويد", time: "2026-07-01T00:00:00+03:00", round: "round32",
+                roundLabel: "دور الـ 32", stadium: "ملعب متلايف - إيست رذرفورد" },
+            { id: 107, team1: "المكسيك", team2: "الإكوادور", time: "2026-07-01T04:00:00+03:00", round: "round32",
+                roundLabel: "دور الـ 32", stadium: "ملعب أزتيكا - مكسيكو سيتي" },
+            { id: 108, team1: "إنجلترا", team2: "الكونغو الديمقراطية", time: "2026-07-01T19:00:00+03:00", round: "round32",
+                roundLabel: "دور الـ 32", stadium: "ملعب مرسيدس بنز - أتلانتا" },
+            { id: 109, team1: "بلجيكا", team2: "السنغال", time: "2026-07-01T23:00:00+03:00", round: "round32",
+                roundLabel: "دور الـ 32", stadium: "ملعب لومن فيلد - سياتل" },
+            { id: 110, team1: "أمريكا", team2: "البوسنة والهرسك", time: "2026-07-02T03:00:00+03:00", round: "round32",
+                roundLabel: "دور الـ 32", stadium: "ملعب ليفاي - سانتا كلارا" },
+            { id: 111, team1: "إسبانيا", team2: "النمسا", time: "2026-07-02T22:00:00+03:00", round: "round32",
+                roundLabel: "دور الـ 32", stadium: "ملعب سوفي - إنجلوود" },
+            { id: 112, team1: "البرتغال", team2: "كرواتيا", time: "2026-07-03T02:00:00+03:00", round: "round32",
+                roundLabel: "دور الـ 32", stadium: "ملعب بي إم أو فيلد - تورونتو" },
+            { id: 113, team1: "سويسرا", team2: "الجزائر", time: "2026-07-03T06:00:00+03:00", round: "round32",
+                roundLabel: "دور الـ 32", stadium: "ملعب بي سي بليس - فانكوفر" },
+            { id: 114, team1: "أستراليا", team2: "مصر", time: "2026-07-03T21:00:00+03:00", round: "round32",
+                roundLabel: "دور الـ 32", stadium: "ملعب آيه تي آند تي - أرلينغتون" },
+            { id: 115, team1: "الأرجنتين", team2: "الرأس الأخضر", time: "2026-07-04T01:00:00+03:00", round: "round32",
+                roundLabel: "دور الـ 32", stadium: "ملعب هارد روك - ميامي غاردنز" },
+            { id: 116, team1: "كولومبيا", team2: "غانا", time: "2026-07-04T04:30:00+03:00", round: "round32",
+                roundLabel: "دور الـ 32", stadium: "ملعب أروهيد - كانساس سيتي" }
+        ];
+
+        const matchesData = rawMatches.map(m => ({
+            ...m,
+            timeISO: m.time,
+            roundLabel: m.roundLabel || (m.round === 'first' ? 'الجولة الأولى' : (m.round === 'second' ? 'الجولة الثانية' :
+                (m.round === 'third' ? 'الجولة الثالثة' : 'دور الـ 32')))
+        }));
+
+        const finalGroups = {
+            "A": ["المكسيك", "جنوب أفريقيا", "كوريا الجنوبية", "التشيك"],
+            "B": ["كندا", "البوسنة والهرسك", "قطر", "سويسرا"],
+            "C": ["البرازيل", "المغرب", "هايتي", "إسكتلندا"],
+            "D": ["أمريكا", "باراغواي", "أستراليا", "تركيا"],
+            "E": ["ألمانيا", "كوراساو", "ساحل العاج", "الإكوادور"],
+            "F": ["هولندا", "اليابان", "السويد", "تونس"],
+            "G": ["بلجيكا", "مصر", "إيران", "نيوزيلندا"],
+            "H": ["إسبانيا", "الرأس الأخضر", "السعودية", "أوروغواي"],
+            "I": ["فرنسا", "السنغال", "النرويج", "العراق"],
+            "J": ["الأرجنتين", "الجزائر", "النمسا", "الأردن"],
+            "K": ["البرتغال", "الكونغو الديمقراطية", "أوزبكستان", "كولومبيا"],
+            "L": ["إنجلترا", "كرواتيا", "غانا", "بنما"]
+        };
+
+        // ============================================================
+        //  دوال التوقعات المحلية
+        // ============================================================
+        function getLocalPredictions() { try { const data = localStorage.getItem('predictions'); return data ? JSON.parse(
+                    data) : {}; } catch (e) { return {}; } }
+
+        function saveLocalPrediction(userName, matchId, prediction) { try { const predictions = getLocalPredictions();
+                predictions[`${userName}_${matchId}`] = { userName, matchId, prediction, timestamp: new Date()
+                    .toISOString() };
+                localStorage.setItem('predictions', JSON.stringify(predictions)); return true; } catch (e) { return false; } }
+
+        function getUserPredictionFromLocal(userName, matchId) { if (!userName) return null; return getLocalPredictions()[
+                `${userName}_${matchId}`] || null; }
+
+        // ============================================================
+        //  دالة مساعدة للعثور على نتيجة المباراة مع دعم ضربات الترجيح
+        // ============================================================
+        function findMatchResult(team1, team2) {
+            let match = state.previousGamesData.find(m => (m.homeAr === team1 && m.awayAr === team2) || (m.homeAr === team2 &&
+                    m.awayAr === team1));
+            if (match) {
+                // استخدام الدوال الجديدة لتحديد الفائز
+                const winner = getMatchWinner(match);
+                const hasPen = hasPenaltyShootout(match);
+                const displayResult = getDisplayedResult(match);
+
+                return {
+                    homeScore: match.homeScore,
+                    awayScore: match.awayScore,
+                    homeAr: match.homeAr,
+                    awayAr: match.awayAr,
+                    hasPenalties: hasPen,
+                    penaltyHome: match.penaltyHome || null,
+                    penaltyAway: match.penaltyAway || null,
+                    winner: winner === "home" ? match.homeAr : (winner === "away" ? match.awayAr : null),
+                    loser: winner === "home" ? match.awayAr : (winner === "away" ? match.homeAr : null),
+                    displayResult: displayResult,
+                    winnerType: winner
+                };
+            }
+
+            // البحث في openfootball
+            if (state.openfootballMatches && state.openfootballMatches.length) {
+                let m = state.openfootballMatches.find(m => {
+                    const h = translateToArabic(m.team1 || '');
+                    const a = translateToArabic(m.team2 || '');
+                    return (h === team1 && a === team2) || (h === team2 && a === team1);
                 });
+                if (m) {
+                    const homeScore = m.home_score || m.goals1?.length || 0;
+                    const awayScore = m.away_score || m.goals2?.length || 0;
+                    const homeAr = translateToArabic(m.team1 || '');
+                    const awayAr = translateToArabic(m.team2 || '');
+                    // التحقق من وجود ضربات ترجيح
+                    const key1 = `${homeAr}_${awayAr}`;
+                    const key2 = `${m.team1}_${m.team2}`;
+                    let penaltyHome = null,
+                        penaltyAway = null;
+                    if (state.penaltyMatches[key1]) {
+                        penaltyHome = state.penaltyMatches[key1].home;
+                        penaltyAway = state.penaltyMatches[key1].away;
+                    } else if (state.penaltyMatches[key2]) {
+                        penaltyHome = state.penaltyMatches[key2].home;
+                        penaltyAway = state.penaltyMatches[key2].away;
+                    }
+
+                    // إنشاء كائن مؤقت لاستخدام دوال matchUtils
+                    const tempGame = {
+                        home_score: homeScore,
+                        away_score: awayScore,
+                        home_penalty_score: penaltyHome,
+                        away_penalty_score: penaltyAway,
+                        home_team: homeAr,
+                        away_team: awayAr,
+                        homeAr: homeAr,
+                        awayAr: awayAr,
+                        team1: m.team1,
+                        team2: m.team2
+                    };
+
+                    const winner = getMatchWinner(tempGame);
+                    const hasPen = hasPenaltyShootout(tempGame);
+                    const displayResult = getDisplayedResult(tempGame);
+
+                    return {
+                        homeScore,
+                        awayScore,
+                        homeAr,
+                        awayAr,
+                        hasPenalties: hasPen,
+                        penaltyHome: penaltyHome,
+                        penaltyAway: penaltyAway,
+                        winner: winner === "home" ? homeAr : (winner === "away" ? awayAr : null),
+                        loser: winner === "home" ? awayAr : (winner === "away" ? homeAr : null),
+                        displayResult: displayResult,
+                        winnerType: winner
+                    };
+                }
+            }
+
+            // البحث في allGames
+            if (state.allGames && state.allGames.length) {
+                let g = state.allGames.find(m => {
+                    const home = translateToArabic(m.home_team_name_fa || m.home_team_name_en || '');
+                    const away = translateToArabic(m.away_team_name_fa || m.away_team_name_en || '');
+                    return (home === team1 && away === team2) || (home === team2 && away === team1);
+                });
+                if (g && g.finished === "TRUE") {
+                    let homeScore = parseInt(g.home_score, 10);
+                    let awayScore = parseInt(g.away_score, 10);
+                    let homeAr = translateToArabic(g.home_team_name_fa || g.home_team_name_en || '');
+                    let awayAr = translateToArabic(g.away_team_name_fa || g.away_team_name_en || '');
+                    let penaltyHome = g.penalty_home ? parseInt(g.penalty_home) : null;
+                    let penaltyAway = g.penalty_away ? parseInt(g.penalty_away) : null;
+
+                    const tempGame = {
+                        home_score: homeScore,
+                        away_score: awayScore,
+                        home_penalty_score: penaltyHome,
+                        away_penalty_score: penaltyAway,
+                        home_team: homeAr,
+                        away_team: awayAr,
+                        homeAr: homeAr,
+                        awayAr: awayAr
+                    };
+
+                    const winner = getMatchWinner(tempGame);
+                    const hasPen = hasPenaltyShootout(tempGame);
+                    const displayResult = getDisplayedResult(tempGame);
+
+                    return {
+                        homeScore,
+                        awayScore,
+                        homeAr,
+                        awayAr,
+                        hasPenalties: hasPen,
+                        penaltyHome: penaltyHome,
+                        penaltyAway: penaltyAway,
+                        winner: winner === "home" ? homeAr : (winner === "away" ? awayAr : null),
+                        loser: winner === "home" ? awayAr : (winner === "away" ? homeAr : null),
+                        displayResult: displayResult,
+                        winnerType: winner
+                    };
+                }
+            }
+            return null;
+        }
+
+        // ============================================================
+        //  حفظ وتحديث التوقعات في Supabase
+        // ============================================================
+        async function savePrediction(userName, matchId, prediction) {
+            if (!supabaseClient) return { success: false, message: "Supabase غير متصل" };
+            const match = matchesData.find(m => `${m.timeISO}_${m.team1}_${m.team2}` === matchId);
+            if (match) {
+                if (!canPredict(match.timeISO)) {
+                    return { success: false,
+                        message: "⛔ لا يمكن التوقع الآن، المباراة على وشك البدء أو بدأت بالفعل (يُسمح حتى 5 دقائق قبل البداية)." };
+                }
+            } else {
+                return { success: false, message: "⛔ مباراة غير معروفة" };
+            }
+
+            async function isUserNameExists(userName) {
+                if (!supabaseClient || !userName) return false;
+                try {
+                    const { data, error } = await supabaseClient.from("predictions").select("user_name").eq("user_name",
+                        userName).limit(1);
+                    if (error) throw error;
+                    return data && data.length > 0;
+                } catch (e) { console.error("❌ التحقق من الاسم:", e); return false; }
+            }
+
+            const existing = await getUserPrediction(userName, matchId);
+
+            if (existing) {
+                try {
+                    const { error } = await supabaseClient
+                        .from("predictions")
+                        .update({ prediction: prediction, updated_at: new Date().toISOString() })
+                        .eq("id", existing.id);
+                    if (error) throw error;
+                    saveLocalPrediction(userName, matchId, prediction);
+                    addSubmittedMatch(matchId);
+                    localStorage.removeItem("predictions");
+                    await getAllPredictions();
+                    return { success: true, updated: true };
+                } catch (e) { return { success: false, message: e.message }; }
+            } else {
+                if (isMatchSubmitted(matchId)) {
+                    return { success: false, message: `⚠️ توقعت مسبقاً هذه المباراة`, duplicate: true };
+                }
+
+                const exists = await isUserNameExists(userName);
+                if (exists) {
+                    const storedUserName = localStorage.getItem('lastUserName') || '';
+                    if (storedUserName !== userName) {
+                        return { success: false,
+                            message: `⚠️ هذا الاسم "${userName}" مسجل لمستخدم آخر. الرجاء استخدام اسم مختلف أو تأكيد أنك أنت صاحب الاسم.` };
+                    }
+                }
+
+                try {
+                    const { error } = await supabaseClient.from("predictions").insert([{ user_name: userName,
+                        match_id: matchId, prediction }]);
+                    if (error) throw error;
+                    saveLocalPrediction(userName, matchId, prediction);
+                    addSubmittedMatch(matchId);
+                    localStorage.removeItem("predictions");
+                    await getAllPredictions();
+                    return { success: true, updated: false };
+                } catch (e) { return { success: false, message: e.message }; }
+            }
+        }
+
+        async function getUserPrediction(userName, matchId) {
+            if (!supabaseClient || !userName || !matchId) return null;
+            try {
+                const { data, error } = await supabaseClient
+                    .from("predictions")
+                    .select("*")
+                    .eq("user_name", userName)
+                    .eq("match_id", matchId)
+                    .order("created_at", { ascending: false })
+                    .limit(1);
+                if (error) throw error;
+                return data && data.length > 0 ? data[0] : null;
+            } catch (e) {
+                console.error("❌ جلب توقع المستخدم:", e);
+                return null;
+            }
+        }
+
+        // ============================================================
+        //  دوال تحليل الأهداف
+        // ============================================================
+        function parseScorersWithMinutes(scorerString) {
+            if (!scorerString || scorerString === "null") return [];
+            let cleaned = scorerString.trim();
+            if (cleaned.startsWith('{') && cleaned.endsWith('}')) cleaned = cleaned.slice(1, -1);
+            let parts = cleaned.split(',').map(s => s.trim());
+            let result = [];
+            for (let part of parts) {
+                part = part.replace(/^["“”]|["“”]$/g, '').trim();
+                let minuteMatch = part.match(/^(.+?)\s+(\d+['’]?)(?:\s*\(([^)]+)\))?$/);
+                if (minuteMatch) {
+                    let name = minuteMatch[1].trim();
+                    let minute = minuteMatch[2].trim();
+                    let type = minuteMatch[3] ? minuteMatch[3].trim() : '';
+                    result.push({ name, minute, type });
+                } else {
+                    result.push({ name: part, minute: '', type: '' });
+                }
+            }
+            return result;
+        }
+
+        // ============================================================
+        //  دوال عرض المباريات (مع دعم ضربات الترجيح وتمييز الفائز/الخاسر)
+        // ============================================================
+        function getGroundForMatch(team1, team2, timeISO) {
+            const directMatch = matchesData.find(m => (m.team1 === team1 && m.team2 === team2) || (m.team1 === team2 && m
+                .team2 === team1));
+            if (directMatch && directMatch.stadium) return directMatch.stadium;
+
+            if (!state.openfootballMatches || !state.openfootballMatches.length) return null;
+            const t1 = translateToArabic(team1);
+            const t2 = translateToArabic(team2);
+            let match = state.openfootballMatches.find(m => {
+                const h = translateToArabic(m.team1 || '');
+                const a = translateToArabic(m.team2 || '');
+                return (h === t1 && a === t2) || (h === t2 && a === t1);
             });
-            
-            // ========== PORTFOLIO FILTER ==========
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const portfolioItems = document.querySelectorAll('.portfolio-item');
-            
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    // إزالة النشط من جميع الأزرار
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    // إضافة النشط للزر المحدد
-                    this.classList.add('active');
-                    
-                    const filterValue = this.getAttribute('data-filter');
-                    
-                    portfolioItems.forEach(item => {
-                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                            item.style.display = 'block';
-                            setTimeout(() => {
-                                item.style.opacity = '1';
-                                item.style.transform = 'translateY(0)';
-                            }, 100);
+            if (match && match.ground) return match.ground;
+            if (timeISO) {
+                const dateStr = getDateFmt(timeISO);
+                match = state.openfootballMatches.find(m => {
+                    if (!m.date) return false;
+                    return m.date.includes(dateStr) || dateStr.includes(m.date);
+                });
+                if (match && match.ground) return match.ground;
+            }
+            return null;
+        }
+
+        function renderMatchCard(m, isUpcoming) {
+            const st = getMatchStatus(m);
+            const isLive = st.live;
+            const isFinished = st.finished;
+            const matchId = `${m.timeISO}_${m.team1}_${m.team2}`;
+            const savedUserName = localStorage.getItem('lastUserName') || '';
+            const submitted = isMatchSubmitted(matchId);
+            const canPredictNow = isUpcoming && !isLive && !isFinished && canPredict(m.timeISO);
+
+            const userHasPrediction = userPredictionsMap && userPredictionsMap[matchId] === true;
+
+            let scoreDisplay = '🆚',
+                scoreClass = 'upcoming',
+                matchClass = '';
+            let homeScore = 0,
+                awayScore = 0,
+                matchResult = null;
+            let hasPenalties = false;
+            let penaltyHome = null,
+                penaltyAway = null;
+            let penaltyDisplay = '';
+            let winner = null,
+                loser = null;
+            let homeClass = '',
+                awayClass = '';
+
+            if (isLive) { scoreDisplay = '🔴 LIVE';
+                scoreClass = 'live';
+                matchClass = 'live'; } else if (isFinished) {
+                const result = findMatchResult(m.team1, m.team2);
+                if (result) {
+                    homeScore = result.homeScore;
+                    awayScore = result.awayScore;
+                    hasPenalties = result.hasPenalties || false;
+                    penaltyHome = result.penaltyHome;
+                    penaltyAway = result.penaltyAway;
+                    winner = result.winner;
+                    loser = result.loser;
+                    if (winner) {
+                        if (winner === m.team1) {
+                            homeClass = 'winner-team';
+                            awayClass = 'loser-team';
                         } else {
-                            item.style.opacity = '0';
-                            item.style.transform = 'translateY(20px)';
-                            setTimeout(() => {
-                                item.style.display = 'none';
-                            }, 300);
+                            homeClass = 'loser-team';
+                            awayClass = 'winner-team';
                         }
-                    });
+                    }
+                    if (hasPenalties && penaltyHome !== null && penaltyAway !== null) {
+                        scoreDisplay = `${homeScore} - ${awayScore}`;
+                        scoreClass = 'penalties';
+                        matchClass = 'finished-match has-penalties';
+                        penaltyDisplay = `⚽ ضربات ترجيح: ${penaltyHome} - ${penaltyAway}`;
+                    } else {
+                        scoreDisplay = `${homeScore} - ${awayScore}`;
+                        scoreClass = 'finished';
+                        matchClass = 'finished-match';
+                    }
+                    matchResult = { homeScore, awayScore, hasPenalties, penaltyHome, penaltyAway, winner, loser };
+                } else { scoreDisplay = '✅';
+                    scoreClass = 'finished';
+                    matchClass = 'finished-match'; }
+            }
+
+            let predictBtnHtml = 'توقع الآن';
+            let predictDisabled = false;
+            let predictBtnClass = 'predict-btn';
+            let predictBtnExtra = '';
+
+            let editBtnHtml = 'تعديل';
+            let editDisabled = true;
+            let editBtnExtra = '';
+            let editBtnClass = 'edit-btn';
+
+            if (userHasPrediction) {
+                predictDisabled = true;
+                predictBtnHtml = '✅ تم التوقع';
+                predictBtnClass += ' submitted';
+                predictBtnExtra = 'disabled';
+
+                if (canPredictNow && isAuthorized) {
+                    editDisabled = false;
+                    editBtnExtra = `onclick="openEditPredictionModal('${matchId}','${m.team1}','${m.team2}','${m.timeISO}')"`;
+                    editBtnClass += ' visible';
+                } else {
+                    editDisabled = true;
+                    editBtnExtra = 'disabled';
+                    if (isFinished) {
+                        editBtnHtml = '⏳ انتهت';
+                    } else if (isLive) {
+                        editBtnHtml = '⛔ جارية';
+                    } else if (!canPredict(m.timeISO) && !isFinished && !isLive) {
+                        editBtnHtml = '⏳ انتهت المهلة';
+                    } else {
+                        editBtnHtml = '⏳ غير متاح';
+                    }
+                    if (isAuthorized) editBtnClass += ' visible';
+                }
+            } else if (submitted) {
+                predictDisabled = true;
+                predictBtnHtml = 'تم التوقع ✅';
+                predictBtnClass += ' submitted';
+                predictBtnExtra = 'disabled';
+
+                if (canPredictNow && isAuthorized) {
+                    editDisabled = false;
+                    editBtnExtra = `onclick="openEditPredictionModal('${matchId}','${m.team1}','${m.team2}','${m.timeISO}')"`;
+                    editBtnClass += ' visible';
+                } else {
+                    editDisabled = true;
+                    editBtnExtra = 'disabled';
+                    if (isFinished) {
+                        editBtnHtml = '⏳ انتهت';
+                    } else if (isLive) {
+                        editBtnHtml = '⛔ جارية';
+                    } else if (!canPredict(m.timeISO) && !isFinished && !isLive) {
+                        editBtnHtml = '⏳ انتهت المهلة';
+                    } else {
+                        editBtnHtml = '⏳ غير متاح';
+                    }
+                    if (isAuthorized) editBtnClass += ' visible';
+                }
+            } else if (!canPredictNow) {
+                predictDisabled = true;
+                if (isFinished) {
+                    predictBtnHtml = '📋 عرض التوقعات';
+                    predictBtnClass += ' view-btn';
+                    predictBtnExtra = 'onclick="openMatchPredictions(\'' + matchId + '\', \'' + m.team1 + '\', \'' + m
+                        .team2 + '\', ' + homeScore + ', ' + awayScore + ')"';
+                } else if (isLive) {
+                    predictBtnHtml = '⛔ جارية';
+                    predictBtnClass += ' view-btn';
+                    predictBtnExtra = 'disabled';
+                } else if (!canPredict(m.timeISO) && !isFinished && !isLive) {
+                    predictBtnHtml = '⏳ قريباً (أقل من 5 دقائق)';
+                    predictBtnClass += ' view-btn';
+                    predictBtnExtra = 'disabled';
+                } else {
+                    predictBtnHtml = '⏳ قريباً';
+                    predictBtnClass += ' view-btn';
+                    predictBtnExtra = 'disabled';
+                }
+            } else {
+                predictBtnExtra = `onclick="openNameModal('${matchId}','${m.team1}','${m.team2}','${m.timeISO}')"`;
+            }
+
+            const groupName = Object.keys(finalGroups).find(g => finalGroups[g].includes(m.team1)) || '';
+            const isToday = isMatchToday(m.timeISO);
+            const dayLabel = isToday ? '📌 اليوم' : (isMatchTodayOrTomorrow(m.timeISO) ? '📌 غداً' : '');
+            let ground = getGroundForMatch(m.team1, m.team2, m.timeISO);
+            if (!ground) {
+                const matchFromAPI = state.allGames.find(g => {
+                    const home = translateToArabic(g.home_team_name_fa || g.home_team_name_en || '');
+                    const away = translateToArabic(g.away_team_name_fa || g.away_team_name_en || '');
+                    return (home === m.team1 && away === m.team2) || (home === m.team2 && away === m.team1);
                 });
+                if (matchFromAPI && matchFromAPI.stadium_id) {
+                    ground = getStadiumName(matchFromAPI.stadium_id);
+                }
+            }
+            const onclickAttr = (isFinished && matchResult) ?
+                `onclick="openMatchPredictions('${matchId}', '${m.team1}', '${m.team2}', ${homeScore}, ${awayScore})"` :
+                '';
+
+            const showEdit = (userHasPrediction || submitted) && canPredictNow && isAuthorized;
+
+            return `
+            <div class="match-card ${matchClass}" ${onclickAttr}>
+              <div class="match-teams">
+                <div class="match-team ${homeClass}"><span class="flag">${getFlag(m.team1)}</span> ${m.team1}</div>
+                <div class="match-score ${scoreClass}">${scoreDisplay}</div>
+                <div class="match-team ${awayClass}"><span class="flag">${getFlag(m.team2)}</span> ${m.team2}</div>
+              </div>
+              ${penaltyDisplay ? `<div style="text-align:center;margin-top:4px;"><span class="penalty-detail">${penaltyDisplay}</span></div>` : ''}
+              <div class="match-meta">
+                <span class="tag">🏅 ${m.roundLabel}</span>
+                <span class="tag">${groupName ? `المجموعة ${groupName}` : ''}</span>
+                ${isUpcoming ? `<span class="timer ${isLive ? 'live' : ''}">${isLive ? '🔴 تُلعب الآن' : st.text}</span>` : `<span class="tag finished-tag">✅ انتهت - اضغط لعرض التوقعات</span>`}
+                ${hasPenalties ? `<span class="tag penalty-tag">⚽ ضربات ترجيح</span>` : ''}
+              </div>
+              <div class="match-meta" style="margin-top:4px;">
+                <span class="tag">${getDay(m.timeISO)}</span>
+                <span class="tag">${getDateTimeDisplay(m.timeISO)}</span>
+                ${dayLabel ? `<span class="tag" style="color:var(--gold-light);">${dayLabel}</span>` : ''}
+                ${ground ? `<span class="tag stadium-tag">🏟️ ${ground}</span>` : ''}
+              </div>
+              ${isUpcoming ? `
+                <div class="predict-btn-wrap">
+                  <div class="btn-group">
+                    <button class="${predictBtnClass}" ${predictBtnExtra} data-matchid="${matchId}">
+                      ${predictBtnHtml}
+                    </button>
+                    ${showEdit ? `<button class="${editBtnClass}" ${editBtnExtra} data-matchid="${matchId}">✏️ ${editBtnHtml}</button>` : (isAuthorized ? `<button class="${editBtnClass}" ${editBtnExtra} data-matchid="${matchId}" style="display:none;">✏️ ${editBtnHtml}</button>` : '')}
+                  </div>
+                  <button class="view-btn" onclick="openViewPredictionsModal('${matchId}','${m.team1}','${m.team2}')">
+                    📋 استعراض التوقعات
+                  </button>
+                  <button class="share-link-btn" onclick="copyMatchLink('${m.id}', '${m.team1}', '${m.team2}')">
+                    🔗 مشاركة
+                  </button>
+                </div>
+              ` : ''}
+            </div>
+          `;
+        }
+
+        // ============================================================
+        //  نافذة إدخال الاسم (الخطوة الأولى)
+        // ============================================================
+        let nameModalMatchId = '',
+            nameModalTeam1 = '',
+            nameModalTeam2 = '',
+            nameModalTimeISO = '';
+
+        function openNameModal(matchId, team1, team2, timeISO) {
+            if (isMatchFinished(timeISO)) { showCopyToast('⛔ هذه المباراة انتهت، لا يمكن التوقع.'); return; }
+            if (!canPredict(timeISO)) { showCopyToast(
+                    '⛔ لا يمكن التوقع الآن، المباراة على وشك البدء أو بدأت بالفعل (يُسمح حتى 5 دقائق قبل البداية).'); return; }
+
+            nameModalMatchId = matchId;
+            nameModalTeam1 = team1;
+            nameModalTeam2 = team2;
+            nameModalTimeISO = timeISO;
+            isNameVerified = false;
+
+            document.getElementById('nameInput').value = localStorage.getItem('lastUserName') || '';
+            document.getElementById('nameStatus').style.display = 'none';
+            document.getElementById('nameError').textContent = '';
+            document.getElementById('nameSubmitBtn').disabled = false;
+            document.getElementById('nameSubmitBtn').textContent = 'متابعة →';
+
+            document.getElementById('nameModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => document.getElementById('nameInput').focus(), 300);
+        }
+
+        function closeNameModal() {
+            document.getElementById('nameModal').classList.remove('active');
+            document.body.style.overflow = '';
+            isNameVerified = false;
+        }
+
+        document.getElementById('nameCloseBtn').addEventListener('click', closeNameModal);
+        document.getElementById('nameModal').addEventListener('click', function(e) { if (e.target === this) closeNameModal(); });
+
+        document.getElementById('nameSubmitBtn').addEventListener('click', async function() {
+            const name = document.getElementById('nameInput').value.trim();
+            const errorEl = document.getElementById('nameError');
+            const statusEl = document.getElementById('nameStatus');
+
+            if (!name) { errorEl.textContent = '⚠️ الرجاء إدخال اسمك';
+                return; }
+
+            if (!supabaseClient) {
+                errorEl.textContent = '❌ خطأ في الاتصال بقاعدة البيانات';
+                return;
+            }
+
+            this.disabled = true;
+            this.textContent = '⏳ جاري التحقق...';
+            errorEl.textContent = '';
+            statusEl.style.display = 'block';
+
+            try {
+                const { data, error } = await supabaseClient
+                    .from("predictions")
+                    .select("user_name")
+                    .eq("user_name", name)
+                    .limit(1);
+
+                if (error) throw error;
+
+                const isExisting = data && data.length > 0;
+
+                if (isExisting) {
+                    statusEl.className = 'user-status existing';
+                    statusEl.textContent = `👤 مرحباً بعودتك "${name}"! سيتم إضافة التوقع إلى حسابك.`;
+                    localStorage.setItem('lastUserName', name);
+                    currentUserName = name;
+                    isNameVerified = true;
+
+                    await loadUserPredictions(name);
+
+                    const existingPred = await getUserPrediction(name, nameModalMatchId);
+                    if (existingPred) {
+                        errorEl.textContent = `⚠️ لقد توقعت هذه المباراة مسبقاً: ${existingPred.prediction === 'DRAW' ? 'تعادل' : existingPred.prediction}`;
+                        this.disabled = false;
+                        this.textContent = 'متابعة →';
+                        renderUpcoming();
+                        return;
+                    }
+
+                    this.textContent = '✅ متابعة للتوقع';
+                    setTimeout(() => {
+                        closeNameModal();
+                        openPredictionModal(nameModalMatchId, nameModalTeam1, nameModalTeam2, nameModalTimeISO,
+                        name);
+                    }, 600);
+                } else {
+                    statusEl.className = 'user-status new';
+                    statusEl.textContent = `👤 مرحباً "${name}"! أنت لاعب جديد. سيتم تسجيل توقعاتك.`;
+                    localStorage.setItem('lastUserName', name);
+                    currentUserName = name;
+                    isNameVerified = true;
+                    userPredictionsMap = {};
+
+                    this.textContent = '✅ متابعة للتوقع';
+                    setTimeout(() => {
+                        closeNameModal();
+                        openPredictionModal(nameModalMatchId, nameModalTeam1, nameModalTeam2, nameModalTimeISO,
+                        name);
+                    }, 600);
+                }
+            } catch (e) {
+                console.error("❌ التحقق من الاسم:", e);
+                errorEl.textContent = '❌ حدث خطأ أثناء التحقق من الاسم';
+                this.disabled = false;
+                this.textContent = 'متابعة →';
+                statusEl.style.display = 'none';
+            }
+        });
+
+        document.getElementById('nameInput').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                document.getElementById('nameSubmitBtn').click();
+            }
+            if (e.key === 'Escape') {
+                closeNameModal();
+            }
+        });
+
+        async function loadUserPredictions(userName) {
+            if (!supabaseClient || !userName) return;
+            try {
+                const { data, error } = await supabaseClient
+                    .from("predictions")
+                    .select("match_id")
+                    .eq("user_name", userName);
+                if (error) throw error;
+                userPredictionsMap = {};
+                if (data && data.length) {
+                    data.forEach(p => {
+                        userPredictionsMap[p.match_id] = true;
+                    });
+                }
+                renderUpcoming();
+            } catch (e) {
+                console.error("❌ جلب توقعات المستخدم:", e);
+                userPredictionsMap = {};
+            }
+        }
+
+        // ============================================================
+        //  نافذة التوقع (الخطوة الثانية) - تم إزالة التعادل
+        // ============================================================
+        function openPredictionModal(matchId, team1, team2, timeISO, userName) {
+            if (isMatchFinished(timeISO)) { showCopyToast('⛔ هذه المباراة انتهت، لا يمكن التوقع.'); return; }
+            if (!canPredict(timeISO)) { showCopyToast(
+                    '⛔ لا يمكن التوقع الآن، المباراة على وشك البدء أو بدأت بالفعل (يُسمح حتى 5 دقائق قبل البداية).'); return; }
+
+            isEditing = false;
+            currentMatchId = matchId;
+            currentTeam1 = team1;
+            currentTeam2 = team2;
+            currentTimeISO = timeISO;
+            currentUserName = userName || localStorage.getItem('lastUserName') || '';
+
+            document.getElementById('modalTitle').textContent = '📝 توقع نتيجة المباراة';
+            document.getElementById('greetingName').textContent = currentUserName;
+            document.getElementById('modalUserGreeting').style.display = 'block';
+            document.getElementById('modalTeam1').textContent = team1;
+            document.getElementById('modalTeam2').textContent = team2;
+            document.getElementById('optTeam1').textContent = team1;
+            document.getElementById('optTeam2').textContent = team2;
+            document.getElementById('modalFlag1').textContent = getFlag(team1);
+            document.getElementById('modalFlag2').textContent = getFlag(team2);
+            document.getElementById('modalDateTime').textContent = `📅 ${getDateTimeDisplay(timeISO)} (بتوقيت السعودية)`;
+
+            const msgEl = document.getElementById('modalMessage');
+            msgEl.textContent = '';
+            msgEl.className = 'modal-message';
+
+            if (isMatchSubmitted(matchId)) {
+                msgEl.textContent = `⚠️ توقعت مسبقاً هذه المباراة`;
+                msgEl.className = 'modal-message warning';
+                document.getElementById('modalSubmitBtn').disabled = true;
+            } else {
+                document.getElementById('modalSubmitBtn').disabled = false;
+            }
+
+            document.getElementById('modalSubmitBtn').textContent = '💾 حفظ التوقع';
+            document.querySelectorAll('input[name="prediction"]').forEach(el => el.checked = false);
+
+            document.getElementById('predictionModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // ============================================================
+        //  دوال النوافذ المنبثقة الأخرى
+        // ============================================================
+        async function openMatchPredictions(matchId, team1, team2, homeScore, awayScore) {
+            if (!state.loaded) {
+                await loadPreviousGames();
+                await getAllPredictions();
+            }
+            document.getElementById('mpTeam1').textContent = team1;
+            document.getElementById('mpTeam2').textContent = team2;
+            document.getElementById('mpFlag1').textContent = getFlag(team1);
+            document.getElementById('mpFlag2').textContent = getFlag(team2);
+            let result = findMatchResult(team1, team2);
+            let penaltyDisplay = '';
+            if (result) {
+                homeScore = result.homeScore;
+                awayScore = result.awayScore;
+                let scoreText = `${homeScore} - ${awayScore}`;
+                if (result.hasPenalties && result.penaltyHome !== null && result.penaltyAway !== null) {
+                    scoreText += ` (⚽ ض.ترجيح: ${result.penaltyHome} - ${result.penaltyAway})`;
+                }
+                document.getElementById('mpResult').textContent = `النتيجة: ${scoreText}`;
+            } else {
+                document.getElementById('mpResult').textContent = `⚠️ لم يتم العثور على نتيجة هذه المباراة بعد`;
+            }
+            if (isAuthorized) { document.getElementById('modalCompactBtn').classList.add('visible'); } else { document
+                    .getElementById('modalCompactBtn').classList.remove('visible'); }
+            if (isModalCompact) { isModalCompact = false;
+                document.getElementById('matchPredictionsContent').classList.remove('compact-mode');
+                document.getElementById('modalCompactBtn').textContent = '📐 تصغير'; }
+            const scorersDiv = document.getElementById('mpScorersDetail');
+            let scorersHtml = '';
+            let matchOF = state.openfootballMatches.find(m => {
+                const h = translateToArabic(m.team1 || '');
+                const a = translateToArabic(m.team2 || '');
+                return (h === team1 && a === team2) || (h === team2 && a === team1);
             });
-            
-            // ========== TESTIMONIAL SLIDER ==========
-            const testimonialSlides = document.getElementById('testimonialSlides');
-            const testimonialPrev = document.getElementById('testimonialPrev');
-            const testimonialNext = document.getElementById('testimonialNext');
-            let currentSlide = 0;
-            const totalSlides = testimonialSlides.children.length;
-            
-            function updateTestimonialSlider() {
-                testimonialSlides.style.transform = `translateX(-${currentSlide * 100}%)`;
-            }
-            
-            if (testimonialNext && testimonialPrev) {
-                testimonialNext.addEventListener('click', () => {
-                    currentSlide = (currentSlide + 1) % totalSlides;
-                    updateTestimonialSlider();
-                });
-                
-                testimonialPrev.addEventListener('click', () => {
-                    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-                    updateTestimonialSlider();
-                });
-                
-                // تبديل تلقائي
-                setInterval(() => {
-                    currentSlide = (currentSlide + 1) % totalSlides;
-                    updateTestimonialSlider();
-                }, 5000);
-            }
-            
-            // ========== GALLERY ==========
-            const galleryScroll = document.getElementById('galleryScroll');
-            const scrollUpBtn = document.getElementById('scrollUpBtn');
-            const scrollDownBtn = document.getElementById('scrollDownBtn');
-            const galleryIndicator = document.getElementById('galleryIndicator');
-            
-            if (galleryScroll && galleryIndicator) {
-                // إنشاء نقاط المؤشر
-                const galleryItems = galleryScroll.querySelectorAll('.gallery-item');
-                galleryItems.forEach((_, index) => {
-                    const dot = document.createElement('div');
-                    dot.classList.add('indicator-dot');
-                    if (index === 0) dot.classList.add('active');
-                    dot.addEventListener('click', () => {
-                        scrollToGalleryItem(index);
-                    });
-                    galleryIndicator.appendChild(dot);
-                });
-                
-                const dots = galleryIndicator.querySelectorAll('.indicator-dot');
-                
-                function scrollToGalleryItem(index) {
-                    const item = galleryItems[index];
-                    galleryScroll.scrollTo({
-                        top: item.offsetTop - galleryScroll.offsetTop,
-                        behavior: 'smooth'
-                    });
-                    updateActiveDot(index);
+            if (matchOF) {
+                const goals = [...(matchOF.goals1 || []), ...(matchOF.goals2 || [])];
+                if (goals.length) {
+                    scorersHtml += `<div style="margin:4px 0;"><strong>⚽ الأهداف:</strong></div>`;
+                    if (matchOF.goals1 && matchOF.goals1.length) {
+                        scorersHtml += `<div>${getFlag(team1)} <strong>${team1}</strong>: `;
+                        scorersHtml += matchOF.goals1.map(g => {
+                            let minute = g.minute ? ` ${g.minute}'` : '';
+                            let name = g.name || 'لاعب';
+                            return `<span class="goal-item"><span class="minute">${minute}</span> ${name}</span>`;
+                        }).join(' ');
+                        scorersHtml += `</div>`;
+                    }
+                    if (matchOF.goals2 && matchOF.goals2.length) {
+                        scorersHtml += `<div>${getFlag(team2)} <strong>${team2}</strong>: `;
+                        scorersHtml += matchOF.goals2.map(g => {
+                            let minute = g.minute ? ` ${g.minute}'` : '';
+                            let name = g.name || 'لاعب';
+                            return `<span class="goal-item"><span class="minute">${minute}</span> ${name}</span>`;
+                        }).join(' ');
+                        scorersHtml += `</div>`;
+                    }
+                } else {
+                    scorersHtml = `<div style="color:var(--text-secondary);">⚽ لا توجد أهداف مسجلة</div>`;
                 }
-                
-                function updateActiveDot(index) {
-                    dots.forEach(dot => dot.classList.remove('active'));
-                    dots[index].classList.add('active');
+            } else {
+                scorersHtml = `<div style="color:var(--text-secondary);">⚽ لا توجد تفاصيل للأهداف</div>`;
+            }
+            scorersDiv.innerHTML = scorersHtml;
+
+            const correctSpan = document.getElementById('mpCorrectCount');
+            const wrongSpan = document.getElementById('mpWrongCount');
+            const totalSpan = document.getElementById('mpTotalCount');
+            const tbody = document.getElementById('predictionsTableBody');
+            tbody.innerHTML =
+                `<tr><td colspan="4" style="text-align:center;padding:20px;color:var(--text-secondary);">⏳ جاري التحميل...</td></tr>`;
+            correctSpan.textContent = '...';
+            wrongSpan.textContent = '...';
+            totalSpan.textContent = '...';
+
+            let predictions = state.predictions;
+            if (!predictions || !predictions.length) {
+                await getAllPredictions();
+                predictions = state.predictions;
+            }
+            const matchPredictions = predictions
+                .filter(p => p.match_id === matchId)
+                .sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
+
+            totalSpan.textContent = matchPredictions.length;
+            if (matchPredictions.length === 0) {
+                tbody.innerHTML =
+                    `<tr><td colspan="4" style="text-align:center;padding:20px;color:var(--text-secondary);">📭 لا توجد توقعات لهذه المباراة</td></tr>`;
+                correctSpan.textContent = '0';
+                wrongSpan.textContent = '0';
+                document.getElementById('matchPredictionsModal').classList.add('active');
+                document.body.style.overflow = 'hidden';
+                return;
+            }
+            let correctResult = "DRAW";
+            if (result) {
+                // في حالة ضربات الترجيح، نأخذ الفائز من ضربات الترجيح
+                if (result.hasPenalties && result.penaltyHome !== null && result.penaltyAway !== null) {
+                    if (result.penaltyHome > result.penaltyAway) correctResult = team1;
+                    else if (result.penaltyAway > result.penaltyHome) correctResult = team2;
+                    else correctResult = "DRAW";
+                } else {
+                    correctResult = result.homeScore > result.awayScore ? team1 : (result.awayScore > result.homeScore ?
+                        team2 : "DRAW");
                 }
-                
-                if (scrollUpBtn && scrollDownBtn) {
-                    scrollUpBtn.addEventListener('click', () => {
-                        const currentScroll = galleryScroll.scrollTop;
-                        let currentIndex = 0;
-                        for (let i = 0; i < galleryItems.length; i++) {
-                            if (galleryItems[i].offsetTop - galleryScroll.offsetTop >= currentScroll) {
-                                currentIndex = i;
-                                break;
+            } else {
+                let rows = '';
+                matchPredictions.forEach((p, idx) => {
+                    let predictionText = p.prediction === 'DRAW' ? 'تعادل' : `فوز ${p.prediction}`;
+                    rows += `<tr>
+                <td class="user-name" onclick="openPlayerPredictions('${p.user_name || ''}')">${p.user_name || 'مجهول'}</td>
+                <td class="prediction-text">${predictionText}</td>
+                <td class="status-pending">⏳ لم تحدد</td>
+                <td class="time-cell">${p.created_at ? formatDate(p.created_at) : 'تاريخ غير معروف'}</td>
+              </tr>`;
+                });
+                tbody.innerHTML = rows;
+                correctSpan.textContent = '0';
+                wrongSpan.textContent = '0';
+                document.getElementById('matchPredictionsModal').classList.add('active');
+                document.body.style.overflow = 'hidden';
+                return;
+            }
+            let correctCount = 0,
+                wrongCount = 0;
+            let rows = '';
+            matchPredictions.forEach((p, idx) => {
+                const isCorrect = p.prediction === correctResult;
+                if (isCorrect) correctCount++;
+                else wrongCount++;
+                let predictionText = p.prediction === 'DRAW' ? 'تعادل' : `فوز ${p.prediction}`;
+                const statusText = isCorrect ? 'صحيح' : 'خاطئ';
+                const statusClass = isCorrect ? 'status-correct' : 'status-wrong';
+                const predClass = isCorrect ? 'correct' : 'wrong';
+                const timeStr = p.created_at ? formatDate(p.created_at) : 'تاريخ غير معروف';
+                rows += `<tr>
+              <td class="user-name" onclick="openPlayerPredictions('${p.user_name || ''}')">${p.user_name || 'مجهول'}</td>
+              <td class="prediction-text ${predClass}">${predictionText}</td>
+              <td class="${statusClass}">${statusText}</td>
+              <td class="time-cell">${timeStr}</td>
+            </tr>`;
+            });
+            correctSpan.textContent = correctCount;
+            wrongSpan.textContent = wrongCount;
+            tbody.innerHTML = rows;
+            document.getElementById('matchPredictionsModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // ============================================================
+        //  دوال إحصائيات الفرق
+        // ============================================================
+        function renderTeamStats() {
+            const container = document.getElementById('teamStatsContainer');
+            if (!state.previousGamesData.length) {
+                container.innerHTML = `<div class="empty-state"><span class="icon">⏳</span> لا توجد نتائج كافية</div>`;
+                return;
+            }
+            const stats = {};
+            state.previousGamesData.forEach(g => {
+                const { homeAr, awayAr, homeScore, awayScore } = g;
+                if (!stats[homeAr]) stats[homeAr] = { played: 0, goalsFor: 0, goalsAgainst: 0, wins: 0, draws: 0,
+                    losses: 0 };
+                if (!stats[awayAr]) stats[awayAr] = { played: 0, goalsFor: 0, goalsAgainst: 0, wins: 0, draws: 0,
+                    losses: 0 };
+                stats[homeAr].played++;
+                stats[awayAr].played++;
+                stats[homeAr].goalsFor += homeScore;
+                stats[homeAr].goalsAgainst += awayScore;
+                stats[awayAr].goalsFor += awayScore;
+                stats[awayAr].goalsAgainst += homeScore;
+                // استخدام getMatchWinner لتحديد الفائز
+                const winner = getMatchWinner({ home_score: homeScore, away_score: awayScore });
+                if (winner === "home") { stats[homeAr].wins++;
+                    stats[awayAr].losses++; } else if (winner === "away") { stats[awayAr].wins++;
+                    stats[homeAr].losses++; } else { stats[homeAr].draws++;
+                    stats[awayAr].draws++; }
+            });
+            const sorted = Object.keys(stats).sort((a, b) => {
+                const diffA = stats[a].goalsFor - stats[a].goalsAgainst;
+                const diffB = stats[b].goalsFor - stats[b].goalsAgainst;
+                return diffB - diffA || stats[b].goalsFor - stats[a].goalsFor;
+            });
+            let html =
+                `<table class="team-stats-table"><thead><tr><th>#</th><th>الفريق</th><th>لعب</th><th>فوز</th><th>تعادل</th><th>خسارة</th><th>له</th><th>عليه</th><th>±</th><th>معدل الأهداف</th></tr></thead><tbody>`;
+            sorted.forEach((team, idx) => {
+                const s = stats[team];
+                const diff = s.goalsFor - s.goalsAgainst;
+                const avg = s.played > 0 ? (s.goalsFor / s.played).toFixed(2) : '0.00';
+                html += `<tr>
+                <td>${idx+1}</td>
+                <td class="team-name">${getFlag(team)} ${team}</td>
+                <td>${s.played}</td>
+                <td>${s.wins}</td>
+                <td>${s.draws}</td>
+                <td>${s.losses}</td>
+                <td class="stat-highlight">${s.goalsFor}</td>
+                <td>${s.goalsAgainst}</td>
+                <td>${diff > 0 ? '+' : ''}${diff}</td>
+                <td>${avg}</td>
+              </tr>`;
+            });
+            html += `</tbody></table>`;
+            container.innerHTML = html;
+        }
+
+        // ============================================================
+        //  مسار البطولة — مع إزالة المباريات المكررة وعرض ضربات الترجيح وتمييز الفائز/الخاسر
+        // ============================================================
+        function renderBracket() {
+            const container = document.getElementById('bracketContainer');
+
+            let allMatches = [];
+
+            if (state.openfootballMatches && state.openfootballMatches.length) {
+                allMatches = [...state.openfootballMatches];
+            }
+
+            if (state.allGames && state.allGames.length) {
+                const gamesWithStage = state.allGames.filter(g =>
+                    g.group && ['R32', 'R16', 'QF', 'SF', '3RD', 'FINAL', 'Final'].includes(g.group) ||
+                    g.type === 'final' || g.type === 'third' || g.group === 'Final' ||
+                    g.round === 'final' || g.round === 'third' ||
+                    g.stage && g.stage.toLowerCase().includes('round')
+                );
+                allMatches = [...allMatches, ...gamesWithStage];
+            }
+
+            if (allMatches.length === 0) {
+                const first32 = matchesData.filter(m => m.round === 'round32').map(m => ({
+                    team1: m.team1,
+                    team2: m.team2,
+                    round: 'Round of 32',
+                    stage: 'Round of 32',
+                    date: m.timeISO,
+                    home_score: 0,
+                    away_score: 0,
+                    finished: false,
+                    _id: `r32_${m.id}`
+                }));
+                allMatches = [...first32];
+            }
+
+            const roundMapping = {
+                'Round of 32': 'R32',
+                'R32': 'R32',
+                'Round of 16': 'R16',
+                'R16': 'R16',
+                'Quarter-finals': 'QF',
+                'Quarterfinal': 'QF',
+                'QF': 'QF',
+                'Semi-finals': 'SF',
+                'Semifinal': 'SF',
+                'SF': 'SF',
+                'Final': 'FINAL',
+                'FINAL': 'FINAL',
+                '3rd Place': '3RD',
+                'Third Place': '3RD',
+                '3RD': '3RD'
+            };
+
+            const roundOrder = ['R32', 'R16', 'QF', 'SF', '3RD', 'FINAL'];
+            const roundNames = {
+                'R32': 'دور الـ 32',
+                'R16': 'دور الـ 16',
+                'QF': 'ربع النهائي',
+                'SF': 'نصف النهائي',
+                '3RD': 'المركز الثالث',
+                'FINAL': 'النهائي'
+            };
+
+            const rounds = {};
+            roundOrder.forEach(r => rounds[r] = []);
+
+            const seenMatches = new Set();
+
+            for (let match of allMatches) {
+                let roundKey = null;
+                if (match.round) roundKey = roundMapping[match.round] || null;
+                if (!roundKey && match.stage) {
+                    const s = match.stage.toLowerCase();
+                    if (s.includes('round of 32') || s.includes('r32')) roundKey = 'R32';
+                    else if (s.includes('round of 16') || s.includes('r16')) roundKey = 'R16';
+                    else if (s.includes('quarter')) roundKey = 'QF';
+                    else if (s.includes('semi')) roundKey = 'SF';
+                    else if (s.includes('final')) roundKey = 'FINAL';
+                    else if (s.includes('third')) roundKey = '3RD';
+                }
+                if (!roundKey && match.group) {
+                    const g = match.group.toUpperCase();
+                    if (roundOrder.includes(g)) roundKey = g;
+                }
+                if (!roundKey && match.type) {
+                    if (match.type.toLowerCase() === 'final') roundKey = 'FINAL';
+                    else if (match.type.toLowerCase() === 'third') roundKey = '3RD';
+                }
+                if (!roundKey && match._id && match._id.toString().startsWith('r32_')) {
+                    roundKey = 'R32';
+                }
+
+                if (roundKey && rounds[roundKey]) {
+                    const homeName = match.team1 || match.home_team_name_fa || match.home_team_name_en || match
+                        .home_team_label || '?';
+                    const awayName = match.team2 || match.away_team_name_fa || match.away_team_name_en || match
+                        .away_team_label || '?';
+                    const matchKey = `${roundKey}|${homeName}|${awayName}`;
+
+                    if (!seenMatches.has(matchKey)) {
+                        seenMatches.add(matchKey);
+                        rounds[roundKey].push(match);
+                    }
+                }
+            }
+
+            // تصفية الجولات حسب المطلوب
+            if (rounds['R32'] && rounds['R32'].length > 16) {
+                rounds['R32'] = rounds['R32'].slice(0, 16);
+            }
+            if (rounds['R16'] && rounds['R16'].length > 8) {
+                rounds['R16'] = rounds['R16'].slice(0, 8);
+            }
+            if (rounds['FINAL'] && rounds['FINAL'].length > 1) {
+                rounds['FINAL'] = rounds['FINAL'].slice(0, 1);
+            }
+
+            let hasMatches = false;
+            let html = `<div class="bracket-tree">`;
+
+            for (let r of roundOrder) {
+                const matches = rounds[r] || [];
+                if (matches.length === 0) continue;
+                hasMatches = true;
+
+                matches.sort((a, b) => (a.date || a.time || '').localeCompare(b.date || b.time || ''));
+
+                html += `<div class="bracket-round">
+                    <div class="bracket-round-title">🏅 ${roundNames[r] || r}</div>`;
+
+                for (let match of matches) {
+                    let homeName = match.team1 || match.home_team_name_fa || match.home_team_name_en || match
+                        .home_team_label || '?';
+                    let awayName = match.team2 || match.away_team_name_fa || match.away_team_name_en || match
+                        .away_team_label || '?';
+                    let homeDisplay = translateBracketTeamName(homeName);
+                    let awayDisplay = translateBracketTeamName(awayName);
+                    if (homeDisplay === homeName && !homeName.includes('متصدر') && !homeName.includes('وصيف') && !homeName
+                        .includes('ثالث')) {
+                        homeDisplay = translateToArabic(homeName);
+                    }
+                    if (awayDisplay === awayName && !awayName.includes('متصدر') && !awayName.includes('وصيف') && !awayName
+                        .includes('ثالث')) {
+                        awayDisplay = translateToArabic(awayName);
+                    }
+                    const flag1 = getFlag(homeDisplay) || '🏁';
+                    const flag2 = getFlag(awayDisplay) || '🏁';
+
+                    let statusText = '⏳ لم تلعب';
+                    let statusClass = 'pending';
+                    const isFinished = match.finished === true || match.finished === "TRUE" || match.status === 'finished';
+                    const isLive = match.live === true || match.live === "TRUE" || match.status === 'live';
+                    let scoreText = '';
+                    let winnerText = '';
+                    let penaltyText = '';
+                    let homeTeamClass = '',
+                        awayTeamClass = '';
+
+                    if (isFinished) {
+                        const s1 = match.home_score || match.goals1?.length || 0;
+                        const s2 = match.away_score || match.goals2?.length || 0;
+
+                        // إنشاء كائن مؤقت لاستخدام دوال matchUtils
+                        const tempGame = {
+                            home_score: s1,
+                            away_score: s2,
+                            home_penalty_score: null,
+                            away_penalty_score: null,
+                            home_team: homeDisplay,
+                            away_team: awayDisplay,
+                            homeAr: homeDisplay,
+                            awayAr: awayDisplay
+                        };
+
+                        // التحقق من ضربات الترجيح
+                        const key1 = `${homeDisplay}_${awayDisplay}`;
+                        const key2 = `${homeName}_${awayName}`;
+                        let pH = null,
+                            pA = null;
+                        if (state.penaltyMatches[key1]) {
+                            pH = state.penaltyMatches[key1].home;
+                            pA = state.penaltyMatches[key1].away;
+                            tempGame.home_penalty_score = pH;
+                            tempGame.away_penalty_score = pA;
+                        } else if (state.penaltyMatches[key2]) {
+                            pH = state.penaltyMatches[key2].home;
+                            pA = state.penaltyMatches[key2].away;
+                            tempGame.home_penalty_score = pH;
+                            tempGame.away_penalty_score = pA;
+                        }
+
+                        const winner = getMatchWinner(tempGame);
+                        const hasPen = hasPenaltyShootout(tempGame);
+
+                        if (pH !== null && pA !== null) {
+                            penaltyText = `ض.ترجيح: ${pH}-${pA}`;
+                        }
+
+                        if (winner === "home") {
+                            homeTeamClass = 'winner-team';
+                            awayTeamClass = 'loser-team';
+                            winnerText = `🏆 ${homeDisplay}`;
+                        } else if (winner === "away") {
+                            homeTeamClass = 'loser-team';
+                            awayTeamClass = 'winner-team';
+                            winnerText = `🏆 ${awayDisplay}`;
+                        } else {
+                            winnerText = '🤝 تعادل';
+                        }
+
+                        scoreText = `${s1} - ${s2}`;
+                        statusText = '✅ انتهت';
+                        statusClass = 'finished';
+                    } else if (isLive) {
+                        statusText = '🔴 جارية';
+                        statusClass = 'live';
+                    }
+
+                    const matchId = match._id || match.id || `bracket_${homeName}_${awayName}_${Date.now()}`;
+
+                    html += `
+                        <div class="bracket-match-item" onclick="openBracketMatchDetail('${matchId}')">
+                            <div class="teams">
+                                <span class="team ${homeTeamClass}"><span class="flag">${flag1}</span> ${homeDisplay}</span>
+                                <span class="vs">🆚</span>
+                                <span class="team ${awayTeamClass}"><span class="flag">${flag2}</span> ${awayDisplay}</span>
+                            </div>
+                            ${scoreText ? `<div class="score">${scoreText}</div>` : ''}
+                            ${penaltyText ? `<div class="penalty-score">⚽ ${penaltyText}</div>` : ''}
+                            ${winnerText ? `<div class="match-winner">${winnerText}</div>` : ''}
+                            <div class="status ${statusClass}">${statusText}</div>
+                        </div>
+                    `;
+                }
+
+                html += `</div>`;
+            }
+
+            html += `</div>`;
+
+            if (!hasMatches) {
+                container.innerHTML = `<div class="empty-state"><span class="icon">📊</span> لا توجد مباريات في المخطط</div>`;
+                return;
+            }
+            container.innerHTML = html;
+        }
+
+        // ============================================================
+        //  تفاصيل مباراة المخطط
+        // ============================================================
+        async function openBracketMatchDetail(matchId) {
+            const detailDiv = document.getElementById('bracketMatchDetail');
+            detailDiv.innerHTML = `<div class="empty-state"><span class="icon">⏳</span> جاري التحميل...</div>`;
+            let match = state.openfootballMatches.find(m => (m._id === matchId || m.id === matchId));
+            if (!match) {
+                match = state.allGames.find(g => g._id === matchId || g.id === matchId);
+            }
+            if (!match) {
+                const fakeMatch = matchesData.find(m => `r32_${m.id}` === matchId);
+                if (fakeMatch) {
+                    match = {
+                        team1: fakeMatch.team1,
+                        team2: fakeMatch.team2,
+                        round: 'Round of 32',
+                        stage: 'Round of 32',
+                        date: fakeMatch.timeISO,
+                        home_score: 0,
+                        away_score: 0,
+                        finished: false,
+                        _id: matchId
+                    };
+                }
+            }
+            if (!match) {
+                detailDiv.innerHTML =
+                    `<div class="empty-state"><span class="icon">⚠️</span> لا توجد تفاصيل لهذه المباراة</div>`;
+                document.getElementById('bracketMatchModal').classList.add('active');
+                document.body.style.overflow = 'hidden';
+                return;
+            }
+            let homeName = match.team1 || match.home_team_name_fa || match.home_team_name_en || match.home_team_label ||
+            '?';
+            let awayName = match.team2 || match.away_team_name_fa || match.away_team_name_en || match.away_team_label ||
+            '?';
+            let homeDisplay = translateBracketTeamName(homeName);
+            let awayDisplay = translateBracketTeamName(awayName);
+            if (homeDisplay === homeName && !homeName.includes('متصدر') && !homeName.includes('وصيف') && !homeName
+                .includes('ثالث')) {
+                homeDisplay = translateToArabic(homeName);
+            }
+            if (awayDisplay === awayName && !awayName.includes('متصدر') && !awayName.includes('وصيف') && !awayName
+                .includes('ثالث')) {
+                awayDisplay = translateToArabic(awayName);
+            }
+            const flag1 = getFlag(homeDisplay) || '🏁';
+            const flag2 = getFlag(awayDisplay) || '🏁';
+            const isFinished = match.finished === true || match.finished === "TRUE" || match.status === 'finished';
+            let score = 'لم تلعب بعد';
+            let penaltyInfo = '';
+            let winner = null,
+                loser = null;
+            if (isFinished) {
+                const s1 = match.home_score || match.goals1?.length || 0;
+                const s2 = match.away_score || match.goals2?.length || 0;
+                score = `${s1} - ${s2}`;
+                const key1 = `${homeDisplay}_${awayDisplay}`;
+                const key2 = `${homeName}_${awayName}`;
+                let pH = null,
+                    pA = null;
+                if (state.penaltyMatches[key1]) {
+                    pH = state.penaltyMatches[key1].home;
+                    pA = state.penaltyMatches[key1].away;
+                } else if (state.penaltyMatches[key2]) {
+                    pH = state.penaltyMatches[key2].home;
+                    pA = state.penaltyMatches[key2].away;
+                }
+                if (pH !== null && pA !== null) {
+                    penaltyInfo = `⚽ ضربات ترجيح: ${pH} - ${pA}`;
+                    if (pH > pA) { winner = homeDisplay;
+                        loser = awayDisplay; } else if (pA > pH) { winner = awayDisplay;
+                        loser = homeDisplay; }
+                } else if (s1 > s2) { winner = homeDisplay;
+                    loser = awayDisplay; } else if (s2 > s1) { winner = awayDisplay;
+                    loser = homeDisplay; }
+            }
+            const dateStr = match.date || match.time || match.local_date || 'تاريخ غير معروف';
+            const stadium = match.ground || (match.stadium_id ? getStadiumName(match.stadium_id) : 'غير معروف');
+            const predictions = await getPredictionsForMatchFull(matchId);
+            const predCount = predictions.length;
+
+            let winnerText = '';
+            if (winner) {
+                winnerText = `🏆 الفائز: ${winner}`;
+            } else if (isFinished && !winner) {
+                winnerText = '🤝 تعادل';
+            }
+
+            // تحديد class للفائز والخاسر
+            let homeClass = '',
+                awayClass = '';
+            if (winner === homeDisplay) { homeClass = 'winner-team';
+                awayClass = 'loser-team'; } else if (winner === awayDisplay) { homeClass = 'loser-team';
+                awayClass = 'winner-team'; }
+
+            detailDiv.innerHTML = `
+            <div class="modal-teams">
+              <div class="m-team ${homeClass}"><span class="flag">${flag1}</span> ${homeDisplay}</div>
+              <div class="m-vs">🆚</div>
+              <div class="m-team ${awayClass}"><span class="flag">${flag2}</span> ${awayDisplay}</div>
+            </div>
+            <div style="text-align:center;font-size:1.2rem;font-weight:800;color:var(--gold-light);">${score}</div>
+            ${penaltyInfo ? `<div style="text-align:center;font-size:0.9rem;color:var(--penalty);font-weight:700;">${penaltyInfo}</div>` : ''}
+            ${winnerText ? `<div style="text-align:center;font-size:0.9rem;color:var(--success);font-weight:700;margin:4px 0;">${winnerText}</div>` : ''}
+            <div style="text-align:center;margin:8px 0;font-size:0.8rem;color:var(--text-secondary);">
+              📅 ${dateStr} 
+              ${stadium ? `| 🏟️ ${stadium}` : ''}
+              ${predCount > 0 ? `| 📋 ${predCount} توقع` : ''}
+            </div>
+            <div style="text-align:center;margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+              <button class="tab-btn" style="background:var(--gold-glow);border-color:var(--border-gold);color:var(--gold-light);" onclick="closeBracketModal()">إغلاق</button>
+              ${isFinished ? `<button class="tab-btn" style="background:var(--info-bg);border-color:rgba(74,158,255,0.15);color:var(--info);" onclick="openMatchPredictions('${matchId}', '${homeDisplay}', '${awayDisplay}', ${match.home_score || match.goals1?.length || 0}, ${match.away_score || match.goals2?.length || 0})">📋 عرض التوقعات</button>` : ''}
+              <button class="tab-btn" style="background:var(--info-bg);border-color:rgba(74,158,255,0.15);color:var(--info);" onclick="openViewPredictionsModal('${matchId}', '${homeDisplay}', '${awayDisplay}')">📋 استعراض التوقعات</button>
+            </div>
+          `;
+            document.getElementById('bracketMatchModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBracketModal() {
+            document.getElementById('bracketMatchModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        document.getElementById('bracketModalCloseBtn').addEventListener('click', closeBracketModal);
+        document.getElementById('bracketMatchModal').addEventListener('click', function(e) { if (e.target === this)
+                closeBracketModal(); });
+
+        // ============================================================
+        //  دوال عرض قائمة الهدافين
+        // ============================================================
+        function updateScorers() {
+            scorersDict = {};
+            playerTeamMap = {};
+            for (let match of state.openfootballMatches) {
+                const homeTeam = translateToArabic(match.team1 || '');
+                const awayTeam = translateToArabic(match.team2 || '');
+                const goals = [...(match.goals1 || []), ...(match.goals2 || [])];
+                for (let g of goals) {
+                    if (!g.name) continue;
+                    let normalizedName = normalizeName(g.name);
+                    if (!scorersDict[normalizedName]) scorersDict[normalizedName] = 0;
+                    scorersDict[normalizedName]++;
+                    let team = '';
+                    if (match.goals1 && match.goals1.some(gg => gg.name === g.name)) team = homeTeam;
+                    else if (match.goals2 && match.goals2.some(gg => gg.name === g.name)) team = awayTeam;
+                    if (team && !playerTeamMap[normalizedName]) playerTeamMap[normalizedName] = team;
+                }
+            }
+            for (let game of state.allGames) {
+                if (game.finished === "TRUE" && game.scorers) {
+                    try {
+                        const scorersData = game.scorers;
+                        const homeTeam = translateToArabic(game.home_team_name_fa || game.home_team_name_en || '');
+                        const awayTeam = translateToArabic(game.away_team_name_fa || game.away_team_name_en || '');
+                        const scorerMatches = scorersData.match(/([^\d,]+?)\s*(\d+['’]?)/g);
+                        if (scorerMatches) {
+                            for (let sm of scorerMatches) {
+                                const parts = sm.match(/^(.+?)\s*(\d+['’]?)$/);
+                                if (parts) {
+                                    let name = parts[1].trim();
+                                    let normalizedName = normalizeName(name);
+                                    if (!scorersDict[normalizedName]) scorersDict[normalizedName] = 0;
+                                    scorersDict[normalizedName]++;
+                                    if (!playerTeamMap[normalizedName]) {
+                                        if (game.home_team_name_en && name.includes(game.home_team_name_en))
+                                            playerTeamMap[normalizedName] = homeTeam;
+                                        else if (game.away_team_name_en && name.includes(game.away_team_name_en))
+                                            playerTeamMap[normalizedName] = awayTeam;
+                                        else if (game.home_team_name_fa && name.includes(game.home_team_name_fa))
+                                            playerTeamMap[normalizedName] = homeTeam;
+                                        else if (game.away_team_name_fa && name.includes(game.away_team_name_fa))
+                                            playerTeamMap[normalizedName] = awayTeam;
+                                    }
+                                }
                             }
                         }
-                        
-                        if (currentIndex > 0) {
-                            scrollToGalleryItem(currentIndex - 1);
-                        }
-                    });
-                    
-                    scrollDownBtn.addEventListener('click', () => {
-                        const currentScroll = galleryScroll.scrollTop;
-                        let currentIndex = 0;
-                        for (let i = 0; i < galleryItems.length; i++) {
-                            if (galleryItems[i].offsetTop - galleryScroll.offsetTop >= currentScroll) {
-                                currentIndex = i;
-                                break;
+                    } catch (e) { /* تجاهل */ }
+                }
+            }
+            renderScorers();
+        }
+
+        function renderScorers() {
+            const container = document.getElementById('scorersContainer');
+            const countSpan = document.getElementById('scorersCount');
+            const scorersArray = Object.entries(scorersDict).map(([name, goals]) => ({ name, goals }));
+            scorersArray.sort((a, b) => b.goals - a.goals);
+            countSpan.textContent = scorersArray.length;
+            if (!scorersArray.length) { container.innerHTML =
+                    `<div class="empty-state"><span class="icon">📭</span> لا توجد أهداف مسجلة بعد</div>`; return; }
+            let html =
+                `<table class="scorers-table"><thead><tr><th>#</th><th>اللاعب</th><th>الفريق</th><th>الأهداف</th></tr></thead><tbody>`;
+            scorersArray.forEach((s, i) => {
+                const medal = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : `${i+1}`;
+                const team = playerTeamMap[s.name] || '';
+                const flag = getFlag(team);
+                html += `<tr><td class="medal">${medal}</td><td class="player-name">${s.name}</td><td>${flag} ${team}</td><td class="goals">${s.goals}</td></tr>`;
+            });
+            html += `</tbody></table>`;
+            container.innerHTML = html;
+        }
+
+        // ============================================================
+        //  دوال تحميل البيانات من API
+        // ============================================================
+        async function loadPreviousGamesFull() {
+            if (isLoadingPrevious) return;
+            isLoadingPrevious = true;
+            try {
+                const response = await fetch('https://worldcup26.ir/get/games');
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                const data = await response.json();
+                if (!data?.games) throw new Error('تنسيق غير صحيح');
+                state.allGames = data.games;
+                const finished = state.allGames.filter(g => g.finished === "TRUE");
+                const newData = finished.map(game => {
+                    const homeAr = translateToArabic(game.home_team_name_fa || game.home_team_name_en || '');
+                    const awayAr = translateToArabic(game.away_team_name_fa || game.away_team_name_en || '');
+                    const homeScore = parseInt(game.home_score, 10);
+                    const awayScore = parseInt(game.away_score, 10);
+                    const penaltyHome = game.penalty_home ? parseInt(game.penalty_home) : null;
+                    const penaltyAway = game.penalty_away ? parseInt(game.penalty_away) : null;
+                    let dateStr = game.local_date || '';
+                    let dayName = '',
+                        formattedDate = '',
+                        timeMatch = '';
+                    let sortTimestamp = 0;
+                    if (dateStr) {
+                        const parts = dateStr.split(' ');
+                        const dateParts = parts[0]?.split('/');
+                        if (dateParts && dateParts.length === 3) {
+                            const d = new Date(`${dateParts[2]}-${dateParts[0]}-${dateParts[1]}T12:00:00`);
+                            if (!isNaN(d)) {
+                                dayName = ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'][d
+                                .getDay()];
+                                formattedDate =
+                                    `${d.getDate()} ${['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'][d.getMonth()]} ${d.getFullYear()}`;
+                                sortTimestamp = d.getTime();
                             }
                         }
-                        
-                        if (currentIndex < galleryItems.length - 1) {
-                            scrollToGalleryItem(currentIndex + 1);
+                        if (parts.length > 1 && parts[1]?.match(/\d{2}:\d{2}/)) {
+                            timeMatch = parts[1];
+                            const timeParts = parts[1].split(':');
+                            if (timeParts.length === 2) {
+                                sortTimestamp += parseInt(timeParts[0]) * 3600000 + parseInt(timeParts[1]) * 60000;
+                            }
                         }
-                    });
+                    }
+                    return { homeAr, awayAr, homeScore, awayScore, dayName, formattedDate, timeMatch, sortTimestamp,
+                        penaltyHome, penaltyAway, hasPenalties: penaltyHome !== null && penaltyAway !== null };
+                });
+                state.previousGamesData = newData;
+                setCache("games", newData);
+                renderPreviousGamesFiltered();
+                calculateStandings();
+                renderTeamStats();
+                renderBracket();
+                renderLeaderboard(currentLeaderboardPeriod);
+                updateScorers();
+                updateNewsTicker();
+            } catch (e) {
+                console.error("❌ تحميل السابقة:", e);
+                if (state.previousGamesData.length === 0) {
+                    document.getElementById('previousMatchesContainer').innerHTML =
+                        `<div class="empty-state"><span class="icon">⚠️</span> فشل التحميل <button onclick="loadPreviousGamesFull()" style="display:block;margin:12px auto 0;background:var(--gold-gradient);border:none;padding:8px 24px;border-radius:40px;font-weight:700;color:#0a0e1a;cursor:pointer;font-family:inherit;">🔄 إعادة المحاولة</button></div>`;
                 }
-                
-                galleryScroll.addEventListener('scroll', () => {
-                    const scrollPosition = galleryScroll.scrollTop;
-                    
-                    for (let i = 0; i < galleryItems.length; i++) {
-                        const item = galleryItems[i];
-                        const itemTop = item.offsetTop - galleryScroll.offsetTop;
-                        const itemBottom = itemTop + item.offsetHeight;
-                        
-                        if (scrollPosition >= itemTop && scrollPosition < itemBottom) {
-                            updateActiveDot(i);
-                            break;
+            } finally { isLoadingPrevious = false; }
+        }
+
+        // ============================================================
+        //  عرض المباريات السابقة مع تمييز الفائز/الخاسر
+        // ============================================================
+        function renderPreviousGamesFiltered() {
+            const searchText = document.getElementById('prevSearchInput')?.value.trim().toLowerCase() || '';
+            let filtered = [...state.previousGamesData];
+
+            filtered.sort((a, b) => (b.sortTimestamp || 0) - (a.sortTimestamp || 0));
+
+            if (searchText) {
+                filtered = filtered.filter(g =>
+                    g.homeAr.toLowerCase().includes(searchText) ||
+                    g.awayAr.toLowerCase().includes(searchText)
+                );
+            }
+
+            const container = document.getElementById('previousMatchesContainer');
+            const countSpan = document.getElementById('prevCount');
+            countSpan.textContent = filtered.length;
+
+            if (!filtered.length) {
+                let message = '📭 لا توجد مباريات مطابقة';
+                if (state.previousGamesData.length === 0) message = '⏳ جاري التحميل...';
+                if (searchText && state.previousGamesData.length > 0) message =
+                    `🔍 لا توجد مباريات سابقة للمنتخب "${searchText}"`;
+                container.innerHTML = `<div class="empty-state"><span class="icon">${message === '⏳ جاري التحميل...' ? '⏳' : '📭'}</span> ${message}</div>`;
+                return;
+            }
+
+            container.innerHTML = filtered.map(g => {
+                let ground = getGroundForMatch(g.homeAr, g.awayAr, null);
+                let scoreDisplay = `${g.homeScore} - ${g.awayScore}`;
+                let penaltyDisplay = '';
+                let hasPenalties = g.hasPenalties || false;
+                if (hasPenalties && g.penaltyHome !== null && g.penaltyAway !== null) {
+                    penaltyDisplay = `⚽ ض.ترجيح: ${g.penaltyHome} - ${g.penaltyAway}`;
+                }
+
+                // استخدام getMatchWinner لتحديد الفائز
+                const tempGame = {
+                    home_score: g.homeScore,
+                    away_score: g.awayScore,
+                    home_penalty_score: g.penaltyHome,
+                    away_penalty_score: g.penaltyAway,
+                    home_team: g.homeAr,
+                    away_team: g.awayAr,
+                    homeAr: g.homeAr,
+                    awayAr: g.awayAr
+                };
+
+                const winner = getMatchWinner(tempGame);
+                const winnerName = winner === "home" ? g.homeAr : (winner === "away" ? g.awayAr : null);
+                const loserName = winner === "home" ? g.awayAr : (winner === "away" ? g.homeAr : null);
+
+                let homeClass = '',
+                    awayClass = '';
+                if (winnerName === g.homeAr) { homeClass = 'winner-team';
+                    awayClass = 'loser-team'; } else if (winnerName === g.awayAr) { homeClass = 'loser-team';
+                    awayClass = 'winner-team'; }
+
+                return `
+              <div class="match-card finished-match" onclick="openPreviousMatchPredictions('${g.homeAr}', '${g.awayAr}', ${g.homeScore}, ${g.awayScore})">
+                <div class="match-teams">
+                  <div class="match-team ${homeClass}"><span class="flag">${getFlag(g.homeAr)}</span> ${g.homeAr}</div>
+                  <div class="match-score finished">${scoreDisplay}</div>
+                  <div class="match-team ${awayClass}"><span class="flag">${getFlag(g.awayAr)}</span> ${g.awayAr}</div>
+                </div>
+                ${penaltyDisplay ? `<div style="text-align:center;margin-top:4px;"><span class="penalty-detail">${penaltyDisplay}</span></div>` : ''}
+                <div class="match-meta">
+                  <span class="tag">${g.dayName || 'تاريخ'}</span>
+                  <span class="tag">${g.formattedDate || ''} ${g.timeMatch || ''}</span>
+                  <span class="tag finished-tag">✅ انتهت - اضغط لعرض التوقعات</span>
+                  ${hasPenalties ? `<span class="tag penalty-tag">⚽ ضربات ترجيح</span>` : ''}
+                  ${ground ? `<span class="tag stadium-tag">🏟️ ${ground}</span>` : ''}
+                </div>
+                <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;">
+                  <button class="view-btn" onclick="event.stopPropagation();openPreviousMatchPredictions('${g.homeAr}','${g.awayAr}',${g.homeScore},${g.awayScore})" style="padding:6px 14px;border-radius:40px;font-size:0.6rem;font-weight:600;background:var(--info-bg);border:1px solid rgba(74,158,255,0.10);color:var(--info);cursor:pointer;font-family:inherit;">📋 عرض التوقعات</button>
+                  <button class="share-link-btn" onclick="event.stopPropagation();copyMatchLink('${g.homeAr}_${g.awayAr}','${g.homeAr}','${g.awayAr}')" style="padding:4px 12px;border-radius:40px;font-size:0.55rem;font-weight:600;background:var(--info-bg);border:1px solid rgba(74,158,255,0.10);color:var(--info);cursor:pointer;font-family:inherit;">🔗 مشاركة</button>
+                </div>
+              </div>
+            `;
+            }).join('');
+        }
+
+        function openPreviousMatchPredictions(team1, team2, homeScore, awayScore) {
+            const match = matchesData.find(m => (m.team1 === team1 && m.team2 === team2) || (m.team1 === team2 && m.team2 ===
+                team1));
+            if (match) { const matchId = `${match.timeISO}_${match.team1}_${match.team2}`;
+                openMatchPredictions(matchId, team1, team2, homeScore, awayScore); } else { showCopyToast(
+                    '⚠️ لا توجد توقعات لهذه المباراة'); }
+        }
+
+        // ============================================================
+        //  دوال أخرى
+        // ============================================================
+        function calculateStandings() {
+            try {
+                const standings = {};
+                for (const [group, teams] of Object.entries(finalGroups)) {
+                    standings[group] = {};
+                    teams.forEach(team => { standings[group][team] = { played: 0, wins: 0, draws: 0, losses: 0,
+                            goalsFor: 0, goalsAgainst: 0, points: 0 }; });
+                }
+                state.previousGamesData.forEach(game => {
+                    const { homeAr, awayAr, homeScore, awayScore } = game;
+                    let groupName = null;
+                    for (const [g, teams] of Object.entries(finalGroups)) {
+                        if (teams.includes(homeAr) && teams.includes(awayAr)) { groupName = g; break; }
+                    }
+                    if (!groupName) return;
+                    const stats = standings[groupName];
+                    if (!stats[homeAr] || !stats[awayAr]) return;
+                    stats[homeAr].played++;
+                    stats[awayAr].played++;
+                    stats[homeAr].goalsFor += homeScore;
+                    stats[homeAr].goalsAgainst += awayScore;
+                    stats[awayAr].goalsFor += awayScore;
+                    stats[awayAr].goalsAgainst += homeScore;
+                    // استخدام getMatchWinner لتحديد الفائز
+                    const winner = getMatchWinner({ home_score: homeScore, away_score: awayScore });
+                    if (winner === "home") { stats[homeAr].wins++;
+                        stats[homeAr].points += 3;
+                        stats[awayAr].losses++; } else if (winner === "away") { stats[awayAr].wins++;
+                        stats[awayAr].points += 3;
+                        stats[homeAr].losses++; } else { stats[homeAr].draws++;
+                        stats[awayAr].draws++;
+                        stats[homeAr].points++;
+                        stats[awayAr].points++; }
+                });
+                const container = document.getElementById('standingsContainer');
+                let html = '';
+                for (const [group, teamsStats] of Object.entries(standings)) {
+                    const tableRows = [];
+                    for (const [team, stat] of Object.entries(teamsStats)) {
+                        tableRows.push({ team, ...stat, diff: stat.goalsFor - stat.goalsAgainst });
+                    }
+                    tableRows.sort((a, b) => b.points - a.points || b.diff - a.diff || b.goalsFor - a.goalsFor);
+                    html +=
+                        `<div class="group-card"><div class="group-title">المجموعة ${group}</div><table class="standings-table"><thead><tr><th>#</th><th>الفريق</th><th>ل</th><th>ف</th><th>ت</th><th>خ</th><th>له</th><th>عليه</th><th>±</th><th>ن</th></tr></thead><tbody>`;
+                    tableRows.forEach((row, idx) => {
+                        html +=
+                            `<tr><td>${idx+1}</td><td><div class="team-cell"><span>${getFlag(row.team)}</span> <span>${row.team}</span></div></td><td>${row.played}</td><td>${row.wins}</td><td>${row.draws}</td><td>${row.losses}</td><td>${row.goalsFor}</td><td>${row.goalsAgainst}</td><td>${row.diff}</td><td style="color:var(--gold);font-weight:800;">${row.points}</td></tr>`;
+                    });
+                    html += `</tbody></table></div>`;
+                }
+                container.innerHTML = html ||
+                    `<div class="empty-state"><span class="icon">📊</span> لا توجد نتائج كافية</div>`;
+            } catch (e) { console.error("calculateStandings:", e);
+                document.getElementById('standingsContainer').innerHTML =
+                    `<div class="empty-state"><span class="icon">⚠️</span> خطأ في حساب الترتيب</div>`; }
+        }
+
+        function getPredictionStatus(prediction) {
+            const parts = prediction.match_id.split('_');
+            if (parts.length < 3) return { status: 'pending', text: '⏳ المباراة لم تلعب بعد', color: 'var(--gold-light)' };
+            const team1 = parts[1],
+                team2 = parts[2];
+            const result = findMatchResult(team1, team2);
+            if (!result) return { status: 'pending', text: '⏳ المباراة لم تلعب بعد', color: 'var(--gold-light)' };
+            let correctResult;
+            if (result.hasPenalties && result.penaltyHome !== null && result.penaltyAway !== null) {
+                correctResult = result.penaltyHome > result.penaltyAway ? result.homeAr :
+                    result.penaltyAway > result.penaltyHome ? result.awayAr : "DRAW";
+            } else {
+                correctResult = result.homeScore > result.awayScore ? result.homeAr :
+                    result.awayScore > result.homeScore ? result.awayAr : "DRAW";
+            }
+            const isCorrect = prediction.prediction === correctResult;
+            if (isCorrect) return { status: 'correct', text: '✅ توقع صحيح', color: 'var(--success)' };
+            else return { status: 'wrong', text: '❌ توقع خاطئ', color: 'var(--danger)' };
+        }
+
+        async function renderAllPredictions() {
+            const container = document.getElementById('allPredictions');
+            const countSpan = document.getElementById('predictionsCount');
+            let predictions = state.predictions;
+            if (!predictions || !predictions.length) {
+                await getAllPredictions();
+                predictions = state.predictions;
+            }
+            allPredictionsCache = predictions;
+            countSpan.textContent = predictions.length;
+            if (!predictions || !predictions.length) { container.innerHTML =
+                    `<div class="empty-state"><span class="icon">📭</span> لا توجد توقعات بعد</div>`; return; }
+            const sorted = [...predictions].sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+            container.innerHTML = sorted.slice(0, 20).map(p => {
+                const parts = p.match_id.split('_');
+                const team1 = parts[1] || '?',
+                    team2 = parts[2] || '?';
+                let predictionText = p.prediction === 'DRAW' ? '🤝 تعادل' : `🏆 فوز ${getFlag(p.prediction)} ${p.prediction}`;
+                const status = getPredictionStatus(p);
+                let cardClass = '',
+                    badgeClass = '';
+                if (status.status === 'correct') { cardClass = 'correct';
+                    badgeClass = 'correct'; } else if (status.status === 'wrong') { cardClass = 'wrong';
+                    badgeClass = 'wrong'; } else { cardClass = 'pending';
+                    badgeClass = 'pending'; }
+                return `<div class="prediction-card ${cardClass}" onclick="openPlayerPredictions('${p.user_name || ''}')" style="cursor:pointer;">
+              <div class="user"><div class="avatar-p">${p.user_name ? p.user_name.charAt(0).toUpperCase() : '👤'}</div><span class="name-p">${p.user_name || 'مجهول'}</span></div>
+              <div class="prediction-text">${team1} 🆚 ${team2}</div>
+              <div class="prediction-text" style="color:var(--gold-light);">🔮 ${predictionText}</div>
+              <span class="status-badge ${badgeClass}">${status.text}</span>
+              <div style="font-size:0.6rem;color:var(--text-secondary);margin-top:4px;">🕒 ${p.created_at ? formatDate(p.created_at) : 'تاريخ غير معروف'}</div>
+            </div>`;
+            }).join('');
+        }
+
+        // ============================================================
+        //  عرض جميع توقعات اللاعب
+        // ============================================================
+        async function openPlayerPredictions(userName) {
+            if (!userName) { showCopyToast('⚠️ اسم المستخدم غير معروف'); return; }
+            document.getElementById('playerModalName').textContent = userName;
+            const listContainer = document.getElementById('playerPredictionsList');
+            const correctSpan = document.getElementById('playerCorrectCount');
+            const wrongSpan = document.getElementById('playerWrongCount');
+            const totalSpan = document.getElementById('playerTotalCount');
+            listContainer.innerHTML = `<div class="empty-state"><span class="icon">⏳</span> جاري التحميل...</div>`;
+            correctSpan.textContent = '...';
+            wrongSpan.textContent = '...';
+            totalSpan.textContent = '...';
+
+            const predictions = await getPredictionsForUserFull(userName);
+            let correct = 0,
+                wrong = 0;
+            for (let p of predictions) {
+                const status = getPredictionStatus(p);
+                if (status.status === 'correct') correct++;
+                else if (status.status === 'wrong') wrong++;
+            }
+            correctSpan.textContent = correct;
+            wrongSpan.textContent = wrong;
+            totalSpan.textContent = predictions.length;
+
+            if (!predictions || predictions.length === 0) {
+                listContainer.innerHTML =
+                `<div class="empty-state"><span class="icon">📭</span> لا توجد توقعات لهذا اللاعب</div>`;
+                document.getElementById('playerPredictionsModal').classList.add('active');
+                document.body.style.overflow = 'hidden';
+                return;
+            }
+
+            predictions.sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
+
+            let html = '';
+            predictions.forEach((p, idx) => {
+                const parts = p.match_id.split('_');
+                const team1 = parts[1] || '?';
+                const team2 = parts[2] || '?';
+                const predText = p.prediction === 'DRAW' ? 'تعادل' : `فوز ${p.prediction}`;
+                const status = getPredictionStatus(p);
+                let statusClass = 'pending';
+                let statusText = '⏳ لم تحدد';
+                if (status.status === 'correct') { statusClass = 'correct';
+                    statusText = '✅ صحيح'; } else if (status.status === 'wrong') { statusClass = 'wrong';
+                    statusText = '❌ خاطئ'; } else { statusClass = 'pending';
+                    statusText = '⏳ قيد الانتظار'; }
+
+                html += `
+              <div class="player-prediction-item">
+                <div class="num">#${idx + 1}</div>
+                <div class="match-info">
+                  <div class="teams">
+                    <span class="flag">${getFlag(team1)}</span> ${team1} 🆚 <span class="flag">${getFlag(team2)}</span> ${team2}
+                  </div>
+                  <div class="pred">🔮 ${predText}</div>
+                  <span class="status ${statusClass}">${statusText}</span>
+                </div>
+                <div class="time">🕒 ${p.created_at ? formatDate(p.created_at) : 'تاريخ غير معروف'}</div>
+              </div>
+            `;
+            });
+
+            listContainer.innerHTML = html;
+            document.getElementById('playerPredictionsModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        async function getPredictionsForUserFull(userName) {
+            if (!supabaseClient || !userName) return [];
+            try {
+                const { data, error } = await supabaseClient
+                    .from("predictions")
+                    .select("*")
+                    .eq("user_name", userName)
+                    .order("created_at", { ascending: true });
+                if (error) throw error;
+                return data || [];
+            } catch (e) {
+                console.error("❌ جلب توقعات اللاعب (جميعها):", e);
+                return [];
+            }
+        }
+
+        async function getPredictionsForMatchFull(matchId) {
+            if (!supabaseClient || !matchId) return [];
+            try {
+                const { data, error } = await supabaseClient
+                    .from("predictions")
+                    .select("*")
+                    .eq("match_id", matchId)
+                    .order("created_at", { ascending: true });
+                if (error) throw error;
+                return data || [];
+            } catch (e) {
+                console.error("❌ جلب توقعات المباراة (جميعها):", e);
+                return [];
+            }
+        }
+
+        // ============================================================
+        //  لوحة المتصدرين — مع معالجة التعادل في النقاط
+        // ============================================================
+        function setLeaderboardPeriod(period) {
+            currentLeaderboardPeriod = period;
+            document.querySelectorAll('.period-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.period === period);
+            });
+            renderLeaderboard(period);
+        }
+
+        async function renderLeaderboard(period) {
+            const container = document.getElementById("leaderboardContainer");
+            if (!state.loaded) {
+                container.innerHTML = `<div class="empty-state"><span class="icon">⏳</span> جاري التحميل...</div>`;
+                return;
+            }
+            const predictions = state.predictions;
+            const games = state.previousGamesData;
+            if (!predictions.length || !games.length) {
+                container.innerHTML = `<div class="empty-state"><span class="icon">📭</span> لا توجد بيانات</div>`;
+                return;
+            }
+
+            let filteredGames = games;
+            if (period === '24h') {
+                const nowTime = now();
+                const last24h = nowTime - 24 * 60 * 60 * 1000;
+                filteredGames = games.filter(g => {
+                    const ts = g.sortTimestamp || 0;
+                    return ts >= last24h && ts <= nowTime;
+                });
+            }
+
+            const scores = {};
+            for (let p of predictions) {
+                if (!scores[p.user_name]) {
+                    scores[p.user_name] = { name: p.user_name, points: 0, correct: 0, wrong: 0, total: 0 };
+                }
+                scores[p.user_name].total++;
+                const parts = (p.match_id || "").split("_");
+                if (parts.length < 3) continue;
+                const team1 = parts[1],
+                    team2 = parts[2];
+                const match = filteredGames.find(g =>
+                    (g.homeAr === team1 && g.awayAr === team2) ||
+                    (g.homeAr === team2 && g.awayAr === team1)
+                );
+                if (!match) continue;
+
+                // استخدام getMatchWinner لتحديد الفائز
+                const tempGame = {
+                    home_score: match.homeScore,
+                    away_score: match.awayScore,
+                    home_penalty_score: match.penaltyHome || null,
+                    away_penalty_score: match.penaltyAway || null
+                };
+                const winner = getMatchWinner(tempGame);
+                const winnerName = winner === "home" ? match.homeAr : (winner === "away" ? match.awayAr : "DRAW");
+
+                const isCorrect = p.prediction === winnerName;
+                if (isCorrect) {
+                    scores[p.user_name].points++;
+                    scores[p.user_name].correct++;
+                } else {
+                    scores[p.user_name].wrong++;
+                }
+            }
+            const board = Object.values(scores).sort((a, b) => b.points - a.points || (b.correct - a.correct));
+            if (!board.length) {
+                container.innerHTML = `<div class="empty-state"><span class="icon">📭</span> لا توجد توقعات صحيحة</div>`;
+                return;
+            }
+            document.getElementById('lbTotalPlayers').textContent = board.length;
+            document.getElementById('lbTotalPredictions').textContent = predictions.length;
+
+            let rank = 1;
+            let i = 0;
+            while (i < board.length) {
+                let j = i;
+                let points = board[i].points;
+                while (j < board.length && board[j].points === points) {
+                    j++;
+                }
+                const groupSize = j - i;
+                for (let k = i; k < j; k++) {
+                    board[k].rank = rank;
+                }
+                i = j;
+                rank += groupSize;
+            }
+
+            const prevRankKey = `prevRank_${period}`;
+            let prevRank = {};
+            try {
+                const raw = localStorage.getItem(prevRankKey);
+                if (raw) prevRank = JSON.parse(raw);
+            } catch (e) {}
+
+            const currentRank = {};
+            board.forEach((p) => {
+                currentRank[p.name] = p.rank;
+            });
+            localStorage.setItem(prevRankKey, JSON.stringify(currentRank));
+
+            const topThree = board.slice(0, 3);
+            const rest = board.slice(3, 10);
+
+            let html = '';
+            if (topThree.length) {
+                const champ = topThree[0];
+                const accuracy = champ.total > 0 ? Math.round((champ.correct / champ.total) * 100) : 0;
+                const isCurrentUser = champ.name === localStorage.getItem('lastUserName') || '';
+                const prevPos = prevRank[champ.name] || 0;
+                const currentPos = champ.rank;
+                let arrow = '';
+                if (prevPos && prevPos !== currentPos) {
+                    if (currentPos < prevPos) arrow = ' <span class="arrow-up">▲</span>';
+                    else if (currentPos > prevPos) arrow = ' <span class="arrow-down">▼</span>';
+                } else if (prevPos) {
+                    arrow = ' <span class="arrow-unchanged">—</span>';
+                }
+                const medal = champ.rank === 1 ? '🥇' : champ.rank === 2 ? '🥈' : champ.rank === 3 ? '🥉' : `#${champ.rank}`;
+                html += `
+              <div class="champion-card" style="${isCurrentUser ? 'border-color:var(--gold);box-shadow:0 0 60px rgba(212,167,69,0.08);' : ''}" onclick="openPlayerPredictions('${champ.name}')">
+                <div class="rank-badge">${medal}</div>
+                <div class="avatar">${champ.name.charAt(0).toUpperCase()}</div>
+                <div class="info">
+                  <div class="name">${champ.name} ${isCurrentUser ? '👤' : ''}
+                    <button class="compare-btn" onclick="event.stopPropagation(); openCompareModal('${champ.name}')">📊 مقارنة</button>
+                  </div>
+                  <div class="stats-row">
+                    <span class="item">🏆 <strong>${champ.points}</strong> نقطة</span>
+                    <span class="item">✅ <strong style="color:var(--gold-light);">${champ.correct}</strong></span>
+                    <span class="item">📊 <strong style="font-size:0.7rem;">${champ.total}</strong></span>
+                    <span class="item">📊 <strong>${accuracy}%</strong> نجاح</span>
+                    <span class="item">${arrow}</span>
+                  </div>
+                  <div class="progress-wrapper">
+                    <div class="progress-label"><span>نسبة النجاح</span><span>${accuracy}%</span></div>
+                    <div class="progress-bar"><div class="fill" style="width:${Math.min(accuracy,100)}%;"></div></div>
+                  </div>
+                </div>
+              </div>
+            `;
+            }
+            if (rest.length || topThree.length > 1) {
+                const allPlayers = [...topThree.slice(1), ...rest];
+                html += `<div class="players-list">`;
+                allPlayers.forEach((player) => {
+                    const rankNum = player.rank;
+                    const accuracy = player.total > 0 ? Math.round((player.correct / player.total) * 100) : 0;
+                    const isCurrentUser = player.name === localStorage.getItem('lastUserName') || '';
+                    let medal = '';
+                    if (rankNum === 1) medal = '🥇';
+                    else if (rankNum === 2) medal = '🥈';
+                    else if (rankNum === 3) medal = '🥉';
+                    else if (rankNum === 4) medal = '4';
+                    else if (rankNum === 5) medal = '5';
+                    else medal = `#${rankNum}`;
+
+                    let rankClass = '';
+                    if (rankNum === 1) rankClass = 'gold';
+                    else if (rankNum === 2) rankClass = 'silver';
+                    else if (rankNum === 3) rankClass = 'bronze';
+                    else rankClass = '';
+
+                    let borderClass = '';
+                    if (rankNum === 1) borderClass = 'gold-border';
+                    else if (rankNum === 2) borderClass = 'silver-border';
+                    else if (rankNum === 3) borderClass = 'bronze-border';
+
+                    const isTie = board.filter(p => p.rank === rankNum).length > 1;
+                    const tieBadge = isTie ? ' ⚡' : '';
+
+                    const prevPos = prevRank[player.name] || 0;
+                    const currentPos = rankNum;
+                    let arrow = '';
+                    if (prevPos && prevPos !== currentPos) {
+                        if (currentPos < prevPos) arrow = ' ▲';
+                        else if (currentPos > prevPos) arrow = ' ▼';
+                    } else if (prevPos) {
+                        arrow = ' —';
+                    }
+                    const arrowClass = arrow.includes('▲') ? 'arrow-up' : (arrow.includes('▼') ? 'arrow-down' :
+                        'arrow-unchanged');
+
+                    html += `
+                <div class="player-card" style="${isCurrentUser ? 'border-color:rgba(212,167,69,0.30);' : ''}" onclick="openPlayerPredictions('${player.name}')">
+                  <div class="rank ${rankClass}">${medal}${tieBadge}</div>
+                  <div class="avatar-sm ${borderClass}">${player.name.charAt(0).toUpperCase()}</div>
+                  <div class="info-sm">
+                    <div class="name-sm">${player.name} ${isCurrentUser ? '👤' : ''}
+                      ${isTie ? `<span class="mini-badge gold">⚡ متعادل</span>` : ''}
+                    </div>
+                    <div class="sub-sm">
+                      <span>✅ <span style="color:var(--gold-light);">${player.correct}</span></span>
+                      <span>📊 <span style="font-size:0.65rem;">${player.total}</span></span>
+                      <span>📊 ${accuracy}%</span>
+                      <span class="${arrowClass}">${arrow.trim()}</span>
+                    </div>
+                    <div class="progress-mini"><div class="fill-mini" style="width:${Math.min(accuracy,100)}%;"></div></div>
+                  </div>
+                  <div class="points-sm">${player.points}</div>
+                  <button class="compare-btn" onclick="event.stopPropagation(); openCompareModal('${player.name}')">📊 مقارنة</button>
+                  ${isCurrentUser ? `<div class="current-user-indicator active"></div><div class="pulse-dot"></div>` : ''}
+                </div>
+              `;
+                });
+                html += `</div>`;
+            }
+            container.innerHTML = html;
+        }
+
+        // ============================================================
+        //  دوال المقارنة
+        // ============================================================
+        function openCompareModal(selectedPlayer) {
+            const modal = document.getElementById('compareModal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            const players = Object.keys(getAllPlayersStats());
+            const select1 = document.getElementById('compareSelect1');
+            const select2 = document.getElementById('compareSelect2');
+
+            select1.innerHTML = '<option value="">اختر لاعباً</option>';
+            select2.innerHTML = '<option value="">اختر لاعباً</option>';
+            players.forEach(p => {
+                select1.innerHTML += `<option value="${p}">${p}</option>`;
+                select2.innerHTML += `<option value="${p}">${p}</option>`;
+            });
+
+            if (selectedPlayer) {
+                select1.value = selectedPlayer;
+                const other = players.find(p => p !== selectedPlayer) || '';
+                select2.value = other;
+            }
+
+            renderCompare();
+        }
+
+        function closeCompareModal() {
+            document.getElementById('compareModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function getAllPlayersStats() {
+            const stats = {};
+            const predictions = state.predictions;
+            const games = state.previousGamesData;
+
+            for (let p of predictions) {
+                if (!stats[p.user_name]) {
+                    stats[p.user_name] = { name: p.user_name, points: 0, correct: 0, wrong: 0, total: 0, predictions: [] };
+                }
+                stats[p.user_name].total++;
+                const parts = (p.match_id || "").split("_");
+                if (parts.length < 3) continue;
+                const team1 = parts[1],
+                    team2 = parts[2];
+                const match = games.find(g =>
+                    (g.homeAr === team1 && g.awayAr === team2) ||
+                    (g.homeAr === team2 && g.awayAr === team1)
+                );
+                if (!match) continue;
+                const tempGame = {
+                    home_score: match.homeScore,
+                    away_score: match.awayScore,
+                    home_penalty_score: match.penaltyHome || null,
+                    away_penalty_score: match.penaltyAway || null
+                };
+                const winner = getMatchWinner(tempGame);
+                const winnerName = winner === "home" ? match.homeAr : (winner === "away" ? match.awayAr : "DRAW");
+                const isCorrect = p.prediction === winnerName;
+                if (isCorrect) {
+                    stats[p.user_name].points++;
+                    stats[p.user_name].correct++;
+                } else {
+                    stats[p.user_name].wrong++;
+                }
+                stats[p.user_name].predictions.push({ matchId: p.match_id, prediction: p.prediction, correct: isCorrect });
+            }
+            return stats;
+        }
+
+        function renderCompare() {
+            const p1 = document.getElementById('compareSelect1').value;
+            const p2 = document.getElementById('compareSelect2').value;
+            const stats = getAllPlayersStats();
+
+            const div1 = document.getElementById('compareStats1');
+            const name1 = document.getElementById('compareName1');
+            if (p1 && stats[p1]) {
+                const s = stats[p1];
+                const acc = s.total > 0 ? Math.round((s.correct / s.total) * 100) : 0;
+                name1.innerHTML = `👤 ${p1}`;
+                div1.innerHTML = `
+              <div class="stat-row"><span class="label">🏆 النقاط</span><span class="value gold">${s.points}</span></div>
+              <div class="stat-row"><span class="label">✅ صحيحة</span><span class="value green">${s.correct}</span></div>
+              <div class="stat-row"><span class="label">❌ خاطئة</span><span class="value red">${s.wrong}</span></div>
+              <div class="stat-row"><span class="label">📊 عدد التوقعات الكلي</span><span class="value">${s.total}</span></div>
+              <div class="stat-row"><span class="label">🎯 نسبة النجاح</span><span class="value gold">${acc}%</span></div>
+            `;
+            } else {
+                name1.innerHTML = '👤 لاعب 1';
+                div1.innerHTML = `<div class="empty-state"><span class="icon">⏳</span> اختر لاعباً</div>`;
+            }
+
+            const div2 = document.getElementById('compareStats2');
+            const name2 = document.getElementById('compareName2');
+            if (p2 && stats[p2]) {
+                const s = stats[p2];
+                const acc = s.total > 0 ? Math.round((s.correct / s.total) * 100) : 0;
+                name2.innerHTML = `👤 ${p2}`;
+                div2.innerHTML = `
+              <div class="stat-row"><span class="label">🏆 النقاط</span><span class="value gold">${s.points}</span></div>
+              <div class="stat-row"><span class="label">✅ صحيحة</span><span class="value green">${s.correct}</span></div>
+              <div class="stat-row"><span class="label">❌ خاطئة</span><span class="value red">${s.wrong}</span></div>
+              <div class="stat-row"><span class="label">📊 عدد التوقعات الكلي</span><span class="value">${s.total}</span></div>
+              <div class="stat-row"><span class="label">🎯 نسبة النجاح</span><span class="value gold">${acc}%</span></div>
+            `;
+            } else {
+                name2.innerHTML = '👤 لاعب 2';
+                div2.innerHTML = `<div class="empty-state"><span class="icon">⏳</span> اختر لاعباً</div>`;
+            }
+        }
+
+        document.getElementById('compareModalCloseBtn').addEventListener('click', closeCompareModal);
+        document.getElementById('compareModal').addEventListener('click', function(e) { if (e.target === this)
+                closeCompareModal(); });
+
+        // ============================================================
+        //  دوال التحليلات المتقدمة
+        // ============================================================
+        let chartInstancesLocal = {};
+
+        function openAnalytics() {
+            const modal = document.getElementById('analyticsModal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            populatePlayerAnalyticsSelect();
+            renderMatchAnalytics();
+
+            setTimeout(() => {
+                generateAnalyticsCharts();
+                const select = document.getElementById('playerAnalyticsSelect');
+                if (select.value) {
+                    updatePlayerAnalytics();
+                }
+            }, 300);
+        }
+
+        function populatePlayerAnalyticsSelect() {
+            const select = document.getElementById('playerAnalyticsSelect');
+            const predictions = state.predictions || [];
+            const players = [...new Set(predictions.map(p => p.user_name).filter(Boolean))];
+            select.innerHTML = '<option value="">-- اختر لاعباً --</option>';
+            players.forEach(p => {
+                select.innerHTML += `<option value="${p}">${p}</option>`;
+            });
+            const currentUser = localStorage.getItem('lastUserName') || '';
+            if (players.includes(currentUser)) {
+                select.value = currentUser;
+            }
+        }
+
+        function updatePlayerAnalytics() {
+            const select = document.getElementById('playerAnalyticsSelect');
+            const playerName = select.value;
+            const detailsDiv = document.getElementById('playerAnalyticsDetails');
+
+            if (!playerName) {
+                detailsDiv.style.display = 'none';
+                return;
+            }
+
+            const predictions = state.predictions || [];
+            const games = state.previousGamesData || [];
+
+            const playerPreds = predictions.filter(p => p.user_name === playerName);
+            if (playerPreds.length === 0) {
+                detailsDiv.innerHTML = `<div class="empty-state"><span class="icon">📭</span> لا توجد توقعات لهذا اللاعب</div>`;
+                detailsDiv.style.display = 'block';
+                return;
+            }
+
+            let total = playerPreds.length;
+            let correct = 0,
+                wrong = 0,
+                points = 0;
+            let lastCorrect = 0,
+                trend = 0;
+            const sortedPreds = [...playerPreds].sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
+
+            for (let p of sortedPreds) {
+                const status = getPredictionStatus(p);
+                if (status.status === 'correct') { correct++;
+                    points++; } else if (status.status === 'wrong') { wrong++; }
+            }
+
+            const recent = sortedPreds.slice(-5);
+            let recentCorrect = 0;
+            for (let p of recent) {
+                const status = getPredictionStatus(p);
+                if (status.status === 'correct') recentCorrect++;
+            }
+            const recentAcc = recent.length > 0 ? (recentCorrect / recent.length) * 100 : 0;
+            const overallAcc = total > 0 ? (correct / total) * 100 : 0;
+
+            const allStats = getAllPlayersStats();
+            const totalPlayers = Object.keys(allStats).length;
+            const remainingMatches = matchesData.filter(m => (matchTime(m.timeISO) + MATCH_DURATION) > now()).length;
+            const avgPointsPerPred = total > 0 ? points / total : 0;
+            const futurePoints = points + (avgPointsPerPred * remainingMatches);
+
+            const futureRanks = Object.values(allStats).map(p => {
+                const pAvg = p.total > 0 ? p.points / p.total : 0;
+                const pFuture = p.points + (pAvg * remainingMatches);
+                return { name: p.name, futurePoints: pFuture };
+            }).sort((a, b) => b.futurePoints - a.futurePoints);
+
+            const predictedRank = futureRanks.findIndex(p => p.name === playerName) + 1;
+            const currentRank = Object.values(allStats).sort((a, b) => b.points - a.points).findIndex(p => p.name ===
+                playerName) + 1;
+
+            detailsDiv.innerHTML = `
+            <div class="stat-item"><span class="label">👤 اللاعب</span><span class="value gold">${playerName}</span></div>
+            <div class="stat-item"><span class="label">🏆 الترتيب الحالي</span><span class="value gold">#${currentRank}</span></div>
+            <div class="stat-item"><span class="label">📊 عدد التوقعات الكلي</span><span class="value">${total}</span></div>
+            <div class="stat-item"><span class="label">✅ صحيحة</span><span class="value green">${correct}</span></div>
+            <div class="stat-item"><span class="label">❌ خاطئة</span><span class="value red">${wrong}</span></div>
+            <div class="stat-item"><span class="label">🎯 نسبة النجاح الإجمالية</span><span class="value gold">${overallAcc.toFixed(1)}%</span></div>
+            <div class="stat-item"><span class="label">🏆 النقاط</span><span class="value gold">${points}</span></div>
+            <div class="stat-item"><span class="label">📈 متوسط النقاط لكل توقع</span><span class="value gold">${avgPointsPerPred.toFixed(2)}</span></div>
+            <div class="stat-item"><span class="label">🔥 الأداء في آخر 5 توقعات</span><span class="value ${recentAcc >= 60 ? 'green' : 'red'}">${recentAcc.toFixed(0)}%</span></div>
+            <div class="prediction-trend">
+              <div class="trend-label">🔮 توقع الترتيب المستقبلي (بناءً على الأداء الحالي وعدد اللاعبين ${totalPlayers})</div>
+              <div class="trend-value">${predictedRank} 🏅</div>
+              ${predictedRank > currentRank ? `<div style="font-size:0.7rem;color:var(--success);">✅ من المتوقع أن يرتفع ترتيبك</div>` : (predictedRank < currentRank ? `<div style="font-size:0.7rem;color:var(--danger);">⚠️ من المتوقع أن ينخفض ترتيبك</div>` : `<div style="font-size:0.7rem;color:var(--text-secondary);">➖ من المتوقع أن يبقى ترتيبك كما هو</div>`)}
+            </div>
+          `;
+            detailsDiv.style.display = 'block';
+        }
+
+        async function renderMatchAnalytics() {
+            const grid = document.getElementById('matchAnalyticsGrid');
+            const predictions = state.predictions || [];
+            const games = state.previousGamesData || [];
+
+            if (!predictions.length || !games.length) {
+                grid.innerHTML = `<div class="empty-state"><span class="icon">📊</span> لا توجد بيانات كافية</div>`;
+                return;
+            }
+
+            const matchStats = {};
+            for (let p of predictions) {
+                const parts = p.match_id.split('_');
+                if (parts.length < 3) continue;
+                const team1 = parts[1],
+                    team2 = parts[2];
+                const key = `${team1} 🆚 ${team2}`;
+                if (!matchStats[key]) matchStats[key] = { correct: 0, wrong: 0, total: 0 };
+                matchStats[key].total++;
+
+                const status = getPredictionStatus(p);
+                if (status.status === 'correct') matchStats[key].correct++;
+                else if (status.status === 'wrong') matchStats[key].wrong++;
+            }
+
+            const sortedCorrect = Object.entries(matchStats).sort((a, b) => b[1].correct - a[1].correct).slice(0, 5);
+            const sortedWrong = Object.entries(matchStats).sort((a, b) => b[1].wrong - a[1].wrong).slice(0, 5);
+
+            let html = `
+            <div class="match-list">
+              <div class="list-title">✅ أكثر المباريات توقعاً صحيحاً</div>
+              ${sortedCorrect.length === 0 ? '<div class="empty-state" style="padding:10px;">لا توجد بيانات</div>' : ''}
+              ${sortedCorrect.map(([match, stats]) => `
+                <div class="match-item">
+                  <span class="teams">${match}</span>
+                  <span class="count correct">${stats.correct} صحيح</span>
+                </div>
+              `).join('')}
+            </div>
+            <div class="match-list">
+              <div class="list-title">❌ أكثر المباريات توقعاً خاطئاً</div>
+              ${sortedWrong.length === 0 ? '<div class="empty-state" style="padding:10px;">لا توجد بيانات</div>' : ''}
+              ${sortedWrong.map(([match, stats]) => `
+                <div class="match-item">
+                  <span class="teams">${match}</span>
+                  <span class="count wrong">${stats.wrong} خاطئ</span>
+                </div>
+              `).join('')}
+            </div>
+          `;
+
+            grid.innerHTML = html;
+        }
+
+        function generateAnalyticsCharts() {
+            const predictions = state.predictions || [];
+            const games = state.previousGamesData || [];
+
+            if (!predictions.length || !games.length) {
+                document.getElementById('analyticsContent').innerHTML = `
+              <div class="empty-state"><span class="icon">📊</span> لا توجد بيانات كافية للتحليل</div>
+              <div style="text-align:center;margin-top:12px;">
+                <button class="tab-btn" onclick="document.getElementById('analyticsModal').classList.remove('active');document.body.style.overflow='';" style="background:var(--gold-glow);border-color:var(--border-gold);color:var(--gold-light);">إغلاق</button>
+              </div>
+            `;
+                return;
+            }
+
+            const playerPredCount = {};
+            for (let p of predictions) {
+                if (!playerPredCount[p.user_name]) playerPredCount[p.user_name] = 0;
+                playerPredCount[p.user_name]++;
+            }
+            const topPredPlayers = Object.entries(playerPredCount)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 5);
+            const predLabels = topPredPlayers.map(p => p[0]);
+            const predData = topPredPlayers.map(p => p[1]);
+
+            const userPoints = {};
+            for (let p of predictions) {
+                const parts = p.match_id.split('_');
+                if (parts.length < 3) continue;
+                const team1 = parts[1],
+                    team2 = parts[2];
+                const match = games.find(g =>
+                    (g.homeAr === team1 && g.awayAr === team2) ||
+                    (g.homeAr === team2 && g.awayAr === team1)
+                );
+                if (!match) continue;
+                const tempGame = {
+                    home_score: match.homeScore,
+                    away_score: match.awayScore,
+                    home_penalty_score: match.penaltyHome || null,
+                    away_penalty_score: match.penaltyAway || null
+                };
+                const winner = getMatchWinner(tempGame);
+                const winnerName = winner === "home" ? match.homeAr : (winner === "away" ? match.awayAr : "DRAW");
+                const isCorrect = p.prediction === winnerName;
+                if (!userPoints[p.user_name]) userPoints[p.user_name] = [];
+                userPoints[p.user_name].push({ matchId: p.match_id, correct: isCorrect, time: p.created_at });
+            }
+            const cumulativePoints = {};
+            for (let [user, preds] of Object.entries(userPoints)) {
+                let total = 0;
+                cumulativePoints[user] = preds.map(p => {
+                    if (p.correct) total++;
+                    return total;
+                });
+            }
+            const topUsers = Object.entries(cumulativePoints)
+                .sort((a, b) => b[1][b[1].length - 1] - a[1][a[1].length - 1])
+                .slice(0, 5);
+            const pointLabels = topUsers.length > 0 ? topUsers[0][1].map((_, i) => `توقع ${i+1}`) : [];
+
+            const matchPredCount = {};
+            for (let p of predictions) {
+                const parts = p.match_id.split('_');
+                if (parts.length < 3) continue;
+                const key = `${parts[1]} 🆚 ${parts[2]}`;
+                if (!matchPredCount[key]) matchPredCount[key] = 0;
+                matchPredCount[key]++;
+            }
+            const popularMatches = Object.entries(matchPredCount)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 8);
+            const popLabels = popularMatches.map(m => m[0].length > 25 ? m[0].substring(0, 22) + '...' : m[0]);
+            const popData = popularMatches.map(m => m[1]);
+
+            const accuracyStats = {};
+            for (let p of predictions) {
+                const parts = p.match_id.split('_');
+                if (parts.length < 3) continue;
+                const team1 = parts[1],
+                    team2 = parts[2];
+                const match = games.find(g =>
+                    (g.homeAr === team1 && g.awayAr === team2) ||
+                    (g.homeAr === team2 && g.awayAr === team1)
+                );
+                if (!match) continue;
+                const tempGame = {
+                    home_score: match.homeScore,
+                    away_score: match.awayScore,
+                    home_penalty_score: match.penaltyHome || null,
+                    away_penalty_score: match.penaltyAway || null
+                };
+                const winner = getMatchWinner(tempGame);
+                const winnerName = winner === "home" ? match.homeAr : (winner === "away" ? match.awayAr : "DRAW");
+                const isCorrect = p.prediction === winnerName;
+                if (!accuracyStats[p.user_name]) accuracyStats[p.user_name] = { correct: 0, total: 0 };
+                accuracyStats[p.user_name].total++;
+                if (isCorrect) accuracyStats[p.user_name].correct++;
+            }
+            const topAcc = Object.entries(accuracyStats)
+                .filter(([_, v]) => v.total >= 2)
+                .sort((a, b) => (b[1].correct / b[1].total) - (a[1].correct / a[1].total))
+                .slice(0, 5);
+            const accLabels = topAcc.map(p => p[0]);
+            const accData = topAcc.map(p => Math.round((p[1].correct / p[1].total) * 100));
+
+            if (chartInstancesLocal.predDist) chartInstancesLocal.predDist.destroy();
+            if (chartInstancesLocal.points) chartInstancesLocal.points.destroy();
+            if (chartInstancesLocal.pop) chartInstancesLocal.pop.destroy();
+            if (chartInstancesLocal.acc) chartInstancesLocal.acc.destroy();
+
+            const ctx1 = document.getElementById('chartPlayerDistribution').getContext('2d');
+            chartInstancesLocal.predDist = new Chart(ctx1, {
+                type: 'bar',
+                data: {
+                    labels: predLabels,
+                    datasets: [{
+                        label: 'عدد التوقعات',
+                        data: predData,
+                        backgroundColor: 'rgba(212, 167, 69, 0.6)',
+                        borderColor: 'rgba(212, 167, 69, 1)',
+                        borderWidth: 1,
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            labels: { color: '#8a9bb5', font: { family: 'Cairo' } }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: { color: '#8a9bb5', font: { family: 'Cairo', size: 9 } },
+                            grid: { color: 'rgba(255,255,255,0.04)' }
+                        },
+                        y: {
+                            ticks: { color: '#8a9bb5' },
+                            grid: { color: 'rgba(255,255,255,0.04)' },
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            const ctx2 = document.getElementById('chartPoints').getContext('2d');
+            const colors = ['#d4a745', '#4a9eff', '#2ecc71', '#e74c3c', '#9b59b6'];
+            const datasets = topUsers.map((user, idx) => ({
+                label: user[0],
+                data: user[1],
+                borderColor: colors[idx % colors.length],
+                backgroundColor: colors[idx % colors.length] + '33',
+                fill: true,
+                tension: 0.3,
+                pointRadius: 2,
+                pointBackgroundColor: colors[idx % colors.length]
+            }));
+            chartInstancesLocal.points = new Chart(ctx2, {
+                type: 'line',
+                data: {
+                    labels: pointLabels,
+                    datasets: datasets
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            labels: { color: '#8a9bb5', font: { family: 'Cairo', size: 10 } }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: { color: '#8a9bb5', font: { family: 'Cairo', size: 8 } },
+                            grid: { color: 'rgba(255,255,255,0.04)' }
+                        },
+                        y: {
+                            ticks: { color: '#8a9bb5' },
+                            grid: { color: 'rgba(255,255,255,0.04)' },
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            const ctx3 = document.getElementById('chartPopular').getContext('2d');
+            chartInstancesLocal.pop = new Chart(ctx3, {
+                type: 'bar',
+                data: {
+                    labels: popLabels,
+                    datasets: [{
+                        label: 'عدد التوقعات',
+                        data: popData,
+                        backgroundColor: 'rgba(212, 167, 69, 0.5)',
+                        borderColor: 'rgba(212, 167, 69, 1)',
+                        borderWidth: 1,
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            labels: { color: '#8a9bb5', font: { family: 'Cairo' } }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: { color: '#8a9bb5', font: { family: 'Cairo', size: 9 } },
+                            grid: { color: 'rgba(255,255,255,0.04)' }
+                        },
+                        y: {
+                            ticks: { color: '#8a9bb5' },
+                            grid: { color: 'rgba(255,255,255,0.04)' },
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            const ctx4 = document.getElementById('chartAccuracy').getContext('2d');
+            chartInstancesLocal.acc = new Chart(ctx4, {
+                type: 'bar',
+                data: {
+                    labels: accLabels,
+                    datasets: [{
+                        label: 'نسبة التوقعات الصحيحة (%)',
+                        data: accData,
+                        backgroundColor: 'rgba(46, 204, 113, 0.6)',
+                        borderColor: 'rgba(46, 204, 113, 1)',
+                        borderWidth: 1,
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            labels: { color: '#8a9bb5', font: { family: 'Cairo' } }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: { color: '#8a9bb5', font: { family: 'Cairo', size: 9 } },
+                            grid: { color: 'rgba(255,255,255,0.04)' }
+                        },
+                        y: {
+                            ticks: { color: '#8a9bb5' },
+                            grid: { color: 'rgba(255,255,255,0.04)' },
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    }
+                }
+            });
+
+            document.getElementById('analyticsContent').innerHTML = `
+            <div class="analytics-grid">
+              <div class="chart-box full-width">
+                <div class="chart-title">📊 أكثر اللاعبين توقعاً</div>
+                <canvas id="chartPlayerDistribution"></canvas>
+              </div>
+              <div class="chart-box full-width">
+                <div class="chart-title">📈 تطور نقاط أفضل 5 لاعبين</div>
+                <canvas id="chartPoints"></canvas>
+              </div>
+              <div class="chart-box full-width">
+                <div class="chart-title">🔥 أكثر المباريات توقعاً</div>
+                <canvas id="chartPopular"></canvas>
+              </div>
+              <div class="chart-box full-width">
+                <div class="chart-title">🎯 نسبة التوقعات الصحيحة (أفضل 5)</div>
+                <canvas id="chartAccuracy"></canvas>
+              </div>
+            </div>
+            <div class="player-analytics-section" id="playerAnalyticsSection">
+              <div class="select-player">
+                <select id="playerAnalyticsSelect" onchange="updatePlayerAnalytics()">
+                  <option value="">-- اختر لاعباً --</option>
+                </select>
+              </div>
+              <div id="playerAnalyticsDetails" class="player-analytics-details" style="display:none;"></div>
+            </div>
+            <div class="match-analytics-section" id="matchAnalyticsSection">
+              <div class="match-analytics-grid" id="matchAnalyticsGrid"></div>
+            </div>
+            <div style="text-align:center;margin-top:12px;display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+              <button class="tab-btn" onclick="document.getElementById('analyticsModal').classList.remove('active');document.body.style.overflow='';" style="background:var(--gold-glow);border-color:var(--border-gold);color:var(--gold-light);">إغلاق</button>
+            </div>
+          `;
+
+            setTimeout(() => {
+                const ctx1b = document.getElementById('chartPlayerDistribution').getContext('2d');
+                const ctx2b = document.getElementById('chartPoints').getContext('2d');
+                const ctx3b = document.getElementById('chartPopular').getContext('2d');
+                const ctx4b = document.getElementById('chartAccuracy').getContext('2d');
+
+                if (chartInstancesLocal.predDist) chartInstancesLocal.predDist.destroy();
+                if (chartInstancesLocal.points) chartInstancesLocal.points.destroy();
+                if (chartInstancesLocal.pop) chartInstancesLocal.pop.destroy();
+                if (chartInstancesLocal.acc) chartInstancesLocal.acc.destroy();
+
+                chartInstancesLocal.predDist = new Chart(ctx1b, {
+                    type: 'bar',
+                    data: {
+                        labels: predLabels,
+                        datasets: [{
+                            label: 'عدد التوقعات',
+                            data: predData,
+                            backgroundColor: 'rgba(212, 167, 69, 0.6)',
+                            borderColor: 'rgba(212, 167, 69, 1)',
+                            borderWidth: 1,
+                            borderRadius: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                labels: { color: '#8a9bb5', font: { family: 'Cairo' } }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                ticks: { color: '#8a9bb5', font: { family: 'Cairo', size: 9 } },
+                                grid: { color: 'rgba(255,255,255,0.04)' }
+                            },
+                            y: {
+                                ticks: { color: '#8a9bb5' },
+                                grid: { color: 'rgba(255,255,255,0.04)' },
+                                beginAtZero: true
+                            }
                         }
                     }
                 });
-            }
-            
-            // ========== BACK TO TOP BUTTON ==========
-            const backToTopBtn = document.getElementById('backToTop');
-            
-            window.addEventListener('scroll', () => {
-                if (window.pageYOffset > 300) {
-                    backToTopBtn.classList.add('visible');
-                } else {
-                    backToTopBtn.classList.remove('visible');
+
+                chartInstancesLocal.points = new Chart(ctx2b, {
+                    type: 'line',
+                    data: {
+                        labels: pointLabels,
+                        datasets: datasets
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                labels: { color: '#8a9bb5', font: { family: 'Cairo', size: 10 } }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                ticks: { color: '#8a9bb5', font: { family: 'Cairo', size: 8 } },
+                                grid: { color: 'rgba(255,255,255,0.04)' }
+                            },
+                            y: {
+                                ticks: { color: '#8a9bb5' },
+                                grid: { color: 'rgba(255,255,255,0.04)' },
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+
+                chartInstancesLocal.pop = new Chart(ctx3b, {
+                    type: 'bar',
+                    data: {
+                        labels: popLabels,
+                        datasets: [{
+                            label: 'عدد التوقعات',
+                            data: popData,
+                            backgroundColor: 'rgba(212, 167, 69, 0.5)',
+                            borderColor: 'rgba(212, 167, 69, 1)',
+                            borderWidth: 1,
+                            borderRadius: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                labels: { color: '#8a9bb5', font: { family: 'Cairo' } }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                ticks: { color: '#8a9bb5', font: { family: 'Cairo', size: 9 } },
+                                grid: { color: 'rgba(255,255,255,0.04)' }
+                            },
+                            y: {
+                                ticks: { color: '#8a9bb5' },
+                                grid: { color: 'rgba(255,255,255,0.04)' },
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+
+                chartInstancesLocal.acc = new Chart(ctx4b, {
+                    type: 'bar',
+                    data: {
+                        labels: accLabels,
+                        datasets: [{
+                            label: 'نسبة التوقعات الصحيحة (%)',
+                            data: accData,
+                            backgroundColor: 'rgba(46, 204, 113, 0.6)',
+                            borderColor: 'rgba(46, 204, 113, 1)',
+                            borderWidth: 1,
+                            borderRadius: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                labels: { color: '#8a9bb5', font: { family: 'Cairo' } }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                ticks: { color: '#8a9bb5', font: { family: 'Cairo', size: 9 } },
+                                grid: { color: 'rgba(255,255,255,0.04)' }
+                            },
+                            y: {
+                                ticks: { color: '#8a9bb5' },
+                                grid: { color: 'rgba(255,255,255,0.04)' },
+                                beginAtZero: true,
+                                max: 100
+                            }
+                        }
+                    }
+                });
+
+                populatePlayerAnalyticsSelect();
+                renderMatchAnalytics();
+                const select = document.getElementById('playerAnalyticsSelect');
+                if (select.value) {
+                    updatePlayerAnalytics();
                 }
-            });
-            
-            backToTopBtn.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-            
-            // ========== SCROLL PROGRESS BAR ==========
-            const scrollProgressBar = document.querySelector('.scroll-progress-bar');
-            
-            window.addEventListener('scroll', () => {
-                const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-                const scrolled = (window.scrollY / windowHeight) * 100;
-                scrollProgressBar.style.width = scrolled + '%';
-            });
-            
-            // ========== LANGUAGE SWITCH ==========
-            const langBtn = document.getElementById('langBtn');
-            
-            langBtn.addEventListener('click', () => {
-                currentLang = currentLang === 'ar' ? 'en' : 'ar';
-                loadLanguage(currentLang);
-                langBtn.innerHTML = currentLang === 'ar' ? 
-                    '<i class="fas fa-language"></i><span>EN</span>' : 
-                    '<i class="fas fa-language"></i><span>AR</span>';
-            });
-            
-            // ========== THEME SWITCH ==========
-            const themeBtn = document.getElementById('themeBtn');
-            
-            themeBtn.addEventListener('click', () => {
-                currentTheme = currentTheme === 'light' ? 'dark' : 'light';
-                document.documentElement.setAttribute('data-theme', currentTheme);
-                updateThemeIcon();
-                localStorage.setItem('theme', currentTheme);
-            });
-            
-            // ========== PDF VIEWER ==========
-            function loadPdf() {
-                const pdfContainer = document.getElementById('pdfContainer');
-                const pdfUrl = 'https://drive.google.com/file/d/109O8XbxTbS6R3ZyO6SgKzZYYJpa6d7Ty/preview?rm=minimal&toolbar=0&navpanes=0&view=FitH';
-                
-                const iframe = document.createElement('iframe');
-                iframe.src = pdfUrl;
-                iframe.style.width = '100%';
-                iframe.style.height = '100%';
-                iframe.style.border = 'none';
-                iframe.title = 'ملف الإنجاز المهني - فهد الخالدي';
-                iframe.allow = 'autoplay';
-                
-                pdfContainer.innerHTML = '';
-                pdfContainer.appendChild(iframe);
-            }
-            
-            loadPdf();
-            
-            // ========== RESPONSIVE HANDLING ==========
-            function handleResize() {
-                if (window.innerWidth <= 768) {
-                    document.body.style.paddingTop = '70px';
-                } else {
-                    document.body.style.paddingTop = '80px';
-                }
-            }
-            
-            handleResize();
-            window.addEventListener('resize', handleResize);
+            }, 100);
+        }
+
+        document.getElementById('analyticsCloseBtn').addEventListener('click', function() {
+            document.getElementById('analyticsModal').classList.remove('active');
+            document.body.style.overflow = '';
         });
+        document.getElementById('analyticsModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                document.getElementById('analyticsModal').classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // ============================================================
+        //  أرشيف التوقعات
+        // ============================================================
+        function toggleArchive() {
+            const section = document.getElementById('archiveSection');
+            const container = document.getElementById('archiveContainer');
+            const countSpan = document.getElementById('archiveCount');
+
+            if (section.classList.contains('visible')) {
+                section.classList.remove('visible');
+                return;
+            }
+
+            section.classList.add('visible');
+            container.innerHTML = `<div class="duplicates-empty">⏳ جاري تحميل الأرشيف...</div>`;
+
+            const games = state.previousGamesData || [];
+            if (games.length === 0) {
+                container.innerHTML = `<div class="duplicates-empty">📭 لا توجد مباريات منتهية</div>`;
+                countSpan.textContent = '0';
+                return;
+            }
+
+            const predictions = state.predictions || [];
+            const archiveData = games.map(game => {
+                const matchPredictions = predictions.filter(p => {
+                    const parts = p.match_id.split('_');
+                    if (parts.length < 3) return false;
+                    return (parts[1] === game.homeAr && parts[2] === game.awayAr) ||
+                        (parts[1] === game.awayAr && parts[2] === game.homeAr);
+                });
+
+                let correct = 0,
+                    wrong = 0;
+                const tempGame = {
+                    home_score: game.homeScore,
+                    away_score: game.awayScore,
+                    home_penalty_score: game.penaltyHome || null,
+                    away_penalty_score: game.penaltyAway || null
+                };
+                const winner = getMatchWinner(tempGame);
+                const winnerName = winner === "home" ? game.homeAr : (winner === "away" ? game.awayAr : "DRAW");
+
+                for (let p of matchPredictions) {
+                    if (p.prediction === winnerName) correct++;
+                    else wrong++;
+                }
+
+                return {
+                    ...game,
+                    correct,
+                    wrong,
+                    total: matchPredictions.length,
+                    accuracy: matchPredictions.length > 0 ? Math.round((correct / matchPredictions.length) * 100) : 0,
+                    hasPenalties: game.hasPenalties || false,
+                    penaltyHome: game.penaltyHome || null,
+                    penaltyAway: game.penaltyAway || null,
+                    winnerName: winnerName
+                };
+            });
+
+            archiveData.sort((a, b) => (b.correct + b.wrong) - (a.correct + a.wrong));
+            countSpan.textContent = archiveData.length;
+
+            let html = `<div class="archive-summary">
+            <span class="item">📊 إجمالي المباريات: <strong>${archiveData.length}</strong></span>
+            <span class="item">✅ إجمالي التوقعات الصحيحة: <strong class="highlight">${archiveData.reduce((sum, m) => sum + m.correct, 0)}</strong></span>
+            <span class="item">📈 متوسط الدقة: <strong class="highlight">${Math.round(archiveData.reduce((sum, m) => sum + m.accuracy, 0) / archiveData.length)}%</strong></span>
+          </div>
+          <div class="archive-list">`;
+
+            archiveData.forEach(m => {
+                let penaltyText = '';
+                let winner = m.winnerName;
+                let loser = null;
+                if (winner === m.homeAr) { loser = m.awayAr; } else if (winner === m.awayAr) { loser = m.homeAr; }
+                if (m.hasPenalties && m.penaltyHome !== null && m.penaltyAway !== null) {
+                    penaltyText = `⚽ ض.ترجيح: ${m.penaltyHome} - ${m.penaltyAway}`;
+                }
+                let homeClass = '',
+                    awayClass = '';
+                if (winner === m.homeAr) { homeClass = 'winner';
+                    awayClass = 'loser'; } else if (winner === m.awayAr) { homeClass = 'loser';
+                    awayClass = 'winner'; }
+
+                html += `
+              <div class="archive-item" onclick="openPreviousMatchPredictions('${m.homeAr}', '${m.awayAr}', ${m.homeScore}, ${m.awayScore})">
+                <div class="match-info">
+                  <span class="flag">${getFlag(m.homeAr)}</span>
+                  <span class="${homeClass}">${m.homeAr}</span>
+                  <span class="score">${m.homeScore} - ${m.awayScore}</span>
+                  <span class="flag">${getFlag(m.awayAr)}</span>
+                  <span class="${awayClass}">${m.awayAr}</span>
+                  ${penaltyText ? `<span class="penalty-score">${penaltyText}</span>` : ''}
+                </div>
+                <div class="stats">
+                  <span class="correct">✅ ${m.correct}</span>
+                  <span class="wrong">❌ ${m.wrong}</span>
+                  <span class="accuracy">${m.accuracy}%</span>
+                  <span style="color:var(--text-secondary);font-size:0.6rem;">${m.total} توقع</span>
+                </div>
+              </div>
+            `;
+            });
+
+            html += `</div>`;
+            container.innerHTML = html;
+        }
+
+        // ============================================================
+        //  دوال التوقعات المكررة
+        // ============================================================
+        async function loadDuplicates() {
+            const section = document.getElementById('duplicatesSection');
+            const container = document.getElementById('duplicatesContainer');
+            const badge = document.getElementById('dupCountBadge');
+
+            if (section.classList.contains('visible')) {
+                section.classList.remove('visible');
+                return;
+            }
+
+            section.classList.add('visible');
+            container.innerHTML = `<div class="duplicates-empty">⏳ جاري البحث عن التكرارات...</div>`;
+
+            if (!supabaseClient) {
+                container.innerHTML = `<div class="duplicates-empty">❌ Supabase غير متصل</div>`;
+                return;
+            }
+
+            try {
+                const { data, error } = await supabaseClient
+                    .from("predictions")
+                    .select("user_name, match_id, prediction, created_at")
+                    .order("created_at", { ascending: false })
+                    .limit(500);
+
+                if (error) throw error;
+
+                if (!data || data.length === 0) {
+                    container.innerHTML = `<div class="duplicates-empty">📭 لا توجد توقعات مسجلة</div>`;
+                    badge.textContent = '0';
+                    return;
+                }
+
+                const groups = {};
+                for (let p of data) {
+                    const key = `${p.user_name}|${p.match_id}`;
+                    if (!groups[key]) {
+                        groups[key] = [];
+                    }
+                    groups[key].push(p);
+                }
+
+                const duplicates = {};
+                for (let [key, items] of Object.entries(groups)) {
+                    if (items.length > 1) {
+                        const [userName, matchId] = key.split('|');
+                        duplicates[key] = {
+                            user_name: userName,
+                            match_id: matchId,
+                            count: items.length,
+                            predictions: items.map(p => p.prediction),
+                            created_at: items[0].created_at
+                        };
+                    }
+                }
+
+                const dupKeys = Object.keys(duplicates);
+                badge.textContent = dupKeys.length;
+
+                if (dupKeys.length === 0) {
+                    container.innerHTML = `<div class="duplicates-empty">✅ لا توجد توقعات مكررة</div>`;
+                    return;
+                }
+
+                let html =
+                    `<table class="duplicates-table"><thead><tr><th>المستخدم</th><th>المباراة</th><th>التكرار</th><th>التوقعات</th></tr></thead><tbody>`;
+                for (let key of dupKeys) {
+                    const d = duplicates[key];
+                    const parts = d.match_id.split('_');
+                    const team1 = parts[1] || '?';
+                    const team2 = parts[2] || '?';
+                    const preds = d.predictions.map(p => p === 'DRAW' ? 'تعادل' : p).join(' / ');
+                    html += `<tr>
+                <td class="dup-user">${d.user_name}</td>
+                <td class="dup-match">${getFlag(team1)} ${team1} 🆚 ${getFlag(team2)} ${team2}</td>
+                <td class="dup-count">${d.count}</td>
+                <td class="dup-preds">${preds}</td>
+              </tr>`;
+                }
+                html += `</tbody></table>`;
+                container.innerHTML = html;
+
+            } catch (e) {
+                console.error("❌ جلب التكرارات:", e);
+                container.innerHTML = `<div class="duplicates-empty">❌ حدث خطأ: ${e.message}</div>`;
+            }
+        }
+
+        // ============================================================
+        //  دوال الاختبارات
+        // ============================================================
+        function runTests() {
+            const modal = document.getElementById('testResultsModal');
+            const content = document.getElementById('testResultsContent');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            content.innerHTML = `<div class="empty-state"><span class="icon">⏳</span> جاري تشغيل الاختبارات...</div>`;
+
+            setTimeout(() => {
+                const results = [];
+                let pass = 0,
+                    fail = 0;
+
+                try {
+                    const future = new Date(Date.now() + 10 * 60 * 1000).toISOString();
+                    const near = new Date(Date.now() + 2 * 60 * 1000).toISOString();
+                    const past = new Date(Date.now() - 10 * 60 * 1000).toISOString();
+                    const r1 = canPredict(future) === true;
+                    const r2 = canPredict(near) === false;
+                    const r3 = canPredict(past) === false;
+                    if (r1 && r2 && r3) { pass++;
+                        results.push('✅ canPredict - صحيح'); } else { fail++;
+                        results.push('❌ canPredict - فشل'); }
+                } catch (e) { fail++;
+                    results.push('❌ canPredict - استثناء: ' + e.message); }
+
+                try {
+                    const t1 = translateToArabic('Argentina') === 'الأرجنتين';
+                    const t2 = translateToArabic('Germany') === 'ألمانيا';
+                    if (t1 && t2) { pass++;
+                        results.push('✅ translateToArabic - صحيح'); } else { fail++;
+                        results.push('❌ translateToArabic - فشل'); }
+                } catch (e) { fail++;
+                    results.push('❌ translateToArabic - استثناء: ' + e.message); }
+
+                try {
+                    const fakeGames = [{ homeAr: 'البرازيل', awayAr: 'الأرجنتين', homeScore: 2, awayScore: 1 }];
+                    const original = state.previousGamesData;
+                    state.previousGamesData = fakeGames;
+                    const res = findMatchResult('البرازيل', 'الأرجنتين');
+                    state.previousGamesData = original;
+                    if (res && res.homeScore === 2 && res.awayScore === 1) { pass++;
+                        results.push('✅ findMatchResult - صحيح'); } else { fail++;
+                        results.push('❌ findMatchResult - فشل'); }
+                } catch (e) { fail++;
+                    results.push('❌ findMatchResult - استثناء: ' + e.message); }
+
+                try {
+                    const key = 'submitted_matches';
+                    const old = localStorage.getItem(key);
+                    localStorage.setItem(key, JSON.stringify(['test1', 'test2']));
+                    const list = getSubmittedMatches();
+                    localStorage.setItem(key, old || '[]');
+                    if (Array.isArray(list) && list.length === 2 && list.includes('test1')) { pass++;
+                        results.push('✅ getSubmittedMatches - صحيح'); } else { fail++;
+                        results.push('❌ getSubmittedMatches - فشل'); }
+                } catch (e) { fail++;
+                    results.push('❌ getSubmittedMatches - استثناء: ' + e.message); }
+
+                try {
+                    const f1 = getFlag('البرازيل') === '🇧🇷';
+                    const f2 = getFlag('فرنسا') === '🇫🇷';
+                    if (f1 && f2) { pass++;
+                        results.push('✅ getFlag - صحيح'); } else { fail++;
+                        results.push('❌ getFlag - فشل'); }
+                } catch (e) { fail++;
+                    results.push('❌ getFlag - استثناء: ' + e.message); }
+
+                const total = results.length;
+                content.innerHTML = `
+              <div style="text-align:center;margin-bottom:16px;">
+                <div style="font-size:1.2rem;font-weight:800;color:var(--gold-light);">
+                  ${pass} ✅ نجاح / ${fail} ❌ فشل
+                </div>
+                <div style="font-size:0.8rem;color:var(--text-secondary);">من أصل ${total} اختبار</div>
+              </div>
+              <div style="max-height:300px;overflow-y:auto;text-align:right;">
+                ${results.map(r => `<div style="padding:4px 8px;border-bottom:1px solid var(--border-subtle);font-size:0.8rem;">${r}</div>`).join('')}
+              </div>
+              <div style="text-align:center;margin-top:16px;">
+                <button class="tab-btn" onclick="document.getElementById('testResultsModal').classList.remove('active');document.body.style.overflow='';" style="background:var(--gold-glow);border-color:var(--border-gold);color:var(--gold-light);">إغلاق</button>
+              </div>
+            `;
+            }, 500);
+        }
+        document.getElementById('testResultsCloseBtn').addEventListener('click', function() {
+            document.getElementById('testResultsModal').classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // ============================================================
+        //  دوال شريط الأخبار
+        // ============================================================
+        function updateNewsTicker() {
+            const tickerEl = document.getElementById('todayHighlights');
+            if (!tickerEl) return;
+
+            const today = getSaudiNow();
+            const todayMatches = matchesData.filter(m => {
+                const d = toSaudiTime(m.timeISO);
+                return d.getDate() === today.getDate() &&
+                    d.getMonth() === today.getMonth() &&
+                    d.getFullYear() === today.getFullYear() &&
+                    (matchTime(m.timeISO) + MATCH_DURATION) > now();
+            });
+
+            if (todayMatches.length === 0) {
+                tickerEl.textContent = '📅 لا توجد مباريات اليوم';
+                return;
+            }
+
+            let text = '📅 مباريات اليوم: ';
+            const matchTexts = todayMatches.map(m => {
+                const flag1 = getFlag(m.team1);
+                const flag2 = getFlag(m.team2);
+                const timeStr = getTimeFromISO(m.timeISO);
+                return `${flag1} ${m.team1} 🆚 ${flag2} ${m.team2} (${timeStr})`;
+            });
+            text += matchTexts.join(' | ');
+
+            const predictions = state.predictions || [];
+            if (predictions.length > 0) {
+                const todayMatchIds = todayMatches.map(m => `${m.timeISO}_${m.team1}_${m.team2}`);
+                const todayPredictions = predictions.filter(p => todayMatchIds.includes(p.match_id));
+
+                if (todayPredictions.length > 0) {
+                    const userPreds = {};
+                    for (let p of todayPredictions) {
+                        if (!userPreds[p.user_name]) userPreds[p.user_name] = [];
+                        userPreds[p.user_name].push(p);
+                    }
+                    const sortedUsers = Object.entries(userPreds).sort((a, b) => b[1].length - a[1].length);
+                    if (sortedUsers.length > 0) {
+                        const topUser = sortedUsers[0];
+                        const predCount = topUser[1].length;
+                        text +=
+                            ` | 🔥 أكثر متوقع اليوم: ${topUser[0]} (${predCount} توقع${predCount > 1 ? 'ات' : ''})`;
+                    }
+                }
+            }
+
+            tickerEl.textContent = text;
+        }
+
+        // ============================================================
+        //  دوال المشاركة والإدارة
+        // ============================================================
+        function shareAllTodayTomorrow() {
+            if (!isAuthorized) { showPasswordOverlay(); return; }
+            const today = getSaudiNow();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            const activeMatches = matchesData.filter(m => (matchTime(m.timeISO) + MATCH_DURATION) > now());
+            const todayTomorrowMatches = activeMatches.filter(m => {
+                const d = toSaudiTime(m.timeISO);
+                return (d.getDate() === today.getDate() && d.getMonth() === today.getMonth()) ||
+                    (d.getDate() === tomorrow.getDate() && d.getMonth() === tomorrow.getMonth());
+            });
+            if (!todayTomorrowMatches.length) { showCopyToast('⚠️ لا توجد مباريات اليوم أو غداً'); return; }
+            todayTomorrowMatches.sort((a, b) => matchTime(a.timeISO) - matchTime(b.timeISO));
+            const baseUrl = window.location.origin + window.location.pathname;
+            let shareText = '🏆 كأس العالم 2026 - روابط توقع مباريات اليوم والغد\n\n';
+            shareText +=
+                `📅 اليوم: ${formatSaudiDate(new Date().toISOString())}\n📅 غداً: ${formatSaudiDate(tomorrow.toISOString())}\n━\n\n`;
+            todayTomorrowMatches.forEach((m, index) => {
+                const dayLabel = isMatchToday(m.timeISO) ? '📌 اليوم' : '📌 غداً';
+                const timeStr = getTimeFromISO(m.timeISO);
+                const link = `${baseUrl}?m=${m.id}`;
+                shareText +=
+                    `${index+1}. ${getFlag(m.team1)} ${m.team1} 🆚 ${getFlag(m.team2)} ${m.team2}\n🕒 ${dayLabel} - ${timeStr}\n🔗 <${link}>\n\n`;
+            });
+            shareText += '━\n✨ توقع · تنافس · اربح ✨\n#كأس_العالم_2026 #توقعات';
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(shareText).then(() => showCopyToast(
+                    `✅ تم نسخ روابط ${todayTomorrowMatches.length} مباراة!`)).catch(() => fallbackCopy(shareText));
+            } else { fallbackCopy(shareText); }
+        }
+
+        function fallbackCopy(text) { const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.top = '-9999px';
+            textArea.style.left = '-9999px';
+            document.body.appendChild(textArea);
+            textArea.select(); try { document.execCommand('copy');
+                showCopyToast('✅ تم نسخ جميع الروابط!'); } catch (e) { prompt('انسخ النص التالي للمشاركة:', text); }
+            document.body.removeChild(textArea); }
+
+        function updateShareAllCount() {
+            if (!isAuthorized) { document.getElementById('shareAllCount').textContent = '🔒'; return; }
+            const today = getSaudiNow();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            const activeMatches = matchesData.filter(m => (matchTime(m.timeISO) + MATCH_DURATION) > now());
+            const count = activeMatches.filter(m => {
+                const d = toSaudiTime(m.timeISO);
+                return (d.getDate() === today.getDate() && d.getMonth() === today.getMonth()) ||
+                    (d.getDate() === tomorrow.getDate() && d.getMonth() === tomorrow.getMonth());
+            }).length;
+            document.getElementById('shareAllCount').textContent = count;
+        }
+
+        function copyMatchLink(matchId, team1, team2) {
+            const shareUrl = `${window.location.origin}${window.location.pathname}?m=${matchId}`;
+            if (navigator.share) {
+                navigator.share({ title: `🏆 توقع مباراة ${team1} 🆚 ${team2}`,
+                    text: `🔮 توقع نتيجة مباراة ${team1} 🆚 ${team2} في كأس العالم 2026\n\n🔗 ${shareUrl}`, url: shareUrl })
+                .catch(() => {});
+            } else {
+                navigator.clipboard.writeText(shareUrl).then(() => showCopyToast('✅ تم نسخ رابط المباراة!')).catch(
+                () => {
+                    const textArea = document.createElement('textarea');
+                    textArea.value = shareUrl;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    showCopyToast('✅ تم نسخ رابط المباراة!');
+                });
+            }
+        }
+
+        function showCopyToast(msg) { const t = document.getElementById('copyToast');
+            t.textContent = msg;
+            t.classList.add('show');
+            setTimeout(() => t.classList.remove('show'), 3000); }
+
+        function toggleTheme() { const current = document.documentElement.getAttribute('data-theme'); const newTheme =
+                current === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme === 'light' ? 'light' : '');
+            localStorage.setItem('theme', newTheme);
+            document.getElementById('themeToggleBtn').textContent = newTheme === 'light' ? '☀️ الوضع الفاتح' :
+                '🌙 الوضع المظلم'; }
+
+        function shareResults() {
+            const currentUser = localStorage.getItem('lastUserName') || 'لاعب';
+            const userScore = document.querySelector('.champion-card .info .stats-row .item:first-child strong')
+                ?.textContent || '0';
+            const userRank = document.querySelector('.champion-card .rank-badge')?.textContent || '🥇';
+            const totalPlayers = document.getElementById('lbTotalPlayers')?.textContent || '0';
+            const shareText =
+                `🏆 كأس العالم 2026\n\n👤 ${currentUser}\n📊 النقاط: ${userScore}\n🏅 الترتيب: ${userRank}\n👥 عدد اللاعبين: ${totalPlayers}\n\n✨ توقع · تنافس · اربح ✨\n#كأس_العالم_2026 #توقعات`;
+            if (navigator.share) { navigator.share({ title: 'نتائجي في كأس العالم 2026', text: shareText }).catch(
+                () => {}); } else { navigator.clipboard.writeText(shareText).then(() => showCopyToast(
+                    '✅ تم نسخ النتائج!')).catch(() => prompt('انسخ النص التالي للمشاركة:', shareText)); }
+        }
+
+        function toggleCompactMode() {
+            const container = document.getElementById('leaderboardContainer');
+            const playersList = container.querySelector('.players-list');
+            const championCard = container.querySelector('.champion-card');
+            if (playersList) {
+                isCompactMode = !isCompactMode;
+                playersList.classList.toggle('compact-mode');
+                if (championCard) { championCard.style.transform = isCompactMode ? 'scale(0.85)' : 'scale(1)';
+                    championCard.style.transformOrigin = 'center center';
+                    championCard.style.margin = isCompactMode ? '-10px 0' : '0'; }
+                const btn = document.getElementById('toggleCompactBtn');
+                if (isCompactMode) { btn.innerHTML = '📐 وضع التصوير (مفعل)';
+                    btn.style.background = 'linear-gradient(135deg, var(--success), #27ae60)';
+                    showCopyToast('📐 تم تفعيل وضع التصغير للقطة الشاشة'); } else { btn.innerHTML = '📐 تصغير للتصوير';
+                    btn.style.background = 'var(--gold-gradient)';
+                    showCopyToast('📐 تم إلغاء وضع التصغير'); }
+            } else { showCopyToast('⚠️ انتظر حتى تحميل البيانات'); }
+        }
+
+        function resetCompactMode() {
+            const container = document.getElementById('leaderboardContainer');
+            const playersList = container.querySelector('.players-list');
+            const championCard = container.querySelector('.champion-card');
+            if (playersList) {
+                isCompactMode = false;
+                playersList.classList.remove('compact-mode');
+                if (championCard) { championCard.style.transform = 'scale(1)';
+                    championCard.style.margin = '0'; }
+                const btn = document.getElementById('toggleCompactBtn');
+                btn.innerHTML = '📐 تصغير للتصوير';
+                btn.style.background = 'var(--gold-gradient)';
+                showCopyToast('🔄 تم إعادة الحجم الطبيعي');
+            }
+        }
+
+        function toggleModalCompact() {
+            const modalContent = document.getElementById('matchPredictionsContent');
+            const btn = document.getElementById('modalCompactBtn');
+            isModalCompact = !isModalCompact;
+            modalContent.classList.toggle('compact-mode');
+            if (isModalCompact) { btn.textContent = '📐 تكبير';
+                showCopyToast('📐 تم تصغير جدول التوقعات للتصوير'); } else { btn.textContent = '📐 تصغير';
+                showCopyToast('📐 تم تكبير جدول التوقعات'); }
+        }
+
+        // ============================================================
+        //  نظام كلمة السر
+        // ============================================================
+        function showPasswordOverlay() {
+            document.getElementById('passwordOverlay').classList.add('active');
+            document.getElementById('passwordInput').value = '';
+            document.getElementById('passwordError').textContent = '';
+            document.getElementById('modalCompactBtn').classList.remove('visible');
+            setTimeout(() => document.getElementById('passwordInput').focus(), 300);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hidePasswordOverlay() {
+            document.getElementById('passwordOverlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function checkPassword() {
+            const input = document.getElementById('passwordInput').value.trim();
+            const errorEl = document.getElementById('passwordError');
+            if (input === SECRET_CODE) {
+                isAuthorized = true;
+                errorEl.textContent = '';
+                hidePasswordOverlay();
+                document.getElementById('shareAllContainer').classList.add('visible');
+                document.getElementById('adminControls').classList.add('visible');
+                if (document.getElementById('matchPredictionsModal').classList.contains('active')) { document
+                        .getElementById('modalCompactBtn').classList.add('visible'); }
+                updateShareAllCount();
+                document.querySelectorAll('.edit-btn').forEach(el => el.classList.add('visible'));
+                showCopyToast('✅ تم تفعيل لوحة الإدارة');
+            } else {
+                errorEl.textContent = '❌ رمز غير صحيح';
+                document.getElementById('passwordInput').value = '';
+                document.getElementById('passwordInput').focus();
+            }
+        }
+        document.getElementById('passwordSubmitBtn').addEventListener('click', checkPassword);
+        document.getElementById('passwordInput').addEventListener('keydown', function(e) { if (e.key === 'Enter')
+                checkPassword(); if (e.key === 'Escape') hidePasswordOverlay(); });
+        document.getElementById('passwordCloseBtn').addEventListener('click', hidePasswordOverlay);
+        document.getElementById('passwordOverlay').addEventListener('click', function(e) { if (e.target === this)
+                hidePasswordOverlay(); });
+
+        // ============================================================
+        //  إظهار/إخفاء مسار البطولة في الإدارة
+        // ============================================================
+        function toggleBracketAdmin() {
+            const wrapper = document.getElementById('bracketWrapper');
+            if (wrapper.classList.contains('visible')) {
+                wrapper.classList.remove('visible');
+            } else {
+                wrapper.classList.add('visible');
+                renderBracket();
+                showCopyToast('🏆 تم عرض مسار البطولة (بدون مباريات مكررة)');
+            }
+        }
+
+        // ============================================================
+        //  التبويبات
+        // ============================================================
+        function initTabs() {
+            console.log("🔹 تفعيل التبويبات");
+            const tabBtns = document.querySelectorAll('.tab-btn[data-tab]');
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const id = this.dataset.tab;
+                    console.log("🔹 تبويب مختار:", id);
+                    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+                    const target = document.getElementById(`${id}Tab`);
+                    if (target) target.classList.add('active');
+                    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const dayFilter = document.getElementById('dayFilterTabs');
+                    if (id === 'upcoming') dayFilter.classList.add('visible');
+                    else dayFilter.classList.remove('visible');
+                    if (id === 'previous' && !state.previousGamesData.length) loadPreviousGamesFull();
+                    if (id === 'standings' && state.previousGamesData.length) calculateStandings();
+                    if (id === 'scorers') renderScorers();
+                    if (id === 'stats') renderTeamStats();
+                    if (id === 'predictions') renderAllPredictions();
+                });
+            });
+            const activeTab = document.querySelector('.tab-btn.active');
+            if (activeTab) {
+                const id = activeTab.dataset.tab;
+                const target = document.getElementById(`${id}Tab`);
+                if (target) target.classList.add('active');
+                if (id === 'upcoming') document.getElementById('dayFilterTabs').classList.add('visible');
+            }
+            console.log("✅ التبويبات مفعلة");
+        }
+
+        // ============================================================
+        //  التحديث التلقائي
+        // ============================================================
+        function startAutoUpdate() {
+            setInterval(renderUpcoming, 1000);
+            setInterval(async () => {
+                const activeTab = document.querySelector('.tab-btn.active')?.dataset.tab;
+                if (activeTab === 'previous') loadPreviousGamesFull();
+                if (activeTab === 'standings' && state.previousGamesData.length) calculateStandings();
+                if (activeTab === 'scorers') renderScorers();
+                if (activeTab === 'stats') renderTeamStats();
+                if (activeTab === 'predictions') await renderAllPredictions();
+                renderLeaderboard(currentLeaderboardPeriod);
+                updateShareAllCount();
+                updateNewsTicker();
+            }, 30000);
+        }
+
+        function checkUrlForMatch() {
+            const params = new URLSearchParams(window.location.search);
+            const matchId = params.get('m');
+            if (matchId && !isNaN(matchId)) {
+                const match = matchesData.find(m => m.id === parseInt(matchId));
+                if (match && !isMatchFinished(match.timeISO)) {
+                    setTimeout(() => {
+                        openNameModal(`${match.timeISO}_${match.team1}_${match.team2}`, match.team1,
+                            match.team2, match.timeISO);
+                    }, 800);
+                }
+            }
+        }
+
+        document.getElementById('footerTrigger').addEventListener('click', function(e) {
+            e.preventDefault();
+            if (isAuthorized) {
+                document.getElementById('shareAllContainer').classList.toggle('visible');
+                document.getElementById('adminControls').classList.toggle('visible');
+                if (document.getElementById('shareAllContainer').classList.contains('visible')) { updateShareAllCount();
+                    showCopyToast('🔓 تم إظهار لوحة الإدارة'); } else { showCopyToast('🔒 تم إخفاء لوحة الإدارة'); }
+            } else { showPasswordOverlay(); }
+        });
+        document.getElementById('prevSearchInput')?.addEventListener('input', renderPreviousGamesFiltered);
+        document.getElementById('groupFilter')?.addEventListener('change', renderUpcoming);
+        document.querySelectorAll('.day-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.day-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentDayFilter = this.dataset.day;
+                renderUpcoming();
+            });
+        });
+
+        if (localStorage.getItem('theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            document.getElementById('themeToggleBtn').textContent = '☀️ الوضع الفاتح';
+        }
+
+        window.openViewPredictionsModal = openViewPredictionsModal;
+        window.openPlayerPredictions = openPlayerPredictions;
+        window.loadPreviousGames = loadPreviousGamesFull;
+        window.toggleTheme = toggleTheme;
+        window.shareResults = shareResults;
+        window.copyMatchLink = copyMatchLink;
+        window.shareAllTodayTomorrow = shareAllTodayTomorrow;
+        window.openMatchPredictions = openMatchPredictions;
+        window.openPreviousMatchPredictions = openPreviousMatchPredictions;
+        window.toggleCompactMode = toggleCompactMode;
+        window.resetCompactMode = resetCompactMode;
+        window.toggleModalCompact = toggleModalCompact;
+        window.openBracketMatchDetail = openBracketMatchDetail;
+        window.closeBracketModal = closeBracketModal;
+        window.showCopyToast = showCopyToast;
+        window.loadDuplicates = loadDuplicates;
+        window.openEditPredictionModal = openEditPredictionModal;
+        window.runTests = runTests;
+        window.openAnalytics = openAnalytics;
+        window.toggleArchive = toggleArchive;
+        window.openNameModal = openNameModal;
+        window.closeNameModal = closeNameModal;
+        window.setLeaderboardPeriod = setLeaderboardPeriod;
+        window.openCompareModal = openCompareModal;
+        window.closeCompareModal = closeCompareModal;
+        window.renderCompare = renderCompare;
+        window.updatePlayerAnalytics = updatePlayerAnalytics;
+        window.populatePlayerAnalyticsSelect = populatePlayerAnalyticsSelect;
+        window.renderMatchAnalytics = renderMatchAnalytics;
+        window.toggleBracketAdmin = toggleBracketAdmin;
+
+        // ============================================================
+        //  دالة فتح نافذة تعديل التوقع
+        // ============================================================
+        async function openEditPredictionModal(matchId, team1, team2, timeISO) {
+            if (isMatchFinished(timeISO)) { showCopyToast('⛔ هذه المباراة انتهت، لا يمكن تعديل التوقع.'); return; }
+            if (!canPredict(timeISO)) { showCopyToast(
+                    '⛔ لا يمكن تعديل التوقع الآن، المباراة على وشك البدء أو بدأت بالفعل (يُسمح حتى 5 دقائق قبل البداية).'
+                    ); return; }
+
+            const savedUserName = localStorage.getItem('lastUserName') || '';
+            if (!savedUserName) {
+                showCopyToast('⚠️ الرجاء تسجيل اسمك أولاً');
+                return;
+            }
+
+            const existing = await getUserPrediction(savedUserName, matchId);
+            if (!existing) {
+                showCopyToast('⚠️ لا يوجد توقع سابق لهذه المباراة');
+                return;
+            }
+
+            isEditing = true;
+            currentMatchId = matchId;
+            currentTeam1 = team1;
+            currentTeam2 = team2;
+            currentTimeISO = timeISO;
+            currentUserName = savedUserName;
+
+            document.getElementById('modalTitle').textContent = '✏️ تعديل توقع المباراة';
+            document.getElementById('greetingName').textContent = savedUserName;
+            document.getElementById('modalUserGreeting').style.display = 'block';
+            document.getElementById('modalTeam1').textContent = team1;
+            document.getElementById('modalTeam2').textContent = team2;
+            document.getElementById('optTeam1').textContent = team1;
+            document.getElementById('optTeam2').textContent = team2;
+            document.getElementById('modalFlag1').textContent = getFlag(team1);
+            document.getElementById('modalFlag2').textContent = getFlag(team2);
+            document.getElementById('modalDateTime').textContent = `📅 ${getDateTimeDisplay(timeISO)} (بتوقيت السعودية)`;
+
+            const currentPrediction = existing.prediction;
+            document.querySelectorAll('input[name="prediction"]').forEach(el => {
+                const val = el.value;
+                if (val === 'HOME' && currentPrediction === team1) el.checked = true;
+                else if (val === 'AWAY' && currentPrediction === team2) el.checked = true;
+            });
+
+            const msgEl = document.getElementById('modalMessage');
+            msgEl.textContent = `✏️ تعديل توقعك الحالي: ${currentPrediction === 'DRAW' ? 'تعادل' : currentPrediction}`;
+            msgEl.className = 'modal-message info';
+
+            document.getElementById('modalSubmitBtn').disabled = false;
+            document.getElementById('modalSubmitBtn').textContent = '💾 تحديث التوقع';
+
+            document.getElementById('predictionModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // ============================================================
+        //  دالة عرض المباريات
+        // ============================================================
+        function renderUpcoming() {
+            try {
+                const groupFilter = document.getElementById('groupFilter')?.value || 'all';
+                let active = [];
+                if (groupFilter === 'all') {
+                    active = upcomingMatches(matchesData);
+                } else {
+                    const teams = finalGroups[groupFilter] || [];
+                    const allMatchesForGroup = matchesData.filter(m => teams.includes(m.team1) || teams.includes(m
+                    .team2));
+                    active = allMatchesForGroup;
+                    active.sort((a, b) => matchTime(a.timeISO) - matchTime(b.timeISO));
+                }
+                if (groupFilter === 'all') {
+                    if (currentDayFilter === 'today') {
+                        active = active.filter(m => isTodaySaudi(m.timeISO));
+                    } else if (currentDayFilter === 'tomorrow') {
+                        active = active.filter(m => isTomorrowSaudi(m.timeISO));
+                    } else if (currentDayFilter === 'week') {
+                        const today = getSaudiNow();
+                        const weekLater = new Date(today);
+                        weekLater.setDate(weekLater.getDate() + 7);
+                        active = active.filter(m => {
+                            const d = toSaudiTime(m.timeISO);
+                            return d >= today && d <= weekLater;
+                        });
+                    }
+                }
+                const container = document.getElementById('matchesContainer');
+                document.getElementById('upcomingCount').textContent = active.length;
+                if (!active.length) { container.innerHTML =
+                        `<div class="empty-state"><span class="icon">📭</span> لا توجد مباريات تطابق الفلاتر</div>`; return; }
+                container.innerHTML = active.map(m => {
+                    const isUpcoming = (matchTime(m.timeISO) + MATCH_DURATION) > now();
+                    return renderMatchCard(m, isUpcoming);
+                }).join('');
+                updateShareAllCount();
+            } catch (e) { console.error("renderUpcoming:", e);
+                document.getElementById('matchesContainer').innerHTML =
+                    `<div class="empty-state"><span class="icon">⚠️</span> حدث خطأ</div>`; }
+        }
+
+        function closePredictionModal() {
+            document.getElementById('predictionModal').classList.remove('active');
+            document.body.style.overflow = '';
+            isEditing = false;
+        }
+
+        function closeViewPredictionsModal() { document.getElementById('viewPredictionsModal').classList.remove('active');
+            document.body.style.overflow = ''; }
+
+        function closePlayerPredictionsModal() { document.getElementById('playerPredictionsModal').classList.remove(
+                'active');
+            document.body.style.overflow = ''; }
+
+        function closeMatchPredictionsModal() { document.getElementById('matchPredictionsModal').classList.remove(
+                'active');
+            document.body.style.overflow = ''; }
+
+        document.getElementById('modalCloseBtn').addEventListener('click', closePredictionModal);
+        document.getElementById('viewModalCloseBtn').addEventListener('click', closeViewPredictionsModal);
+        document.getElementById('playerModalCloseBtn').addEventListener('click', closePlayerPredictionsModal);
+        document.getElementById('matchPredictionsCloseBtn').addEventListener('click', closeMatchPredictionsModal);
+        document.getElementById('predictionModal').addEventListener('click', function(e) { if (e.target === this)
+                closePredictionModal(); });
+        document.getElementById('viewPredictionsModal').addEventListener('click', function(e) { if (e.target === this)
+                closeViewPredictionsModal(); });
+        document.getElementById('playerPredictionsModal').addEventListener('click', function(e) { if (e.target === this)
+                closePlayerPredictionsModal(); });
+        document.getElementById('matchPredictionsModal').addEventListener('click', function(e) { if (e.target === this)
+                closeMatchPredictionsModal(); });
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { closePredictionModal();
+                closeViewPredictionsModal();
+                closePlayerPredictionsModal();
+                closeMatchPredictionsModal(); } });
+
+        document.getElementById('modalSubmitBtn').addEventListener('click', async function() {
+            const userName = currentUserName || localStorage.getItem('lastUserName') || '';
+            const selected = document.querySelector('input[name="prediction"]:checked');
+            const msgEl = document.getElementById('modalMessage');
+
+            if (!userName) { msgEl.textContent = '⚠️ الرجاء إدخال اسمك';
+                msgEl.className = 'modal-message warning'; return; }
+
+            if (!selected) { msgEl.textContent = '⚠️ الرجاء اختيار توقع';
+                msgEl.className = 'modal-message warning'; return; }
+
+            let prediction = selected.value === 'HOME' ? currentTeam1 : (selected.value === 'AWAY' ? currentTeam2 :
+                'DRAW');
+
+            if (isMatchFinished(currentTimeISO)) { msgEl.textContent = '⛔ هذه المباراة انتهت، لا يمكن حفظ التوقع.';
+                msgEl.className = 'modal-message error'; return; }
+            if (isMatchLive(currentTimeISO)) { msgEl.textContent = '⛔ لا يمكن التوقع على مباراة جارية';
+                msgEl.className = 'modal-message error'; return; }
+            if (!canPredict(currentTimeISO)) { msgEl.textContent =
+                    '⛔ لا يمكن التوقع الآن، المباراة على وشك البدء أو بدأت بالفعل (يُسمح حتى 5 دقائق قبل البداية).';
+                msgEl.className = 'modal-message error'; return; }
+
+            if (!isEditing && isMatchSubmitted(currentMatchId)) {
+                msgEl.textContent = '⚠️ لقد توقعت هذه المباراة مسبقاً';
+                msgEl.className = 'modal-message warning';
+                return;
+            }
+
+            this.disabled = true;
+            msgEl.textContent = '⏳ جاري الحفظ...';
+            msgEl.className = 'modal-message';
+
+            const result = await savePrediction(userName, currentMatchId, prediction);
+
+            if (result.success) {
+                msgEl.textContent = result.updated ? '✅ تم تحديث التوقع بنجاح! 🎉' : '✅ تم حفظ التوقع بنجاح! 🎉';
+                msgEl.className = 'modal-message success';
+                this.disabled = false;
+                if (userName) {
+                    await loadUserPredictions(userName);
+                }
+                await renderAllPredictions();
+                renderLeaderboard(currentLeaderboardPeriod);
+                renderUpcoming();
+                updateNewsTicker();
+                setTimeout(closePredictionModal, 1200);
+            } else {
+                msgEl.textContent = result.message || '❌ فشل الحفظ';
+                msgEl.className = 'modal-message error';
+                this.disabled = false;
+            }
+        });
+
+        // ============================================================
+        //  نافذة استعراض التوقعات (مع نسبة الفوز - تم إزالة التعادل)
+        // ============================================================
+        async function openViewPredictionsModal(matchId, team1, team2) {
+            document.getElementById('viewTeam1').textContent = team1;
+            document.getElementById('viewTeam2').textContent = team2;
+            document.getElementById('viewFlag1').textContent = getFlag(team1);
+            document.getElementById('viewFlag2').textContent = getFlag(team2);
+            document.getElementById('probTeam1').textContent = team1;
+            document.getElementById('probTeam2').textContent = team2;
+            const listContainer = document.getElementById('viewPredictionsList');
+            const countSpan = document.getElementById('viewPredictionsCount');
+            listContainer.innerHTML = `<div class="empty-state"><span class="icon">⏳</span> جاري التحميل...</div>`;
+            countSpan.textContent = '...';
+
+            const predictions = await getPredictionsForMatchFull(matchId);
+            countSpan.textContent = predictions.length;
+
+            let homeCount = 0,
+                awayCount = 0;
+            for (let p of predictions) {
+                if (p.prediction === team1) homeCount++;
+                else if (p.prediction === team2) awayCount++;
+            }
+            const totalPreds = predictions.length;
+            const homePercent = totalPreds > 0 ? (homeCount / totalPreds) * 100 : 0;
+            const awayPercent = totalPreds > 0 ? (awayCount / totalPreds) * 100 : 0;
+
+            document.getElementById('probHomePercent').textContent = homePercent.toFixed(1) + '%';
+            document.getElementById('probAwayPercent').textContent = awayPercent.toFixed(1) + '%';
+
+            document.querySelector('#probBar .segment.home').style.width = homePercent + '%';
+            document.querySelector('#probBar .segment.home').textContent = homePercent.toFixed(0) + '%';
+            document.querySelector('#probBar .segment.away').style.width = awayPercent + '%';
+            document.querySelector('#probBar .segment.away').textContent = awayPercent.toFixed(0) + '%';
+
+            const drawSegment = document.querySelector('#probBar .segment.draw');
+            if (drawSegment) drawSegment.style.display = 'none';
+
+            if (totalPreds === 0) {
+                document.querySelector('#probBar .segment.home').style.width = '50%';
+                document.querySelector('#probBar .segment.home').textContent = '0%';
+                document.querySelector('#probBar .segment.away').style.width = '50%';
+                document.querySelector('#probBar .segment.away').textContent = '0%';
+            }
+
+            if (!predictions || predictions.length === 0) {
+                listContainer.innerHTML =
+                    `<div class="empty-state"><span class="icon">📭</span> لا توجد توقعات لهذه المباراة</div>`;
+            } else {
+                let html = '';
+                predictions.forEach((p, idx) => {
+                    let text = p.prediction === 'DRAW' ? '🤝 تعادل الفريقين' :
+                        `🏆 فوز ${getFlag(p.prediction)} ${p.prediction}`;
+                    const status = getPredictionStatus(p);
+                    let statusText = '⏳ قيد الانتظار';
+                    let statusClass = 'pending';
+                    if (status.status === 'correct') { statusText = '✅ صحيح';
+                        statusClass = 'correct'; } else if (status.status === 'wrong') { statusText = '❌ خاطئ';
+                        statusClass = 'wrong'; }
+                    html += `
+                <div class="prediction-card ${statusClass}" onclick="openPlayerPredictions('${p.user_name || ''}')" style="cursor:pointer;">
+                  <div class="user"><div class="avatar-p">${p.user_name ? p.user_name.charAt(0).toUpperCase() : '👤'}</div><span class="name-p">${p.user_name || 'مجهول'}</span></div>
+                  <div class="prediction-text">🔮 ${text}</div>
+                  <span class="status-badge ${statusClass}">${statusText}</span>
+                  <div style="font-size:0.6rem;color:var(--text-secondary);margin-top:4px;">🕒 ${p.created_at ? formatDate(p.created_at) : 'تاريخ غير معروف'}</div>
+                </div>
+              `;
+                });
+                listContainer.innerHTML = html;
+            }
+            document.getElementById('viewPredictionsModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        async function getPredictionsForMatch(matchId) {
+            return getPredictionsForMatchFull(matchId);
+        }
+
+        async function getPredictionsForUser(userName) {
+            return getPredictionsForUserFull(userName);
+        }
+
+        // ============================================================
+        //  START
+        // ============================================================
+        init();
     </script>
 </body>
 </html>
